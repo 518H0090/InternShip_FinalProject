@@ -35,3 +35,18 @@ const dropdownSwitchMenu = document.querySelector('.dropdown-switch__menu ');
 dropdownSwitchToggle.addEventListener('click',(e) => {
     dropdownSwitchMenu.classList.toggle('showSwitch');
 });
+
+// Move To Login Page
+const navbarLogin = document.querySelector('.navbar-login');
+
+navbarLogin.addEventListener('click',(e) => {
+    window.location.href = "./login.html";
+});
+
+// Move To Index Page
+const navbarLogo = document.querySelector('.navbar-logo');
+
+navbarLogo.addEventListener('click', (e) => {
+    window.location.href = "./index.html";
+});
+
