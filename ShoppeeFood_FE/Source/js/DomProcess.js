@@ -49,4 +49,3 @@ const navbarLogo = document.querySelector('.navbar-logo');
 navbarLogo.addEventListener('click', (e) => {
     window.location.href = "./index.html";
 });
-

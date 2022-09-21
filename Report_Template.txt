@@ -1,9 +1,10 @@
 +Huỳnh Trần Trung Hiếu - 21/09/2022
 + Completed Task: 
   - Re-Estimate Task For Final Project.
+  - Finish Login Page Layout
 
 + Current Tasks:  
-  - 
+  - Build Forget Password Layout. 
           
 + Next Task: Continue Build Project. 
 + Issue: None.

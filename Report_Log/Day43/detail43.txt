@@ -1,12 +1,14 @@
 +Huỳnh Trần Trung Hiếu - 21/09/2022
 + Completed Task: 
   - Re-Estimate Task For Final Project.
+  - Finish Login Page.  
 
 + Current Tasks:  
-  - 
+  - Build Forget Password and Policy Layout. 
           
 + Next Task: Continue Build Project. 
 + Issue: None.
++ Current Technology : Vanilla Html,CSS,JS,FontAwesome,GoogleFonts.
 
 Estimate 21/09/2022
 - https://docs.google.com/spreadsheets/d/1SHZb_m95PsywkJGtWuHCOZo0GvyPMaLQtvDmqM1CTVQ/edit#gid=0

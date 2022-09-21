@@ -15,7 +15,7 @@
 /* Layout Form */
 .layout-form {
     width: 60em;
-    min-height: 59em;
+    min-height: 26em;
     margin: auto;
     background: var(--color-white);
     border-radius: 1.2em;
