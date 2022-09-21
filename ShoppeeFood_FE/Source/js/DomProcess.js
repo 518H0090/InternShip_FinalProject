@@ -1,51 +1,64 @@
 // DropDown Location Toggle
 
-const navbarDropDownToggle = document.querySelector('.navbar .navbar-dropdown__toggle');
-const navbarDropDownMenu = document.querySelector('.navbar-dropdown__menu');
+const navbarDropDownToggle = document.querySelector(
+  ".navbar .navbar-dropdown__toggle"
+);
+const navbarDropDownMenu = document.querySelector(".navbar-dropdown__menu");
 
-navbarDropDownToggle.addEventListener('click',(e) => {
-    navbarDropDownMenu.classList.toggle('show');
+navbarDropDownToggle.addEventListener("click", (e) => {
+  navbarDropDownMenu.classList.toggle("show");
 });
 
 // Show Navbar Search Modal
-const navbarSearchBtn = document.querySelector('.navbar-search__btn');
-const modalNavbarSearch = document.querySelector('.modal-navbarsearch');
+const navbarSearchBtn = document.querySelector(".navbar-search__btn");
+const modalNavbarSearch = document.querySelector(".modal-navbarsearch");
 
-navbarSearchBtn.addEventListener('click',(e) => {
-    modalNavbarSearch.classList.add('showModals');
+navbarSearchBtn.addEventListener("click", (e) => {
+  modalNavbarSearch.classList.add("showModals");
 });
 
 // Close Navbar Search Modal
-const modalNavBarSearchOverlay = document.querySelector('.modal-navbarsearch__overlay');
+const modalNavBarSearchOverlay = document.querySelector(
+  ".modal-navbarsearch__overlay"
+);
 
-modalNavBarSearchOverlay.addEventListener('click', (e) => {
-    modalNavbarSearch.classList.remove('showModals');
+modalNavBarSearchOverlay.addEventListener("click", (e) => {
+  modalNavbarSearch.classList.remove("showModals");
 });
 
-const modalNavbarSearchCloseIcon = document.querySelector('.modal-navbarsearch__close-icon');
+const modalNavbarSearchCloseIcon = document.querySelector(
+  ".modal-navbarsearch__close-icon"
+);
 
-modalNavbarSearchCloseIcon.addEventListener('click', (e) => {
-    modalNavbarSearch.classList.remove('showModals');
+modalNavbarSearchCloseIcon.addEventListener("click", (e) => {
+  modalNavbarSearch.classList.remove("showModals");
 });
 
 // Add Switch Language
-const dropdownSwitchToggle = document.querySelector('.dropdown-switch__toggle');
-const dropdownSwitchMenu = document.querySelector('.dropdown-switch__menu ');
+const dropdownSwitchToggle = document.querySelector(".dropdown-switch__toggle");
+const dropdownSwitchMenu = document.querySelector(".dropdown-switch__menu ");
 
-dropdownSwitchToggle.addEventListener('click',(e) => {
-    dropdownSwitchMenu.classList.toggle('showSwitch');
+dropdownSwitchToggle.addEventListener("click", (e) => {
+  dropdownSwitchMenu.classList.toggle("showSwitch");
 });
 
 // Move To Login Page
-const navbarLogin = document.querySelector('.navbar-login');
+const navbarLogin = document.querySelector(".navbar-login");
 
-navbarLogin.addEventListener('click',(e) => {
-    window.location.href = "./login.html";
+navbarLogin.addEventListener("click", (e) => {
+  window.location.href = "./login.html";
 });
 
 // Move To Index Page
-const navbarLogo = document.querySelector('.navbar-logo');
+const navbarLogo = document.querySelector(".navbar-logo");
 
-navbarLogo.addEventListener('click', (e) => {
-    window.location.href = "./index.html";
+navbarLogo.addEventListener("click", (e) => {
+  window.location.href = "./index.html";
+});
+
+// Move To Register Page
+const layoutFormSwitch = document.querySelector(".layout-form__switch");
+
+layoutFormSwitch.addEventListener("click", (e) => {
+  window.location.href = "./register.html";
 });
