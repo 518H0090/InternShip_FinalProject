@@ -1,0 +1,25 @@
+/* ============================================================== */
+
+/* Layout */
+.layout {
+    width: 100%;
+}
+
+.layout .layout__title {
+    margin-top: 7em;
+    background-color: var(--color-silver-l);
+    height: 8em;
+    display: flex;
+}
+
+.layout .layout__heading {
+    margin: auto;
+}
+
+
+
+
+/* ============================================================== */
+
+
+/* ============================================================== */
