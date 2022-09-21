@@ -1,0 +1,39 @@
+  /* ======================================================== */
+
+  /* Layout */
+  .layout {
+      margin-top: 7em;
+      /* background: url('../img/main-banner.jpg'); */
+      width: 100%;
+  }
+
+  /* Banner */
+  .banner {
+      display: flex;
+      height: 697px;
+  }
+
+  .banner .banner-search {
+      flex: 35%;
+      margin: auto;
+      position: relative;
+      top: 0;
+      left: 0;
+  }
+
+  .banner .banner-search-inner {}
+
+  .banner .banner-listitem {
+      flex: 65%;
+      overflow: hidden;
+      height: 100%;
+  }
+
+  .banner .banner-listitem__scroll {
+      height: 100%;
+      overflow-y: scroll;
+      margin-right: -20px;
+      padding: 20px;
+  }
+
+  /* ======================================================== */

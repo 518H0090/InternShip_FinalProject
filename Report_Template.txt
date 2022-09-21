@@ -1,0 +1,34 @@
++Huỳnh Trần Trung Hiếu - 20/09/2022
++ Completed Task: 
+  - Visualize Website.
+  - Prepare Tools.
+  - Build Overall Header.
+  - Add Dropdown Menu Location UI.
+  - Add SearchBar Modal UI.
+  - Add Switch Language Dropdown UI.
+  - Build Constructure HTML For Main Layout(Not Include CSS).
+  - Build Constructure HTML For Footer.
+
++ Current Tasks:  
+  - Re-Estimate Task For Final Project.
+  - Add CSS Style For Footer.
+          
++ Next Task: Continue Build Project. 
++ Issue: None.
+
+Report 20/09/2022
+- https://docs.google.com/spreadsheets/d/1SHZb_m95PsywkJGtWuHCOZo0GvyPMaLQtvDmqM1CTVQ/edit#gid=0
+
+Demo 20/09/2022
+- None.
+
+References 20/09/2022
+- None
+
+link fill performance for work
+
+https://docs.google.com/spreadsheets/d/1FswF__hVviGR7COoSAz6Zb6hfycABNM08C8Gmc1ZmWQ/edit#gid=552608413
+
+Example Todo List
+
+https://docs.google.com/spreadsheets/d/1sS4hg11POA2OLxJc37ESK4v2ZzxGIuiwnon0KHxgNDw/edit#gid=0
