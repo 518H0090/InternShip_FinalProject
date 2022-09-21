@@ -73,7 +73,7 @@ hr {
   transform: translateY(-50%);
 }
 
-.icon+.icon {
+.icon + .icon {
   margin: 3.5em 0;
 }
 
