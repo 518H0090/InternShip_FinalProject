@@ -1,11 +1,11 @@
 +Huỳnh Trần Trung Hiếu - 21/09/2022
 + Completed Task: 
-  - Re-Estimate Task For Final Project.
-  - Build Login Page.  
-  - Build Forget Password
+  - Build Policy Page.
+  - Build Login Page.
+  - Build Coporation Section in Home Page.
 
 + Current Tasks:  
-  - Build Policy Layout. 
+  - Build Index Category Section. 
           
 + Next Task: Continue Build Project. 
 + Issue: None.
