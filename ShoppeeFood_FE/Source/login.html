@@ -168,12 +168,12 @@
     <main class="layout">
       <!-- Container -->
       <div class="container layout-container">
-        <!-- Login Form -->
+        <!-- Layout Form -->
         <div class="layout-form">
 
           <!-- Form Switch Register -->
-          <div class="layout-form__switch">
-            <button class="btn btn-switch-register">Đăng ký</button>
+          <div class="layout-form__switch switch-register">
+            <button class="btn btn-switch">Đăng ký</button>
           </div>
 
           <!-- Form Title -->
@@ -204,40 +204,45 @@
           <!-- Text Description  -->
           <p class="layout-form__desc">Hoặc đăng nhập bằng tài khoản của bạn</p>
 
-          <!-- Form Login Input -->
-          <div class="layout-form__login">
-            <!-- Form Field -->
-            <div class="layout-form__field">
-              <!-- Form Input -->
-              <div class="layout-form__input">
-                <i class="fa-solid fa-pen layout-form__fied-icon"></i>
-                <input type="text" class="layout-form__input-user" placeholder="Tên đăng nhập hoặc Email">
+          <!-- Login Form -->
+          <form name="login-form" action="">
+            <!-- Form Login Input -->
+            <div class="layout-form__login">
+              <!-- Form Field -->
+              <div class="layout-form__field">
+                <!-- Form Input -->
+                <div class="layout-form__input">
+                  <i class="fa-solid fa-pen layout-form__fied-icon"></i>
+                  <input type="text" name="username" class="layout-form__input-user"
+                    placeholder="Tên đăng nhập hoặc Email">
+                </div>
+
+                <!-- Form Input -->
+                <div class="layout-form__input">
+                  <i class="fa-sharp fa-solid fa-lock layout-form__fied-icon"></i>
+                  <input type="password" name="password" class="layout-form__input-pwd" placeholder="Mật khẩu">
+                </div>
+              </div>
+            </div>
+
+            <!-- Form  User Options -->
+            <div class="layout-form__useroptions">
+              <!-- Check Save Login -->
+              <div class="layout-form__useroptions-savelogin">
+                <input type="checkbox" name="savepassword" id="savepassword">
+                <label for="savepassword">Lưu thông tin đăng nhập</label>
               </div>
 
-              <!-- Form Input -->
-              <div class="layout-form__input">
-                <i class="fa-sharp fa-solid fa-lock layout-form__fied-icon"></i>
-                <input type="password" class="layout-form__input-pwd" placeholder="Mật khẩu">
+              <!-- Forget Password -->
+              <div class="layout-form__useroptions-forgetpwd">
+                <a href="./forgetpassword.html" class="layout-form__useroptions-forgetpwd">Quên mật khẩu ?</a>
               </div>
             </div>
-          </div>
 
-          <!-- Form  User Options -->
-          <div class="layout-form__useroptions">
-            <!-- Check Save Login -->
-            <div class="layout-form__useroptions-savelogin">
-              <input type="checkbox" name="savepassword" id="savepassword">
-              <label for="savepassword">Lưu thông tin đăng nhập</label>
-            </div>
+            <!-- Button Login -->
+            <button type="submit" class="btn btn-large btn-login btn-login-connect ">Đăng nhập</button>
 
-            <!-- Forget Password -->
-            <div class="layout-form__useroptions-forgetpwd">
-              <a href="./forgetpassword.html" class="layout-form__useroptions-forgetpwd">Quên mật khẩu ?</a>
-            </div>
-          </div>
-
-          <!-- Button Login -->
-          <button type="submit" class="btn btn-large btn-login btn-login-connect ">Đăng nhập</button>
+          </form>
 
           <!-- Login Mess Policy -->
           <div class="layout-form__messpolicy">

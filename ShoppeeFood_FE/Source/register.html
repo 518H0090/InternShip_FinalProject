@@ -173,7 +173,51 @@
                 <div class="layout-container">
                     <!-- Layout Form -->
                     <div class="layout-form">
-                        <p>Register</p>
+
+                        <!-- Form Switch Register -->
+                        <div class="layout-form__switch switch-login">
+                            <button class="btn btn-switch">Đăng nhập</button>
+                        </div>
+
+                        <!-- Form Title -->
+                        <p class="layout-form__title">
+                            Đăng ký
+                        </p>
+
+                        <!-- Register Form -->
+                        <form name="login-form" action="">
+                            <!-- Form Login Input -->
+                            <div class="layout-form__login">
+                                <!-- Form Field -->
+                                <div class="layout-form__field">
+                                    <!-- Form Input -->
+                                    <div class="layout-form__input">
+                                        <i class="fa-solid fa-pen layout-form__fied-icon"></i>
+                                        <input type="text" name="username" class="layout-form__input-user"
+                                            placeholder="Tên đăng nhập hoặc Email">
+                                    </div>
+
+                                    <!-- Form Input -->
+                                    <div class="layout-form__input">
+                                        <i class="fa-sharp fa-solid fa-lock layout-form__fied-icon"></i>
+                                        <input type="password" name="password" class="layout-form__input-pwd"
+                                            placeholder="Mật khẩu">
+                                    </div>
+
+                                    <!-- Form Input -->
+                                    <div class="layout-form__input">
+                                        <i class="fa-sharp fa-solid fa-lock layout-form__fied-icon"></i>
+                                        <input type="password" name="re-password" class="layout-form__input-pwd"
+                                            placeholder="Nhập lại mật khẩu">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Button Login -->
+                            <button type="submit" class="btn btn-large btn-login btn-login-connect">Đăng ký</button>
+
+                        </form>
+
                     </div>
                 </div>
             </div>

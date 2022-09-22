@@ -56,9 +56,13 @@ navbarLogo.addEventListener("click", (e) => {
   window.location.href = "./index.html";
 });
 
-// Move To Register Page
+// Move To Register Page Or Login Page
 const layoutFormSwitch = document.querySelector(".layout-form__switch");
 
 layoutFormSwitch.addEventListener("click", (e) => {
-  window.location.href = "./register.html";
+  if (layoutFormSwitch.classList.contains("switch-register")) {
+    window.location.href = "./register.html";
+  } else if (layoutFormSwitch.classList.contains("switch-login")) {
+    window.location.href = "./login.html";
+  }
 });
