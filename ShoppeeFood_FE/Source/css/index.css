@@ -203,7 +203,7 @@
 .category-group .category-group__item-name:not(:last-child)::before {
   content: "";
   display: block;
-  width: 0.1em;
+  width: 0.01em;
   height: 1.4em;
   background-color: #000;
   position: absolute;
