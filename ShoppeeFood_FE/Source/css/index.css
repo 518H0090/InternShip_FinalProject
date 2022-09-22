@@ -67,7 +67,7 @@
 
 .coporation-container .coporation-container__article-title {
   font-size: 2.4rem;
-  margin: 0.4em 0;
+  margin: 0.8em 0 0.1em;
 }
 
 .coporation-container .coporation-container__article-pagraph {
@@ -85,7 +85,7 @@
   .coporation-container__article--has-img
   .coporation-container__article-item--img-left {
   position: absolute;
-  top: 20%;
+  top: 14%;
   left: 8%;
 }
 
@@ -117,3 +117,28 @@
 }
 
 /* ======================================================== */
+
+/* Coporation Paragraph */
+.coporation-container__article.coporation-container__article--has-img
+  .coporation-container__article-pagraph--bold {
+  color: var(--color-black);
+  font-weight: 700;
+}
+
+.coporation-container__article.coporation-container__article--has-img
+  .coporation-container__article-pagraph--link {
+  text-decoration: none;
+  color: var(--color-blue);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.coporation-container__article.coporation-container__article--has-img
+  .coporation-container__article-pagraph--red {
+  color: var(--color-red);
+}
+
+.coporation-container__article.coporation-container__article--has-img
+  .coporation-container__article-pagraph--big {
+  font-size: 2.1rem;
+}
