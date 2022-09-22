@@ -148,6 +148,7 @@
 /* Index Category */
 .layout-category {
   min-height: 21em;
+  margin: 2em 0 4em;
 }
 
 .category-container {
