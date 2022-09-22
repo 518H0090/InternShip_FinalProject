@@ -1,39 +1,119 @@
-  /* ======================================================== */
+/* ======================================================== */
 
-  /* Layout */
-  .layout {
-      margin-top: 7em;
-      /* background: url('../img/main-banner.jpg'); */
-      width: 100%;
-  }
+/* Layout */
+.layout {
+  margin-top: 7em;
+  /* background: url('../img/main-banner.jpg'); */
+  width: 100%;
+}
 
-  /* Banner */
-  .banner {
-      display: flex;
-      height: 697px;
-  }
+/* ======================================================== */
 
-  .banner .banner-search {
-      flex: 35%;
-      margin: auto;
-      position: relative;
-      top: 0;
-      left: 0;
-  }
+/* Banner */
+.layout-banner {
+  background: url("../img/main-banner.jpg") center center / cover;
+}
 
-  .banner .banner-search-inner {}
+.banner {
+  min-height: 70em;
+  color: var(--color-white);
+  display: flex;
+}
 
-  .banner .banner-listitem {
-      flex: 65%;
-      overflow: hidden;
-      height: 100%;
-  }
+.banner .banner-search {
+  flex: 35%;
+  margin: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+}
 
-  .banner .banner-listitem__scroll {
-      height: 100%;
-      overflow-y: scroll;
-      margin-right: -20px;
-      padding: 20px;
-  }
+.banner .banner-search-inner {
+}
 
-  /* ======================================================== */
+.banner .banner-listitem {
+  flex: 65%;
+  overflow: hidden;
+  height: 100%;
+}
+
+.banner .banner-listitem__scroll {
+  height: 100%;
+  overflow-y: scroll;
+  margin-right: -20px;
+  padding: 20px;
+}
+
+/* ======================================================== */
+
+/* Coporation */
+.layout-coporation {
+  min-height: 18em;
+  background: inherit;
+}
+
+.layout-coporation .coporation-container__article {
+  height: 30.5em;
+  background: var(--color-white);
+  margin: 5em 0;
+  box-shadow: 0.2em 0.2em 0.8em var(--color-black-l);
+  border-radius: 0.4em;
+}
+
+.layout-coporation .coporation-container__article {
+  display: flex;
+  justify-content: center;
+}
+
+.coporation-container .coporation-container__article-title {
+  font-size: 2.4rem;
+  margin: 0.4em 0;
+}
+
+.coporation-container .coporation-container__article-pagraph {
+  font-size: 1.4rem;
+  margin: 1em 0;
+}
+
+.coporation-container .coporation-container__article--has-img {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.coporation-container
+  .coporation-container__article--has-img
+  .coporation-container__article-item--img-left {
+  position: absolute;
+  top: 20%;
+  left: 8%;
+}
+
+.coporation-container
+  .coporation-container__article--has-img
+  .coporation-container__article-item--img-right {
+  position: absolute;
+  top: -8%;
+  right: 0;
+}
+
+.coporation-container
+  .coporation-container__article--has-img
+  .coporation-container__article-item--img-right-small {
+  position: absolute !important;
+  top: 4em;
+  right: 0;
+}
+
+.coporation-container
+  .coporation-container__article--has-img
+  .coporation-container__article-image {
+  width: 80%;
+}
+
+.coporation-container__article.coporation-container__article--has-img
+  .coporation-container__article-pagraph {
+  max-width: 700px;
+}
+
+/* ======================================================== */

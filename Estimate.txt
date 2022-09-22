@@ -1,6 +1,1 @@
-Build Html Structure For Login Page
-Config CSS For Login Page
-Add Forget Password Html
-CSS For Forget Password UI
-Add Html For Policy
-CSS For Policy Page
+https://docs.google.com/spreadsheets/d/1SHZb_m95PsywkJGtWuHCOZo0GvyPMaLQtvDmqM1CTVQ/edit#gid=0
