@@ -43,11 +43,11 @@ html {
   font-weight: 400;
   scroll-behavior: smooth;
   color: var(--text-black);
-  transition: all 4s ease-in;
 }
 
 body {
   background: var(--bg-color);
+  transition: all 1s ease-in;
 }
 
 hr {

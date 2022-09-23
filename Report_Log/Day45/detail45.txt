@@ -1,9 +1,6 @@
-+Huỳnh Trần Trung Hiếu - 22/09/2022
++Huỳnh Trần Trung Hiếu - 23/09/2022
 + Completed Task: 
-  - Build Policy Page.
-  - Build Login Page.
-  - Build Coporation Section in Home Page.
-  - Build Index Category Section. 
+  - 
 
 + Current Tasks:  
   - Build Html Structure For Banner in Home Page.  
@@ -11,13 +8,13 @@
 + Next Task: Continue Build Project. 
 + Issue: None.
 
-Estimate 22/09/2022
+Estimate 23/09/2022
 - https://docs.google.com/spreadsheets/d/1SHZb_m95PsywkJGtWuHCOZo0GvyPMaLQtvDmqM1CTVQ/edit#gid=0
 
-Demo 22/09/2022
+Demo 23/09/2022
 - https://github.com/518H0090/InternShip_FinalProject.
 
-References 22/09/2022
+References 23/09/2022
 - None
 
 Example Todo List
