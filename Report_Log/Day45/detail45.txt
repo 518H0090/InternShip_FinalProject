@@ -1,6 +1,6 @@
 +Huỳnh Trần Trung Hiếu - 23/09/2022
 + Completed Task: 
-  - 
+  - Build Html Structure Banner For Main Layout.
 
 + Current Tasks:  
   - Build Html Structure For Banner in Home Page.  
