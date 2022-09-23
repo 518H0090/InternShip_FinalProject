@@ -3,7 +3,6 @@
 /* Layout */
 .layout {
   margin-top: 7em;
-  /* background: url('../img/main-banner.jpg'); */
   width: 100%;
 }
 
@@ -11,17 +10,119 @@
 
 /* Banner */
 .layout-banner {
-  /* background: url("../img/main-banner.jpg") center center / cover; */
+  background: url("../img/main-banner.jpg") center center / cover;
+}
+
+.layout-banner .layout-banner__container {
+  height: 72.2rem;
+  width: 120rem;
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 /* ======================================================== */
 /* Layout Banner Search  */
 .layout-banner__search {
+  width: 47rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--color-white);
+}
+
+.layout-banner__search .banner-search__content {
+  transform: translate(0, 14%);
+}
+
+.layout-banner__search .banner-search__desc {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.layout-banner__search .banner-search__sub-desc {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+
+.layout-banner__search .banner-search__form {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.layout-banner .banner-search__form-input {
+  height: 5rem;
+  flex: 5;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+  padding-left: 2rem;
+}
+
+.layout-banner .banner-search__form-input:focus {
+  outline: none;
+}
+
+.layout-banner .banner-search__form-btn {
+  color: var(--color-white);
+  height: 5rem;
+  background-color: var(--color-blue);
+  flex: 1;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}
+
+.layout-banner .banner-search__form-btn i {
+  font-size: 2.5rem;
+  transform: translate(28px, 10px);
+}
+
+.layout-banner__search .banner-search__filters {
+  min-height: 22rem;
+  width: 100%;
+}
+
+.layout-banner__search .banner-search__filter {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.banner-search__filter + .banner-search__filter {
+  padding: 1.3rem 0.3rem;
+}
+
+.layout-banner__search .banner-search__media-appstore,
+.layout-banner__search .banner-search__media-googleplay {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.layout-banner__search .banner-search__paragraph {
+  margin: 1.4rem 0;
+  font-size: 2rem;
+}
+
+.layout-banner__search .banner-search__media-img {
+  width: 16.4rem;
+  height: 5.1rem;
+  object-fit: cover;
+  outline: 1px solid var(--color-white);
+  border-radius: 8px;
 }
 
 /* ======================================================== */
 /* Layout Banner Menu */
 .layout-banner__menu {
+  min-height: 72.2rem;
+  width: 67rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--color-white);
 }
 
 /* ======================================================== */
@@ -146,6 +247,7 @@
   font-size: 1.8rem;
   margin-bottom: 0.8em;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
 /* ======================================================== */
@@ -165,6 +267,7 @@
   color: var(--color-black-bl);
   font-weight: 500;
   font-size: 1.6rem;
+  text-transform: uppercase;
 }
 
 /* Category Item List  */
