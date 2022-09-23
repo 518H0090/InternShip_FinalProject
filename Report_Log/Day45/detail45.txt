@@ -1,9 +1,12 @@
 +Huỳnh Trần Trung Hiếu - 23/09/2022
 + Completed Task: 
   - Build Html Structure Banner For Main Layout.
+  - Finish Banner Search.
+  - Build Banner Menu Tab.
+  - Build Modal For Menu Tab.
 
 + Current Tasks:  
-  - Build Html Structure For Banner in Home Page.  
+  -  Build View Food Detail.
           
 + Next Task: Continue Build Project. 
 + Issue: None.
