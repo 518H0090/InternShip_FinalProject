@@ -1,12 +1,11 @@
 +Huỳnh Trần Trung Hiếu - 23/09/2022
 + Completed Task: 
-  - Build Html Structure Banner For Main Layout.
-  - Finish Banner Search.
-  - Build Banner Menu Tab.
-  - Build Modal For Menu Tab.
+  - Build Html Structure For View Food Detail.
+  -  CSS For View Food Detail Filter.
+  - Javascript For Food Detail Filter.
 
 + Current Tasks:  
-  -  Build View Food Detail.
+  -  CSS For View Food Detail Menu.
           
 + Next Task: Continue Build Project. 
 + Issue: None.
