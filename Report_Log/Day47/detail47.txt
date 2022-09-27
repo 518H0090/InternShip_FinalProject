@@ -4,6 +4,7 @@
 
 + Current Tasks:  
   -  Build View Detail Food.
+  -  Manage Project With Sprint.
           
 + Next Task: Continue Build Project. 
 + Issue: None.
