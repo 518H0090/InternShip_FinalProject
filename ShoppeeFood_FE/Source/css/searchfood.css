@@ -241,6 +241,7 @@
     opacity: 0.8;
     padding-left: 2.2rem;
     margin-bottom: 0.2rem;
+    color: var(--color-black);
 }
 
 .layout-searchmenu .searchitem__promotion {
@@ -296,6 +297,23 @@
     height: 3rem;
     width: 4rem;
     padding: 1rem;
+}
+
+.searchmenu__pagination .searchpagination__item--select .searchpagination__item-link {
+    color: var(--color-white);
+    z-index: 2;
+}
+
+.searchmenu__pagination .searchpagination__item.searchpagination__item--select::after {
+    display: block;
+    content: "";
+    width: 4rem;
+    height: 3rem;
+    background: var(--color-red);
+    z-index: -1;
+    position: relative;
+    top: -250%;
+    left: -80%;
 }
 
 .searchmenu__pagination .searchpagination__item-link {

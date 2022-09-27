@@ -1,0 +1,61 @@
+/* ============================================================== */
+/* Layout */
+.layout {
+    margin-top: 7rem;
+    width: 100%;
+}
+
+/* ============================================================== */
+/* Section */
+.layout .layout-fooddetail {
+    min-height: 21rem;
+    background: var(--color-white);
+}
+
+.layout .layout-foodoptions {
+    min-height: 12rem;
+    background: var(--color-white);
+    margin-top: 10rem;
+}
+
+/* ============================================================== */
+/* Food Detail */
+.layout-fooddetail .fooddetail__container {
+    display: flex;
+}
+
+.layout-fooddetail .fooddetail__img {
+    width: 48rem;
+    height: 30rem;
+}
+
+.layout-fooddetail .fooddetail__info {
+    margin-left: 6rem;
+}
+
+.layout-fooddetail .fooddetail__breadcrumb-list {
+    list-style: none;
+}
+
+.layout-fooddetail .fooddetail__breadcrumb-list .fooddetail__breadcrumb-item {
+    display: inline-block;
+}
+
+.layout-fooddetail .fooddetail__breadcrumb-item+.fooddetail__breadcrumb-item {
+    margin-left: 0.6rem;
+}
+
+.layout-fooddetail .fooddetail__breadcrumb-item a {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--color-blue);
+}
+
+.layout-fooddetail .fooddetail__breadcrumb-item i {
+    font-size: 1.3rem;
+    color: var(--color-blue-l);
+}
+
+/* ============================================================== */
+
+/* ============================================================== */
