@@ -1,22 +1,20 @@
-+Huỳnh Trần Trung Hiếu - 23/09/2022
++Huỳnh Trần Trung Hiếu - 27/09/2022
 + Completed Task: 
-  - Build Html Structure For View Food Detail.
-  -  CSS For View Food Detail Filter.
-  - Javascript For Food Detail Filter.
+  - Build View Search Food Detail.
 
 + Current Tasks:  
-  -  CSS For View Food Detail Menu.
+  -  Build View Detail Food.
           
 + Next Task: Continue Build Project. 
 + Issue: None.
 
-Estimate 23/09/2022
+Estimate 27/09/2022
 - https://docs.google.com/spreadsheets/d/1SHZb_m95PsywkJGtWuHCOZo0GvyPMaLQtvDmqM1CTVQ/edit#gid=0
 
-Demo 23/09/2022
+Demo 27/09/2022
 - https://github.com/518H0090/InternShip_FinalProject.
 
-References 23/09/2022
+References 27/09/2022
 - None
 
 Example Todo List
