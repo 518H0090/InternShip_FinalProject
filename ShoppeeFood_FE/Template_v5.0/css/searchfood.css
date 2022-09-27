@@ -183,14 +183,11 @@
 .layout-searchmenu {
     min-height: 50rem;
     max-height: 120rem;
+    overflow: hidden;
 }
 
 .layout-searchmenu .searchmenu__list {
     width: 100%;
-}
-
-.searchmenu__list .searchmenu__item {
-    margin: 1rem 1.2rem;
 }
 
 .layout-searchmenu .searchmenu__item {
@@ -199,10 +196,15 @@
     min-height: 24.1rem;
     background-color: var(--color-white);
     border-radius: 1rem;
+    margin: 1rem 1.2rem;
     border: 0.1rem solid var(--color-black-l);
     position: relative;
     top: 0;
     left: 0;
+}
+
+.layout-searchmenu .searchmenu__item-link {
+    text-decoration: none;
 }
 
 .layout-searchmenu .searchitem__img {

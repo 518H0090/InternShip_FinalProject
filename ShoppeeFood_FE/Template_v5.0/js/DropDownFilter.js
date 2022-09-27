@@ -9,6 +9,8 @@ const searchFilterSecondBoxlist = document.querySelector('.searchfilter__item:nt
 
 const searchFilterTag = document.querySelectorAll('.searchfilter__tag');
 
+const searchMenuItem = document.querySelectorAll(".layout-searchmenu .searchmenu__item")
+
 searchFilterFirstItem.firstElementChild.addEventListener('click', (e) => {
     searchFilterFirstToggle.classList.toggle('show')
     searchFilterSecondToggle.classList.remove('show')
@@ -21,11 +23,19 @@ searchFilterFirstItem.firstElementChild.addEventListener('click', (e) => {
             element.style.zIndex = "2";
         })
 
+        searchMenuItem.forEach(element => {
+            element.style.zIndex = "1"
+        })
+
     } else {
         searchFilterFirstToggle.classList.add('active')
 
         searchFilterTag.forEach(element => {
             element.style.zIndex = "-1";
+        })
+
+        searchMenuItem.forEach(element => {
+            element.style.zIndex = "-2"
         })
     }
 });
@@ -38,6 +48,8 @@ searchFilterFirstBoxlist.addEventListener('click',(e) => {
 
     if (searchFilterFirstToggle.classList.contains('active')) {
         searchFilterFirstToggle.classList.remove('active')
+
+
     } else {
         searchFilterFirstToggle.classList.add('active')
     }
@@ -55,11 +67,19 @@ searchFilterSecondItem.firstElementChild.addEventListener('click', (e) => {
         searchFilterTag.forEach(element => {
             element.style.zIndex = "2";
         })
+
+        searchMenuItem.forEach(element => {
+            element.style.zIndex = "1"
+        })
     } else {
         searchFilterSecondToggle.classList.add('active')
 
         searchFilterTag.forEach(element => {
             element.style.zIndex = "-1";
+        })
+
+        searchMenuItem.forEach(element => {
+            element.style.zIndex = "-2"
         })
     }
 });
