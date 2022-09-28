@@ -35,6 +35,7 @@
   --text-color-footer: #252525;
   --color-violet: #bc36a9;
   --color-badge: #ffad00;
+  --color-badge-l: rgba(255, 173, 0, 0.8);
 }
 
 html {
@@ -75,7 +76,7 @@ hr {
   transform: translateY(-50%);
 }
 
-.icon+.icon {
+.icon + .icon {
   margin: 3.5em 0;
 }
 
@@ -176,4 +177,10 @@ hr {
   filter: brightness(120%);
 }
 
-/* Animation */
+.full-star,
+.half-star,
+.none-star {
+  color: var(--color-badge);
+  font-size: 1.4rem;
+  display: inline-block;
+}
