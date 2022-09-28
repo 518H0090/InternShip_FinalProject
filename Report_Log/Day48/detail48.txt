@@ -3,7 +3,7 @@
   - Build View Detail Food Relative Menu Detail.
 
 + Current Tasks:  
-  - Build Banner List Food.
+  - Build Banner Menu List.
           
 + Next Task: Continue Build Project. 
 + Issue: None.
