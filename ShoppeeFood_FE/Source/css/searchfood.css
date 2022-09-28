@@ -7,7 +7,7 @@
 /* ==================================================================== */
 /* View Food Detail  */
 .layout-searchfilter {
-  min-height: 17rem;
+  min-height: 16rem;
 }
 
 .searchfilter__underline {
@@ -154,9 +154,6 @@
   width: 10rem;
   height: 2.9rem;
   border-radius: 0.2rem;
-  position: relative;
-  top: 0;
-  left: 0;
   box-shadow: 0rem 0rem 0.2rem var(--color-black);
   margin-left: 20px;
 }
@@ -168,14 +165,6 @@
 .searchfilter__taglist .searchfilter__paragraph {
   font-size: 1.3rem;
   text-align: center;
-}
-
-.searchfilter__taglist .searchfilter__remove-icon {
-  font-size: 1.4rem;
-  position: absolute;
-  top: -20%;
-  right: -6%;
-  cursor: pointer;
 }
 
 /* ==================================================================== */
