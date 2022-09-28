@@ -1,10 +1,9 @@
 +Huỳnh Trần Trung Hiếu - 27/09/2022
 + Completed Task: 
-  - Build View Search Food Detail.
+  - Build View Search Food Detail Content.
 
 + Current Tasks:  
-  -  Build View Detail Food.
-  -  Manage Project With Sprint.
+  -  Build View Detail Food Relative.
           
 + Next Task: Continue Build Project. 
 + Issue: None.
