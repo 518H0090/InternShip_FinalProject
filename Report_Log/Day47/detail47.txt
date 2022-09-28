@@ -1,9 +1,10 @@
 +Huỳnh Trần Trung Hiếu - 27/09/2022
 + Completed Task: 
   - Build View Search Food Detail Content.
+  -  Build View Detail Food Relative.
 
 + Current Tasks:  
-  -  Build View Detail Food Relative.
+  -  Build Banner Menu List.
           
 + Next Task: Continue Build Project. 
 + Issue: None.
