@@ -14,8 +14,7 @@
 
 .layout .layout-foodoptions {
   min-height: 12rem;
-  background: var(--color-white);
-  margin-top: 10rem;
+  margin-top: 1rem;
 }
 
 /* ============================================================== */
@@ -243,5 +242,80 @@
 }
 
 /* ============================================================== */
+/* Food Relative Options */
+
+/* Title */
+
+.layout-foodoptions .foodoptions__title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--color-red);
+  filter: brightness(140%);
+  margin-bottom: 1.4rem;
+}
+
+.layout-foodoptions .foodoptions__relative {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Category */
+
+.layout-foodoptions .foodoptions__category {
+  width: 24rem;
+  background-color: var(--color-white);
+  padding: 1rem 2rem;
+  border-radius: 0.6rem;
+}
+
+.layout-foodoptions .foodoptions__list {
+  list-style: none;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding: 0.8rem 0.2rem;
+}
+
+.layout-foodoptions .foodoptions__item {
+  margin: 1rem 0;
+}
+
+.layout-foodoptions .foodoptions__item.foodoptions__item--select {
+  transform: translateX(-3%);
+}
+
+.layout-foodoptions .foodoptions__item.foodoptions__item--select span {
+  background: var(--color-silver-b);
+  color: var(--color-white);
+  padding: 0.6rem 0.6rem;
+  border-radius: 0.4rem;
+}
+
+/* QR Code */
+
+.layout-foodoptions .foodoptions__Qr {
+  width: 31.5rem;
+  height: 28.7rem;
+  background: url("../img/bg_qrcode.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout-foodoptions .foodoptions__Qr-img {
+  width: 20rem;
+  height: 20rem;
+  transform: translateY(6%);
+}
+
+.layout-foodoptions .foodoptions__Qr-paragraph {
+  color: var(--color-white);
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 6%;
+}
+
+/* ============================================================== */
+/* Menu Detail */
 
 /* ============================================================== */
