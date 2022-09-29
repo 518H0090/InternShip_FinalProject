@@ -2,8 +2,8 @@
 
 /* Layout */
 .layout {
-  margin-top: 7em;
   width: 100%;
+
 }
 
 /* ======================================================== */
@@ -11,10 +11,11 @@
 /* Banner */
 .layout-banner {
   background: url("../img/main-banner.jpg") center center / cover;
+  height: 97rem;
 }
 
 .layout-banner .layout-banner__container {
-  height: 72.2rem;
+  height: 100%;
   width: 120rem;
   max-width: 100%;
   margin: auto;
@@ -35,7 +36,7 @@
 }
 
 .layout-banner__search .banner-search__content {
-  transform: translate(0, 12%);
+  transform: translate(0, 50%);
 }
 
 .layout-banner__search .banner-search__desc {
@@ -121,18 +122,19 @@
 /* ======================================================== */
 /* Layout Banner Menu */
 .layout-banner__menu {
-  min-height: 72.2rem;
+  height: 100%;
   width: 67rem;
   position: absolute;
   top: 0;
   right: 0;
   color: var(--color-white);
+  overflow-y: scroll;
 }
 
 .layout-banner__menu .banner-menu__tab {
   height: 5rem;
   background: var(--color-white);
-  margin-top: 6rem;
+  margin: 12rem 0 2.6rem;
   box-shadow: 0.1rem 0.1rem 0.4rem var(--color-black);
   display: flex;
   justify-content: space-around;
@@ -436,3 +438,14 @@
   font-size: 2rem;
   color: var(--color-blue-l);
 }
+
+/* =================================================================================== */
+/* Menu Detail Tab */
+
+.layout-banner__menu .banner-menu__content {}
+
+.layout-banner__menu .banner-menu__detail {}
+
+
+
+/* =================================================================================== */
