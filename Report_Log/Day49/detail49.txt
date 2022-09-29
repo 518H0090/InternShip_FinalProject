@@ -1,12 +1,12 @@
 +Huỳnh Trần Trung Hiếu - 29/09/2022
 + Completed Task: 
-  - Build View Detail Food Relative Menu Detail.
+  - Make Banner Menu ScrollBar Event. 
 
 + Current Tasks:  
-  - Build Banner Menu List.
+  - Build Banner Menu Detail Item.
           
 + Next Task: Continue Build Project. 
-+ Issue: None.
++ Issue: Banner Menu ScrollBar Work But It has small error when refresh page.
 
 Estimate 29/09/2022
 - https://docs.google.com/spreadsheets/d/1SHZb_m95PsywkJGtWuHCOZo0GvyPMaLQtvDmqM1CTVQ/edit#gid=0
