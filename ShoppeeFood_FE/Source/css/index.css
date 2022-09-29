@@ -20,7 +20,7 @@
 }
 
 .layout-banner .layout-banner__container {
-  height: 100%;
+  min-height: 100%;
   width: 120rem;
   max-width: 100%;
   margin: auto;
@@ -34,10 +34,22 @@
 .layout-banner__search {
   width: 47rem;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
+  left: 14%;
   color: var(--color-white);
+}
+
+.layout-banner__search.layout-banner__search--fixed {
+  position: fixed;
+  top: -4%;
+  left: 14%;
+}
+
+.layout-banner__search.layout-banner__search--stuck {
+  position: absolute;
+  top: 100%;
+  left: 0;
 }
 
 .layout-banner__search .banner-search__content {
