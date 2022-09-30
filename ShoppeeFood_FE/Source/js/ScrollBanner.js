@@ -7,7 +7,7 @@ window.addEventListener('scroll',(e) => {
     layoutBannerSearch.classList.add('layout-banner__search--stuck')
     layoutBannerSearch.classList.remove('layout-banner__search--fixed')
     layoutBanner.style.overflowY = "hidden"
-  } else if (layoutBanner.scrollHeight > 500 ){
+  } else if (layoutBanner.scrollHeight > 300 ){
     layoutBannerSearch.classList.add('layout-banner__search--fixed')
     layoutBannerSearch.classList.remove('layout-banner__search--stuck')
     layoutBanner.style.overflowY = "scroll"

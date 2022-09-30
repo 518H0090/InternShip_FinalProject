@@ -34,9 +34,9 @@
 .layout-banner__search {
   width: 47rem;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: -4%;
+  left: 14%;
   color: var(--color-white);
 }
 
