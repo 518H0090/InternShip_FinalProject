@@ -42,7 +42,7 @@
 
 .layout-banner__search.layout-banner__search--stuck {
   position: absolute;
-  top: 110%;
+  top: 180%;
   left: 0;
 }
 
@@ -597,7 +597,6 @@
   position: absolute;
   bottom: 50%;
   left: 0;
-  transform: rotate(-12deg) skew(30deg) translate(60%, -50%);
   filter: brightness(140%);
   display: none;
 }
@@ -611,6 +610,142 @@
 .layout-banner .banner-menu__taglike-content {
   display: inline-block;
   transform: translate(12%, 12%);
+}
+
+/* Collection Tag */
+.layout-banner .banner-menu__collection-list {
+  width: 100%;
+  margin-top: 1.4rem;
+}
+
+.layout-banner .banner-menu__collection-item {
+  max-height: 16.8rem;
+  height: fit-content;
+  width: 18.2rem;
+  border-radius: 0.6rem;
+  display: inline-block;
+  margin: 0.8rem 0.6rem;
+}
+
+.layout-banner .banner-menu__collection-item:hover {
+  box-shadow: 0.1rem 0.1rem 1rem var(--color-black-l);
+}
+
+.layout-banner .banner-menu__collection-link {
+  text-decoration: none;
+}
+
+.layout-banner .banner-menu__collection-img {
+  width: 18.2rem;
+  height: 11.4rem;
+  border-radius: 0.6rem;
+}
+
+.layout-banner .banner-menu__collection-title {
+  font-size: 1.4rem;
+  padding: 0.1rem 0.2rem;
+  color: var(--color-black);
+}
+
+.layout-banner .banner-menu__collection-subtitle {
+  font-size: 1.2rem;
+  padding: 0.1rem 0.2rem;
+  color: var(--color-blue-l);
+  font-weight: 600;
+}
+
+/* List Restaurant */
+.layout-banner .banner-menu__listres {}
+
+.layout-banner .banner-menu__listres-header {
+  margin-top: 1rem;
+}
+
+.layout-banner .banner-menu__listres-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.layout-banner .banner-menu__listres-item {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0.8rem 0;
+}
+
+.layout-banner .banner-menu__listres-item.banner-menu__listres-item--select {
+  color: var(--color-blue-l);
+}
+
+.layout-banner .banner-menu__listres-select {
+  font-size: 1.4rem;
+  border: 0.2rem solid var(--color-black);
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.6rem;
+}
+
+.layout-banner .banner-menu__listres-foodlist {
+  width: 100%;
+  display: block;
+}
+
+.layout-banner .banner-menu__listres-fooditem+.banner-menu__listres-fooditem {
+  margin-top: 1.4rem;
+}
+
+.layout-banner .banner-menu__listres-foodlink {
+  display: flex;
+  text-decoration: none;
+}
+
+.layout-banner .banner-menu__fooditem-image {
+  flex: 1;
+}
+
+.layout-banner .banner-menu__fooditem-img {
+  width: 14.4rem;
+  height: 9rem;
+  object-fit: cover;
+  border-radius: 0.6rem;
+}
+
+.layout-banner .banner-menu__listres-content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 1.2rem;
+}
+
+.layout-banner .banner-menu__listres-title {
+  font-size: 1.6rem;
+  color: var(--color-black)
+}
+
+.layout-banner .banner-menu__listres-location {
+  font-size: 1.4rem;
+  color: var(--color-blue-l);
+}
+
+.layout-banner .banner-menu__listres-promotion-icon {
+  font-size: 1.4rem;
+  color: var(--color-black-l);
+  margin: 0.2rem;
+  transform: translate(24%, 6%);
+}
+
+.layout-banner .banner-menu__listres-promotion-text {
+  font-size: 1.4rem;
+  margin: 0.4rem;
+  color: var(--color-black);
+}
+
+.layout-banner .banner-menu__listres-type {
+  text-transform: uppercase;
+  color: var(--color-black-l);
+  font-size: 1.4rem;
+  font-weight: 400;
 }
 
 /* =================================================================================== */
