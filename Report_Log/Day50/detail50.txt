@@ -1,10 +1,9 @@
 +Huỳnh Trần Trung Hiếu - 30/09/2022
 + Completed Task: 
   - Add ScrollTo Event When Refresh For Banner Menu ScrollBar.
-  - Build Banner Menu List Item.
+  - Temporarily Finish Build UI.
 
 + Current Tasks:  
-  - Try to improve Banner Scroll Event.
   - Research Database and Seed data.
           
 + Next Task: Continue Build Project. 
