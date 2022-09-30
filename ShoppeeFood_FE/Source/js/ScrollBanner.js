@@ -14,3 +14,13 @@ window.addEventListener('scroll',(e) => {
   }
 })
 
+window.addEventListener('load',(e) => {
+  
+
+  if (window.pageYOffset >100) {
+    layoutBannerSearch.classList.add('layout-banner__search--stuck')
+    layoutBanner.style.overflowY = "hidden"
+    window.scroll(0,0)
+  }
+})
+
