@@ -498,4 +498,119 @@
   font-size: 1.6rem;
 }
 
+.layout-banner__menu .banner-menu__more {
+  display: block;
+  text-align: center;
+  color: var(--color-blue-l);
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-weight: 500;
+  height: 2.4rem;
+  margin: 2rem 0 1rem;
+}
+
+.layout-banner__menu .banner-menu__deallist {
+  width: 100%;
+}
+
+.layout-banner .banner-menu__dealitem {
+  width: 18.8rem;
+  min-height: 11.6rem;
+  border: 0.1rem solid var(--color-black-l);
+  border-radius: 0.6rem;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  margin-right: 0.69rem;
+  margin-top: 1rem;
+}
+
+.layout-banner .banner-menu__dealitem:hover {
+  box-shadow: 0.1rem 0.1rem 1rem var(--color-black-l);
+}
+
+.layout-banner .banner-menu__dealitem.banner-menu__dealitem--like .banner-menu__taglike {
+  display: block;
+}
+
+.layout-banner .banner-menu__dealitem-link {
+  text-decoration: none;
+}
+
+.layout-banner .banner-menu__dealitem-img {
+  width: 18.6rem;
+  height: 11.6rem;
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+  object-fit: cover;
+}
+
+.layout-banner .banner-menu__dealitem-content {
+  min-height: 5.2rem;
+  padding: 0.6rem;
+  color: var(--color-black);
+}
+
+.layout-banner .banner-menu__dealitem-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.layout-banner .banner-menu__dealitem-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.layout-banner .banner-menu__promotion {
+  padding: 0.8rem;
+  border-top: 0.1rem solid var(--color-black-l);
+}
+
+.layout-banner .banner-menu__promotion-icon {
+  font-size: 1.6rem;
+  color: var(--color-red);
+}
+
+.layout-banner .banner-menu__promotion-desc {
+  font-size: 1.4rem;
+  margin-left: 0.6rem;
+  color: var(--color-blue);
+  font-weight: 700;
+}
+
+.layout-banner .banner-menu__openstatus {
+  font-size: 2rem;
+  color: var(--color-green);
+  position: absolute;
+  top: -4%;
+  left: -2%;
+  z-index: 7;
+}
+
+.layout-banner .banner-menu__taglike {
+  width: 9.1rem;
+  height: 2.7rem;
+  background: var(--color-red);
+  color: var(--color-white);
+  font-size: 1.4rem;
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  transform: rotate(-12deg) skew(30deg) translate(60%, -50%);
+  filter: brightness(140%);
+  display: none;
+}
+
+.layout-banner .banner-menu__taglike-icon {
+  transform: translate(30%, 20%);
+  display: inline-block;
+  font-size: 1.6rem;
+}
+
+.layout-banner .banner-menu__taglike-content {
+  display: inline-block;
+  transform: translate(12%, 12%);
+}
+
 /* =================================================================================== */
