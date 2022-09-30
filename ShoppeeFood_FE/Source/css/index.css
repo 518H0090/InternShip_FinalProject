@@ -40,12 +40,6 @@
   color: var(--color-white);
 }
 
-.layout-banner__search.layout-banner__search--fixed {
-  position: fixed;
-  top: -4%;
-  left: 14%;
-}
-
 .layout-banner__search.layout-banner__search--stuck {
   position: absolute;
   top: 110%;
@@ -469,12 +463,39 @@
 .layout-banner__menu .banner-menu__deal,
 .layout-banner__menu .banner-menu__listres {
   background: var(--color-white);
-  padding: 1rem 2rem;
+  padding: 1rem 4rem;
   color: var(--color-black);
   margin: 2rem 0;
   min-height: 59rem;
+  border-radius: 1rem;
 }
 
+/* Menu Deal */
+.layout-banner__menu .banner-menu__deal {}
 
+.layout-banner .banner-menu__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.layout-banner__menu .banner-menu__title {
+  font-size: 1.8rem;
+  transform: translateY(2%);
+}
+
+.layout-banner__menu .banner-menu__viewall {
+  text-decoration: none;
+  color: var(--color-blue);
+}
+
+.layout-banner__menu .banner-menu__viewall-icon {
+  font-size: 1.4rem;
+  transform: translateX(-40%) translateY(-2%);
+}
+
+.layout-banner__menu .banner-menu__viewall-text {
+  font-size: 1.6rem;
+}
 
 /* =================================================================================== */
