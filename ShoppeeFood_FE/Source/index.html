@@ -1,1004 +1,1059 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>
-    Fresh | Đi chợ Online | Thực phẩm ngon - Giao nhanh TP. HCM |
-    shopeefood.vn
-  </title>
-  <meta name="author" content="Trung Hiếu" />
-  <meta name="keywords" content="HTML,CSS,JS,DotNet,Sql" />
-  <meta name="description" content="Build Simple website" />
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="./img/shopeefood_favicon.jpg" type="image/x-icon" />
-  <!-- FontAweSome -->
-  <script src="https://kit.fontawesome.com/85dd07e8e0.js" crossorigin="anonymous"></script>
-  <!-- Base CSS -->
-  <link rel="stylesheet" href="./css/base.css" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <!-- CSS  -->
-  <link rel="stylesheet" href="./css/index.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Fresh | Đi chợ Online | Thực phẩm ngon - Giao nhanh TP. HCM |
+      shopeefood.vn
+    </title>
+    <meta name="author" content="Trung Hiếu" />
+    <meta name="keywords" content="HTML,CSS,JS,DotNet,Sql" />
+    <meta name="description" content="Build Simple website" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/shopeefood_favicon.jpg"
+      type="image/x-icon" />
+    <!-- FontAweSome -->
+    <script src="https://kit.fontawesome.com/85dd07e8e0.js"
+      crossorigin="anonymous"></script>
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- CSS  -->
+    <link rel="stylesheet" href="./css/index.css">
+  </head>
 
-<body>
-  <!-- Full app -->
-  <div class="app">
-    <!-- Header -->
-    <header class="header">
-      <!-- Container -->
-      <div class="container">
-        <!-- Navbar -->
-        <nav class="navbar">
-          <!-- Logo -->
-          <div class="navbar-logo">
-            <a href="#" class="navbar-logo__link">
-              <img src="./img/shopeefoodvn_logo.png" alt="" class="navbar-logo__image" />
-            </a>
-          </div>
-          <!-- Dropdown  -->
-          <div class="navbar-dropdown">
-            <!-- Dropdown Toggle -->
-            <div class="navbar-dropdown__toggle">
-              <span class="navbar-dropdown__toggle-name">TP.HCM
-                <i class="fa-solid fa-caret-down"></i>
-              </span>
-            </div>
-            <!-- Dropdown Menu -->
-            <div class="navbar-dropdown__menu">
-              <!-- Dropdown Item -->
-              <div class="navbar-dropdown__item">
-                <div class="navbar-dropdown__item-name">TP.HCM</div>
-                <div class="navbar-dropdown__item-count">86256 địa điểm</div>
-              </div>
-
-              <!-- Dropdown Item -->
-              <div class="navbar-dropdown__item">
-                <span class="navbar-dropdown__item-name">Hà Nội</span>
-                <span class="navbar-dropdown__item-count">42231 địa điểm</span>
-              </div>
-
-              <!-- Dropdown Item -->
-              <div class="navbar-dropdown__item">
-                <span class="navbar-dropdown__item-name">Đà Nẵng</span>
-                <span class="navbar-dropdown__item-count">11920 địa điểm</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Navigation -->
-          <div class="navbar-navigation">
-            <!-- Navbar List -->
-            <ul class="navbar__list">
-              <!-- Navbar item -->
-              <li class="navbar__list-item navbar__list-item--active">
-                <!-- Navbar Item Anchor -->
-                <a href="" class="navbar__item-link">Đồ ăn</a>
-              </li>
-
-              <!-- Navbar item -->
-              <li class="navbar__list-item">
-                <!-- Navbar Item Anchor -->
-                <a href="" class="navbar__item-link">Thực phẩm</a>
-              </li>
-
-              <!-- Navbar item -->
-              <li class="navbar__list-item">
-                <!-- Navbar Item Anchor -->
-                <a href="" class="navbar__item-link">Bia</a>
-              </li>
-
-              <!-- Navbar item -->
-              <li class="navbar__list-item">
-                <!-- Navbar Item Anchor -->
-                <a href="" class="navbar__item-link">Hoa</a>
-              </li>
-
-              <!-- Navbar item -->
-              <li class="navbar__list-item">
-                <!-- Navbar Item Anchor -->
-                <a href="" class="navbar__item-link">Siêu thị</a>
-              </li>
-
-              <!-- Navbar item -->
-              <li class="navbar__list-item">
-                <!-- Navbar Item Anchor -->
-                <a href="" class="navbar__item-link">Thuốc</a>
-              </li>
-
-              <!-- Navbar item -->
-              <li class="navbar__list-item">
-                <!-- Navbar Item Anchor -->
-                <a href="" class="navbar__item-link">Thú cưng</a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Search -->
-          <div class="navbar-search">
-            <div class="navbar-search__btn">
-              <i class="fa-solid fa-magnifying-glass navbar-search__icon"></i>
-            </div>
-          </div>
-
-          <!-- User Login -->
-          <div class="navbar-login">
-            <button type="button" class="btn btn-login">Đăng nhập</button>
-          </div>
-        </nav>
-      </div>
-
-      <!-- Dropdown Switch Language -->
-      <div class="dropdown-switch">
-        <!-- Dropdown Toggle -->
-        <div class="dropdown-switch__toggle">
-          <span class="icon">
-            <img src="./img/vietnameflag_icon.webp" alt="" class="icon-select" />
-            <i class="fa-solid fa-caret-down icon-down"></i>
-          </span>
-        </div>
-        <!-- Dropdown Menu -->
-        <div class="dropdown-switch__menu">
-          <!-- Dropdown Item -->
-          <div class="dropdown-switch__item">
-            <span class="dropdown__item-flag">
-              <span class="icon">
-                <img src="./img/americanflag_icon.webp" alt="" class="icon-select" />
-              </span>
-            </span>
-            <span class="dropdown__item-flag-name"> Tiếng Anh </span>
-          </div>
-
-          <!-- Dropdown Item -->
-          <div class="dropdown-switch__item">
-            <span class="dropdown__item-flag">
-              <span class="icon">
-                <img src="./img/vietnameflag_icon.webp" alt="" class="icon-select" />
-              </span>
-            </span>
-            <span class="dropdown__item-flag-name"> Tiếng Việt</span>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Main Layout -->
-    <main class="layout">
-      <!-- Banner Layout -->
-      <section class="layout-banner">
-
-        <!-- Banner Container -->
-        <div class="layout-banner__container">
-
-          <!-- Layout Banner Search -->
-          <div class="layout-banner__search">
-            <!-- Search Content -->
-            <div class="banner-search__content">
-              <!-- Content Description -->
-              <h3 class="banner-search__desc">Đặt Đồ ăn, giao hàng từ 20'...</h3>
-
-              <!-- Content Sub Description  -->
-              <p class="banner-search__sub-desc">Có 72201 Địa Điểm Ở TP. HCM Từ 00:00 - 23:59</p>
-
-              <!-- Search Form -->
-              <div class="banner-search__form">
-                <!-- Search Form Input -->
-                <input type="text" class="banner-search__form-input" placeholder="Tìm địa điểm, món ăn, địa chỉ ...">
-
-                <!-- Search Form Button -->
-                <a href="./searchfood.html" class="banner-search__form-btn">
-                  <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-                </a>
-
-              </div>
-
-              <!-- List Filter -->
-              <div class="banner-search__filters">
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">All</span>
-                </a>
-
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">Đồ ăn</span>
-                </a>
-
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">Đồ uống</span>
-                </a>
-
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">Đồ chay</span>
-                </a>
-
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">Bánh kem</span>
-                </a>
-
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">Tráng miệng</span>
-                </a>
-
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">Homemade</span>
-                </a>
-
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">Vỉa hè</span>
-                </a>
-
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">Pizza/Burger</span>
-                </a>
-
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">Món gà</span>
-                </a>
-
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">Món lẩu</span>
-                </a>
-
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">Sushi</span>
-                </a>
-
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">Mì phở</span>
-                </a>
-
-                <a href="./searchfood.html" class="banner-search__filter">
-                  <span class="btn btn-white-default">Cơm hộp</span>
-                </a>
-              </div>
-
-              <!-- Content Paragraph -->
-              <p class="banner-search__paragraph">Sử dụng App ShopeeFood để có nhiều giảm giá
-                và trải nghiệm tốt hơn</p>
-
-              <!-- Media Download -->
-              <div class="banner-search__media">
-
-                <!-- Media App Store -->
-                <a href="#" class="banner-search__media-appstore">
-                  <!-- Image -->
-                  <img src="./img/AppStore-vn.png" alt="" class="banner-search__media-img ">
-                </a>
-
-                <!-- Media Google Play -->
-                <a href="#" class="banner-search__media-googleplay">
-                  <!-- Image -->
-                  <img src="./img/PlayStore-vn.png" alt="" class="banner-search__media-img
-                  ">
-                </a>
-
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Layout Banner Menu -->
-          <div class="layout-banner__menu">
-            <!-- Banner Menu Content-->
-            <div class="banner-menu__content">
-              <!-- Menu Tab -->
-              <div class="banner-menu__tab">
-
-                <!-- Title -->
-                <h3 class="banner-menu__tab-title">
-                  Đồ ăn
-                </h3>
-
-                <!-- Icon Arrow Right  -->
-                <i class="fa-solid fa-arrow-right banner-menu__tab-icon banner-menu__tab-icon--move-left"></i>
-
-                <!-- Description -->
-                <p class="banner-menu__tab-desc">Chọn địa chỉ giao hàng</p>
-
-                <!-- Icon Chevron Right -->
-                <i class="fa-solid fa-chevron-right banner-menu__tab-icon"></i>
-
-              </div>
-
-              <!-- Menu Detail Tab -->
-              <div class="banner-menu__detail">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, possimus praesentium? Eligendi, veniam impedit rem ea, asperiores aut soluta error animi reiciendis illo accusamus similique fugit nisi sapiente quod ratione quasi cum, suscipit quos repellat quaerat earum ipsum vel dolore! Maxime error nihil, placeat laborum dolorum harum tempore quis cum voluptatum blanditiis, accusantium dolor voluptates, dicta laudantium odio vel eos doloremque omnis. Cum officiis, repellendus magnam delectus cupiditate ea sunt tenetur doloremque debitis est vel expedita qui, cumque ducimus. Totam minus quo doloribus, expedita debitis ab atque quam, fugit nobis iure ea inventore fugiat sit veniam, quas nulla corrupti magnam molestiae officia quos rerum! Quisquam sunt sapiente perspiciatis, deserunt animi doloribus at. Quod nostrum, quaerat ex in ratione saepe voluptas eius provident temporibus perferendis accusamus, laboriosam consequatur. Fuga odit reprehenderit nisi, expedita vero eveniet tenetur vel soluta mollitia sed, iste unde sequi aliquam nemo praesentium animi aspernatur error beatae eos consectetur! Amet commodi dolorem aspernatur beatae, neque itaque animi quia saepe vel cum reprehenderit, quam corrupti corporis exercitationem ut ea nam ad voluptate distinctio possimus repellendus debitis voluptatum? Reprehenderit, inventore magnam. Deserunt consequuntur magni quos numquam earum exercitationem molestiae necessitatibus accusantium sed dolores obcaecati delectus quod tempore enim error quo, soluta sapiente reiciendis accusamus culpa non nostrum iusto, saepe repellat. Fuga maxime qui rerum consequatur minima, alias eveniet dolores. Vero sunt laboriosam ab placeat voluptas iste inventore molestiae veniam necessitatibus, quia dolorem voluptatem enim unde similique aliquid quaerat ullam, molestias quod perferendis eos qui consectetur magni provident! Tenetur repellat quod eius voluptatum earum reprehenderit possimus explicabo enim delectus impedit fuga nam dolores dolor quidem, nihil ea, iure aspernatur porro ipsa rem, aliquid fugiat quia doloremque facere? Laboriosam esse repellendus dolores nam sint. Sequi doloribus error repellat asperiores, tempora pariatur, dolores placeat saepe, ad cum cupiditate dolorem non alias libero debitis vel? Officiis libero, repellat ipsa nulla tempore quasi culpa obcaecati ut velit recusandae alias voluptate eaque porro animi corporis. Itaque esse iure vel nisi sapiente ab placeat fuga, veritatis non excepturi delectus consequuntur neque architecto ipsa quis praesentium? Quasi facere fuga maiores, eos sint, reprehenderit impedit amet earum nam minima, deleniti cumque repellat voluptates suscipit vel placeat magnam explicabo nihil. Aliquid non reiciendis in distinctio veniam, temporibus magnam culpa illo possimus sint dignissimos, esse saepe alias libero velit! Hic provident, voluptatem odio magni pariatur nobis officia temporibus eos dicta id. Saepe repellendus a eum consequatur recusandae! Animi similique enim deleniti itaque molestias rem ratione fugiat, obcaecati nihil at quo dicta, ab repellat ipsum fuga a recusandae corrupti nobis esse. Ipsum, illo? Quidem optio sapiente esse cum. Blanditiis quas odio nam cupiditate eveniet ea fugit veniam eaque? Dolorum laboriosam iste accusantium ipsam quam reiciendis dolor nihil quidem iusto, porro, quas, odio voluptatem accusamus. Sit, exercitationem illum veritatis odio expedita cumque molestias, ipsa fugit, doloremque harum quos labore debitis rerum aperiam tenetur dolorum. Facilis eum quaerat impedit, laudantium et natus nostrum quia, quam consequatur quis rem repellendus consequuntur quae ea? Voluptas quia exercitationem distinctio libero dicta. Suscipit harum odio est minima vel dolores ducimus eaque quod aliquam voluptatibus nulla unde, iusto velit perspiciatis quasi, aperiam temporibus rem? Architecto corporis nihil, neque cum culpa vero autem! Voluptatem laudantium nemo maxime, error libero dolorum minus in accusantium. Assumenda quae repellendus sapiente mollitia ratione nobis eos repellat enim voluptatem, odio fuga laborum. Aliquam enim dolorem totam repudiandae ab possimus odio, expedita tempore velit, fuga, quaerat nam. Cupiditate assumenda nobis nulla earum! Fugiat, accusantium ducimus. Porro, fuga quis. Asperiores quos qui expedita necessitatibus voluptates, provident quaerat consequuntur perferendis cumque porro fugiat voluptatem neque modi. Ex reiciendis similique eum labore consectetur quasi voluptate veniam cum dolorum? Eos, veniam possimus quibusdam dolore ad, aspernatur quidem earum at nesciunt esse maxime eius reprehenderit iusto quia atque! Deserunt provident eius corrupti laudantium, recusandae nemo ratione harum expedita odio vero maiores cumque fugit ipsam ullam repellendus veniam. Quod odio accusantium ad est, cumque voluptas asperiores deserunt explicabo, voluptate officiis ratione voluptates dolore iusto esse at doloribus quisquam cupiditate quaerat reiciendis veritatis quis. Similique, autem ducimus, consectetur deserunt inventore necessitatibus voluptas delectus explicabo alias cumque libero neque nulla nobis officiis, eveniet veritatis illum? Minus, eos velit. Perspiciatis distinctio numquam quo sed exercitationem reprehenderit architecto ex dolor voluptate dolorem, reiciendis velit aut modi quas optio facilis cumque fugiat qui libero culpa officiis sapiente repellat? Cumque cum quasi velit illo accusantium, excepturi rerum at iste odit similique assumenda, placeat recusandae non temporibus id facilis vero sequi ipsum omnis doloremque. Fugit, architecto consectetur. Sunt ipsam quis architecto assumenda asperiores quas rem ad ab! Quasi eaque sequi aliquid, consequuntur itaque distinctio. Laudantium sapiente sit modi consectetur vitae? Reiciendis voluptates distinctio vel quia ex aperiam accusantium nobis consequuntur sunt dignissimos? Quaerat, reiciendis labore doloremque placeat iusto, laborum delectus aperiam eligendi modi deleniti iste atque, quos fuga minima tempore unde sint in dicta commodi fugit nulla eius sapiente quia. Voluptate ut praesentium, culpa veniam impedit itaque sit in numquam dolor totam error minus reiciendis consectetur. Blanditiis eum iure sint fuga nostrum vero laudantium velit. Itaque aliquam consequuntur sint debitis quidem suscipit esse aspernatur unde ducimus nisi. Perferendis esse veniam sequi cupiditate fugiat ipsa mollitia voluptatum minima aperiam, reiciendis vel doloribus natus laborum commodi delectus quos cumque quis provident. Ipsa iste consequuntur ratione accusantium quis illum inventore exercitationem alias id, praesentium consectetur necessitatibus porro deleniti sit, veniam odio quia vel distinctio tenetur voluptatem. Rerum quibusdam repudiandae provident aspernatur quisquam eius aperiam aut consectetur, dolorum laudantium perferendis alias blanditiis quas possimus illum quos, nobis itaque amet eligendi iste. Ut reiciendis hic earum facilis vero fugiat autem vel cum velit repudiandae, numquam, necessitatibus nesciunt et quidem dolore quis minima itaque quibusdam assumenda eum. Ex recusandae tempore quisquam minima. Quibusdam cumque obcaecati consequuntur necessitatibus impedit modi, odio esse et corrupti nemo, eligendi ratione accusamus, deserunt quisquam tenetur veniam? Veniam provident odio sequi culpa repudiandae maiores quam illum porro ullam laboriosam incidunt quibusdam dolore quisquam, molestiae doloribus, mollitia accusamus ipsa perferendis id minima atque! Quaerat cum iste dolor tempora perspiciatis rem, quasi aliquid iure doloremque! Deleniti, necessitatibus molestias quam repellendus dolore consectetur doloribus consequatur perspiciatis animi. Explicabo quasi tenetur veniam debitis? Architecto saepe unde repellat ratione nostrum sunt eligendi debitis quis earum enim aliquid, ab, possimus eos nulla hic similique maxime rem illo incidunt exercitationem culpa facilis? Similique eligendi repellat labore consequatur, deleniti expedita iusto sit fugiat distinctio reiciendis officia dolorem voluptatem amet facilis laborum mollitia commodi? Perferendis, optio reiciendis esse voluptatum a soluta reprehenderit maiores nesciunt, saepe numquam, est illum animi fuga itaque rem dignissimos mollitia. Aut eos quaerat aspernatur facere mollitia. Incidunt dolorem praesentium, nam iure soluta quas dicta sed laborum animi distinctio ipsum vitae nesciunt quod error velit expedita ullam temporibus quis rerum impedit a possimus voluptates fuga quam. Vel ab officia recusandae dicta, dolorem, ducimus, aliquam iure blanditiis ullam vero modi similique temporibus provident perferendis. Nihil impedit nam molestiae cumque, officiis aut ut ducimus possimus repudiandae? Necessitatibus id, ipsum neque quis praesentium earum explicabo temporibus facere inventore mollitia, exercitationem, deleniti repellat illum harum! Consectetur pariatur asperiores facilis. Quia hic modi iusto iste ipsa ut, vero odio ipsam illo culpa est accusantium expedita obcaecati deleniti tenetur placeat consectetur quisquam nemo asperiores ad eos quasi repudiandae incidunt. Eligendi velit consequuntur aspernatur, cumque voluptas corporis neque iure vel molestias repellat asperiores voluptatibus doloribus animi eveniet provident veritatis consectetur accusantium atque quaerat ipsa numquam qui. Dolores placeat cumque sunt quia voluptatibus reiciendis commodi magni alias facilis perspiciatis ullam consectetur veniam totam voluptatem laboriosam ut a cum debitis omnis, quis harum recusandae! Dolor est perferendis ipsum atque molestiae rem harum ducimus pariatur odit mollitia, provident eos nemo porro dolores quidem neque expedita vero cum minima veritatis, beatae repellendus similique praesentium tenetur? Laborum suscipit iste nisi itaque dolore mollitia perspiciatis voluptatum eaque quasi, sed dolor architecto vel in, maiores nulla ex. Neque rem ipsum error veniam? Reiciendis ut fuga odio placeat officiis ipsum, dolore recusandae facere nihil aliquid, deleniti amet laudantium magnam, adipisci libero minima eos quos sapiente doloremque corrupti iure! Sit cum facere distinctio ipsum quis, commodi alias nihil voluptate non ex ipsam beatae libero voluptatibus veniam minima eaque hic assumenda vero numquam totam esse velit. Atque quidem suscipit itaque quibusdam repudiandae corporis libero, consectetur cumque, hic ea laudantium, sunt possimus! Consectetur repellat, voluptate reprehenderit totam unde provident asperiores, modi velit, corrupti earum nihil natus nisi ullam veniam! Molestiae nulla quaerat odio earum facere, sunt deleniti sed ducimus? Consequatur maiores asperiores, nihil excepturi voluptates inventore deleniti voluptas eaque optio accusantium non accusamus error quod tenetur earum adipisci harum! Officia dolorum, eaque facilis modi corporis enim perspiciatis voluptatibus? Temporibus architecto cum quos nostrum sint officiis corporis soluta repellendus porro dolores amet, provident qui excepturi incidunt ipsam repudiandae nemo saepe nesciunt laborum modi optio officia non! Dicta, debitis a. Labore animi quam molestiae laboriosam! Officiis quod saepe tempora consequatur quas est repudiandae consectetur vel ullam praesentium in, voluptatem voluptatibus commodi dolore magnam sit reiciendis voluptatum quibusdam doloremque vitae, quo laudantium amet adipisci culpa? Voluptate voluptates hic possimus sunt quam illum sapiente expedita dolorum, cupiditate labore deserunt earum maiores veritatis mollitia in, reprehenderit asperiores quisquam iusto placeat explicabo fugiat a. Odio, officiis laborum! Sint error placeat inventore architecto quis eum iure porro accusamus perferendis doloremque iste consequuntur earum veniam, vero facilis qui quibusdam! Ipsam soluta provident atque voluptatum architecto, ex distinctio optio, fugiat eaque sunt dolorem perferendis earum quisquam odio facere quas eos dignissimos debitis magnam inventore maxime minima aut nisi! Magni inventore provident ducimus, iusto voluptate laboriosam fugiat ipsum molestias maiores iure voluptatem reiciendis non nihil officiis mollitia pariatur animi culpa assumenda tempore numquam vel vitae deserunt! Maxime ex magnam necessitatibus debitis, est delectus fuga sint enim a, amet vero ipsum vel ipsam corporis fugiat, quibusdam nobis temporibus! Dolor velit placeat eius, sequi maiores ipsam blanditiis fuga sed numquam cupiditate quia quod est error necessitatibus suscipit laudantium laborum nostrum deserunt, quasi temporibus corporis debitis ipsa. Consequuntur veniam optio possimus facere sunt, sed quidem expedita, ea provident dolore porro. Eligendi qui saepe quod ipsam aliquid eaque alias cupiditate dolore libero fuga dicta rem quis vel vero nobis, iste doloremque magnam, necessitatibus quo id quibusdam quia esse laboriosam magni. Similique, eum, tenetur assumenda omnis, illo delectus rem laboriosam sint quas alias accusantium aliquam. Minus, esse ipsam quasi molestias sit reprehenderit? Veniam repudiandae natus temporibus consectetur amet facilis quisquam recusandae earum iusto dolorum nemo tempora vitae, ea eius nihil eum modi! Voluptatum, illum? A minima iste iusto temporibus iure dolores enim aut sit earum reprehenderit odit pariatur vel labore, quia, quod illo amet distinctio minus at vero, aperiam facilis maxime. Praesentium recusandae inventore ad, at, reprehenderit, animi optio quis iste maxime porro molestiae? Nobis debitis quos, eius totam quam eos voluptatibus minus facilis quisquam voluptas hic sed corrupti dolorum? Voluptatum, molestias deserunt atque error commodi magnam fuga neque dolores dignissimos consequatur suscipit expedita temporibus dolorum porro impedit delectus debitis hic esse quae odit consectetur! Nihil doloribus quos excepturi cum tenetur ab alias quis error! Mollitia inventore possimus debitis! Esse molestiae repellendus fugiat impedit beatae, voluptatibus quia dolorum alias? Quasi ea, repellendus mollitia velit ex nam ratione adipisci non odit nihil facere quas excepturi voluptatum perspiciatis? Quaerat, minima dolorem? Tempore quia minus expedita optio! Iste odit dignissimos iure incidunt autem maiores excepturi suscipit ex debitis modi ad, praesentium non perspiciatis enim sapiente dolorem voluptatum voluptate, numquam, deleniti dolorum ab. Laboriosam vero, ipsum recusandae atque voluptate aperiam modi minus placeat quibusdam iusto dolore quasi praesentium totam eum velit. Voluptatibus et cum soluta iure blanditiis voluptates asperiores, accusamus, eveniet, laudantium atque omnis excepturi id quidem nulla explicabo possimus dolore in maxime? Id fuga aspernatur quibusdam eius voluptates doloremque debitis sequi alias quo. Suscipit esse velit est, neque vel quasi totam laboriosam sunt unde inventore ipsa asperiores aliquam repudiandae. Quisquam molestiae ipsum placeat sit vero dignissimos est libero consequatur esse nesciunt, eos commodi doloribus nisi quasi corporis, dicta eligendi architecto? A quas deserunt voluptatibus exercitationem quis iste! Ab vitae animi ipsum iure quasi sit cumque quibusdam eius, eos blanditiis recusandae quam nesciunt a excepturi modi aliquam nulla accusantium voluptas voluptatem voluptatibus magni autem veritatis mollitia! Dolor consequuntur maiores ullam recusandae totam consectetur temporibus.</p>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-      <!-- Coporation Layout -->
-      <section class="layout-coporation">
+  <body>
+    <!-- Full app -->
+    <div class="app">
+      <!-- Header -->
+      <header class="header">
         <!-- Container -->
         <div class="container">
-          <!-- coporation container -->
-          <div class="coporation-container">
-            <!-- Coporation Article -->
-            <article class="coporation-container__article">
-
-              <!-- Coporation Article Item -->
-              <div class="coporation-container__article-item">
-                <h3 class="coporation-container__article-title">Đơn hàng của bạn sẽ được bảo quản như thế nào?</h3>
-                <p class="coporation-container__article-pagraph">ShopeeFood sẽ bảo quản đơn của bạn bằng túi & thùng để
-                  chống nắng mưa, giữ nhiệt... trên đường đi một cách tốt nhất.</p>
-                <img src="./img/Box-food-preservation-footer.png" alt="" class="coporation-container__article-image">
+          <!-- Navbar -->
+          <nav class="navbar">
+            <!-- Logo -->
+            <div class="navbar-logo">
+              <a href="#" class="navbar-logo__link">
+                <img src="./img/shopeefoodvn_logo.png" alt=""
+                  class="navbar-logo__image" />
+              </a>
+            </div>
+            <!-- Dropdown  -->
+            <div class="navbar-dropdown">
+              <!-- Dropdown Toggle -->
+              <div class="navbar-dropdown__toggle">
+                <span class="navbar-dropdown__toggle-name">TP.HCM
+                  <i class="fa-solid fa-caret-down"></i>
+                </span>
               </div>
+              <!-- Dropdown Menu -->
+              <div class="navbar-dropdown__menu">
+                <!-- Dropdown Item -->
+                <div class="navbar-dropdown__item">
+                  <div class="navbar-dropdown__item-name">TP.HCM</div>
+                  <div class="navbar-dropdown__item-count">86256 địa điểm</div>
+                </div>
 
-            </article>
+                <!-- Dropdown Item -->
+                <div class="navbar-dropdown__item">
+                  <span class="navbar-dropdown__item-name">Hà Nội</span>
+                  <span class="navbar-dropdown__item-count">42231 địa điểm</span>
+                </div>
 
-            <!-- Coporation Article -->
-            <article class="coporation-container__article coporation-container__article--has-img">
-
-              <!-- Coporation Article Item -->
-              <div class="coporation-container__article-item coporation-container__article-item--img-left">
-                <h3 class="coporation-container__article-title">Ứng dụng Shopee Partner</h3>
-                <p class="coporation-container__article-pagraph">
-                  - <span class="coporation-container__article-pagraph--bold">Ứng dụng Shopee Partner</span>
-                  là ứng dụng quản lý đơn hàng cho các nhà hàng đối tác của dịch vụ đặt món
-                  tận nơi</p>
-                <p class="coporation-container__article-pagraph">
-                  - <span class="coporation-container__article-pagraph--bold">ShopeeFood.vn</span>
-                  luôn sẵn sàng hợp tác với các nhà hàng, quán ăn, cafe... để mở rộng kinh doanh cũng
-                  như gia tăng khách
-                  hàng. Hãy kết nối vào hệ thống đặt và giao hàng để giảm bớt chi phí quản lý, vận hành, marketing, công
-                  nghệ...
-                  Đăng ký tham gia:
-                  <a href="#" class="coporation-container__article-pagraph--link">tại
-                    đây</a>
-
-                </p>
-              </div>
-
-              <!-- Coporation Article Image Item -->
-              <div class="coporation-container__article-item coporation-container__article-item--img-right">
-                <img src="./img/banner-phone-reg-merchant.png" alt="" class="coporation-container__article-image">
-              </div>
-
-            </article>
-
-            <!-- Coporation Article -->
-            <article class="coporation-container__article coporation-container__article--has-img">
-
-              <!-- Coporation Article Item -->
-              <div class="coporation-container__article-item coporation-container__article-item--img-left">
-                <h3 class="coporation-container__article-title">
-                  <a href="#"
-                    class="coporation-container__article-pagraph--bold coporation-container__article-pagraph--link coporation-container__article-pagraph--red coporation-container__article-pagraph--big">ShopeeFood.vn</a>
-
-                  <a href="#"
-                    class="coporation-container__article-pagraph--bold coporation-container__article-pagraph--link coporation-container__article-pagraph--big">Hợp
-                    tác nhân viên giao nhận - ShopeeFood Driver</a>
-
-                </h3>
-                <p class="coporation-container__article-pagraph">Giúp bạn tăng thu nhập trong thời gian rảnh rỗi</p>
-                <p class="coporation-container__article-pagraph">
-                  <span
-                    class="coporation-container__article-pagraph--bold coporation-container__article-pagraph--red">ShopeeFood</span>
-
-                  tìm kiếm hợp tác với các cá nhân để thực
-                  hiện việc giao hàng, chúng tôi sẽ cung cấp ứng dụng (app), 1 số dụng
-                  cụ cần thiết để bạn có thể tiếp nhận & giao hàng, kiếm thêm thu nhập
-                  Đăng ký tham gia
-                  <a href="#" class="coporation-container__article-pagraph--link">
-                    tại đây
-                  </a>
-
-                  hoặc gửi Email qua
-                  <a href="#" class="coporation-container__article-pagraph--link">
-                    tuyendung@gofast.vn
-                  </a>
-
-                  - hoặc gọi qua số điện thoại (028)
-                  7109 9179.
-                </p>
-
-              </div>
-
-              <!-- Coporation Article Item -->
-              <div class="coporation-container__article-item coporation-container__article-item--img-right-small">
-                <img src="./img/bg-deliverynow-dat-mon-truc-tuyen-giao-hang-tan-noi.png" alt=""
-                  class="coporation-container__article-image">
-              </div>
-
-            </article>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- Index Category -->
-      <section class="layout-category">
-        <!-- Container -->
-        <div class="container">
-          <!-- Category Title -->
-          <div class="category-title">
-            <h2 class="category-title__name">Danh mục</h2>
-          </div>
-
-          <!-- Category Container -->
-          <div class="category-container">
-            <!-- Category Group -->
-            <div class="category-group">
-              <!-- Category Item -->
-              <div class="category-group__item">
-                <!-- Category Item Title -->
-                <h3 class="category-group__item-title">
-                  <a href="#">Thuốc</a>
-                </h3>
-                <!-- Category Item List -->
-                <ul class="category-group__item-list">
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Hoá mỹ phẩm</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">BCS</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Thiết bị</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Vitamins</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Thuốc tây</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Khẩu trang</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Khẩn cấp</a>
-                  </li>
-                </ul>
+                <!-- Dropdown Item -->
+                <div class="navbar-dropdown__item">
+                  <span class="navbar-dropdown__item-name">Đà Nẵng</span>
+                  <span class="navbar-dropdown__item-count">11920 địa điểm</span>
+                </div>
               </div>
             </div>
 
-            <!-- Category Group -->
-            <div class="category-group">
-              <!-- Category Item -->
-              <div class="category-group__item">
-                <!-- Category Item Title -->
-                <h3 class="category-group__item-title">
-                  <a href="#">Đồ ăn Homepage</a>
-                </h3>
+            <!-- Navigation -->
+            <div class="navbar-navigation">
+              <!-- Navbar List -->
+              <ul class="navbar__list">
+                <!-- Navbar item -->
+                <li class="navbar__list-item navbar__list-item--active">
+                  <!-- Navbar Item Anchor -->
+                  <a href="" class="navbar__item-link">Đồ ăn</a>
+                </li>
+
+                <!-- Navbar item -->
+                <li class="navbar__list-item">
+                  <!-- Navbar Item Anchor -->
+                  <a href="" class="navbar__item-link">Thực phẩm</a>
+                </li>
+
+                <!-- Navbar item -->
+                <li class="navbar__list-item">
+                  <!-- Navbar Item Anchor -->
+                  <a href="" class="navbar__item-link">Bia</a>
+                </li>
+
+                <!-- Navbar item -->
+                <li class="navbar__list-item">
+                  <!-- Navbar Item Anchor -->
+                  <a href="" class="navbar__item-link">Hoa</a>
+                </li>
+
+                <!-- Navbar item -->
+                <li class="navbar__list-item">
+                  <!-- Navbar Item Anchor -->
+                  <a href="" class="navbar__item-link">Siêu thị</a>
+                </li>
+
+                <!-- Navbar item -->
+                <li class="navbar__list-item">
+                  <!-- Navbar Item Anchor -->
+                  <a href="" class="navbar__item-link">Thuốc</a>
+                </li>
+
+                <!-- Navbar item -->
+                <li class="navbar__list-item">
+                  <!-- Navbar Item Anchor -->
+                  <a href="" class="navbar__item-link">Thú cưng</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Search -->
+            <div class="navbar-search">
+              <div class="navbar-search__btn">
+                <i class="fa-solid fa-magnifying-glass navbar-search__icon"></i>
               </div>
             </div>
 
-            <!-- Category Group -->
-            <div class="category-group">
-              <!-- Category Item -->
-              <div class="category-group__item">
-                <!-- Category Item Title -->
-                <h3 class="category-group__item-title">
-                  <a href="#">Sản phẩm</a>
-                </h3>
-                <!-- Category Item List -->
-                <ul class="category-group__item-list">
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Mỹ phẩm</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Đồ chơi</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Sữa</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Tả bỉm</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Dụng cụ</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Quần áo</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Giày dép</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Diện tử</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Trang sức</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Sản phẩm - TP.HCM</a>
-                  </li>
-
-                </ul>
-              </div>
+            <!-- User Login -->
+            <div class="navbar-login">
+              <button type="button" class="btn btn-login">Đăng nhập</button>
             </div>
-
-            <!-- Category Group -->
-            <div class="category-group">
-              <!-- Category Item -->
-              <div class="category-group__item">
-                <!-- Category Item Title -->
-                <h3 class="category-group__item-title">
-                  <a href="#">Thực phẩm</a>
-                </h3>
-                <!-- Category Item List -->
-                <ul class="category-group__item-list">
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Ăn chay</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Trái cây</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Gia vị</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Đặc sản</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Thịt/trứng</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Hải sản</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Rau củ</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Gạo mì</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Đồ uống/Ăn vặt</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Thực phẩm - TP.HCM</a>
-                  </li>
-
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category Container -->
-          <div class="category-container">
-            <!-- Category Group -->
-            <div class="category-group">
-              <!-- Category Item -->
-              <div class="category-group__item">
-                <!-- Category Item Title -->
-                <h3 class="category-group__item-title">
-                  <a href="#">Thú cưng</a>
-                </h3>
-                <!-- Category Item List -->
-                <ul class="category-group__item-list">
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Thú cưng</a>
-                  </li>
-
-                </ul>
-              </div>
-            </div>
-
-            <!-- Category Group -->
-            <div class="category-group">
-              <!-- Category Item -->
-              <div class="category-group__item">
-                <!-- Category Item Title -->
-                <h3 class="category-group__item-title">
-                  <a href="#">Đồ ăn</a>
-                </h3>
-
-                <!-- Category Item List -->
-                <ul class="category-group__item-list">
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Vỉa hè</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Món lẩu</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Cơm hộp</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Đồ uống</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Đồ chay</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Bánh kem</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Tráng miệng</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Homemade</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Sushi</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Mì phở</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Đồ ăn</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Pizza/Burger</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Món gà</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Category Group -->
-            <div class="category-group">
-              <!-- Category Item -->
-              <div class="category-group__item">
-                <!-- Category Item Title -->
-                <h3 class="category-group__item-title">
-                  <a href="#"></a>
-                </h3>
-                <!-- Category Item List -->
-                <ul class="category-group__item-list">
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#"></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Category Group -->
-            <div class="category-group">
-              <!-- Category Item -->
-              <div class="category-group__item">
-                <!-- Category Item Title -->
-                <h3 class="category-group__item-title">
-                  <a href="#">Hoa</a>
-                </h3>
-                <!-- Category Item List -->
-                <ul class="category-group__item-list">
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Chia buồn</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Cây cảnh</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Chúc mừng</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Sinh nhật</a>
-                  </li>
-
-                  <!-- Category Item Name -->
-                  <li class="category-group__item-name">
-                    <a href="#">Tình yêu</a>
-                  </li>
-
-                </ul>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!--  -->
-    </main>
-
-    <!-- Hr -->
-    <hr />
-
-    <!-- Footer -->
-    <footer class="footer">
-      <!-- Container -->
-      <div class="container footer-container">
-        <!-- Block Footer -->
-        <div class="footer-block">
-          <!-- Block Title -->
-          <p class="footer-block__title">Công ty</p>
-          <!-- Block List -->
-          <ul class="footer-block__list">
-            <!-- Block Item -->
-            <li class="footer-block__item">
-              <a href="" class="footer-block__item-link">Giới Thiệu</a>
-            </li>
-
-            <!-- Block Item -->
-            <li class="footer-block__item">
-              <a href="" class="footer-block__item-link">Trung tâm Trợ giúp</a>
-            </li>
-
-            <!-- Block Item -->
-            <li class="footer-block__item">
-              <a href="" class="footer-block__item-link">Quy chế</a>
-            </li>
-
-            <!-- Block Item -->
-            <li class="footer-block__item">
-              <a href="" class="footer-block__item-link">Điều khoản sử dụng</a>
-            </li>
-
-            <!-- Block Item -->
-            <li class="footer-block__item">
-              <a href="" class="footer-block__item-link">Bảo mật thông tin</a>
-            </li>
-
-            <!-- Block Item -->
-            <li class="footer-block__item">
-              <a href="" class="footer-block__item-link">Giải quyết khiếu nại</a>
-            </li>
-
-            <!-- Block Item -->
-            <li class="footer-block__item">
-              <a href="" class="footer-block__item-link">Liên hệ</a>
-            </li>
-
-            <!-- Block Item -->
-            <li class="footer-block__item">
-              <a href="" class="footer-block__item-link">Hợp tác nhân viên giao nhận</a>
-            </li>
-
-            <!-- Block Item -->
-            <li class="footer-block__item">
-              <a href="" class="footer-block__item-link">Đăng ký quán</a>
-            </li>
-
-            <!-- Block Item -->
-            <li class="footer-block__item">
-              <a href="" class="footer-block__item-link">ShopeeFood Uni</a>
-            </li>
-
-            <!-- Block Item -->
-            <li class="footer-block__item">
-              <a href="" class="footer-block__item-link">Shopee Blog</a>
-            </li>
-          </ul>
+          </nav>
         </div>
 
-        <!-- Block Footer -->
-        <div class="footer-block">
-          <!-- Block Title -->
-          <p class="footer-block__title">Ứng dụng ShopeeFood</p>
-
-          <!-- Icon -->
-          <div class="icon">
-            <a href="#">
-              <img src="./img/AppStore-vn.png" class="icon__appstore" alt="" />
-            </a>
-          </div>
-
-          <!-- Icon -->
-          <div class="icon">
-            <a href="#">
-              <img src="./img/PlayStore-vn.png" class="icon__googleplay" alt="" />
-            </a>
-          </div>
-
-          <!-- Icon -->
-          <div class="icon">
-            <a href="#">
-              <img src="./img/Huawei-gallery-vn.png" class="icon__appstore" alt="" />
-            </a>
-          </div>
-        </div>
-
-        <!-- Block Footer -->
-        <div class="footer-block">
-          <!-- ShopeeFood Logo -->
-          <div class="footer-block__logo" title="Đặt món trực tuyến giao hàng tận nơi">
-            <a href="#">
-              <img src="./img/Logo-ShopeefoodVN.png" alt="" class="footer-block__logo-img" />
-            </a>
-          </div>
-
-
-          <!-- Description -->
-          <div class="footer-block__copydesc">© 2022 ShopeeFood</div>
-
-          <!-- Media -->
-          <div class="footer-block__media">
-            <!-- Media Icon -->
-            <span class="footer-block__media-icon">
-              <i class="fa-brands fa-facebook"></i>
-            </span>
-            <!-- Media Icon -->
-            <span class="footer-block__media-icon">
-              <i class="fa-brands fa-instagram"></i>
+        <!-- Dropdown Switch Language -->
+        <div class="dropdown-switch">
+          <!-- Dropdown Toggle -->
+          <div class="dropdown-switch__toggle">
+            <span class="icon">
+              <img src="./img/vietnameflag_icon.webp" alt="" class="icon-select"
+                />
+              <i class="fa-solid fa-caret-down icon-down"></i>
             </span>
           </div>
-        </div>
+          <!-- Dropdown Menu -->
+          <div class="dropdown-switch__menu">
+            <!-- Dropdown Item -->
+            <div class="dropdown-switch__item">
+              <span class="dropdown__item-flag">
+                <span class="icon">
+                  <img src="./img/americanflag_icon.webp" alt=""
+                    class="icon-select" />
+                </span>
+              </span>
+              <span class="dropdown__item-flag-name"> Tiếng Anh </span>
+            </div>
 
-        <!-- Block Footer -->
-        <div class="footer-block">
-          <!-- Block Title -->
-          <p class="footer-block__title footer-block__title--last">Ứng dụng ShopeeFood</p>
-          <div class="footer-block__text">
-            <p>Công Ty Cổ Phần Foody</p>
-            <p>Lầu G, Tòa nhà jabes 1,</p>
-            <p>số 244 đường Cống Quỳnh, phường Phạm Ngũ Lão, Quận 1, TPHCM</p>
-            <p>Giấy CN ĐKDN số: 0311828036</p>
-            <p>do Sở Kế hoạch và Đầu tư TP.HCM cấp ngày 11/6/2012,</p>
-            <p>sửa đổi lần thứ 23, ngày 10/12/2020</p>
-            <p>Số điện thoại: 1900 2042</p>
-            <p>Email: <a href="#">support@shopeefood.vn</a></p>
-            <a href="#">
-              <img src="./img/gov_seals1.jpg" alt="">
-            </a>
+            <!-- Dropdown Item -->
+            <div class="dropdown-switch__item">
+              <span class="dropdown__item-flag">
+                <span class="icon">
+                  <img src="./img/vietnameflag_icon.webp" alt=""
+                    class="icon-select" />
+                </span>
+              </span>
+              <span class="dropdown__item-flag-name"> Tiếng Việt</span>
+            </div>
           </div>
         </div>
-    </footer>
-  </div>
+      </header>
 
-  <!-- Modals -->
-  <!-- Navbar Search Modal -->
-  <div class="modal-navbarsearch">
-    <!-- Overlay -->
-    <div class="modal-navbarsearch__overlay"></div>
+      <!-- Main Layout -->
+      <main class="layout">
+        <!-- Banner Layout -->
+        <section class="layout-banner">
 
-    <!-- Body -->
-    <div class="modal-navbarsearch__body">
-      <!-- Content -->
-      <div class="modal-navbarsearch__inner">
-        <!-- Close Icon -->
-        <span class="modal-navbarsearch__close-icon">
-          <i class="fa-solid fa-xmark"></i>
-        </span>
+          <!-- Banner Container -->
+          <div class="layout-banner__container">
 
-        <!-- Description -->
-        <p class="modal-navbarsearch__desc">
-          Đặt Đồ ăn, giao hàng từ 20'... có 72092 địa điểm ở TP. HCM từ 00:00
-          - 23:59
-        </p>
+            <!-- Layout Banner Search -->
+            <div class="layout-banner__search">
+              <!-- Search Content -->
+              <div class="banner-search__content">
+                <!-- Content Description -->
+                <h3 class="banner-search__desc">Đặt Đồ ăn, giao hàng từ 20'...</h3>
+                <!-- Content Sub Description  -->
+                <p class="banner-search__sub-desc">Có 72201 Địa Điểm Ở TP. HCM
+                  Từ 00:00 - 23:59</p>
 
-        <!-- Search Input -->
-        <div class="modal-navbarsearch__form">
-          <input type="text" class="modal-navbarsearch__search-input" />
-        </div>
-      </div>
-    </div>
-  </div>
+                <!-- Search Form -->
+                <div class="banner-search__form">
+                  <!-- Search Form Input -->
+                  <input type="text" class="banner-search__form-input"
+                    placeholder="Tìm địa điểm, món ăn, địa chỉ ...">
 
-  <!-- Modal Banner Menu Tag -->
-  <div class="modal-bannertag">
-    <!-- Overalay -->
-    <div class="modal-bannertag__overlay"></div>
+                  <!-- Search Form Button -->
+                  <a href="./searchfood.html" class="banner-search__form-btn">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                  </a>
 
-    <!-- Body -->
-    <div class="modal-bannertag__body">
-      <!-- Content -->
-      <div class="modal-bannertag__inner">
-        <!--  Header  -->
-        <header class="modal-bannertag__header">
-          <!-- Title -->
-          <h3 class="modal-bannertag__title">Bạn muốn giao đến đâu?</h3>
+                </div>
 
-          <!-- Icon Close -->
-          <span class="modal-banner__close-icon">
-            <i class="fa-solid fa-xmark"></i>
-          </span>
-        </header>
+                <!-- List Filter -->
+                <div class="banner-search__filters">
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">All</span>
+                  </a>
 
-        <!-- Body -->
-        <section class="modal-banner__body">
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">Đồ ăn</span>
+                  </a>
 
-          <!-- Form Search -->
-          <div class="modal-banner__form">
-            <i class="fa-solid fa-magnifying-glass modal-banner__form-icon"></i>
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">Đồ uống</span>
+                  </a>
 
-            <input type="text" class="modal-banner__form-input" placeholder="Nhập địa chỉ giao hàng">
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">Đồ chay</span>
+                  </a>
 
-            <i class="fa-solid fa-ticket-simple modal-banner__form-icon"></i>
-          </div>
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">Bánh kem</span>
+                  </a>
 
-          <!-- Find Location -->
-          <div class="modal-banner__location">
-            <i class="fa-sharp fa-solid fa-cubes modal-banner__location-icon"></i>
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">Tráng miệng</span>
+                  </a>
 
-            <p class="modal-banner__location-paragraph">Tìm trên bản đồ</p>
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">Homemade</span>
+                  </a>
+
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">Vỉa hè</span>
+                  </a>
+
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">Pizza/Burger</span>
+                  </a>
+
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">Món gà</span>
+                  </a>
+
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">Món lẩu</span>
+                  </a>
+
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">Sushi</span>
+                  </a>
+
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">Mì phở</span>
+                  </a>
+
+                  <a href="./searchfood.html" class="banner-search__filter">
+                    <span class="btn btn-white-default">Cơm hộp</span>
+                  </a>
+                </div>
+
+                <!-- Content Paragraph -->
+                <p class="banner-search__paragraph">Sử dụng App ShopeeFood để có
+                  nhiều giảm giá
+                  và trải nghiệm tốt hơn</p>
+
+                <!-- Media Download -->
+                <div class="banner-search__media">
+
+                  <!-- Media App Store -->
+                  <a href="#" class="banner-search__media-appstore">
+                    <!-- Image -->
+                    <img src="./img/AppStore-vn.png" alt=""
+                      class="banner-search__media-img ">
+                  </a>
+
+                  <!-- Media Google Play -->
+                  <a href="#" class="banner-search__media-googleplay">
+                    <!-- Image -->
+                    <img src="./img/PlayStore-vn.png" alt=""
+                      class="banner-search__media-img
+                      ">
+                  </a>
+
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Layout Banner Menu -->
+            <div class="layout-banner__menu">
+              <!-- Banner Menu Content-->
+              <div class="banner-menu__content">
+                <!-- Menu Tab -->
+                <div class="banner-menu__tab">
+
+                  <!-- Title -->
+                  <h3 class="banner-menu__tab-title">
+                    Đồ ăn
+                  </h3>
+
+                  <!-- Icon Arrow Right  -->
+                  <i class="fa-solid fa-arrow-right banner-menu__tab-icon
+                    banner-menu__tab-icon--move-left"></i>
+
+                  <!-- Description -->
+                  <p class="banner-menu__tab-desc">Chọn địa chỉ giao hàng</p>
+                  <!-- Icon Chevron Right -->
+                  <i class="fa-solid fa-chevron-right banner-menu__tab-icon"></i>
+                </div>
+
+                  <!-- Menu Detail Deal Tab -->
+                  <div class="banner-menu__deal">
+                    <p>deal</p>
+                  </div>
+
+                  <!-- Menu Detail Collection Tab -->
+                  <div class="banner-menu__collection">
+                    <p>collection</p>
+                  </div>
+
+                  <!-- Menu Detail Restaurant List Tab -->
+                  <div class="banner-menu__listres">
+                    <p>list</p>
+                  </div>
+
+              </div>
+            </div>
           </div>
 
         </section>
 
+        <!-- Coporation Layout -->
+        <section class="layout-coporation">
+          <!-- Container -->
+          <div class="container">
+            <!-- coporation container -->
+            <div class="coporation-container">
+              <!-- Coporation Article -->
+              <article class="coporation-container__article">
+
+                <!-- Coporation Article Item -->
+                <div class="coporation-container__article-item">
+                  <h3 class="coporation-container__article-title">Đơn hàng của
+                    bạn sẽ được bảo quản như thế nào?</h3>
+                  <p class="coporation-container__article-pagraph">ShopeeFood sẽ
+                    bảo quản đơn của bạn bằng túi & thùng để
+                    chống nắng mưa, giữ nhiệt... trên đường đi một cách tốt
+                    nhất.</p>
+                  <img src="./img/Box-food-preservation-footer.png" alt=""
+                    class="coporation-container__article-image">
+                </div>
+
+              </article>
+
+              <!-- Coporation Article -->
+              <article class="coporation-container__article
+                coporation-container__article--has-img">
+
+                <!-- Coporation Article Item -->
+                <div class="coporation-container__article-item
+                  coporation-container__article-item--img-left">
+                  <h3 class="coporation-container__article-title">Ứng dụng
+                    Shopee Partner</h3>
+                  <p class="coporation-container__article-pagraph">
+                    - <span class="coporation-container__article-pagraph--bold">Ứng
+                      dụng Shopee Partner</span>
+                    là ứng dụng quản lý đơn hàng cho các nhà hàng đối tác của
+                    dịch vụ đặt món
+                    tận nơi</p>
+                  <p class="coporation-container__article-pagraph">
+                    - <span class="coporation-container__article-pagraph--bold">ShopeeFood.vn</span>
+                    luôn sẵn sàng hợp tác với các nhà hàng, quán ăn, cafe... để
+                    mở rộng kinh doanh cũng
+                    như gia tăng khách
+                    hàng. Hãy kết nối vào hệ thống đặt và giao hàng để giảm bớt
+                    chi phí quản lý, vận hành, marketing, công
+                    nghệ...
+                    Đăng ký tham gia:
+                    <a href="#"
+                      class="coporation-container__article-pagraph--link">tại
+                      đây</a>
+
+                  </p>
+                </div>
+
+                <!-- Coporation Article Image Item -->
+                <div class="coporation-container__article-item
+                  coporation-container__article-item--img-right">
+                  <img src="./img/banner-phone-reg-merchant.png" alt=""
+                    class="coporation-container__article-image">
+                </div>
+
+              </article>
+
+              <!-- Coporation Article -->
+              <article class="coporation-container__article
+                coporation-container__article--has-img">
+
+                <!-- Coporation Article Item -->
+                <div class="coporation-container__article-item
+                  coporation-container__article-item--img-left">
+                  <h3 class="coporation-container__article-title">
+                    <a href="#"
+                      class="coporation-container__article-pagraph--bold
+                      coporation-container__article-pagraph--link
+                      coporation-container__article-pagraph--red
+                      coporation-container__article-pagraph--big">ShopeeFood.vn</a>
+                    <a href="#"
+                      class="coporation-container__article-pagraph--bold
+                      coporation-container__article-pagraph--link
+                      coporation-container__article-pagraph--big">Hợp
+                      tác nhân viên giao nhận - ShopeeFood Driver</a>
+
+                  </h3>
+                  <p class="coporation-container__article-pagraph">Giúp bạn tăng
+                    thu nhập trong thời gian rảnh rỗi</p>
+                  <p class="coporation-container__article-pagraph">
+                    <span
+                      class="coporation-container__article-pagraph--bold
+                      coporation-container__article-pagraph--red">ShopeeFood</span>
+                    tìm kiếm hợp tác với các cá nhân để thực
+                    hiện việc giao hàng, chúng tôi sẽ cung cấp ứng dụng (app), 1
+                    số dụng
+                    cụ cần thiết để bạn có thể tiếp nhận & giao hàng, kiếm thêm
+                    thu nhập
+                    Đăng ký tham gia
+                    <a href="#"
+                      class="coporation-container__article-pagraph--link">
+                      tại đây
+                    </a>
+
+                    hoặc gửi Email qua
+                    <a href="#"
+                      class="coporation-container__article-pagraph--link">
+                      tuyendung@gofast.vn
+                    </a>
+
+                    - hoặc gọi qua số điện thoại (028)
+                    7109 9179.
+                  </p>
+
+                </div>
+
+                <!-- Coporation Article Item -->
+                <div class="coporation-container__article-item
+                  coporation-container__article-item--img-right-small">
+                  <img
+                    src="./img/bg-deliverynow-dat-mon-truc-tuyen-giao-hang-tan-noi.png"
+                    alt=""
+                    class="coporation-container__article-image">
+                </div>
+
+              </article>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- Index Category -->
+        <section class="layout-category">
+          <!-- Container -->
+          <div class="container">
+            <!-- Category Title -->
+            <div class="category-title">
+              <h2 class="category-title__name">Danh mục</h2>
+            </div>
+
+            <!-- Category Container -->
+            <div class="category-container">
+              <!-- Category Group -->
+              <div class="category-group">
+                <!-- Category Item -->
+                <div class="category-group__item">
+                  <!-- Category Item Title -->
+                  <h3 class="category-group__item-title">
+                    <a href="#">Thuốc</a>
+                  </h3>
+                  <!-- Category Item List -->
+                  <ul class="category-group__item-list">
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Hoá mỹ phẩm</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">BCS</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Thiết bị</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Vitamins</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Thuốc tây</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Khẩu trang</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Khẩn cấp</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Category Group -->
+              <div class="category-group">
+                <!-- Category Item -->
+                <div class="category-group__item">
+                  <!-- Category Item Title -->
+                  <h3 class="category-group__item-title">
+                    <a href="#">Đồ ăn Homepage</a>
+                  </h3>
+                </div>
+              </div>
+
+              <!-- Category Group -->
+              <div class="category-group">
+                <!-- Category Item -->
+                <div class="category-group__item">
+                  <!-- Category Item Title -->
+                  <h3 class="category-group__item-title">
+                    <a href="#">Sản phẩm</a>
+                  </h3>
+                  <!-- Category Item List -->
+                  <ul class="category-group__item-list">
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Mỹ phẩm</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Đồ chơi</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Sữa</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Tả bỉm</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Dụng cụ</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Quần áo</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Giày dép</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Diện tử</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Trang sức</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Sản phẩm - TP.HCM</a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Category Group -->
+              <div class="category-group">
+                <!-- Category Item -->
+                <div class="category-group__item">
+                  <!-- Category Item Title -->
+                  <h3 class="category-group__item-title">
+                    <a href="#">Thực phẩm</a>
+                  </h3>
+                  <!-- Category Item List -->
+                  <ul class="category-group__item-list">
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Ăn chay</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Trái cây</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Gia vị</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Đặc sản</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Thịt/trứng</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Hải sản</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Rau củ</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Gạo mì</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Đồ uống/Ăn vặt</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Thực phẩm - TP.HCM</a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category Container -->
+            <div class="category-container">
+              <!-- Category Group -->
+              <div class="category-group">
+                <!-- Category Item -->
+                <div class="category-group__item">
+                  <!-- Category Item Title -->
+                  <h3 class="category-group__item-title">
+                    <a href="#">Thú cưng</a>
+                  </h3>
+                  <!-- Category Item List -->
+                  <ul class="category-group__item-list">
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Thú cưng</a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Category Group -->
+              <div class="category-group">
+                <!-- Category Item -->
+                <div class="category-group__item">
+                  <!-- Category Item Title -->
+                  <h3 class="category-group__item-title">
+                    <a href="#">Đồ ăn</a>
+                  </h3>
+
+                  <!-- Category Item List -->
+                  <ul class="category-group__item-list">
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Vỉa hè</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Món lẩu</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Cơm hộp</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Đồ uống</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Đồ chay</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Bánh kem</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Tráng miệng</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Homemade</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Sushi</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Mì phở</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Đồ ăn</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Pizza/Burger</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Món gà</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Category Group -->
+              <div class="category-group">
+                <!-- Category Item -->
+                <div class="category-group__item">
+                  <!-- Category Item Title -->
+                  <h3 class="category-group__item-title">
+                    <a href="#"></a>
+                  </h3>
+                  <!-- Category Item List -->
+                  <ul class="category-group__item-list">
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Category Group -->
+              <div class="category-group">
+                <!-- Category Item -->
+                <div class="category-group__item">
+                  <!-- Category Item Title -->
+                  <h3 class="category-group__item-title">
+                    <a href="#">Hoa</a>
+                  </h3>
+                  <!-- Category Item List -->
+                  <ul class="category-group__item-list">
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Chia buồn</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Cây cảnh</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Chúc mừng</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Sinh nhật</a>
+                    </li>
+
+                    <!-- Category Item Name -->
+                    <li class="category-group__item-name">
+                      <a href="#">Tình yêu</a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!--  -->
+      </main>
+
+      <!-- Hr -->
+      <hr />
+
+      <!-- Footer -->
+      <footer class="footer">
+        <!-- Container -->
+        <div class="container footer-container">
+          <!-- Block Footer -->
+          <div class="footer-block">
+            <!-- Block Title -->
+            <p class="footer-block__title">Công ty</p>
+            <!-- Block List -->
+            <ul class="footer-block__list">
+              <!-- Block Item -->
+              <li class="footer-block__item">
+                <a href="" class="footer-block__item-link">Giới Thiệu</a>
+              </li>
+
+              <!-- Block Item -->
+              <li class="footer-block__item">
+                <a href="" class="footer-block__item-link">Trung tâm Trợ giúp</a>
+              </li>
+
+              <!-- Block Item -->
+              <li class="footer-block__item">
+                <a href="" class="footer-block__item-link">Quy chế</a>
+              </li>
+
+              <!-- Block Item -->
+              <li class="footer-block__item">
+                <a href="" class="footer-block__item-link">Điều khoản sử dụng</a>
+              </li>
+
+              <!-- Block Item -->
+              <li class="footer-block__item">
+                <a href="" class="footer-block__item-link">Bảo mật thông tin</a>
+              </li>
+
+              <!-- Block Item -->
+              <li class="footer-block__item">
+                <a href="" class="footer-block__item-link">Giải quyết khiếu nại</a>
+              </li>
+
+              <!-- Block Item -->
+              <li class="footer-block__item">
+                <a href="" class="footer-block__item-link">Liên hệ</a>
+              </li>
+
+              <!-- Block Item -->
+              <li class="footer-block__item">
+                <a href="" class="footer-block__item-link">Hợp tác nhân viên
+                  giao nhận</a>
+              </li>
+
+              <!-- Block Item -->
+              <li class="footer-block__item">
+                <a href="" class="footer-block__item-link">Đăng ký quán</a>
+              </li>
+
+              <!-- Block Item -->
+              <li class="footer-block__item">
+                <a href="" class="footer-block__item-link">ShopeeFood Uni</a>
+              </li>
+
+              <!-- Block Item -->
+              <li class="footer-block__item">
+                <a href="" class="footer-block__item-link">Shopee Blog</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Block Footer -->
+          <div class="footer-block">
+            <!-- Block Title -->
+            <p class="footer-block__title">Ứng dụng ShopeeFood</p>
+
+            <!-- Icon -->
+            <div class="icon">
+              <a href="#">
+                <img src="./img/AppStore-vn.png" class="icon__appstore" alt=""
+                  />
+              </a>
+            </div>
+
+            <!-- Icon -->
+            <div class="icon">
+              <a href="#">
+                <img src="./img/PlayStore-vn.png" class="icon__googleplay"
+                  alt="" />
+              </a>
+            </div>
+
+            <!-- Icon -->
+            <div class="icon">
+              <a href="#">
+                <img src="./img/Huawei-gallery-vn.png" class="icon__appstore"
+                  alt="" />
+              </a>
+            </div>
+          </div>
+
+          <!-- Block Footer -->
+          <div class="footer-block">
+            <!-- ShopeeFood Logo -->
+            <div class="footer-block__logo" title="Đặt món trực tuyến giao hàng
+              tận nơi">
+              <a href="#">
+                <img src="./img/Logo-ShopeefoodVN.png" alt=""
+                  class="footer-block__logo-img" />
+              </a>
+            </div>
+
+
+            <!-- Description -->
+            <div class="footer-block__copydesc">© 2022 ShopeeFood</div>
+
+            <!-- Media -->
+            <div class="footer-block__media">
+              <!-- Media Icon -->
+              <span class="footer-block__media-icon">
+                <i class="fa-brands fa-facebook"></i>
+              </span>
+              <!-- Media Icon -->
+              <span class="footer-block__media-icon">
+                <i class="fa-brands fa-instagram"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- Block Footer -->
+          <div class="footer-block">
+            <!-- Block Title -->
+            <p class="footer-block__title footer-block__title--last">Ứng dụng
+              ShopeeFood</p>
+            <div class="footer-block__text">
+              <p>Công Ty Cổ Phần Foody</p>
+              <p>Lầu G, Tòa nhà jabes 1,</p>
+              <p>số 244 đường Cống Quỳnh, phường Phạm Ngũ Lão, Quận 1, TPHCM</p>
+              <p>Giấy CN ĐKDN số: 0311828036</p>
+              <p>do Sở Kế hoạch và Đầu tư TP.HCM cấp ngày 11/6/2012,</p>
+              <p>sửa đổi lần thứ 23, ngày 10/12/2020</p>
+              <p>Số điện thoại: 1900 2042</p>
+              <p>Email: <a href="#">support@shopeefood.vn</a></p>
+              <a href="#">
+                <img src="./img/gov_seals1.jpg" alt="">
+              </a>
+            </div>
+          </div>
+        </footer>
       </div>
-    </div>
-  </div>
 
-  <!-- Javascript -->
-  <script src="./js/DomProcess.js"></script>
-  <script src="./js/BannerModal.js"></script>
-  <script src="./js/ScrollBanner.js"></script>
-  <script src="./js/App.js"></script>
+      <!-- Modals -->
+      <!-- Navbar Search Modal -->
+      <div class="modal-navbarsearch">
+        <!-- Overlay -->
+        <div class="modal-navbarsearch__overlay"></div>
 
- 
-</body>
+        <!-- Body -->
+        <div class="modal-navbarsearch__body">
+          <!-- Content -->
+          <div class="modal-navbarsearch__inner">
+            <!-- Close Icon -->
+            <span class="modal-navbarsearch__close-icon">
+              <i class="fa-solid fa-xmark"></i>
+            </span>
 
-</html>
+            <!-- Description -->
+            <p class="modal-navbarsearch__desc">
+              Đặt Đồ ăn, giao hàng từ 20'... có 72092 địa điểm ở TP. HCM từ
+              00:00
+              - 23:59
+            </p>
+
+            <!-- Search Input -->
+            <div class="modal-navbarsearch__form">
+              <input type="text" class="modal-navbarsearch__search-input" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Banner Menu Tag -->
+      <div class="modal-bannertag">
+        <!-- Overalay -->
+        <div class="modal-bannertag__overlay"></div>
+
+        <!-- Body -->
+        <div class="modal-bannertag__body">
+          <!-- Content -->
+          <div class="modal-bannertag__inner">
+            <!--  Header  -->
+            <header class="modal-bannertag__header">
+              <!-- Title -->
+              <h3 class="modal-bannertag__title">Bạn muốn giao đến đâu?</h3>
+              <!-- Icon Close -->
+              <span class="modal-banner__close-icon">
+                <i class="fa-solid fa-xmark"></i>
+              </span>
+            </header>
+
+            <!-- Body -->
+            <section class="modal-banner__body">
+
+              <!-- Form Search -->
+              <div class="modal-banner__form">
+                <i class="fa-solid fa-magnifying-glass modal-banner__form-icon"></i>
+                <input type="text" class="modal-banner__form-input"
+                  placeholder="Nhập địa chỉ giao hàng">
+
+                <i class="fa-solid fa-ticket-simple modal-banner__form-icon"></i>
+              </div>
+
+              <!-- Find Location -->
+              <div class="modal-banner__location">
+                <i class="fa-sharp fa-solid fa-cubes
+                  modal-banner__location-icon"></i>
+
+                <p class="modal-banner__location-paragraph">Tìm trên bản đồ</p>
+              </div>
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Javascript -->
+      <script src="./js/DomProcess.js"></script>
+      <script src="./js/BannerModal.js"></script>
+      <script src="./js/ScrollBanner.js"></script>
+      <script src="./js/App.js"></script>
+
+
+    </body>
+
+  </html>
