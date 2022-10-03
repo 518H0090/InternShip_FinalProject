@@ -1,0 +1,45 @@
+User
+Username - string
+Password - string
+UserRole - string
+
+Restaurant
+RsId - int
+RsImageUrl - string
+RsProvince - string
+RsTitle - string
+RsAddress - string
+RsType - string
+RsStars - float (Range 1-5 )
+RsReviews - int
+RsOpenTime - string
+RsPriceRange - string
+RsPreferenceLike - bool
+
+Promotion
+PromoTitle
+PromoDesc
+
+
+Menu
+MenuTag - string
+
+Food
+FoodTag - string
+FoodImageUrl - string
+FoodTitle - string
+FoodDesc - string
+FoodPrice - int
+FoodPricesLess - int
+
+
+
+
+
+
+
+
+
+
+
+
