@@ -4,7 +4,6 @@ Password - string
 UserRole - string
 
 Restaurant
-RsId - int
 RsImageUrl - string
 RsProvince - string
 RsTitle - string
@@ -34,7 +33,7 @@ FoodPricesLess - int
 
 
 
-
+Every Table Id is Guid
 
 
 

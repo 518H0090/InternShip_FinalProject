@@ -1,10 +1,9 @@
 +Huỳnh Trần Trung Hiếu - 03/10/2022
 + Completed Task: 
   - Build Dotnet Folder and Config For It.
-  - Research Database.
-
+  - Research Database In ShopeeFood.
+  - Review again .Net Api, automapper.
 + Current Tasks:    
-  - Research a Solid ASP.NET Core using cors,mediator pattern and clean architecture.
   - Prepare text and image for seed data.
           
 + Next Task: Continue Build Project. 
