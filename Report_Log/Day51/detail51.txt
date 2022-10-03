@@ -1,7 +1,6 @@
 +Huỳnh Trần Trung Hiếu - 03/10/2022
 + Completed Task: 
-  - Build Basic Dotnet Folder.
-  - Install Basic For Dotnet.
+  - Build Dotnet Folder and Config For It.
 
 + Current Tasks:  
   - Research Database and Seed data.
