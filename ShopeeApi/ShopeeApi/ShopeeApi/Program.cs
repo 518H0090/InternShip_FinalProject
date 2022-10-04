@@ -1,5 +1,9 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using ShopeeApi.Datas;
+using ShopeeApi.Repository;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,14 +14,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-string devCorsPolicy = builder.Configuration.GetValue<string>("CorsPolicy:PolicyString");
+string devCorsPolicy = builder.Configuration.GetSection("CorsPolicy:PolicyString").Value;
+
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(devCorsPolicy,
             builder =>
             {
-                builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader().AllowCredentials();
+                builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
             }
         );
 });
@@ -25,6 +31,25 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnection")    
 ));
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(
+        options =>
+        {
+            options.SaveToken = true;
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.Unicode.GetBytes(
+                        builder.Configuration.GetSection("JwtSettings:SecretKey").Value
+                    )),
+                ValidateIssuer = false,
+                ValidateAudience = false
+            };
+        }
+    );
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 
@@ -37,6 +62,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors(devCorsPolicy);
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

@@ -20,8 +20,8 @@ PromoTitle
 PromoDesc
 
 
-Menu
-MenuTag - string
+Category
+CategoryTag - string
 
 Food
 FoodTag - string
@@ -33,7 +33,7 @@ FoodPricesLess - int
 
 
 
-Every Table Id is Guid
+Every Table Id is Id
 
 
 
