@@ -84,7 +84,7 @@ namespace ShopeeApi.Service
             catch(Exception e)
             {
                 serviceResponse.Success = false;
-                serviceResponse.Message = "Over Range or Not Exist";
+                serviceResponse.Message = $"Over Range or Not Exist or {e.Message}";
             }
 
             return serviceResponse;

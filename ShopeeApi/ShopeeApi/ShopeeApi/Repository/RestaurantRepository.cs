@@ -84,6 +84,7 @@ namespace ShopeeApi.Repository
             findRes.RsOpenTime = request.RsOpenTime;
             findRes.RsPrinceRange = request.RsPrinceRange;
             findRes.RsRefeLike = request.RsRefeLike;
+            findRes.RsPromotion = request.RsPromotion;
          
             var updatedRes = _context.Restaurants.Update(findRes);
             await _context.SaveChangesAsync();

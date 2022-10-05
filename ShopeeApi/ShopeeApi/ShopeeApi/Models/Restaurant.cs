@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ShopeeApi.Models
 {
@@ -26,5 +27,10 @@ namespace ShopeeApi.Models
         public string RsPrinceRange { set; get; } = string.Empty;
 
         public bool RsRefeLike { set; get; } = false;
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public Promotion RsPromotion { set; get; }  = Promotion.reduce;
+
+        public IEnumerable<Category> Categories { set; get; }
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace ShopeeApi.Dtos
+﻿using ShopeeApi.Models;
+using System.Text.Json.Serialization;
+
+namespace ShopeeApi.Dtos
 {
     public class ResponseGetRestaurant
     {
@@ -21,5 +24,8 @@
         public string RsPrinceRange { set; get; } = string.Empty;
 
         public bool RsRefeLike { set; get; } = false;
+
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public Promotion RsPromotion { set; get; }
     }
 }

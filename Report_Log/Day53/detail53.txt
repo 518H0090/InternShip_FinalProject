@@ -3,8 +3,8 @@
   - Restaurant Repository, Serive and Controller.
 
 + Current Tasks:    
-  - Seed data For Every Table.   
-  - Continue For Build CRUD.
+  - Seed data For Every Table(Restaurant, User, Category and Food).   
+  - Build Crud for Category and Food.
           
 + Next Task: Continue Build Project. 
 + Issue: none.

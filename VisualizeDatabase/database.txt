@@ -14,13 +14,10 @@ RsReviews - int
 RsOpenTime - string
 RsPriceRange - string
 RsRefeLike - bool
-
-Promotion
-PromoTitle
-PromoDesc
-
+RsPromotion - Promotion
 
 Category
+CategoryName - string
 CategoryTag - string
 
 Food

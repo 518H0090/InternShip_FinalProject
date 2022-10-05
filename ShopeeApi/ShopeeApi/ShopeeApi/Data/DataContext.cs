@@ -11,6 +11,7 @@ namespace ShopeeApi.Datas
 
         public DbSet<User> Users { get; set; }
         public DbSet<Restaurant> Restaurants { set; get; }
+        public DbSet<Category> Categories { set; get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -61,6 +62,32 @@ namespace ShopeeApi.Datas
 
                 res.Property(x => x.RsRefeLike).HasDefaultValue<bool>(false);
 
+                res.Property(x => x.RsPromotion).IsRequired();
+
+                res.HasMany<Category>(res => res.Categories)
+                .WithOne(cate => cate.Restaurant)
+                .HasForeignKey(cate => cate.RestaurantId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            });
+
+            //Restaurant Category
+            modelBuilder.Entity<Category>(cate =>
+            {
+                cate.HasKey(x => x.CategoryId);
+
+                cate.HasIndex(x => x.CategoryTag).IsUnique();
+
+                cate.Property(x => x.CategoryId).UseIdentityColumn();
+
+                cate.Property(x => x.CategoryName).HasColumnType("nvarchar(200)").IsRequired();
+
+                cate.Property(x => x.CategoryName).HasColumnType("nvarchar(50)").IsRequired();
+
+                cate.HasOne<Restaurant>(cate => cate.Restaurant)
+                .WithMany(res => res.Categories)
+                .HasForeignKey(cate => cate.RestaurantId)
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
         }
