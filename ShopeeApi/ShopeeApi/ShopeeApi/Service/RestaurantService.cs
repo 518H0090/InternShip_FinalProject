@@ -23,6 +23,7 @@ namespace ShopeeApi.Service
             if (await _repository.ExistRestaurant(request.RsTitle))
             {
                 serviceResponse.Message = "Exists Restaurant";
+                serviceResponse.Success = false;
             } 
             
             else
@@ -45,7 +46,7 @@ namespace ShopeeApi.Service
 
             if (checkDelete == false)
             {
-                serviceResponse.Success = checkDelete;
+                serviceResponse.Success = false;
                 serviceResponse.Message = "Can't Delete Restaurant";
             } 
             
@@ -63,9 +64,18 @@ namespace ShopeeApi.Service
 
             var getAllResFromRepo = await _repository.GetAllRestaurant();
 
-            var responseAllRes = getAllResFromRepo.Select(u => _mapper.Map<ResponseGetRestaurant>(u)).ToList();
+            if (getAllResFromRepo.ToList().Count <= 0)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = "Don't Have Any Data";
+            } 
+            
+            else
+            {
+                var responseAllRes = getAllResFromRepo.Select(u => _mapper.Map<ResponseGetRestaurant>(u)).ToList();
 
-            serviceResponse.Data = responseAllRes;
+                serviceResponse.Data = responseAllRes;
+            }
 
             return serviceResponse;
         }
