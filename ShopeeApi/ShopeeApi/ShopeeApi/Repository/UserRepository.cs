@@ -20,7 +20,7 @@ namespace ShopeeApi.Repository
         public UserRepository(DataContext context, IMapper mapper, IConfiguration configuration)
         {
             _context = context;
-            _mapper = mapper;   
+            _mapper = mapper;
             _configuration = configuration;
         }
 
@@ -34,14 +34,12 @@ namespace ShopeeApi.Repository
             {
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Not Found User";
-            } 
-            
+            }
             else if (!VerifyPassword(request.Password, findCharacter.PasswordSalt, findCharacter.PasswordHash))
             {
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Not Validate Password";
-            } 
-            
+            }
             else
             {
                 serviceResponse.Data = GenerateJwtToken(findCharacter);
@@ -58,8 +56,7 @@ namespace ShopeeApi.Repository
             {
                 serviceResponse.Success = false;
                 serviceResponse.Message = "User Exists or Invaliad Password Compare";
-            } 
-
+            }
             else
             {
                 HashPassword(request.Password, out byte[] passwordSalt, out byte[] passwordHash);
@@ -88,9 +85,9 @@ namespace ShopeeApi.Repository
 
             List<Claim> claims = new List<Claim>
             {
-                new Claim("UserId", request.Id.ToString()),
-                new Claim("UserName", request.UserName),
-                new Claim("UserRole", request.Role.ToString())
+                new Claim(ClaimTypes.NameIdentifier, request.Id.ToString()),
+                new Claim(ClaimTypes.Name, request.UserName),
+                new Claim(ClaimTypes.Role, request.Role.ToString()),
             };
 
             SymmetricSecurityKey symmetric = new SymmetricSecurityKey(Encoding.Unicode.GetBytes(secretKey));
@@ -109,7 +106,6 @@ namespace ShopeeApi.Repository
             SecurityToken securityToken = tokenHandler.CreateToken(tokenDescriptor);
 
             return tokenHandler.WriteToken(securityToken);
-
         }
 
         private bool ExistsUser(string requestUsername)
@@ -124,7 +120,7 @@ namespace ShopeeApi.Repository
             return false;
         }
 
-        private void HashPassword(string password,out byte[] passwordSalt, out byte[] passwordHash)
+        private void HashPassword(string password, out byte[] passwordSalt, out byte[] passwordHash)
         {
             using (var hmac = new HMACSHA512())
             {
@@ -143,7 +139,6 @@ namespace ShopeeApi.Repository
             }
         }
 
-
         public async Task<ServiceResponse<ResponseViewUser>> ViewUserInfo(string jwtToken)
         {
             ServiceResponse<ResponseViewUser> serviceResponse = new ServiceResponse<ResponseViewUser>();
@@ -152,17 +147,17 @@ namespace ShopeeApi.Repository
 
             var token = tokenHandler.ReadJwtToken(jwtToken);
 
-            var userName = token.Claims.FirstOrDefault(u => u.Type == "UserName").Value;
-          
+            var userName = token.Claims.FirstOrDefault(u => u.Type == ClaimTypes.Name || u.Type == "unique_name").Value;
+
             //var findUserName = await _context.Users
             //    .FirstOrDefaultAsync(u => u.UserName == userName);
 
             //if (findUserName != null)
             //{
-                //serviceResponse.Data = _mapper.Map<ResponseViewUser>(findUserName);
-                serviceResponse.Message = userName;
-            //} 
-            
+            //serviceResponse.Data = _mapper.Map<ResponseViewUser>(findUserName);
+            serviceResponse.Message = userName;
+            //}
+
             //else
             //{
             //    serviceResponse.Message = "Please Check Your Authentication";

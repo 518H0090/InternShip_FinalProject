@@ -9,11 +9,11 @@ RsProvince - string
 RsTitle - string
 RsAddress - string
 RsType - string
-RsStars - float (Range 1-5 )
+RsStar - float (Range 1-5 )
 RsReviews - int
 RsOpenTime - string
 RsPriceRange - string
-RsPreferenceLike - bool
+RsRefeLike - bool
 
 Promotion
 PromoTitle

@@ -1,4 +1,5 @@
 ﻿using ShopeeApi.Models;
+using System.Text.Json.Serialization;
 
 namespace ShopeeApi.Dtos
 {
@@ -6,6 +7,7 @@ namespace ShopeeApi.Dtos
     {
         public string UserName { get; set; } = string.Empty;
 
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public Role Role { get; set; }
     }
 }

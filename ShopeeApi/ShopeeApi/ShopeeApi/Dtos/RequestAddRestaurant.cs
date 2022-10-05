@@ -1,11 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace ShopeeApi.Models
+﻿namespace ShopeeApi.Dtos
 {
-    public class Restaurant
+    public class RequestAddRestaurant
     {
-        public int RsId { get; set; }
-
         public string RsTitle { set; get; } = string.Empty;
 
         public string RsProvince { set; get; } = string.Empty;
@@ -16,7 +12,6 @@ namespace ShopeeApi.Models
 
         public string RsImageUrl { set; get; } = string.Empty;
 
-        [Range(1,5)]
         public float RsStar { set; get; }
 
         public int RsReviews { set; get; }

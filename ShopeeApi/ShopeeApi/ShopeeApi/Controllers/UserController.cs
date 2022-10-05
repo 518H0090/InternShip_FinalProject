@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ShopeeApi.Dtos;
 using ShopeeApi.Repository;
-using System.Security.Claims;
 
 namespace ShopeeApi.Controllers
 {
@@ -35,7 +33,7 @@ namespace ShopeeApi.Controllers
             return Created("CreateUser", registerCheck.Data);
         }
 
-        [HttpPost] 
+        [HttpPost]
         [Route("AuthenLogin")]
         public async Task<IActionResult> AuthenLogin(RequestUserLogin request)
         {
@@ -66,7 +64,7 @@ namespace ShopeeApi.Controllers
             var jwtTokenFromCookies = Request.Cookies["JwtToken"];
 
             var checkUserInfo = await _repository.ViewUserInfo(jwtTokenFromCookies);
-            
+
             if (checkUserInfo.Data == null)
             {
                 return BadRequest(new
@@ -78,7 +76,7 @@ namespace ShopeeApi.Controllers
 
             return Ok(checkUserInfo.Data);
         }
-        
+
         [HttpPost]
         [Route("Logout")]
         public IActionResult Logout()

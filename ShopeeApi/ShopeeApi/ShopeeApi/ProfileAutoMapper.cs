@@ -9,6 +9,10 @@ namespace ShopeeApi
         public ProfileAutoMapper()
         {
             CreateMap<User, ResponseUserRegister>();
+            CreateMap<Restaurant, ResponseGetRestaurant>();
+            CreateMap<ResponseGetRestaurant, Restaurant>();
+            CreateMap<RequestAddRestaurant, Restaurant>();
+            CreateMap<RequestEditRestaurant, Restaurant>();
         }
     }
 }

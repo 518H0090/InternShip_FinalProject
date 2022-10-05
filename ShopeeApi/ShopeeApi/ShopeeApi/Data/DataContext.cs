@@ -7,15 +7,16 @@ namespace ShopeeApi.Datas
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Restaurant> Restaurants { set; get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+            //User 
             modelBuilder.Entity<User>(user =>
             {
                 user.HasKey(x => x.Id);
@@ -30,6 +31,40 @@ namespace ShopeeApi.Datas
 
                 user.Property(u => u.PasswordSalt).IsRequired();
             });
+
+            //Restaurant
+            modelBuilder.Entity<Restaurant>(res =>
+            {
+                res.HasKey(x => x.RsId);
+
+                res.HasIndex(x => x.RsTitle).IsUnique();
+
+                res.Property(x => x.RsId).UseIdentityColumn();
+
+                res.Property(x => x.RsTitle).HasColumnType("nvarchar(100)").IsRequired();
+
+                res.Property(x => x.RsProvince).HasColumnType("nvarchar(200)").IsRequired();
+
+                res.Property(x => x.RsAddress).HasColumnType("nvarchar(200)").IsRequired();
+
+                res.Property(x => x.RsType).HasColumnType("nvarchar(30)").IsRequired();
+
+                res.Property(x => x.RsImageUrl).HasColumnType("nvarchar(600)").IsRequired();
+
+                res.Property(x => x.RsStar).HasDefaultValue<float>(1);
+
+                res.Property(x => x.RsReviews).HasDefaultValue<int>(0);
+
+                res.Property(x => x.RsOpenTime).HasColumnType("nvarchar(100)").IsRequired();
+            
+                res.Property(x => x.RsPrinceRange).HasColumnType("nvarchar(800)").IsRequired();
+
+                res.Property(x => x.RsRefeLike).HasDefaultValue<bool>(false);
+
+            });
+
         }
+
+        
     }
 }

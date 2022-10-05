@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ShopeeApi.Datas;
 using ShopeeApi.Repository;
+using ShopeeApi.Service;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,7 +30,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(
-    builder.Configuration.GetConnectionString("DefaultConnection")    
+    builder.Configuration.GetConnectionString("DefaultConnection")
 ));
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -44,12 +45,15 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                         builder.Configuration.GetSection("JwtSettings:SecretKey").Value
                     )),
                 ValidateIssuer = false,
-                ValidateAudience = false
+                ValidateAudience = false,
             };
         }
     );
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IRestaurantRepository, RestaurantRepository>();
+
+builder.Services.AddScoped<IRestaurantService, RestaurantService>();
 
 var app = builder.Build();
 

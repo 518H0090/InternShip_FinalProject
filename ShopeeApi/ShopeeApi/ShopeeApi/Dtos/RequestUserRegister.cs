@@ -1,6 +1,4 @@
-﻿using ShopeeApi.Models;
-
-namespace ShopeeApi.Dtos
+﻿namespace ShopeeApi.Dtos
 {
     public class RequestUserRegister
     {
@@ -8,7 +6,6 @@ namespace ShopeeApi.Dtos
 
         public string Password { get; set; } = string.Empty;
 
-        public string RePassword { get; set; } = string.Empty;  
-
+        public string RePassword { get; set; } = string.Empty;
     }
 }
