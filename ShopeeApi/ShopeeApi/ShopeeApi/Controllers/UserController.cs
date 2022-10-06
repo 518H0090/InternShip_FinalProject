@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ShopeeApi.Dtos;
+using ShopeeApi.Models;
 using ShopeeApi.Repository;
 
 namespace ShopeeApi.Controllers
@@ -13,6 +15,15 @@ namespace ShopeeApi.Controllers
         public UserController(IUserRepository repository)
         {
             _repository = repository;
+        }
+
+        [HttpGet]
+        [Route("ViewRole")]
+        public async Task<IActionResult> ViewRole()
+        {
+            //return Ok(JsonConvert.SerializeObject(new {Role.Admin, Role.User}, new Newtonsoft.Json.Converters.StringEnumConverter()));
+            return Ok(JsonConvert.SerializeObject(Enum.GetNames(typeof(Role)).ToList()
+                , new Newtonsoft.Json.Converters.StringEnumConverter()));
         }
 
         [HttpPost]

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fkqX7fCklAF1GA/S7hgLpkju86qDlg3KpAiIfutSHgIhfVxkFcqtUBoikd9GhdX46DKvRsBoJFShefnxUbVFJw==",
+  "dgSpecHash": "tRyzvvNTeZg97GjkZsg5ZnR/usvd6BXeLVFGURq3Eo5+svxwr0RFzlwWIdu4tl6lBP6yN9bsuKzLb6faa9/3kw==",
   "success": true,
   "projectFilePath": "D:\\InternShip\\InternShip_FinalProject\\ShopeeApi\\ShopeeApi\\ShopeeApi\\ShopeeApi.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,7 @@
     "C:\\Users\\hieu.huynh\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\hieu.huynh\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\hieu.huynh\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\hieu.huynh\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\hieu.huynh\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\hieu.huynh\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\hieu.huynh\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

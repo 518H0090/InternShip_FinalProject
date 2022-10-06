@@ -1,6 +1,8 @@
 +Huỳnh Trần Trung Hiếu - 06/10/2022
 + Completed Task: 
   - Category Repository, Serive and Controller.
+  - Add Relation Between Category and Restaurant.
+  - Make HttpGet For Enum .
 
 + Current Tasks:    
   - Seed data For Every Table(Restaurant, User, Category and Food).   

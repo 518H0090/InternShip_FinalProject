@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ShopeeApi.Dtos;
 using ShopeeApi.Models;
 using ShopeeApi.Repository;
@@ -30,6 +31,24 @@ namespace ShopeeApi.Controllers
         public async Task<IActionResult> GetRestaurantById(int id)
         {
             return Ok(await _service.GetRestaurantById(id));
+        }
+
+        [HttpGet]
+        [Route("ViewPromotion")]
+        public async Task<IActionResult> ViewPromotion()
+        {
+            //return Ok(Enum.GetValues(typeof(Promotion)));
+            //return Ok(JsonConvert.SerializeObject(new
+            //{
+            //    Promotion.reduce,
+            //    Promotion.reduce10K,
+            //    Promotion.reduce20K,
+            //    Promotion.reduce30K,
+            //    Promotion.reduce40K
+            //}, new Newtonsoft.Json.Converters.StringEnumConverter()));
+
+            return Ok(JsonConvert.SerializeObject(Enum.GetNames(typeof(Promotion)).ToList()
+                , new Newtonsoft.Json.Converters.StringEnumConverter()));
         }
 
         [HttpPost]
