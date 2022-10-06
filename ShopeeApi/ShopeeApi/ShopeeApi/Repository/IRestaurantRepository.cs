@@ -10,6 +10,7 @@ namespace ShopeeApi.Repository
         Task<Restaurant> GetRestaurantById(int ResId);
         Task<bool> ExistRestaurant(string RsTitle);
         Task<Restaurant> UpdateRestaurant(int ResId, Restaurant request);
-        Task<bool> DeleteRestaurant(int ResId); 
+        Task<bool> DeleteRestaurant(int ResId);
+        Task<IEnumerable<Restaurant>> GetAllRestaurantWithCategoryTag();
     }
 }

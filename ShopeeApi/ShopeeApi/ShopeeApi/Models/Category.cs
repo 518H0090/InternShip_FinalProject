@@ -1,4 +1,6 @@
-﻿namespace ShopeeApi.Models
+﻿using System.Text.Json.Serialization;
+
+namespace ShopeeApi.Models
 {
     public class Category
     {
@@ -8,6 +10,7 @@
 
         public string CategoryTag { set; get; } = string.Empty;
 
+        [JsonIgnore]
         public Restaurant Restaurant { set; get; }
         public int RestaurantId { get; set; }
     }

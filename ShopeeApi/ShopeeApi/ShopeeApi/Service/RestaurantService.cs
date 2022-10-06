@@ -80,6 +80,28 @@ namespace ShopeeApi.Service
             return serviceResponse;
         }
 
+        public async Task<ServiceResponse<IEnumerable<ResponseGetRestaurantWithCategoryTag>>> GetAllRestaurantWithTag()
+        {
+            var serviceResponse = new ServiceResponse<IEnumerable<ResponseGetRestaurantWithCategoryTag>>();
+
+            var getAllRestaurantAndTheirCategoryTag = await _repository.GetAllRestaurantWithCategoryTag();
+
+            if (getAllRestaurantAndTheirCategoryTag.ToList().Count <= 0)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = "Don't Have Any Data";
+            } 
+            
+            else
+            {
+                serviceResponse.Data = getAllRestaurantAndTheirCategoryTag
+                    .Select(x => _mapper.Map<ResponseGetRestaurantWithCategoryTag>(x)).ToList();
+            }
+
+            return serviceResponse;
+           
+        }
+
         public async Task<ServiceResponse<ResponseGetRestaurant>> GetRestaurantById(int ResId)
         {
             var serviceResponse = new ServiceResponse<ResponseGetRestaurant>();

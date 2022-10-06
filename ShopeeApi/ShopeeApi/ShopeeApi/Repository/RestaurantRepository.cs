@@ -60,6 +60,11 @@ namespace ShopeeApi.Repository
             return await _context.Restaurants.ToListAsync();
         }
 
+        public async Task<IEnumerable<Restaurant>> GetAllRestaurantWithCategoryTag()
+        {
+            return await _context.Restaurants.Include(x => x.Categories).ToListAsync();
+        }
+
         public async Task<Restaurant> GetRestaurantById(int ResId)
         {
             return await _context.Restaurants.FirstAsync(u => u.RsId == ResId);
