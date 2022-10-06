@@ -76,13 +76,13 @@ namespace ShopeeApi.Datas
             {
                 cate.HasKey(x => x.CategoryId);
 
-                cate.HasIndex(x => x.CategoryTag).IsUnique();
+                cate.HasIndex(x => new { x.CategoryTag, x.RestaurantId }).IsUnique();
 
                 cate.Property(x => x.CategoryId).UseIdentityColumn();
 
                 cate.Property(x => x.CategoryName).HasColumnType("nvarchar(200)").IsRequired();
 
-                cate.Property(x => x.CategoryName).HasColumnType("nvarchar(50)").IsRequired();
+                cate.Property(x => x.CategoryTag).HasColumnType("nvarchar(50)").IsRequired();
 
                 cate.HasOne<Restaurant>(cate => cate.Restaurant)
                 .WithMany(res => res.Categories)

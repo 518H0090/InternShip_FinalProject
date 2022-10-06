@@ -32,21 +32,21 @@ namespace ShopeeApi.Migrations
 
                     b.Property<string>("CategoryName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("CategoryTag")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("RestaurantId")
                         .HasColumnType("int");
 
                     b.HasKey("CategoryId");
 
-                    b.HasIndex("CategoryTag")
-                        .IsUnique();
-
                     b.HasIndex("RestaurantId");
+
+                    b.HasIndex("CategoryTag", "RestaurantId")
+                        .IsUnique();
 
                     b.ToTable("Categories");
                 });

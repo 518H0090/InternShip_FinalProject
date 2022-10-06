@@ -13,6 +13,9 @@ namespace ShopeeApi
             CreateMap<ResponseGetRestaurant, Restaurant>();
             CreateMap<RequestAddRestaurant, Restaurant>();
             CreateMap<RequestEditRestaurant, Restaurant>();
+            CreateMap<Category, ResponseGetCategory>();
+            CreateMap<RequestAddCategory, Category>();
+            CreateMap<RequestEditCategory, Category>();
         }
     }
 }

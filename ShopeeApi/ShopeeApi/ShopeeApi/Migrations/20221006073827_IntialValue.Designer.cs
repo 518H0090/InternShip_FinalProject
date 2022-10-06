@@ -12,8 +12,8 @@ using ShopeeApi.Datas;
 namespace ShopeeApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221005042339_AddRestaurant")]
-    partial class AddRestaurant
+    [Migration("20221006073827_IntialValue")]
+    partial class IntialValue
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,35 @@ namespace ShopeeApi.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("ShopeeApi.Models.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"), 1L, 1);
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("CategoryTag")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CategoryId");
+
+                    b.HasIndex("RestaurantId");
+
+                    b.HasIndex("CategoryTag", "RestaurantId")
+                        .IsUnique();
+
+                    b.ToTable("Categories");
+                });
 
             modelBuilder.Entity("ShopeeApi.Models.Restaurant", b =>
                 {
@@ -47,6 +76,9 @@ namespace ShopeeApi.Migrations
                     b.Property<string>("RsPrinceRange")
                         .IsRequired()
                         .HasColumnType("nvarchar(800)");
+
+                    b.Property<int>("RsPromotion")
+                        .HasColumnType("int");
 
                     b.Property<string>("RsProvince")
                         .IsRequired()
@@ -112,6 +144,22 @@ namespace ShopeeApi.Migrations
                         .IsUnique();
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("ShopeeApi.Models.Category", b =>
+                {
+                    b.HasOne("ShopeeApi.Models.Restaurant", "Restaurant")
+                        .WithMany("Categories")
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Restaurant");
+                });
+
+            modelBuilder.Entity("ShopeeApi.Models.Restaurant", b =>
+                {
+                    b.Navigation("Categories");
                 });
 #pragma warning restore 612, 618
         }

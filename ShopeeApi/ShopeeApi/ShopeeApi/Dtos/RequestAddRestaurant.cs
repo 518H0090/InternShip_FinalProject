@@ -24,8 +24,5 @@ namespace ShopeeApi.Dtos
         public string RsPrinceRange { set; get; } = string.Empty;
 
         public bool RsRefeLike { set; get; } = false;
-
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public Promotion RsPromotion { set; get; } 
     }
 }
