@@ -25,6 +25,20 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
+        [Route("GetAllRestaurantWithFood")]
+        public async Task<IActionResult> GetAllRestaurantWithFood()
+        {
+            return Ok(await _service.GetAllRestaurantWithFood());
+        }
+
+        [HttpGet]
+        [Route("GetAllRestaurantWithFoodTag")]
+        public async Task<IActionResult> GetAllRestaurantWithFoodTag()
+        {
+            return Ok(await _service.GetAllRestaurantWithFoodTag());
+        }
+
+        [HttpGet]
         [Route("GetAllRestaurants")]
         public async Task<IActionResult> GetAllRestaurants()
         {

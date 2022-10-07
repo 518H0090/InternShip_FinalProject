@@ -16,5 +16,9 @@ namespace ShopeeApi.Service
         Task<ServiceResponse<string>> DeleteRestaurant(int ResId);
 
         Task<ServiceResponse<IEnumerable<ResponseGetRestaurantWithCategoryTag>>> GetAllRestaurantWithTag();
+
+        Task<ServiceResponse<IEnumerable<ResponseGetRestaurantWithFood>>> GetAllRestaurantWithFood();
+
+        Task<ServiceResponse<IEnumerable<ResponseGetRestaurantWithFoodTag>>> GetAllRestaurantWithFoodTag();
     }
 }

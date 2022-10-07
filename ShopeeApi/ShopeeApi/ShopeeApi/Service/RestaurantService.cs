@@ -97,6 +97,26 @@ namespace ShopeeApi.Service
             return serviceResponse;
         }
 
+        public async Task<ServiceResponse<IEnumerable<ResponseGetRestaurantWithFood>>> GetAllRestaurantWithFood()
+        {
+            var serviceResponse = new ServiceResponse<IEnumerable<ResponseGetRestaurantWithFood>>();
+
+            var ResponseGetRestaurantFood = await _repository.GetAllRestaurantWithFood();
+
+            if (ResponseGetRestaurantFood.ToList().Count <= 0)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = "Don't Have Any Data";
+            }
+            else
+            {
+                serviceResponse.Data = ResponseGetRestaurantFood
+                    .Select(x => _mapper.Map<ResponseGetRestaurantWithFood>(x)).ToList();
+            }
+
+            return serviceResponse;
+        }
+
         public async Task<ServiceResponse<ResponseGetRestaurant>> GetRestaurantById(int ResId)
         {
             var serviceResponse = new ServiceResponse<ResponseGetRestaurant>();
@@ -136,6 +156,26 @@ namespace ShopeeApi.Service
             }
 
             return serviceResponse;
+        }
+
+        public async Task<ServiceResponse<IEnumerable<ResponseGetRestaurantWithFoodTag>>> GetAllRestaurantWithFoodTag()
+        {
+            var response = new ServiceResponse<IEnumerable<ResponseGetRestaurantWithFoodTag>>();
+
+            var getAllRestaurantWithTheirFoodTag = await _repository.GetAllRestaurantWithCategoryTagAndFood();
+
+            if (getAllRestaurantWithTheirFoodTag.ToList().Count <= 0)
+            {
+                response.Success = false;
+                response.Message = "Not Found Any Value";
+            }
+
+            else
+            {
+                response.Data = getAllRestaurantWithTheirFoodTag.Select(x => _mapper.Map<ResponseGetRestaurantWithFoodTag>(x));
+            }
+
+            return response;
         }
     }
 }

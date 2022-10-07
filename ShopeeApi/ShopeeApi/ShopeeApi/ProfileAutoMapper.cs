@@ -21,7 +21,8 @@ namespace ShopeeApi
             CreateMap<Food, ResponseGetFood>();
             CreateMap<RequestFoodContainRestaurant, Food>();
             CreateMap<RequestUpdateFood, Food>();
-
+            CreateMap<Restaurant, ResponseGetRestaurantWithFood>();
+            CreateMap<Restaurant, ResponseGetRestaurantWithFoodTag>();
 
         }
     }

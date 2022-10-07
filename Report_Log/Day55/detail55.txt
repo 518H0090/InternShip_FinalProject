@@ -1,6 +1,7 @@
 +Huỳnh Trần Trung Hiếu - 07/10/2022
 + Completed Task: 
   - Build Relation Category and Food (many - many), Restaurant and Food (one - many).  
+  - Add HttpGet For Get All Restaurant Inclue Food, Tag (just check their relation).
   - Finish Controller, Service and Repository For Food.
 
 + Current Tasks:    

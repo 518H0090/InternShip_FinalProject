@@ -17,5 +17,9 @@ namespace ShopeeApi.Repository
         Task<bool> DeleteRestaurant(int ResId);
 
         Task<IEnumerable<Restaurant>> GetAllRestaurantWithCategoryTag();
+
+        Task<IEnumerable<Restaurant>> GetAllRestaurantWithFood();
+
+        Task<IEnumerable<Restaurant>> GetAllRestaurantWithCategoryTagAndFood();
     }
 }
