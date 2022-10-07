@@ -17,7 +17,7 @@ namespace ShopeeApi.Models
 
         public string RsImageUrl { set; get; } = string.Empty;
 
-        [Range(1,5)]
+        [Range(1, 5)]
         public float RsStar { set; get; }
 
         public int RsReviews { set; get; }
@@ -29,8 +29,10 @@ namespace ShopeeApi.Models
         public bool RsRefeLike { set; get; } = false;
 
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        public Promotion RsPromotion { set; get; }  = Promotion.reduce;
+        public Promotion RsPromotion { set; get; } = Promotion.reduce;
 
         public IEnumerable<Category> Categories { set; get; }
+
+        public IEnumerable<Food> Foods { set; get; }
     }
 }

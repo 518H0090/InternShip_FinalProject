@@ -1,5 +1,4 @@
 ﻿using ShopeeApi.Dtos;
-using ShopeeApi.Models;
 using ShopeeApi.Repository;
 
 namespace ShopeeApi.Service
@@ -7,9 +6,13 @@ namespace ShopeeApi.Service
     public interface IRestaurantService
     {
         Task<ServiceResponse<ResponseGetRestaurant>> CreateRestaurant(RequestAddRestaurant request);
+
         Task<ServiceResponse<IEnumerable<ResponseGetRestaurant>>> GetAllRestaurant();
+
         Task<ServiceResponse<ResponseGetRestaurant>> GetRestaurantById(int ResId);
+
         Task<ServiceResponse<ResponseGetRestaurant>> UpdateRestaurant(int ResId, RequestEditRestaurant request);
+
         Task<ServiceResponse<string>> DeleteRestaurant(int ResId);
 
         Task<ServiceResponse<IEnumerable<ResponseGetRestaurantWithCategoryTag>>> GetAllRestaurantWithTag();

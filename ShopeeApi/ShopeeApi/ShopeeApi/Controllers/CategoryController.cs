@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ShopeeApi.Dtos;
 using ShopeeApi.Service;
 
@@ -81,7 +80,7 @@ namespace ShopeeApi.Controllers
             if (newCategory.Data == null)
             {
                 return BadRequest(newCategory);
-            } 
+            }
 
             return Ok(newCategory);
         }
@@ -113,6 +112,5 @@ namespace ShopeeApi.Controllers
 
             return Ok(updateCategory);
         }
-
     }
 }

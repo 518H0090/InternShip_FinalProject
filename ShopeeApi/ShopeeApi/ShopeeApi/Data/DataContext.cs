@@ -12,12 +12,14 @@ namespace ShopeeApi.Datas
         public DbSet<User> Users { get; set; }
         public DbSet<Restaurant> Restaurants { set; get; }
         public DbSet<Category> Categories { set; get; }
+        public DbSet<Food> Foods { set; get; }
+        public DbSet<RelationCategoryFood> RelationCategoryFoods { set; get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            //User 
+            //User
             modelBuilder.Entity<User>(user =>
             {
                 user.HasKey(x => x.Id);
@@ -57,7 +59,7 @@ namespace ShopeeApi.Datas
                 res.Property(x => x.RsReviews).HasDefaultValue<int>(0);
 
                 res.Property(x => x.RsOpenTime).HasColumnType("nvarchar(100)").IsRequired();
-            
+
                 res.Property(x => x.RsPrinceRange).HasColumnType("nvarchar(800)").IsRequired();
 
                 res.Property(x => x.RsRefeLike).HasDefaultValue<bool>(false);
@@ -69,6 +71,11 @@ namespace ShopeeApi.Datas
                 .HasForeignKey(cate => cate.RestaurantId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+                res.HasMany<Food>(res => res.Foods)
+                .WithOne(f => f.Restaurant)
+                .HasForeignKey(f => f.RestaurantId)
+                .OnDelete(DeleteBehavior.Cascade)
+                ;
             });
 
             //Restaurant Category
@@ -90,8 +97,49 @@ namespace ShopeeApi.Datas
                 .OnDelete(DeleteBehavior.Cascade);
             });
 
-        }
+            //Food 
+            modelBuilder.Entity<Food>(food =>
+            {
+                food.HasKey(x => x.FoodId);
 
-        
+                food.HasIndex(x => new { x.FoodTitle, x.RestaurantId }).IsUnique();
+
+                food.Property(x => x.FoodId).UseIdentityColumn();
+
+                food.Property(x => x.FoodImageUrl).HasColumnType("nvarchar(500)").IsRequired();
+
+                food.Property(x => x.FoodTitle).HasColumnType("nvarchar(100)").IsRequired();
+
+                food.Property(x => x.FoodTitle).HasColumnType("nvarchar(500)").IsRequired();
+
+                food.Property(x => x.FoodPrice).HasDefaultValue<int>(0).IsRequired();
+
+                food.Property(x => x.FoodPriceLess).HasDefaultValue<float>(0).IsRequired();
+
+                food.HasOne<Restaurant>(f => f.Restaurant)
+                .WithMany(res => res.Foods)
+                .HasForeignKey(f => f.RestaurantId)
+                .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            //RelationCategoryFood
+            modelBuilder.Entity<RelationCategoryFood>(x =>
+            {
+                x.HasKey(rcf => new { rcf.CategoryId, rcf.FoodId });
+
+                x.HasOne<Category>(rcf => rcf.Category)
+                .WithMany(c => c.RelationCategoryFoods)
+                .HasForeignKey(rcf => rcf.CategoryId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+                x.HasOne<Food>(rcf => rcf.Food)
+               .WithMany(c => c.RelationCategoryFoods)
+               .HasForeignKey(rcf => rcf.FoodId)
+               .OnDelete(DeleteBehavior.Restrict);
+            });
+
+
+
+        }
     }
 }

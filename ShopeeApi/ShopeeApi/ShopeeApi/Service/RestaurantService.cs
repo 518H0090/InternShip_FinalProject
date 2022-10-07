@@ -24,8 +24,7 @@ namespace ShopeeApi.Service
             {
                 serviceResponse.Message = "Exists Restaurant";
                 serviceResponse.Success = false;
-            } 
-            
+            }
             else
             {
                 var newRestaurant = _mapper.Map<Restaurant>(request);
@@ -48,8 +47,7 @@ namespace ShopeeApi.Service
             {
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Can't Delete Restaurant";
-            } 
-            
+            }
             else
             {
                 serviceResponse.Data = "Delete Success";
@@ -68,8 +66,7 @@ namespace ShopeeApi.Service
             {
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Don't Have Any Data";
-            } 
-            
+            }
             else
             {
                 var responseAllRes = getAllResFromRepo.Select(u => _mapper.Map<ResponseGetRestaurant>(u)).ToList();
@@ -90,8 +87,7 @@ namespace ShopeeApi.Service
             {
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Don't Have Any Data";
-            } 
-            
+            }
             else
             {
                 serviceResponse.Data = getAllRestaurantAndTheirCategoryTag
@@ -99,21 +95,19 @@ namespace ShopeeApi.Service
             }
 
             return serviceResponse;
-           
         }
 
         public async Task<ServiceResponse<ResponseGetRestaurant>> GetRestaurantById(int ResId)
         {
             var serviceResponse = new ServiceResponse<ResponseGetRestaurant>();
 
-           try
+            try
             {
                 var getResByIdRepo = await _repository.GetRestaurantById(ResId);
 
                 serviceResponse.Data = _mapper.Map<ResponseGetRestaurant>(getResByIdRepo);
-            } 
-            
-            catch(Exception e)
+            }
+            catch (Exception e)
             {
                 serviceResponse.Success = false;
                 serviceResponse.Message = $"Over Range or Not Exist or {e.Message}";
@@ -134,8 +128,7 @@ namespace ShopeeApi.Service
             {
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Can't Update Restaurant";
-            } 
-            
+            }
             else
             {
                 var newValueUpdate = _mapper.Map<ResponseGetRestaurant>(updateRes);

@@ -12,8 +12,8 @@ using ShopeeApi.Datas;
 namespace ShopeeApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221006073827_IntialValue")]
-    partial class IntialValue
+    [Migration("20221007072750_InitialValue")]
+    partial class InitialValue
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,6 +51,46 @@ namespace ShopeeApi.Migrations
                         .IsUnique();
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("ShopeeApi.Models.Food", b =>
+                {
+                    b.Property<int>("FoodId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FoodId"), 1L, 1);
+
+                    b.Property<string>("FoodDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FoodImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("FoodPrice")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
+                    b.Property<float>("FoodPriceLess")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("real")
+                        .HasDefaultValue(0f);
+
+                    b.Property<string>("FoodTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("FoodId");
+
+                    b.HasIndex("RestaurantId");
+
+                    b.ToTable("Foods");
                 });
 
             modelBuilder.Entity("ShopeeApi.Models.Restaurant", b =>
@@ -157,9 +197,22 @@ namespace ShopeeApi.Migrations
                     b.Navigation("Restaurant");
                 });
 
+            modelBuilder.Entity("ShopeeApi.Models.Food", b =>
+                {
+                    b.HasOne("ShopeeApi.Models.Restaurant", "Restaurant")
+                        .WithMany("Foods")
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Restaurant");
+                });
+
             modelBuilder.Entity("ShopeeApi.Models.Restaurant", b =>
                 {
                     b.Navigation("Categories");
+
+                    b.Navigation("Foods");
                 });
 #pragma warning restore 612, 618
         }

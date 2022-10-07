@@ -2,7 +2,7 @@
 + Completed Task: 
   - Category Repository, Serive and Controller.
   - Add Relation Between Category and Restaurant.
-  - Make HttpGet For Enum .
+  - Make HttpGet For Enum (Role and Promotion).
 
 + Current Tasks:    
   - Seed data For Every Table(Restaurant, User, Category and Food).   

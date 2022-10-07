@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using ShopeeApi.Datas;
-using ShopeeApi.Dtos;
 using ShopeeApi.Models;
 
 namespace ShopeeApi.Repository
@@ -47,8 +46,7 @@ namespace ShopeeApi.Repository
             if (checkRes != null)
             {
                 return true;
-            } 
-            
+            }
             else
             {
                 return false;
@@ -90,7 +88,7 @@ namespace ShopeeApi.Repository
             findRes.RsPrinceRange = request.RsPrinceRange;
             findRes.RsRefeLike = request.RsRefeLike;
             findRes.RsPromotion = request.RsPromotion;
-         
+
             var updatedRes = _context.Restaurants.Update(findRes);
             await _context.SaveChangesAsync();
 

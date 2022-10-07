@@ -9,6 +9,6 @@ namespace ShopeeApi.Models
         reduce10K = 10,
         reduce20K = 20,
         reduce = 5,
-        reduce40K = 40 
+        reduce40K = 40
     }
 }

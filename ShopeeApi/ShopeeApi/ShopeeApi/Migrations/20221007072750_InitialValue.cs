@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ShopeeApi.Migrations
 {
-    public partial class IntialValue : Migration
+    public partial class InitialValue : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -69,6 +69,30 @@ namespace ShopeeApi.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Foods",
+                columns: table => new
+                {
+                    FoodId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FoodImageUrl = table.Column<string>(type: "nvarchar(500)", nullable: false),
+                    FoodTitle = table.Column<string>(type: "nvarchar(500)", nullable: false),
+                    FoodDescription = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FoodPrice = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    FoodPriceLess = table.Column<float>(type: "real", nullable: false, defaultValue: 0f),
+                    RestaurantId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Foods", x => x.FoodId);
+                    table.ForeignKey(
+                        name: "FK_Foods_Restaurants_RestaurantId",
+                        column: x => x.RestaurantId,
+                        principalTable: "Restaurants",
+                        principalColumn: "RsId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Categories_CategoryTag_RestaurantId",
                 table: "Categories",
@@ -78,6 +102,11 @@ namespace ShopeeApi.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Categories_RestaurantId",
                 table: "Categories",
+                column: "RestaurantId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Foods_RestaurantId",
+                table: "Foods",
                 column: "RestaurantId");
 
             migrationBuilder.CreateIndex(
@@ -97,6 +126,9 @@ namespace ShopeeApi.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Foods");
 
             migrationBuilder.DropTable(
                 name: "Users");

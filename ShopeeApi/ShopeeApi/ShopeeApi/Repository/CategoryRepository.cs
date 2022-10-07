@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ShopeeApi.Datas;
 using ShopeeApi.Models;
 
@@ -55,7 +54,8 @@ namespace ShopeeApi.Repository
         {
             var findRestaurant = await _context.Restaurants.FirstOrDefaultAsync(r => r.RsId == ResId);
 
-            if (findRestaurant == null) {
+            if (findRestaurant == null)
+            {
                 return false;
             }
 
@@ -64,7 +64,7 @@ namespace ShopeeApi.Repository
 
         public async Task<IEnumerable<Category>> GetAllCategories(int ResId)
         {
-           return await _context.Categories.Where(x => x.RestaurantId == ResId).ToListAsync();
+            return await _context.Categories.Where(x => x.RestaurantId == ResId).ToListAsync();
         }
 
         public async Task<Category> GetCategoryById(int ResId, int CateId)

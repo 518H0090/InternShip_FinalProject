@@ -21,13 +21,18 @@ CategoryName - string
 CategoryTag - string
 
 Food
-FoodTag - string
+Category
+Restaurant
+
 FoodImageUrl - string
 FoodTitle - string
 FoodDesc - string
 FoodPrice - int
-FoodPricesLess - int
+FoodPricesLess - float 
 
+Restaurant - Food 1-many
+
+Category - Food many many
 
 
 Every Table Id is Id

@@ -9,6 +9,5 @@
         public string CategoryName { set; get; } = string.Empty;
 
         public string CategoryTag { set; get; } = string.Empty;
-
     }
 }

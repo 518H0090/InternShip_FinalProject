@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using ShopeeApi.Dtos;
 using ShopeeApi.Models;
-using ShopeeApi.Repository;
 using ShopeeApi.Service;
 
 namespace ShopeeApi.Controllers
@@ -85,7 +83,6 @@ namespace ShopeeApi.Controllers
 
             return Ok(newRes);
         }
-
 
         [HttpDelete]
         [Route("DeleteRestaurant/{id}")]

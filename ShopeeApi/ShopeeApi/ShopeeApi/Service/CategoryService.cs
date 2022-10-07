@@ -28,13 +28,11 @@ namespace ShopeeApi.Service
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Not Exist Restaurant";
             }
-
             else if (checkExistTagInRestaurant)
             {
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Exists Category Tag In This Restaurant";
-            } 
-            
+            }
             else
             {
                 var newCategoryInRes = await _repository.CreateCategory(_mapper.Map<Category>(request));
@@ -48,14 +46,13 @@ namespace ShopeeApi.Service
         {
             var response = new ServiceResponse<string>();
 
-            var deleteCategory = await _repository.DeleteCategory(request.RestaurantId,request.CategoryId);
+            var deleteCategory = await _repository.DeleteCategory(request.RestaurantId, request.CategoryId);
 
             if (!deleteCategory)
             {
                 response.Success = false;
                 response.Message = "Can't Delete Category";
-            } 
-            
+            }
             else
             {
                 response.Data = "Delete Success";
@@ -74,8 +71,7 @@ namespace ShopeeApi.Service
             {
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Not Found Any Category In This Restaurant";
-            } 
-            
+            }
             else
             {
                 serviceResponse.Data = getAllCategory.Select(c => _mapper.Map<ResponseGetCategory>(c)).ToList();
@@ -94,8 +90,7 @@ namespace ShopeeApi.Service
             {
                 response.Success = false;
                 response.Message = "Not Found Any Category In This Restaurant";
-            } 
-            
+            }
             else
             {
                 response.Data = _mapper.Map<ResponseGetCategory>(CategoryWithId);
@@ -115,7 +110,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Any Category In This Restaurant";
             }
-
             else
             {
                 response.Data = _mapper.Map<ResponseGetCategory>(CategoryWithTag);
@@ -134,8 +128,7 @@ namespace ShopeeApi.Service
             {
                 response.Success = false;
                 response.Message = "Not Found Any Category";
-            } 
-            
+            }
             else
             {
                 response.Data = getFullCatgories.Select(x => _mapper.Map<ResponseGetCategory>(x));
@@ -154,8 +147,7 @@ namespace ShopeeApi.Service
             {
                 response.Success = false;
                 response.Message = "Can't Update Category";
-            } 
-
+            }
             else
             {
                 response.Data = _mapper.Map<ResponseGetCategory>(updateCategory);

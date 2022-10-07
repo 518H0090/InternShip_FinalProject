@@ -1,7 +1,4 @@
-﻿using ShopeeApi.Models;
-using System.Text.Json.Serialization;
-
-namespace ShopeeApi.Dtos
+﻿namespace ShopeeApi.Dtos
 {
     public class ResponseGetCategory
     {

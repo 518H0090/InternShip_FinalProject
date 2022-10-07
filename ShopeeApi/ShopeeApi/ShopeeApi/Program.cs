@@ -53,9 +53,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IRestaurantRepository, RestaurantRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IFoodRepository, FoodRepository>();
 
 builder.Services.AddScoped<IRestaurantService, RestaurantService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IFoodService, FoodService>();
 
 var app = builder.Build();
 

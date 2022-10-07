@@ -13,5 +13,8 @@ namespace ShopeeApi.Models
         [JsonIgnore]
         public Restaurant Restaurant { set; get; }
         public int RestaurantId { get; set; }
+
+
+        public IEnumerable<RelationCategoryFood> RelationCategoryFoods { get; set; }
     }
 }
