@@ -10,11 +10,11 @@ namespace ShopeeApi.Models
 
         public string CategoryTag { set; get; } = string.Empty;
 
-        [JsonIgnore]
         public Restaurant Restaurant { set; get; }
         public int RestaurantId { get; set; }
 
-
         public IEnumerable<RelationCategoryFood> RelationCategoryFoods { get; set; }
+
+        public IEnumerable<Food> Foods { set; get; }
     }
 }

@@ -95,6 +95,24 @@ namespace ShopeeApi.Datas
                 .WithMany(res => res.Categories)
                 .HasForeignKey(cate => cate.RestaurantId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+                cate.HasMany<Food>(cate => cate.Foods)
+                .WithMany(cate => cate.Categories)
+                .UsingEntity<RelationCategoryFood>(
+                    x =>
+                    {
+                        x.HasOne<Category>(rcf => rcf.Category)
+               .WithMany(c => c.RelationCategoryFoods)
+               .HasForeignKey(rcf => rcf.CategoryId)
+               .OnDelete(DeleteBehavior.Restrict);
+
+                        x.HasOne<Food>(rcf => rcf.Food)
+                       .WithMany(c => c.RelationCategoryFoods)
+                       .HasForeignKey(rcf => rcf.FoodId)
+                       .OnDelete(DeleteBehavior.Restrict);
+                    }
+
+                    );
             });
 
             //Food 
@@ -120,6 +138,24 @@ namespace ShopeeApi.Datas
                 .WithMany(res => res.Foods)
                 .HasForeignKey(f => f.RestaurantId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+                food.HasMany<Category>(f => f.Categories)
+                .WithMany(cate => cate.Foods)
+                .UsingEntity<RelationCategoryFood>(
+                    x =>
+                    {
+                        x.HasOne<Category>(rcf => rcf.Category)
+                        .WithMany(c => c.RelationCategoryFoods)
+                        .HasForeignKey(rcf => rcf.CategoryId)
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                        x.HasOne<Food>(rcf => rcf.Food)
+                       .WithMany(c => c.RelationCategoryFoods)
+                       .HasForeignKey(rcf => rcf.FoodId)
+                       .OnDelete(DeleteBehavior.Restrict);
+                    }
+                    
+                    );
             });
 
             //RelationCategoryFood

@@ -1,6 +1,8 @@
-﻿namespace ShopeeApi.Dtos
+﻿using ShopeeApi.Models;
+
+namespace ShopeeApi.Dtos
 {
-    public class ResponseGetFood
+    public class ResponseGetFoodCombineCategory
     {
         public string FoodImageUrl { set; get; } = string.Empty;
 
@@ -12,5 +14,8 @@
 
         public float FoodPriceLess { set; get; }
 
+        public int RestaurantId { set; get; }
+
+        public IEnumerable<ResponseGetCategory> Categories { set; get; }
     }
 }

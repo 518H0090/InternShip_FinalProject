@@ -78,6 +78,11 @@ namespace ShopeeApi.Repository
             return await _context.Restaurants.FirstAsync(u => u.RsId == ResId);
         }
 
+        public async Task<Restaurant> GetRestaurantByIdWithTagAndFood(int ResId)
+        {
+            return await _context.Restaurants.Where(x => x.RsId == ResId).Include(x => x.Foods).Include(x => x.Categories).FirstOrDefaultAsync();
+        }
+
         public async Task<Restaurant> UpdateRestaurant(int ResId, Restaurant request)
         {
             var findRes = await _context.Restaurants.FindAsync(ResId);

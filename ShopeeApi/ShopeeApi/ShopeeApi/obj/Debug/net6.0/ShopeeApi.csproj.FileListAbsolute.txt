@@ -129,3 +129,4 @@ D:\InternShip\InternShip_FinalProject\ShopeeApi\ShopeeApi\ShopeeApi\obj\Debug\ne
 D:\InternShip\InternShip_FinalProject\ShopeeApi\ShopeeApi\ShopeeApi\obj\Debug\net6.0\ShopeeApi.genruntimeconfig.cache
 D:\InternShip\InternShip_FinalProject\ShopeeApi\ShopeeApi\ShopeeApi\obj\Debug\net6.0\ref\ShopeeApi.dll
 D:\InternShip\InternShip_FinalProject\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\S3corp\InternShip_FinalProject\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\Newtonsoft.Json.dll

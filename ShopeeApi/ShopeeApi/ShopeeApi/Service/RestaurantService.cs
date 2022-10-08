@@ -177,5 +177,25 @@ namespace ShopeeApi.Service
 
             return response;
         }
+
+        public async Task<ServiceResponse<ResponseGetRestaurantWithFoodTag>> GetRestaurantByIdWithTagAndFood(int ResId)
+        {
+            var response = new ServiceResponse<ResponseGetRestaurantWithFoodTag>();
+
+            var getRestaurantWithTheirFoodTag = await _repository.GetRestaurantByIdWithTagAndFood(ResId);
+
+            if (getRestaurantWithTheirFoodTag == null)
+            {
+                response.Success = false;
+                response.Message = "Not Found Value";
+            }
+
+            else
+            {
+                response.Data = _mapper.Map<ResponseGetRestaurantWithFoodTag>(getRestaurantWithTheirFoodTag);
+            }
+
+            return response;
+        }
     }
 }

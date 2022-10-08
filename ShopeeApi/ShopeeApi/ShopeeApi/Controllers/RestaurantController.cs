@@ -21,40 +21,89 @@ namespace ShopeeApi.Controllers
         [Route("GetAllRestaurantWithTag")]
         public async Task<IActionResult> GetAllRestaurantWithTag()
         {
-            return Ok(await _service.GetAllRestaurantWithTag());
+            var getAllRes = await _service.GetAllRestaurantWithTag();
+
+            if (getAllRes.Data == null)
+            {
+                return BadRequest(getAllRes);
+            }
+
+            return Ok(getAllRes);
         }
 
         [HttpGet]
         [Route("GetAllRestaurantWithFood")]
         public async Task<IActionResult> GetAllRestaurantWithFood()
         {
-            return Ok(await _service.GetAllRestaurantWithFood());
+            var getAllRes = await _service.GetAllRestaurantWithFood();
+
+            if (getAllRes.Data == null)
+            {
+                return BadRequest(getAllRes);
+            }
+
+            return Ok(getAllRes);
         }
 
         [HttpGet]
         [Route("GetAllRestaurantWithFoodTag")]
         public async Task<IActionResult> GetAllRestaurantWithFoodTag()
         {
-            return Ok(await _service.GetAllRestaurantWithFoodTag());
+            var getAllRes = await _service.GetAllRestaurantWithFoodTag();
+
+            if (getAllRes.Data == null)
+            {
+                return BadRequest(getAllRes);
+            }
+
+            return Ok(getAllRes);
         }
 
         [HttpGet]
         [Route("GetAllRestaurants")]
         public async Task<IActionResult> GetAllRestaurants()
         {
-            return Ok(await _service.GetAllRestaurant());
+            var getAllRes = await _service.GetAllRestaurant();
+
+            if (getAllRes.Data == null)
+            {
+                return BadRequest(getAllRes);
+            }
+
+            return Ok(getAllRes);
         }
 
         [HttpGet]
         [Route("GetRestaurantById/{id}")]
         public async Task<IActionResult> GetRestaurantById(int id)
         {
-            return Ok(await _service.GetRestaurantById(id));
+            var getAllResById = await _service.GetRestaurantById(id);
+
+            if (getAllResById.Data == null)
+            {
+                return BadRequest(getAllResById);
+            }
+
+            return Ok(getAllResById);
+        }
+
+        [HttpGet]
+        [Route("GetRestaurantByIdWithFoodTag/{resId}")]
+        public async Task<IActionResult> GetRestaurantByIdWithFoodTag(int resId)
+        {
+            var getResById = await _service.GetRestaurantByIdWithTagAndFood(resId);
+
+            if (getResById.Data == null)
+            {
+                return BadRequest(getResById);
+            }
+
+            return Ok(getResById);
         }
 
         [HttpGet]
         [Route("ViewPromotion")]
-        public async Task<IActionResult> ViewPromotion()
+        public  IActionResult ViewPromotion()
         {
             //return Ok(Enum.GetValues(typeof(Promotion)));
             //return Ok(JsonConvert.SerializeObject(new

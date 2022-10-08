@@ -10,6 +10,8 @@ namespace ShopeeApi.Repository
 
         Task<Restaurant> GetRestaurantById(int ResId);
 
+        Task<Restaurant> GetRestaurantByIdWithTagAndFood(int ResId);
+
         Task<bool> ExistRestaurant(string RsTitle);
 
         Task<Restaurant> UpdateRestaurant(int ResId, Restaurant request);

@@ -1,4 +1,6 @@
-﻿namespace ShopeeApi.Models
+﻿using System.Text.Json.Serialization;
+
+namespace ShopeeApi.Models
 {
     public class Food
     {
@@ -13,10 +15,12 @@
         public int FoodPrice { set; get; }
 
         public float FoodPriceLess { set; get; }
-        
+
         public Restaurant Restaurant { set; get; }
         public int RestaurantId { set; get; }
 
         public IEnumerable<RelationCategoryFood> RelationCategoryFoods { get; set; }
+
+        public IEnumerable<Category> Categories { set; get; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ShopeeApi.Dtos;
 using ShopeeApi.Models;
+using ShopeeApi.Repository;
 
 namespace ShopeeApi
 {
@@ -23,6 +24,13 @@ namespace ShopeeApi
             CreateMap<RequestUpdateFood, Food>();
             CreateMap<Restaurant, ResponseGetRestaurantWithFood>();
             CreateMap<Restaurant, ResponseGetRestaurantWithFoodTag>();
+            CreateMap<RelationCategoryFood, ResponseGetFoodTag>();
+            CreateMap<Category, ResponseGetCategoryCombineFood>();
+            CreateMap<RelationCategoryFood, ResponseGetFoodTag>();
+            CreateMap<Food, ResponseGetFoodCombineCategory>();
+            CreateMap<RequestCategoryFood, RelationCategoryFood>();
+            CreateMap<RequestFoodCombineCategory, RelationCategoryFood>();
+            CreateMap<RequestCategoryCombineFood, RelationCategoryFood>();
 
         }
     }
