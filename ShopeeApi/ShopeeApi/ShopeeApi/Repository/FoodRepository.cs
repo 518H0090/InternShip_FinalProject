@@ -40,7 +40,7 @@ namespace ShopeeApi.Repository
         public async Task<bool> ExistsFoodInRestaurant(Food request)
         {
             var findFoodInRes = await _context.Foods
-                .FirstOrDefaultAsync(x => x.FoodId == request.FoodId && x.RestaurantId == request.RestaurantId);
+                .FirstOrDefaultAsync(x => x.FoodTitle == request.FoodTitle && x.RestaurantId == request.RestaurantId);
 
             if (findFoodInRes == null)
             {

@@ -25,18 +25,22 @@ namespace ShopeeApi.Service
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Not Exist Restaurant";
             }
-
-            else if (await _repository.ExistsFoodInRestaurant(_mapper.Map<Food>(request)))
-            {
-                serviceResponse.Success = false;
-                serviceResponse.Message = "Exists Food In this Restaurant";
-            } 
             
             else
             {
-                var newFood = await _repository.CreateFood(_mapper.Map<Food>(request));
+                try
+                {
+                    var newFood = await _repository.CreateFood(_mapper.Map<Food>(request));
 
-                serviceResponse.Data = _mapper.Map<ResponseGetFood>(newFood);
+                    serviceResponse.Data = _mapper.Map<ResponseGetFood>(newFood);
+                } 
+                
+                catch (Exception ex)
+                {
+                    serviceResponse.Success = false;
+                    serviceResponse.Message = $"Exists Food In this Restaurant + {ex.Message}";
+                }
+                
             }
 
             return serviceResponse;
