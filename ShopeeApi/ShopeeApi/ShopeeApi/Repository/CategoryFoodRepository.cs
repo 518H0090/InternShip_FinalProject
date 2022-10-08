@@ -75,6 +75,12 @@ namespace ShopeeApi.Repository
             return await _context.Categories.Where(x => x.RestaurantId == resId)
                .Include(x => x.Foods)
                .ToListAsync();
+
+            //Option 2
+            //return await _context.Categories.Where(x => x.RestaurantId == resId)
+            //    .Include(x => x.RelationCategoryFoods)
+            //    .ThenInclude(x => x.Food)
+            //    .ToListAsync();
         }
 
         public async Task<IEnumerable<Food>> GetAllFoodwithRestaurantIdCombineCategory(int resId)
@@ -86,9 +92,15 @@ namespace ShopeeApi.Repository
 
         public async Task<Category> GetCategorywithRestaurantIdCombineFood(int resId, int cateId)
         {
-            return await _context.Categories.Where(x => x.RestaurantId == resId) 
+            return await _context.Categories.Where(x => x.RestaurantId == resId)
                 .Include(x => x.Foods)
                 .FirstOrDefaultAsync(x => x.CategoryId == cateId);
+
+            //Option 2
+            //return await _context.Categories.Where(x => x.RestaurantId == resId)
+            //   .Include(x => x.RelationCategoryFoods)
+            //   .ThenInclude(x => x.Food)
+            //   .FirstOrDefaultAsync(x => x.CategoryId == cateId);
         }
 
         public async Task<Food> GetFoodwithRestaurantIdCombineCategory(int resId, int foodId)
