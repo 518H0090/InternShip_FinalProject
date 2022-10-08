@@ -36,6 +36,7 @@
   --color-violet: #bc36a9;
   --color-badge: #ffad00;
   --color-badge-l: rgba(255, 173, 0, 0.8);
+  --color-yellow-l: #fbf9d8;
 }
 
 html {
@@ -76,7 +77,7 @@ hr {
   transform: translateY(-50%);
 }
 
-.icon + .icon {
+.icon+.icon {
   margin: 3.5em 0;
 }
 

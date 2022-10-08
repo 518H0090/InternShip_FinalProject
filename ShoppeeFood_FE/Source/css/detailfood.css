@@ -13,9 +13,9 @@
 }
 
 .layout .layout-foodoptions {
-  min-height: 12rem;
-  background: var(--color-white);
-  margin-top: 10rem;
+  min-height: 22rem;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
 }
 
 /* ============================================================== */
@@ -59,9 +59,6 @@
 .layout-fooddetail .fooddetail__breadcrumb-item i {
   font-size: 1.3rem;
   color: var(--color-blue-l);
-}
-
-.layout-fooddetail .fooddetail__kind {
 }
 
 .layout-fooddetail .fooddetail__type-pref {
@@ -243,5 +240,196 @@
 }
 
 /* ============================================================== */
+/* Food Relative Options */
+
+/* Title */
+
+.layout-foodoptions .foodoptions__title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--color-red);
+  filter: brightness(140%);
+  margin-bottom: 1.4rem;
+}
+
+.layout-foodoptions .foodoptions__relative {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Category */
+
+.layout-foodoptions .foodoptions__category {
+  width: 24rem;
+  height: fit-content;
+  background-color: var(--color-white);
+  padding: 1rem 2rem;
+  border-radius: 0.6rem;
+}
+
+.layout-foodoptions .foodoptions__list {
+  list-style: none;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding: 0.8rem 0.2rem;
+}
+
+.layout-foodoptions .foodoptions__item {
+  margin: 1rem 0;
+}
+
+.layout-foodoptions .foodoptions__item.foodoptions__item--select {
+  transform: translateX(-3%);
+}
+
+.layout-foodoptions .foodoptions__item.foodoptions__item--select span {
+  background: var(--color-silver-b);
+  color: var(--color-white);
+  padding: 0.6rem 0.6rem;
+  border-radius: 0.4rem;
+}
+
+/* QR Code */
+
+.layout-foodoptions .foodoptions__Qr {
+  width: 31.5rem;
+  height: 28.7rem;
+  background: url("../img/bg_qrcode.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.layout-foodoptions .foodoptions__Qr-img {
+  width: 20rem;
+  height: 20rem;
+  transform: translateY(6%);
+}
+
+.layout-foodoptions .foodoptions__Qr-paragraph {
+  color: var(--color-white);
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 6%;
+}
+
+/* ============================================================== */
+/* Menu Detail */
+.layout-foodoptions .foodoptions__detail {
+  min-height: 20rem;
+  width: 59rem;
+  background: var(--color-white);
+}
+
+.layout-foodoptions .foodoptions__detail-promotion {
+  background: var(--color-yellow-l);
+  height: 6.7rem;
+  border: 0.2rem dotted var(--color-black);
+  margin-top: 1.4rem;
+}
+
+.layout-foodoptions .foodoptions__promotion-icon {
+  width: 4rem;
+  height: 4rem;
+  display: inline-block;
+  transform: translate(44%, 36%);
+}
+
+.layout-foodoptions .foodoptions__detail-content {
+  width: 40.7rem;
+  height: 5.5rem;
+  display: inline-block;
+  font-size: 1.4rem;
+  margin-left: 3.4rem;
+}
+
+.layout-foodoptions .foodoptions__detail-menulist {
+  padding: 1.4rem;
+}
+
+.layout-foodoptions .foodoptions__menulist-title {
+  height: 5.6rem;
+  text-transform: uppercase;
+  align-items: flex-start;
+  font-size: 1.4rem;
+  opacity: 0.8;
+}
+
+.layout-foodoptions .foodoptions__menulist-item {
+  display: flex;
+  justify-content: space-between;
+  height: 8.1rem;
+}
+
+.layout-foodoptions .foodoptions__menulist-item + .foodoptions__menulist-item {
+  margin-top: 0.1rem;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.layout-foodoptions
+  .foodoptions__menulist-item
+  + .foodoptions__menulist-item::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10%;
+  opacity: 0.4;
+  border-top: 0.004rem solid var(--color-black-l);
+  position: absolute;
+  top: -16%;
+  left: 0;
+}
+
+.layout-foodoptions .foodoptions__menuitem-image {
+  flex: 1;
+}
+
+.layout-foodoptions .foodoptions__menuitem-content {
+  flex: 6;
+  padding: 0 1.4rem;
+}
+
+.layout-foodoptions .foodoptions__menuitem-more {
+  flex: 2;
+}
+
+.layout-foodoptions .foodoptions__menuitem-img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.layout-foodoptions .foodoptions__menuitem-title {
+  font-size: 1.6rem;
+  margin-top: -0.4rem;
+}
+
+.layout-foodoptions .foodoptions__menuitem-subtitle {
+  font-size: 1.2rem;
+}
+
+.layout-foodoptions .foodoptions__menuitem-cost {
+  font-size: 1.8rem;
+  color: var(--color-blue-l);
+  font-weight: 700;
+  display: inline-block;
+  margin-left: 0.8rem;
+  margin-right: 1rem;
+}
+
+.layout-foodoptions .foodoptions__menuitem-btn {
+  background: var(--color-red);
+  width: 2.2rem;
+  height: 2.2rem;
+  border: none;
+  border-radius: 0.3rem;
+  display: inline-block;
+}
+
+.layout-foodoptions .foodoptions__menuitem-icon {
+  color: var(--color-white);
+}
 
 /* ============================================================== */
