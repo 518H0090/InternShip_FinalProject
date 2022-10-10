@@ -3,7 +3,7 @@
   - Temp Finish All CRUD.
 
 + Current Tasks:    
-  - Seed data For Every Table(Restaurant, Category ,Food and CategoryFood).   
+  - Seed data For Every Table.   
           
 + Next Task: Fetch Data In Layout. 
 + Issue: none.
