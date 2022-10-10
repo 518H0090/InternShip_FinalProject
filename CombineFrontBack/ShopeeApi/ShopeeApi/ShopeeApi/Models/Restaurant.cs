@@ -5,7 +5,7 @@ namespace ShopeeApi.Models
 {
     public class Restaurant
     {
-        public int RsId { get; set; }
+        public int RsId { get; set; } 
 
         public string RsTitle { set; get; } = string.Empty;
 
@@ -29,7 +29,7 @@ namespace ShopeeApi.Models
         public bool RsRefeLike { set; get; } = false;
 
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        public Promotion RsPromotion { set; get; } = Promotion.reduce;
+        public Promotion? RsPromotion { set; get; } 
 
         public IEnumerable<Category> Categories { set; get; }
 

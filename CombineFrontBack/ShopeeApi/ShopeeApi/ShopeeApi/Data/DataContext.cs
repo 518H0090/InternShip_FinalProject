@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopeeApi.Models;
+using ShopeeApi.SeedData;
 
 namespace ShopeeApi.Datas
 {
@@ -18,6 +19,10 @@ namespace ShopeeApi.Datas
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            //Seed Data 
+            modelBuilder.ApplyConfiguration(new UserSeed());
+            modelBuilder.ApplyConfiguration(new RestaurantSeed());
 
             //User
             modelBuilder.Entity<User>(user =>

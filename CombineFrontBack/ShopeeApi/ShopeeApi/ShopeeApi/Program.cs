@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ShopeeApi.Datas;
 using ShopeeApi.Repository;
+using ShopeeApi.SeedData;
 using ShopeeApi.Service;
 using System.Text;
 
@@ -76,5 +77,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MigrateDatabase();
 
 app.Run();
