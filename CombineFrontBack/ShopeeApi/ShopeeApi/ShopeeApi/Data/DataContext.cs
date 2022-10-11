@@ -22,7 +22,25 @@ namespace ShopeeApi.Datas
 
             //Seed Data 
             modelBuilder.ApplyConfiguration(new UserSeed());
+
             modelBuilder.ApplyConfiguration(new RestaurantSeed());
+
+            modelBuilder.ApplyConfiguration(new CategoryRes1Seed());
+            modelBuilder.ApplyConfiguration(new CategoryRes2Seed());
+            modelBuilder.ApplyConfiguration(new CategoryRes3Seed());
+            modelBuilder.ApplyConfiguration(new CategoryRes4Seed());
+            modelBuilder.ApplyConfiguration(new CategoryRes5Seed());
+            modelBuilder.ApplyConfiguration(new CategoryRes6Seed());
+            modelBuilder.ApplyConfiguration(new CategoryRes7Seed());
+            modelBuilder.ApplyConfiguration(new CategoryRes8Seed());
+            modelBuilder.ApplyConfiguration(new CategoryRes9Seed());
+
+            modelBuilder.ApplyConfiguration(new FoodRes1Seed());
+            modelBuilder.ApplyConfiguration(new FoodRes2Seed());
+            modelBuilder.ApplyConfiguration(new FoodRes3Seed());
+            modelBuilder.ApplyConfiguration(new FoodRes4Seed());
+            modelBuilder.ApplyConfiguration(new FoodRes5Seed());
+            modelBuilder.ApplyConfiguration(new FoodRes6Seed());
 
             //User
             modelBuilder.Entity<User>(user =>
