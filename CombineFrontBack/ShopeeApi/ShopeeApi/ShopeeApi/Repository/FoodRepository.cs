@@ -16,10 +16,10 @@ namespace ShopeeApi.Repository
         public async Task<Food> CreateFood(Food request)
         {
             //Basic Temp Check Priceless In Visualize
-            //var findRestaurant = await _context.Restaurants.Where(x => x.RsId == request.RestaurantId)
-            //    .FirstOrDefaultAsync();
+            var findRestaurant = await _context.Restaurants.Where(x => x.RsId == request.RestaurantId)
+                .FirstOrDefaultAsync();
 
-            //request.FoodPriceLess = request.FoodPrice - (int) findRestaurant.RsPromotion;
+            request.FoodPriceLess = request.FoodPrice - (int)findRestaurant.RsPromotion;
 
             var newFood = await _context.Foods.AddAsync(request);
             await _context.SaveChangesAsync();

@@ -1,6 +1,7 @@
 +Huỳnh Trần Trung Hiếu - 12/10/2022
 + Completed Task: 
   - Seed Data For Every Table.
+  - Fix several for ui and crud. 
 
 + Current Tasks:    
   - Fetch Data And Check In Console Log.   
