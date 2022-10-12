@@ -103,7 +103,7 @@ namespace ShopeeApi.Controllers
 
         [HttpGet]
         [Route("ViewPromotion")]
-        public  IActionResult ViewPromotion()
+        public IActionResult ViewPromotion()
         {
             //return Ok(Enum.GetValues(typeof(Promotion)));
             //return Ok(JsonConvert.SerializeObject(new

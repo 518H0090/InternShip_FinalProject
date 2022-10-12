@@ -164,7 +164,6 @@ namespace ShopeeApi.SeedData
                        RestaurantId = 4
                    },
 
-
                    new Food
                    {
                        FoodId = 66,

@@ -86,7 +86,7 @@ namespace ShopeeApi.Repository
 
         public async Task<Category> GetCategorywithRestaurantIdCombineFood(int resId, int cateId)
         {
-            return await _context.Categories.Where(x => x.RestaurantId == resId) 
+            return await _context.Categories.Where(x => x.RestaurantId == resId)
                 .Include(x => x.Foods)
                 .FirstOrDefaultAsync(x => x.CategoryId == cateId);
         }

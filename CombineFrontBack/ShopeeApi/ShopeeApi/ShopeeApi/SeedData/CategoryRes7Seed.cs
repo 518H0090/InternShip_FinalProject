@@ -23,7 +23,7 @@ namespace ShopeeApi.SeedData
                       CategoryId = 39,
                       CategoryName = "BÁNH BÒ",
                       CategoryTag = "banhbo",
-                     RestaurantId = 7
+                      RestaurantId = 7
                   },
 
                   new Category

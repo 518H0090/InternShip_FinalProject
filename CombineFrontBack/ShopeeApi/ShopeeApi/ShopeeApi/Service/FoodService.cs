@@ -20,12 +20,11 @@ namespace ShopeeApi.Service
         {
             var serviceResponse = new ServiceResponse<ResponseGetFood>();
 
-            if ((await _repository.ExistsRestaurant(_mapper.Map<Food>(request))) == false )
+            if ((await _repository.ExistsRestaurant(_mapper.Map<Food>(request))) == false)
             {
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Not Exist Restaurant";
             }
-            
             else
             {
                 try
@@ -33,14 +32,12 @@ namespace ShopeeApi.Service
                     var newFood = await _repository.CreateFood(_mapper.Map<Food>(request));
 
                     serviceResponse.Data = _mapper.Map<ResponseGetFood>(newFood);
-                } 
-                
+                }
                 catch (Exception ex)
                 {
                     serviceResponse.Success = false;
                     serviceResponse.Message = $"Exists Food In this Restaurant + {ex.Message}";
                 }
-                
             }
 
             return serviceResponse;
@@ -49,15 +46,14 @@ namespace ShopeeApi.Service
         public async Task<ServiceResponse<string>> DeleteFood(RequestFoodContainRestaurant request)
         {
             var response = new ServiceResponse<string>();
-           
+
             var deleteFood = await _repository.DeleteFood(_mapper.Map<Food>(request));
 
             if (!deleteFood)
             {
                 response.Success = false;
                 response.Message = "Can't Delete Food";
-            } 
-            
+            }
             else
             {
                 response.Data = "Delete Success";
@@ -77,7 +73,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Any Value";
             }
-
             else
             {
                 response.Data = getAllWithoutRestaurant.Select(x => _mapper.Map<ResponseGetFood>(x));
@@ -102,7 +97,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Any Value";
             }
-
             else
             {
                 response.Data = getAllWithRestaurant.Select(x => _mapper.Map<ResponseGetFood>(x));
@@ -126,8 +120,7 @@ namespace ShopeeApi.Service
             {
                 response.Success = false;
                 response.Message = "Not Found Value";
-            } 
-
+            }
             else
             {
                 response.Data = _mapper.Map<ResponseGetFood>(getFoodById);
@@ -153,7 +146,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Value";
             }
-
             else
             {
                 response.Data = _mapper.Map<ResponseGetFood>(getFoodById);
@@ -172,8 +164,7 @@ namespace ShopeeApi.Service
             {
                 response.Success = false;
                 response.Message = "Can't Update Value";
-            } 
-            
+            }
             else
             {
                 response.Data = _mapper.Map<ResponseGetFood>(updateFood);

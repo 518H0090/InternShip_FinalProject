@@ -801,7 +801,7 @@ namespace ShopeeApi.Migrations
                             FoodImageUrl = "./ImageForSeedData/Food/Restaurant2/food33.jpeg",
                             FoodPrice = 58000,
                             FoodPriceLess = 34800f,
-                            FoodTitle = "Scola kem cheese",
+                            FoodTitle = "Socola kem cheese",
                             RestaurantId = 2
                         },
                         new
@@ -1859,6 +1859,708 @@ namespace ShopeeApi.Migrations
                     b.HasIndex("FoodId");
 
                     b.ToTable("RelationCategoryFoods");
+
+                    b.HasData(
+                        new
+                        {
+                            CategoryId = 1,
+                            FoodId = 1
+                        },
+                        new
+                        {
+                            CategoryId = 1,
+                            FoodId = 2
+                        },
+                        new
+                        {
+                            CategoryId = 1,
+                            FoodId = 3
+                        },
+                        new
+                        {
+                            CategoryId = 2,
+                            FoodId = 4
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            FoodId = 5
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            FoodId = 6
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            FoodId = 7
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            FoodId = 8
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            FoodId = 9
+                        },
+                        new
+                        {
+                            CategoryId = 3,
+                            FoodId = 10
+                        },
+                        new
+                        {
+                            CategoryId = 4,
+                            FoodId = 11
+                        },
+                        new
+                        {
+                            CategoryId = 4,
+                            FoodId = 12
+                        },
+                        new
+                        {
+                            CategoryId = 5,
+                            FoodId = 13
+                        },
+                        new
+                        {
+                            CategoryId = 5,
+                            FoodId = 14
+                        },
+                        new
+                        {
+                            CategoryId = 5,
+                            FoodId = 15
+                        },
+                        new
+                        {
+                            CategoryId = 5,
+                            FoodId = 16
+                        },
+                        new
+                        {
+                            CategoryId = 5,
+                            FoodId = 17
+                        },
+                        new
+                        {
+                            CategoryId = 5,
+                            FoodId = 18
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            FoodId = 19
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            FoodId = 20
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            FoodId = 21
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            FoodId = 22
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            FoodId = 23
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            FoodId = 24
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            FoodId = 25
+                        },
+                        new
+                        {
+                            CategoryId = 6,
+                            FoodId = 26
+                        },
+                        new
+                        {
+                            CategoryId = 7,
+                            FoodId = 27
+                        },
+                        new
+                        {
+                            CategoryId = 7,
+                            FoodId = 28
+                        },
+                        new
+                        {
+                            CategoryId = 7,
+                            FoodId = 29
+                        },
+                        new
+                        {
+                            CategoryId = 8,
+                            FoodId = 30
+                        },
+                        new
+                        {
+                            CategoryId = 8,
+                            FoodId = 31
+                        },
+                        new
+                        {
+                            CategoryId = 8,
+                            FoodId = 32
+                        },
+                        new
+                        {
+                            CategoryId = 9,
+                            FoodId = 33
+                        },
+                        new
+                        {
+                            CategoryId = 9,
+                            FoodId = 34
+                        },
+                        new
+                        {
+                            CategoryId = 10,
+                            FoodId = 35
+                        },
+                        new
+                        {
+                            CategoryId = 10,
+                            FoodId = 36
+                        },
+                        new
+                        {
+                            CategoryId = 10,
+                            FoodId = 37
+                        },
+                        new
+                        {
+                            CategoryId = 11,
+                            FoodId = 38
+                        },
+                        new
+                        {
+                            CategoryId = 11,
+                            FoodId = 39
+                        },
+                        new
+                        {
+                            CategoryId = 12,
+                            FoodId = 40
+                        },
+                        new
+                        {
+                            CategoryId = 12,
+                            FoodId = 41
+                        },
+                        new
+                        {
+                            CategoryId = 12,
+                            FoodId = 42
+                        },
+                        new
+                        {
+                            CategoryId = 12,
+                            FoodId = 43
+                        },
+                        new
+                        {
+                            CategoryId = 13,
+                            FoodId = 44
+                        },
+                        new
+                        {
+                            CategoryId = 13,
+                            FoodId = 45
+                        },
+                        new
+                        {
+                            CategoryId = 13,
+                            FoodId = 46
+                        },
+                        new
+                        {
+                            CategoryId = 13,
+                            FoodId = 47
+                        },
+                        new
+                        {
+                            CategoryId = 13,
+                            FoodId = 48
+                        },
+                        new
+                        {
+                            CategoryId = 13,
+                            FoodId = 49
+                        },
+                        new
+                        {
+                            CategoryId = 14,
+                            FoodId = 50
+                        },
+                        new
+                        {
+                            CategoryId = 14,
+                            FoodId = 51
+                        },
+                        new
+                        {
+                            CategoryId = 15,
+                            FoodId = 52
+                        },
+                        new
+                        {
+                            CategoryId = 15,
+                            FoodId = 53
+                        },
+                        new
+                        {
+                            CategoryId = 15,
+                            FoodId = 54
+                        },
+                        new
+                        {
+                            CategoryId = 16,
+                            FoodId = 55
+                        },
+                        new
+                        {
+                            CategoryId = 16,
+                            FoodId = 56
+                        },
+                        new
+                        {
+                            CategoryId = 16,
+                            FoodId = 52
+                        },
+                        new
+                        {
+                            CategoryId = 17,
+                            FoodId = 55
+                        },
+                        new
+                        {
+                            CategoryId = 17,
+                            FoodId = 58
+                        },
+                        new
+                        {
+                            CategoryId = 17,
+                            FoodId = 59
+                        },
+                        new
+                        {
+                            CategoryId = 17,
+                            FoodId = 60
+                        },
+                        new
+                        {
+                            CategoryId = 18,
+                            FoodId = 61
+                        },
+                        new
+                        {
+                            CategoryId = 18,
+                            FoodId = 62
+                        },
+                        new
+                        {
+                            CategoryId = 19,
+                            FoodId = 63
+                        },
+                        new
+                        {
+                            CategoryId = 19,
+                            FoodId = 64
+                        },
+                        new
+                        {
+                            CategoryId = 20,
+                            FoodId = 57
+                        },
+                        new
+                        {
+                            CategoryId = 20,
+                            FoodId = 65
+                        },
+                        new
+                        {
+                            CategoryId = 20,
+                            FoodId = 56
+                        },
+                        new
+                        {
+                            CategoryId = 21,
+                            FoodId = 67
+                        },
+                        new
+                        {
+                            CategoryId = 21,
+                            FoodId = 68
+                        },
+                        new
+                        {
+                            CategoryId = 22,
+                            FoodId = 69
+                        },
+                        new
+                        {
+                            CategoryId = 22,
+                            FoodId = 70
+                        },
+                        new
+                        {
+                            CategoryId = 23,
+                            FoodId = 71
+                        },
+                        new
+                        {
+                            CategoryId = 23,
+                            FoodId = 72
+                        },
+                        new
+                        {
+                            CategoryId = 23,
+                            FoodId = 73
+                        },
+                        new
+                        {
+                            CategoryId = 23,
+                            FoodId = 74
+                        },
+                        new
+                        {
+                            CategoryId = 24,
+                            FoodId = 75
+                        },
+                        new
+                        {
+                            CategoryId = 24,
+                            FoodId = 76
+                        },
+                        new
+                        {
+                            CategoryId = 24,
+                            FoodId = 77
+                        },
+                        new
+                        {
+                            CategoryId = 25,
+                            FoodId = 78
+                        },
+                        new
+                        {
+                            CategoryId = 25,
+                            FoodId = 79
+                        },
+                        new
+                        {
+                            CategoryId = 25,
+                            FoodId = 80
+                        },
+                        new
+                        {
+                            CategoryId = 25,
+                            FoodId = 81
+                        },
+                        new
+                        {
+                            CategoryId = 26,
+                            FoodId = 82
+                        },
+                        new
+                        {
+                            CategoryId = 26,
+                            FoodId = 83
+                        },
+                        new
+                        {
+                            CategoryId = 26,
+                            FoodId = 84
+                        },
+                        new
+                        {
+                            CategoryId = 27,
+                            FoodId = 85
+                        },
+                        new
+                        {
+                            CategoryId = 27,
+                            FoodId = 87
+                        },
+                        new
+                        {
+                            CategoryId = 28,
+                            FoodId = 77
+                        },
+                        new
+                        {
+                            CategoryId = 28,
+                            FoodId = 85
+                        },
+                        new
+                        {
+                            CategoryId = 29,
+                            FoodId = 88
+                        },
+                        new
+                        {
+                            CategoryId = 29,
+                            FoodId = 89
+                        },
+                        new
+                        {
+                            CategoryId = 30,
+                            FoodId = 90
+                        },
+                        new
+                        {
+                            CategoryId = 31,
+                            FoodId = 91
+                        },
+                        new
+                        {
+                            CategoryId = 31,
+                            FoodId = 92
+                        },
+                        new
+                        {
+                            CategoryId = 31,
+                            FoodId = 93
+                        },
+                        new
+                        {
+                            CategoryId = 32,
+                            FoodId = 94
+                        },
+                        new
+                        {
+                            CategoryId = 32,
+                            FoodId = 95
+                        },
+                        new
+                        {
+                            CategoryId = 32,
+                            FoodId = 96
+                        },
+                        new
+                        {
+                            CategoryId = 32,
+                            FoodId = 97
+                        },
+                        new
+                        {
+                            CategoryId = 32,
+                            FoodId = 98
+                        },
+                        new
+                        {
+                            CategoryId = 33,
+                            FoodId = 99
+                        },
+                        new
+                        {
+                            CategoryId = 33,
+                            FoodId = 100
+                        },
+                        new
+                        {
+                            CategoryId = 33,
+                            FoodId = 101
+                        },
+                        new
+                        {
+                            CategoryId = 33,
+                            FoodId = 102
+                        },
+                        new
+                        {
+                            CategoryId = 34,
+                            FoodId = 103
+                        },
+                        new
+                        {
+                            CategoryId = 35,
+                            FoodId = 104
+                        },
+                        new
+                        {
+                            CategoryId = 36,
+                            FoodId = 105
+                        },
+                        new
+                        {
+                            CategoryId = 36,
+                            FoodId = 106
+                        },
+                        new
+                        {
+                            CategoryId = 37,
+                            FoodId = 107
+                        },
+                        new
+                        {
+                            CategoryId = 37,
+                            FoodId = 108
+                        },
+                        new
+                        {
+                            CategoryId = 38,
+                            FoodId = 109
+                        },
+                        new
+                        {
+                            CategoryId = 38,
+                            FoodId = 110
+                        },
+                        new
+                        {
+                            CategoryId = 38,
+                            FoodId = 111
+                        },
+                        new
+                        {
+                            CategoryId = 39,
+                            FoodId = 112
+                        },
+                        new
+                        {
+                            CategoryId = 39,
+                            FoodId = 113
+                        },
+                        new
+                        {
+                            CategoryId = 39,
+                            FoodId = 114
+                        },
+                        new
+                        {
+                            CategoryId = 40,
+                            FoodId = 115
+                        },
+                        new
+                        {
+                            CategoryId = 40,
+                            FoodId = 116
+                        },
+                        new
+                        {
+                            CategoryId = 40,
+                            FoodId = 117
+                        },
+                        new
+                        {
+                            CategoryId = 41,
+                            FoodId = 118
+                        },
+                        new
+                        {
+                            CategoryId = 41,
+                            FoodId = 119
+                        },
+                        new
+                        {
+                            CategoryId = 42,
+                            FoodId = 120
+                        },
+                        new
+                        {
+                            CategoryId = 43,
+                            FoodId = 121
+                        },
+                        new
+                        {
+                            CategoryId = 44,
+                            FoodId = 122
+                        },
+                        new
+                        {
+                            CategoryId = 45,
+                            FoodId = 123
+                        },
+                        new
+                        {
+                            CategoryId = 46,
+                            FoodId = 124
+                        },
+                        new
+                        {
+                            CategoryId = 47,
+                            FoodId = 125
+                        },
+                        new
+                        {
+                            CategoryId = 48,
+                            FoodId = 126
+                        },
+                        new
+                        {
+                            CategoryId = 49,
+                            FoodId = 127
+                        },
+                        new
+                        {
+                            CategoryId = 50,
+                            FoodId = 128
+                        },
+                        new
+                        {
+                            CategoryId = 51,
+                            FoodId = 129
+                        },
+                        new
+                        {
+                            CategoryId = 51,
+                            FoodId = 130
+                        },
+                        new
+                        {
+                            CategoryId = 52,
+                            FoodId = 131
+                        },
+                        new
+                        {
+                            CategoryId = 52,
+                            FoodId = 132
+                        },
+                        new
+                        {
+                            CategoryId = 53,
+                            FoodId = 133
+                        },
+                        new
+                        {
+                            CategoryId = 53,
+                            FoodId = 134
+                        },
+                        new
+                        {
+                            CategoryId = 54,
+                            FoodId = 135
+                        },
+                        new
+                        {
+                            CategoryId = 54,
+                            FoodId = 136
+                        },
+                        new
+                        {
+                            CategoryId = 54,
+                            FoodId = 137
+                        });
                 });
 
             modelBuilder.Entity("ShopeeApi.Models.Restaurant", b =>
@@ -2094,32 +2796,32 @@ namespace ShopeeApi.Migrations
                         new
                         {
                             Id = 1,
-                            PasswordHash = new byte[] { 10, 37, 245, 155, 135, 54, 95, 56, 89, 10, 216, 18, 18, 195, 182, 131, 90, 242, 178, 11, 86, 13, 19, 112, 231, 212, 88, 70, 183, 100, 61, 194, 224, 155, 111, 88, 66, 219, 139, 93, 37, 24, 19, 65, 16, 21, 111, 155, 62, 188, 202, 148, 167, 141, 219, 201, 240, 76, 38, 14, 253, 234, 13, 231 },
-                            PasswordSalt = new byte[] { 72, 78, 54, 105, 20, 204, 106, 152, 86, 25, 201, 77, 64, 17, 166, 112, 208, 50, 189, 18, 99, 134, 200, 83, 58, 65, 173, 29, 64, 221, 112, 179, 131, 104, 111, 43, 233, 68, 216, 122, 163, 191, 191, 215, 196, 203, 28, 217, 208, 36, 26, 174, 68, 102, 185, 152, 179, 80, 229, 128, 217, 74, 147, 200, 115, 77, 51, 211, 50, 162, 23, 178, 156, 220, 211, 1, 56, 129, 58, 212, 200, 169, 229, 67, 45, 25, 237, 0, 177, 248, 98, 200, 98, 126, 178, 162, 93, 146, 113, 36, 239, 209, 52, 175, 153, 110, 35, 237, 41, 186, 233, 248, 36, 73, 57, 56, 183, 92, 149, 41, 30, 130, 208, 115, 103, 16, 241, 5 },
+                            PasswordHash = new byte[] { 54, 33, 206, 6, 85, 59, 37, 90, 245, 166, 70, 151, 5, 28, 34, 22, 10, 46, 115, 230, 190, 127, 19, 240, 93, 65, 173, 186, 178, 69, 221, 152, 22, 159, 225, 82, 173, 86, 154, 231, 79, 152, 112, 117, 142, 50, 248, 212, 215, 69, 237, 17, 144, 90, 70, 169, 160, 169, 120, 142, 57, 195, 127, 65 },
+                            PasswordSalt = new byte[] { 231, 18, 95, 25, 227, 132, 255, 13, 65, 75, 155, 7, 78, 65, 91, 197, 249, 225, 203, 1, 162, 178, 237, 166, 196, 167, 158, 68, 73, 235, 71, 173, 24, 57, 127, 60, 55, 167, 188, 207, 143, 46, 242, 240, 42, 182, 21, 232, 143, 178, 93, 158, 141, 231, 208, 6, 4, 116, 199, 104, 149, 199, 93, 27, 70, 30, 223, 171, 206, 42, 30, 230, 253, 85, 2, 10, 190, 50, 255, 167, 198, 20, 200, 36, 129, 37, 124, 221, 148, 178, 115, 214, 227, 57, 76, 183, 89, 18, 106, 139, 11, 128, 24, 197, 241, 68, 152, 71, 206, 225, 1, 47, 85, 53, 79, 64, 21, 234, 71, 90, 79, 231, 254, 36, 44, 34, 2, 186 },
                             Role = 928399,
                             UserName = "nhoxhieuro5@gmail.com"
                         },
                         new
                         {
                             Id = 2,
-                            PasswordHash = new byte[] { 157, 170, 124, 251, 67, 134, 234, 138, 243, 98, 206, 184, 180, 22, 4, 218, 117, 164, 20, 244, 108, 107, 167, 227, 196, 87, 74, 71, 79, 15, 217, 211, 60, 217, 39, 210, 129, 66, 234, 49, 180, 54, 239, 228, 77, 102, 26, 110, 68, 114, 231, 2, 248, 145, 232, 60, 44, 237, 74, 172, 97, 227, 105, 219 },
-                            PasswordSalt = new byte[] { 249, 49, 230, 73, 26, 193, 0, 142, 214, 148, 210, 176, 6, 53, 251, 123, 188, 228, 8, 56, 247, 195, 29, 45, 54, 84, 35, 128, 230, 248, 92, 139, 164, 85, 54, 168, 19, 67, 126, 14, 211, 239, 176, 250, 85, 76, 75, 254, 117, 18, 20, 253, 209, 198, 37, 218, 67, 182, 87, 145, 124, 48, 163, 106, 118, 236, 164, 11, 189, 71, 234, 214, 193, 72, 26, 71, 5, 169, 234, 150, 187, 92, 40, 46, 10, 167, 137, 66, 49, 16, 56, 78, 23, 151, 196, 195, 13, 104, 213, 3, 231, 63, 255, 244, 241, 125, 136, 248, 102, 220, 254, 0, 224, 124, 249, 23, 131, 117, 42, 72, 108, 97, 5, 115, 114, 137, 83, 57 },
+                            PasswordHash = new byte[] { 237, 10, 177, 52, 218, 100, 33, 48, 226, 1, 44, 3, 180, 237, 37, 148, 237, 241, 16, 103, 97, 237, 148, 126, 231, 146, 167, 23, 51, 203, 243, 2, 201, 7, 49, 157, 210, 23, 31, 91, 169, 62, 165, 162, 36, 43, 35, 74, 77, 169, 24, 175, 240, 155, 226, 213, 203, 144, 152, 97, 177, 146, 76, 196 },
+                            PasswordSalt = new byte[] { 160, 16, 38, 185, 183, 26, 218, 70, 66, 19, 131, 39, 118, 106, 111, 125, 180, 61, 255, 226, 177, 213, 32, 94, 100, 165, 2, 240, 222, 230, 81, 28, 152, 244, 193, 53, 28, 59, 195, 57, 104, 46, 180, 204, 170, 43, 248, 49, 78, 37, 3, 111, 95, 30, 42, 102, 32, 200, 67, 239, 127, 243, 198, 122, 72, 148, 118, 209, 208, 228, 58, 181, 192, 207, 22, 75, 154, 17, 141, 201, 191, 13, 196, 103, 222, 37, 29, 74, 130, 195, 182, 238, 200, 140, 67, 179, 7, 235, 230, 154, 240, 210, 145, 56, 206, 118, 24, 28, 170, 234, 250, 174, 17, 66, 167, 125, 105, 78, 26, 238, 43, 50, 181, 1, 173, 81, 131, 223 },
                             Role = 468255,
                             UserName = "chaymetwa"
                         },
                         new
                         {
                             Id = 3,
-                            PasswordHash = new byte[] { 170, 30, 18, 173, 17, 187, 209, 177, 102, 110, 187, 21, 219, 88, 153, 52, 78, 117, 29, 231, 95, 59, 173, 157, 71, 20, 14, 78, 153, 127, 189, 45, 73, 197, 189, 76, 189, 68, 238, 198, 187, 190, 100, 248, 68, 120, 199, 187, 13, 247, 146, 107, 70, 78, 233, 200, 112, 160, 80, 99, 25, 167, 57, 59 },
-                            PasswordSalt = new byte[] { 6, 182, 222, 37, 201, 211, 28, 177, 128, 128, 172, 0, 231, 112, 44, 103, 78, 65, 202, 122, 245, 107, 163, 216, 82, 194, 103, 121, 22, 189, 166, 206, 25, 54, 75, 183, 96, 220, 175, 251, 56, 182, 146, 198, 79, 111, 189, 152, 34, 157, 104, 45, 242, 139, 81, 132, 69, 205, 37, 4, 163, 237, 147, 224, 144, 216, 197, 48, 143, 108, 160, 154, 113, 18, 194, 236, 51, 24, 60, 139, 76, 117, 106, 138, 5, 13, 161, 239, 103, 121, 44, 139, 47, 69, 203, 21, 1, 45, 207, 249, 227, 27, 156, 117, 49, 93, 3, 255, 1, 121, 50, 20, 165, 55, 104, 107, 237, 87, 2, 34, 34, 226, 34, 16, 52, 22, 164, 4 },
+                            PasswordHash = new byte[] { 40, 110, 211, 45, 174, 251, 7, 183, 215, 151, 6, 111, 229, 197, 168, 240, 88, 119, 52, 245, 147, 103, 158, 166, 215, 126, 220, 196, 253, 76, 183, 102, 217, 13, 219, 211, 135, 79, 244, 21, 237, 145, 137, 68, 30, 217, 42, 74, 98, 155, 243, 80, 79, 149, 245, 230, 199, 21, 178, 84, 55, 225, 21, 249 },
+                            PasswordSalt = new byte[] { 49, 21, 99, 226, 20, 206, 150, 44, 222, 1, 174, 29, 163, 24, 251, 202, 103, 199, 249, 105, 117, 179, 173, 209, 92, 1, 67, 149, 12, 72, 142, 133, 75, 34, 86, 199, 249, 196, 13, 172, 144, 224, 200, 130, 88, 138, 127, 97, 74, 224, 191, 29, 27, 44, 37, 39, 92, 224, 135, 211, 144, 255, 230, 133, 91, 206, 3, 219, 48, 149, 123, 138, 40, 7, 251, 199, 148, 53, 138, 160, 251, 144, 169, 4, 137, 98, 100, 102, 254, 158, 184, 208, 184, 165, 112, 43, 115, 251, 43, 104, 40, 102, 176, 106, 134, 109, 183, 252, 190, 213, 117, 91, 35, 47, 130, 26, 104, 18, 136, 33, 231, 192, 76, 143, 114, 158, 188, 3 },
                             Role = 468255,
                             UserName = "metmoichua"
                         },
                         new
                         {
                             Id = 4,
-                            PasswordHash = new byte[] { 127, 8, 163, 209, 118, 180, 77, 79, 200, 30, 66, 237, 32, 80, 29, 53, 67, 127, 73, 173, 33, 46, 190, 248, 3, 187, 76, 99, 116, 3, 187, 0, 70, 106, 74, 65, 165, 149, 157, 69, 175, 225, 90, 44, 176, 35, 66, 153, 47, 75, 156, 151, 235, 143, 148, 194, 247, 124, 82, 27, 7, 228, 238, 78 },
-                            PasswordSalt = new byte[] { 138, 5, 129, 59, 179, 174, 220, 153, 32, 92, 243, 246, 200, 88, 137, 55, 22, 240, 11, 25, 183, 71, 105, 89, 129, 221, 162, 133, 223, 175, 145, 222, 83, 95, 41, 1, 174, 93, 166, 140, 15, 143, 68, 157, 202, 75, 138, 145, 222, 148, 177, 57, 192, 0, 226, 93, 66, 155, 76, 86, 26, 156, 9, 121, 197, 51, 215, 52, 179, 32, 31, 195, 65, 166, 39, 109, 43, 235, 236, 114, 20, 43, 161, 60, 58, 249, 14, 113, 183, 52, 236, 192, 245, 1, 125, 127, 140, 38, 58, 209, 209, 85, 63, 165, 0, 191, 192, 101, 209, 175, 72, 232, 72, 45, 240, 27, 2, 35, 175, 40, 241, 49, 138, 18, 21, 201, 58, 251 },
+                            PasswordHash = new byte[] { 166, 62, 15, 36, 57, 172, 254, 230, 165, 252, 110, 147, 198, 102, 102, 247, 232, 20, 162, 224, 51, 13, 49, 157, 208, 70, 174, 185, 96, 120, 129, 41, 33, 9, 204, 230, 161, 216, 135, 20, 130, 138, 64, 35, 27, 214, 151, 43, 6, 120, 60, 93, 86, 106, 206, 51, 47, 87, 29, 137, 168, 221, 146, 129 },
+                            PasswordSalt = new byte[] { 180, 181, 197, 223, 222, 96, 216, 165, 93, 144, 12, 64, 23, 5, 205, 50, 163, 231, 235, 17, 51, 201, 39, 250, 64, 194, 6, 39, 252, 102, 1, 195, 49, 241, 178, 101, 15, 46, 146, 202, 104, 176, 85, 212, 76, 247, 229, 143, 128, 3, 211, 129, 232, 131, 123, 86, 253, 92, 128, 97, 173, 252, 239, 204, 174, 103, 98, 200, 35, 96, 241, 225, 156, 25, 149, 177, 203, 235, 163, 91, 234, 93, 169, 228, 79, 121, 243, 102, 126, 243, 130, 122, 37, 184, 251, 6, 157, 235, 112, 175, 89, 108, 233, 74, 191, 238, 43, 160, 202, 92, 223, 106, 239, 229, 114, 215, 102, 9, 174, 100, 171, 222, 139, 32, 183, 77, 89, 94 },
                             Role = 468255,
                             UserName = "hoiaita"
                         });

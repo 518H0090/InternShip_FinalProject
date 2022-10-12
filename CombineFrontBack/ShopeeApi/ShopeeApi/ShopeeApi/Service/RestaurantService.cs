@@ -169,7 +169,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Any Value";
             }
-
             else
             {
                 response.Data = getAllRestaurantWithTheirFoodTag.Select(x => _mapper.Map<ResponseGetRestaurantWithFoodTag>(x));
@@ -189,7 +188,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Value";
             }
-
             else
             {
                 response.Data = _mapper.Map<ResponseGetRestaurantWithFoodTag>(getRestaurantWithTheirFoodTag);

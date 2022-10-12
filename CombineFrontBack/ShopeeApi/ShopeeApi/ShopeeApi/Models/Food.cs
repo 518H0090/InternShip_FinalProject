@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace ShopeeApi.Models
+﻿namespace ShopeeApi.Models
 {
     public class Food
     {
@@ -8,7 +6,7 @@ namespace ShopeeApi.Models
 
         public string FoodImageUrl { set; get; } = string.Empty;
 
-        public string FoodTitle { set; get; } = string.Empty;   
+        public string FoodTitle { set; get; } = string.Empty;
 
         public string FoodDescription { set; get; } = string.Empty;
 

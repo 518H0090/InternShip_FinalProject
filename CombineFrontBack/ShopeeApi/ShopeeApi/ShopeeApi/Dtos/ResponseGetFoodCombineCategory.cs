@@ -1,6 +1,4 @@
-﻿using ShopeeApi.Models;
-
-namespace ShopeeApi.Dtos
+﻿namespace ShopeeApi.Dtos
 {
     public class ResponseGetFoodCombineCategory
     {

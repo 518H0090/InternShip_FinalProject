@@ -6,13 +6,13 @@ using System.Text;
 
 namespace ShopeeApi.SeedData
 {
-    public class UserSeed : IEntityTypeConfiguration<User> 
+    public class UserSeed : IEntityTypeConfiguration<User>
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            var user1 = getUserInfor(1, "nhoxhieuro5@gmail.com","468255", Role.Admin);
+            var user1 = getUserInfor(1, "nhoxhieuro5@gmail.com", "468255", Role.Admin);
             var user2 = getUserInfor(2, "chaymetwa", "99546455");
-            var user3 = getUserInfor(3,"metmoichua","555422364");
+            var user3 = getUserInfor(3, "metmoichua", "555422364");
             var user4 = getUserInfor(4, "hoiaita", "152545");
 
             builder.HasData
@@ -34,7 +34,6 @@ namespace ShopeeApi.SeedData
                     PasswordHash = user2.PasswordHash,
                     Role = user2.Role
                 },
-
 
                 new User
                 {

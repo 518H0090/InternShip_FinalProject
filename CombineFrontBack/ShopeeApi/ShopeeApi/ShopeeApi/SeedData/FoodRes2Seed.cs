@@ -333,7 +333,7 @@ namespace ShopeeApi.SeedData
                             {
                                 FoodId = 33,
                                 FoodImageUrl = "./ImageForSeedData/Food/Restaurant2/food33.jpeg",
-                                FoodTitle = "Scola kem cheese",
+                                FoodTitle = "Socola kem cheese",
                                 FoodDescription = "",
                                 FoodPrice = 58000,
                                 FoodPriceLess = 34800,

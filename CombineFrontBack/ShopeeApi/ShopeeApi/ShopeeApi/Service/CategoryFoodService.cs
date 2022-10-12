@@ -25,7 +25,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Can't Create New Relationship";
             }
-            
             else
             {
                 await _repository.ConnectFoodTag(_mapper.Map<RelationCategoryFood>(request));
@@ -37,7 +36,7 @@ namespace ShopeeApi.Service
 
         public async Task<ServiceResponse<string>> DeleteRelationFoodTag(int resId, RequestCategoryFood request)
         {
-            var response  = new ServiceResponse<string> ();
+            var response = new ServiceResponse<string>();
 
             if (await _repository.ExistsRelationFoodTag(resId, _mapper.Map<RelationCategoryFood>(request)))
             {
@@ -51,7 +50,6 @@ namespace ShopeeApi.Service
 
                 response.Data = "Delete Succesfully";
             }
-
             else
             {
                 response.Success = false;
@@ -71,11 +69,10 @@ namespace ShopeeApi.Service
             {
                 response.Success = false;
                 response.Message = "Not Found Any Value";
-            } 
-
+            }
             else
             {
-                response.Data = getCategoryCombineFood.Select(x => 
+                response.Data = getCategoryCombineFood.Select(x =>
                 _mapper.Map<ResponseGetCategoryCombineFood>(x));
             }
 
@@ -93,7 +90,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Any Value";
             }
-
             else
             {
                 response.Data = getFoodCombineCategory.Select(x =>
@@ -113,8 +109,7 @@ namespace ShopeeApi.Service
             {
                 response.Message = "Can't Find Any Value";
                 response.Success = false;
-            } 
-
+            }
             else
             {
                 response.Data = getAllRelation.Select(x => _mapper.Map<ResponseGetFoodTag>(x));
@@ -134,7 +129,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Value";
             }
-
             else
             {
                 response.Data = _mapper.Map<ResponseGetCategoryCombineFood>(getFoodCombineCategory);
@@ -154,7 +148,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Value";
             }
-
             else
             {
                 response.Data = _mapper.Map<ResponseGetFoodCombineCategory>(getFoodCombineCategory);

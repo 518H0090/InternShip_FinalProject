@@ -20,7 +20,7 @@ namespace ShopeeApi.Datas
         {
             base.OnModelCreating(modelBuilder);
 
-            //Seed Data 
+            //Seed Data
             modelBuilder.ApplyConfiguration(new UserSeed());
 
             modelBuilder.ApplyConfiguration(new RestaurantSeed());
@@ -44,6 +44,8 @@ namespace ShopeeApi.Datas
             modelBuilder.ApplyConfiguration(new FoodRes7Seed());
             modelBuilder.ApplyConfiguration(new FoodRes8Seed());
             modelBuilder.ApplyConfiguration(new FoodRes9Seed());
+
+            modelBuilder.ApplyConfiguration(new CategoryFoodSeed());
 
             //User
             modelBuilder.Entity<User>(user =>
@@ -141,7 +143,7 @@ namespace ShopeeApi.Datas
                     );
             });
 
-            //Food 
+            //Food
             modelBuilder.Entity<Food>(food =>
             {
                 food.HasKey(x => x.FoodId);
@@ -180,7 +182,7 @@ namespace ShopeeApi.Datas
                        .HasForeignKey(rcf => rcf.FoodId)
                        .OnDelete(DeleteBehavior.Restrict);
                     }
-                    
+
                     );
             });
 
@@ -199,9 +201,6 @@ namespace ShopeeApi.Datas
                .HasForeignKey(rcf => rcf.FoodId)
                .OnDelete(DeleteBehavior.Restrict);
             });
-
-
-
         }
     }
 }

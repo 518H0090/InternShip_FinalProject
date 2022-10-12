@@ -13,6 +13,5 @@
         public float FoodPriceLess { set; get; }
 
         public int RestaurantId { set; get; }
-
     }
 }

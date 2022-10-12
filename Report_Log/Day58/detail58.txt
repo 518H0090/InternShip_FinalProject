@@ -1,10 +1,9 @@
 +Huỳnh Trần Trung Hiếu - 12/10/2022
 + Completed Task: 
-  - Research Fetch Data.
-  - Seed data For User, Restaurant, Category, Food.
+  - Seed Data For Every Table.
 
 + Current Tasks:    
-  - Seed data for CategoryFood.   
+  - Fetch Data And Check In Console Log.   
           
 + Next Task: Fetch Data In Layout. 
 + Issue: none.

@@ -6,7 +6,7 @@ namespace ShopeeApi.Repository
     {
         Task<RelationCategoryFood> ConnectFoodTag(RelationCategoryFood request);
 
-        Task<bool> ExistsRelationFoodTag(int resId,RelationCategoryFood request);
+        Task<bool> ExistsRelationFoodTag(int resId, RelationCategoryFood request);
 
         Task<bool> DeleteRelationFoodTag(RelationCategoryFood request);
 
