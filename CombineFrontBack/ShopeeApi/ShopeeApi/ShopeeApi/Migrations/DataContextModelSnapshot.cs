@@ -1373,6 +1373,476 @@ namespace ShopeeApi.Migrations
                             FoodPriceLess = 38400f,
                             FoodTitle = "Trà sữa + Trà sữa socola",
                             RestaurantId = 5
+                        },
+                        new
+                        {
+                            FoodId = 91,
+                            FoodDescription = "2 vắt mì + đùi gà góc tư mắm tỏi + cải Tặng kèm 1 ly Trà La Hán Quả",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food91.jpeg",
+                            FoodPrice = 87000,
+                            FoodPriceLess = 78300f,
+                            FoodTitle = "Mì khô gà chiên giòn mắm tỏi",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 92,
+                            FoodDescription = "2 vắt mì + tôm + xá xíu + gà xé + 2 cá viên hấp + trứng bắc thảo + sate tôm X.O Tặng kèm 1 ly Trà La Hán Quar",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food92.jpeg",
+                            FoodPrice = 97000,
+                            FoodPriceLess = 87300f,
+                            FoodTitle = "Mì khô thập cẩm Hong Kong",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 93,
+                            FoodDescription = "2 vắt mì + 4 hoành thánh chiên + 1 đùi gà góc tư mắm tỏi + cải Tặng kèm 1 ly Trà La Hán Quả",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food93.jpeg",
+                            FoodPrice = 97000,
+                            FoodPriceLess = 87300f,
+                            FoodTitle = "Mì hoành thánh khô gà góc tư mắm giòn",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 94,
+                            FoodDescription = "8 viên hoành thánh luộc + Sốt giấm đen + Sate tôm X.O + cải",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food94.jpg",
+                            FoodPrice = 69000,
+                            FoodPriceLess = 62100f,
+                            FoodTitle = "Hoành thánh giấm đen",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 95,
+                            FoodDescription = "6 viên sủi cảo + sốt tương sate tôm X.O + cải Tặng kèm 1 ly Trà La Hán Quả",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food95.jpeg",
+                            FoodPrice = 69000,
+                            FoodPriceLess = 62100f,
+                            FoodTitle = "Sủi cảo khô sốt X.O",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 96,
+                            FoodDescription = "3 Sủi cảo + 5 Hoành thánh + Sốt tương sate X.O + cải Tặng kèm 1 ly Trà La Hán Quar",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food96.jpeg",
+                            FoodPrice = 69000,
+                            FoodPriceLess = 62100f,
+                            FoodTitle = "Hoành sủi khô",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 97,
+                            FoodDescription = "6 hoành thánh chiên + 6 cá viên mắm tỏi + bắc thảo + trứng gà Tặng kèm 1 ly Trà La Hán Quả",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food97.jpeg",
+                            FoodPrice = 69000,
+                            FoodPriceLess = 62100f,
+                            FoodTitle = "Combo thập cẩm chiên lớn",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 98,
+                            FoodDescription = "8 viên hoành thánh nước + xá xíu + cải",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food98.jpeg",
+                            FoodPrice = 59000,
+                            FoodPriceLess = 53100f,
+                            FoodTitle = "Hoành thánh nước xá xíu",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 99,
+                            FoodDescription = "2 vắt mì + xá xíu + cải Tặng kèm 1 ly Trà La Hán Quả",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food99.jpeg",
+                            FoodPrice = 59000,
+                            FoodPriceLess = 53100f,
+                            FoodTitle = "Mì khô xá xíu",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 100,
+                            FoodDescription = "2 vắt mì + 2 hoành thánh chiên + 6 viên cá chiên mắm + cải Tặng kèm 1 Ly Trà La Hán Quả",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food100.jpeg",
+                            FoodPrice = 59000,
+                            FoodPriceLess = 53100f,
+                            FoodTitle = "Mì khô cá hoành chiên mắm",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 101,
+                            FoodDescription = "2 vắt mì trộn khô + 4 viên hoành thánh chiên + Cải Tặng kèm 1 ly Trà La Hán Quả",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food101.jpeg",
+                            FoodPrice = 59000,
+                            FoodPriceLess = 53100f,
+                            FoodTitle = "Mì khô hoành thánh chiên (Ko kèm chén súp)",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 102,
+                            FoodDescription = "2 vắt mì + gà luộc xé + cải Tặng kèm 1 Ly Trà La Hán Quả",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food102.jpeg",
+                            FoodPrice = 59000,
+                            FoodPriceLess = 53100f,
+                            FoodTitle = "Mì khô gà xé",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 103,
+                            FoodDescription = "2 vắt mì + 5 hoành thánh luộc + cải + Súp",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food103.jpeg",
+                            FoodPrice = 59000,
+                            FoodPriceLess = 53100f,
+                            FoodTitle = "Mì hoành thánh nước",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 104,
+                            FoodDescription = "Hủ tíu khô + xá xíu + cải Tặng kèm 1 ly Trà La Hán Quả",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food104.jpeg",
+                            FoodPrice = 59000,
+                            FoodPriceLess = 53100f,
+                            FoodTitle = "Hủ tiếu khô xá xíu",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 105,
+                            FoodDescription = "Đùi gà góc tư chiên giòn sốt mắm tỏi",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food105.jpeg",
+                            FoodPrice = 59000,
+                            FoodPriceLess = 53100f,
+                            FoodTitle = "Đùi gà góc tư chiên mắm",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 106,
+                            FoodDescription = "4 viên",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food105.jpeg",
+                            FoodPrice = 39000,
+                            FoodPriceLess = 35100f,
+                            FoodTitle = "Hoàn thánh chiên",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 107,
+                            FoodDescription = "",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food107.jpg",
+                            FoodPrice = 39000,
+                            FoodPriceLess = 35100f,
+                            FoodTitle = "Hồng trà long nhãn",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 108,
+                            FoodDescription = "",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant6/food105.jpeg",
+                            FoodPrice = 29000,
+                            FoodPriceLess = 26100f,
+                            FoodTitle = "Hồng trà chanh",
+                            RestaurantId = 6
+                        },
+                        new
+                        {
+                            FoodId = 109,
+                            FoodDescription = "Bánh bò nướng đường thốt nốt",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food109.jpeg",
+                            FoodPrice = 22000,
+                            FoodPriceLess = 11000f,
+                            FoodTitle = "Bánh bò nướng (hộp 1 lát lớn)",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 110,
+                            FoodDescription = "Rau câu sơn thủy, bao gồm nhiều vị trong cùng một miếng rau câu: cốt dừa, cà phê, rau câu, lá dứa",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food110.jpeg",
+                            FoodPrice = 45000,
+                            FoodPriceLess = 40500f,
+                            FoodTitle = "Rau câu sơn thủy hộp nhỏ (350g)",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 111,
+                            FoodDescription = "Gồm: nước cốt dừa tươi, đường thốt nốt, trứng gà tươi, bột",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food111.jpeg",
+                            FoodPrice = 35000,
+                            FoodPriceLess = 31500f,
+                            FoodTitle = "Hộp 2 lát bánh bò nhỏ",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 112,
+                            FoodDescription = "Bánh bò nướng đường thốt nốt",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food112.jpeg",
+                            FoodPrice = 110000,
+                            FoodPriceLess = 99000f,
+                            FoodTitle = "Bánh bò nhỏ (550g)",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 113,
+                            FoodDescription = "Bánh bò nướng đường thốt nốt",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food113.jpeg",
+                            FoodPrice = 170000,
+                            FoodPriceLess = 153000f,
+                            FoodTitle = "Bánh bò lớn (900g)",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 114,
+                            FoodDescription = "Bánh bò nướng đường thốt nốt",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food114.jpeg",
+                            FoodPrice = 60000,
+                            FoodPriceLess = 54000f,
+                            FoodTitle = "Hộp 4 lát bánh bò nhỏ",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 115,
+                            FoodDescription = "Bánh da lợn có thành phần chính từ lá cẩm khoai môn",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food115.jpeg",
+                            FoodPrice = 60000,
+                            FoodPriceLess = 54000f,
+                            FoodTitle = "Da lợn cuộn 2 vị hộp 6 khoanh",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 116,
+                            FoodDescription = "Bánh da lợn có thành phần chính từ lá cẩm khoai môn",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food116.jpeg",
+                            FoodPrice = 75000,
+                            FoodPriceLess = 67500f,
+                            FoodTitle = "Da lợn cuộn 2 vị hộp 8 khoanh",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 117,
+                            FoodDescription = "Bánh da lợn có thành phần chính từ lá dứa, đậu xanh",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food117.jpeg",
+                            FoodPrice = 60000,
+                            FoodPriceLess = 54000f,
+                            FoodTitle = "Da lợn cuộn Đậu xanh lá dứa hộp 6 khoanh",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 118,
+                            FoodDescription = "Rau câu dẻo, lớp rau câu cà phê và flan phô mai xen kẽ nhau tạo thành từng lớp",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food118.jpeg",
+                            FoodPrice = 95000,
+                            FoodPriceLess = 85500f,
+                            FoodTitle = "Flan cheese Cà phê hộp nhỏ (600g)",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 119,
+                            FoodDescription = "Rau câu dẻo, lớp rau câu cà phê và flan phô mai xen kẽ nhau tạo thành từng lớp",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food119.jpeg",
+                            FoodPrice = 140000,
+                            FoodPriceLess = 126000f,
+                            FoodTitle = "Flan cheese Cà phê hộp lớn (900g)",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 120,
+                            FoodDescription = "Rau câu sơn thủy, bao gồm nhiều vị trong cùng một miếng rau câu: cốt dừa, cà phê, rau câu, lá dứa",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food120.jpeg",
+                            FoodPrice = 75000,
+                            FoodPriceLess = 67500f,
+                            FoodTitle = "Rau câu sơn thủy hộp lớn (600g)",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 121,
+                            FoodDescription = "Rau câu dẻo được làm từ nước cốt và nước dừa tươi",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food121.jpeg",
+                            FoodPrice = 85000,
+                            FoodPriceLess = 76500f,
+                            FoodTitle = "Rau câu dừa hộp nhỏ (600g)",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 122,
+                            FoodDescription = "",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food122.jpeg",
+                            FoodPrice = 95000,
+                            FoodPriceLess = 85500f,
+                            FoodTitle = "Hộp kem Nhãn nhỏ 250g",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 123,
+                            FoodDescription = "Hình ảnh mang tính chất minh họa",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food123.jpeg",
+                            FoodPrice = 195000,
+                            FoodPriceLess = 175500f,
+                            FoodTitle = "Combo B: 1 Bánh bò nhỏ (550g) + Hộp kem dừa 250gr",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 124,
+                            FoodDescription = "",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food124.jpeg",
+                            FoodPrice = 22000,
+                            FoodPriceLess = 19800f,
+                            FoodTitle = "Yoghurt",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 125,
+                            FoodDescription = "",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food125.jpeg",
+                            FoodPrice = 22000,
+                            FoodPriceLess = 19800f,
+                            FoodTitle = "Bánh Flan Vị Truyền Thống",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 126,
+                            FoodDescription = "Chè bưởi kèm cốt dừa chan",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food126.jpeg",
+                            FoodPrice = 35000,
+                            FoodPriceLess = 31500f,
+                            FoodTitle = "Chè Bưởi (Đường Thốt Nốt) 200g☘",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 127,
+                            FoodDescription = "50ml cốt dừa (lạnh)",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant7/food127.jpeg",
+                            FoodPrice = 6000,
+                            FoodPriceLess = 5400f,
+                            FoodTitle = "Cốt dừa chén nhỏ 50ml (lạnh)",
+                            RestaurantId = 7
+                        },
+                        new
+                        {
+                            FoodId = 128,
+                            FoodDescription = "",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant8/food128.jpeg",
+                            FoodPrice = 54000,
+                            FoodPriceLess = 0f,
+                            FoodTitle = "Combo 2 Cơm thập cẩm chay",
+                            RestaurantId = 8
+                        },
+                        new
+                        {
+                            FoodId = 129,
+                            FoodDescription = "",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant8/food129.jpeg",
+                            FoodPrice = 29000,
+                            FoodPriceLess = 0f,
+                            FoodTitle = "Cơm thập cẩm chay",
+                            RestaurantId = 8
+                        },
+                        new
+                        {
+                            FoodId = 130,
+                            FoodDescription = "",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant8/food130.jpeg",
+                            FoodPrice = 44000,
+                            FoodPriceLess = 0f,
+                            FoodTitle = "Cơm chiên Dương Châu chay",
+                            RestaurantId = 8
+                        },
+                        new
+                        {
+                            FoodId = 131,
+                            FoodDescription = "",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant8/food131.jpeg",
+                            FoodPrice = 29000,
+                            FoodPriceLess = 0f,
+                            FoodTitle = "Bún Huế chay",
+                            RestaurantId = 8
+                        },
+                        new
+                        {
+                            FoodId = 132,
+                            FoodDescription = "",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant8/food132.jpeg",
+                            FoodPrice = 29000,
+                            FoodPriceLess = 0f,
+                            FoodTitle = "Hủ tiếu Sa Đéc chay",
+                            RestaurantId = 8
+                        },
+                        new
+                        {
+                            FoodId = 133,
+                            FoodDescription = "",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant8/food133.jpeg",
+                            FoodPrice = 160000,
+                            FoodPriceLess = 0f,
+                            FoodTitle = "Lẩu Thái chay",
+                            RestaurantId = 8
+                        },
+                        new
+                        {
+                            FoodId = 134,
+                            FoodDescription = "",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant8/food134.jpeg",
+                            FoodPrice = 160000,
+                            FoodPriceLess = 0f,
+                            FoodTitle = "Lẩu nấm chay",
+                            RestaurantId = 8
+                        },
+                        new
+                        {
+                            FoodId = 135,
+                            FoodDescription = "Bánh Biscotti hạnh nhân & socola nguyên chất, dành cho những người sành ăn tạo ra một sự kết hợp ngon miệng.",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant9/food135.jpeg",
+                            FoodPrice = 99000,
+                            FoodPriceLess = 0f,
+                            FoodTitle = "Bánh Biscotti Dark Chocolate - Hộp 195gr",
+                            RestaurantId = 9
+                        },
+                        new
+                        {
+                            FoodId = 136,
+                            FoodDescription = "Hương vị truyền thống kết hợp hạt hạnh nhân & óc chó với một chút hương vị hạt tiểu hồi.",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant9/food136.jpeg",
+                            FoodPrice = 99000,
+                            FoodPriceLess = 0f,
+                            FoodTitle = "Bánh Biscotti Truyền Thống - Hộp 195gr",
+                            RestaurantId = 9
+                        },
+                        new
+                        {
+                            FoodId = 137,
+                            FoodDescription = "Nam Việt Quất kết hợp với Hạnh Nhân và được nướng hai lần mang đến cho bạn cảm giác dai giòn ngon tuyệt đỉnh.",
+                            FoodImageUrl = "./ImageForSeedData/Food/Restaurant9/food137.jpeg",
+                            FoodPrice = 120000,
+                            FoodPriceLess = 0f,
+                            FoodTitle = "Biscotti Nam Việt Quất - Hộp 195gr",
+                            RestaurantId = 9
                         });
                 });
 
@@ -1624,32 +2094,32 @@ namespace ShopeeApi.Migrations
                         new
                         {
                             Id = 1,
-                            PasswordHash = new byte[] { 97, 244, 89, 241, 167, 49, 22, 112, 45, 140, 144, 70, 224, 119, 115, 117, 228, 6, 103, 65, 22, 16, 89, 139, 16, 29, 15, 73, 165, 6, 183, 204, 11, 246, 18, 215, 8, 99, 220, 79, 203, 33, 124, 231, 64, 203, 89, 83, 129, 189, 96, 83, 186, 239, 12, 83, 138, 78, 198, 85, 63, 185, 52, 25 },
-                            PasswordSalt = new byte[] { 100, 118, 196, 1, 229, 239, 108, 140, 136, 46, 101, 135, 208, 31, 197, 186, 91, 241, 255, 144, 234, 182, 243, 131, 128, 214, 161, 116, 194, 104, 20, 232, 162, 205, 133, 206, 185, 32, 235, 215, 25, 120, 100, 68, 168, 248, 199, 105, 52, 41, 179, 72, 86, 85, 217, 43, 239, 209, 130, 174, 16, 91, 236, 100, 209, 190, 126, 246, 93, 238, 158, 142, 255, 134, 92, 124, 178, 194, 221, 20, 73, 245, 84, 50, 182, 218, 30, 60, 36, 18, 98, 89, 99, 55, 19, 58, 50, 44, 66, 146, 177, 254, 144, 177, 77, 102, 231, 161, 248, 37, 231, 250, 169, 123, 56, 168, 213, 69, 153, 204, 177, 145, 139, 25, 23, 103, 56, 239 },
+                            PasswordHash = new byte[] { 10, 37, 245, 155, 135, 54, 95, 56, 89, 10, 216, 18, 18, 195, 182, 131, 90, 242, 178, 11, 86, 13, 19, 112, 231, 212, 88, 70, 183, 100, 61, 194, 224, 155, 111, 88, 66, 219, 139, 93, 37, 24, 19, 65, 16, 21, 111, 155, 62, 188, 202, 148, 167, 141, 219, 201, 240, 76, 38, 14, 253, 234, 13, 231 },
+                            PasswordSalt = new byte[] { 72, 78, 54, 105, 20, 204, 106, 152, 86, 25, 201, 77, 64, 17, 166, 112, 208, 50, 189, 18, 99, 134, 200, 83, 58, 65, 173, 29, 64, 221, 112, 179, 131, 104, 111, 43, 233, 68, 216, 122, 163, 191, 191, 215, 196, 203, 28, 217, 208, 36, 26, 174, 68, 102, 185, 152, 179, 80, 229, 128, 217, 74, 147, 200, 115, 77, 51, 211, 50, 162, 23, 178, 156, 220, 211, 1, 56, 129, 58, 212, 200, 169, 229, 67, 45, 25, 237, 0, 177, 248, 98, 200, 98, 126, 178, 162, 93, 146, 113, 36, 239, 209, 52, 175, 153, 110, 35, 237, 41, 186, 233, 248, 36, 73, 57, 56, 183, 92, 149, 41, 30, 130, 208, 115, 103, 16, 241, 5 },
                             Role = 928399,
                             UserName = "nhoxhieuro5@gmail.com"
                         },
                         new
                         {
                             Id = 2,
-                            PasswordHash = new byte[] { 88, 90, 241, 87, 42, 238, 127, 22, 81, 237, 234, 29, 36, 7, 86, 157, 147, 198, 147, 101, 2, 218, 175, 231, 60, 4, 156, 27, 224, 99, 136, 138, 96, 202, 61, 19, 30, 36, 83, 216, 157, 228, 125, 68, 114, 106, 189, 17, 146, 32, 33, 202, 116, 223, 79, 30, 72, 24, 59, 38, 25, 172, 227, 217 },
-                            PasswordSalt = new byte[] { 44, 31, 86, 28, 169, 178, 250, 60, 195, 110, 47, 237, 190, 246, 14, 227, 159, 190, 216, 229, 180, 31, 161, 31, 16, 60, 197, 111, 120, 77, 149, 61, 229, 111, 92, 178, 166, 63, 37, 127, 94, 154, 134, 205, 149, 152, 182, 233, 154, 63, 218, 85, 100, 147, 6, 121, 184, 58, 215, 207, 3, 168, 165, 50, 94, 202, 54, 212, 121, 111, 75, 131, 229, 208, 227, 48, 65, 184, 250, 80, 164, 26, 188, 203, 102, 98, 211, 228, 161, 255, 170, 32, 215, 113, 90, 6, 238, 141, 134, 203, 106, 38, 200, 217, 79, 193, 143, 76, 57, 167, 110, 52, 72, 207, 14, 139, 155, 252, 100, 232, 147, 245, 128, 196, 114, 215, 214, 168 },
+                            PasswordHash = new byte[] { 157, 170, 124, 251, 67, 134, 234, 138, 243, 98, 206, 184, 180, 22, 4, 218, 117, 164, 20, 244, 108, 107, 167, 227, 196, 87, 74, 71, 79, 15, 217, 211, 60, 217, 39, 210, 129, 66, 234, 49, 180, 54, 239, 228, 77, 102, 26, 110, 68, 114, 231, 2, 248, 145, 232, 60, 44, 237, 74, 172, 97, 227, 105, 219 },
+                            PasswordSalt = new byte[] { 249, 49, 230, 73, 26, 193, 0, 142, 214, 148, 210, 176, 6, 53, 251, 123, 188, 228, 8, 56, 247, 195, 29, 45, 54, 84, 35, 128, 230, 248, 92, 139, 164, 85, 54, 168, 19, 67, 126, 14, 211, 239, 176, 250, 85, 76, 75, 254, 117, 18, 20, 253, 209, 198, 37, 218, 67, 182, 87, 145, 124, 48, 163, 106, 118, 236, 164, 11, 189, 71, 234, 214, 193, 72, 26, 71, 5, 169, 234, 150, 187, 92, 40, 46, 10, 167, 137, 66, 49, 16, 56, 78, 23, 151, 196, 195, 13, 104, 213, 3, 231, 63, 255, 244, 241, 125, 136, 248, 102, 220, 254, 0, 224, 124, 249, 23, 131, 117, 42, 72, 108, 97, 5, 115, 114, 137, 83, 57 },
                             Role = 468255,
                             UserName = "chaymetwa"
                         },
                         new
                         {
                             Id = 3,
-                            PasswordHash = new byte[] { 150, 97, 228, 219, 236, 235, 35, 206, 172, 66, 38, 203, 140, 36, 16, 139, 235, 214, 85, 89, 184, 235, 246, 186, 42, 72, 106, 224, 188, 178, 120, 238, 120, 107, 123, 49, 176, 223, 138, 70, 121, 141, 178, 164, 44, 50, 108, 242, 234, 174, 176, 128, 119, 155, 83, 158, 184, 104, 200, 248, 195, 187, 66, 56 },
-                            PasswordSalt = new byte[] { 213, 202, 38, 236, 129, 170, 134, 134, 100, 166, 148, 152, 32, 11, 79, 48, 16, 201, 253, 232, 85, 187, 167, 185, 153, 204, 18, 120, 178, 231, 246, 180, 38, 217, 141, 1, 147, 52, 215, 85, 255, 199, 171, 171, 137, 207, 117, 252, 143, 163, 58, 80, 147, 200, 235, 104, 108, 186, 75, 36, 129, 19, 194, 146, 223, 69, 172, 43, 77, 93, 141, 209, 68, 138, 252, 182, 162, 17, 25, 239, 76, 90, 187, 9, 211, 155, 121, 201, 206, 102, 99, 193, 14, 5, 103, 61, 31, 45, 210, 20, 78, 220, 243, 242, 252, 206, 98, 116, 127, 53, 104, 52, 239, 210, 128, 92, 16, 185, 246, 236, 14, 45, 179, 206, 194, 219, 124, 205 },
+                            PasswordHash = new byte[] { 170, 30, 18, 173, 17, 187, 209, 177, 102, 110, 187, 21, 219, 88, 153, 52, 78, 117, 29, 231, 95, 59, 173, 157, 71, 20, 14, 78, 153, 127, 189, 45, 73, 197, 189, 76, 189, 68, 238, 198, 187, 190, 100, 248, 68, 120, 199, 187, 13, 247, 146, 107, 70, 78, 233, 200, 112, 160, 80, 99, 25, 167, 57, 59 },
+                            PasswordSalt = new byte[] { 6, 182, 222, 37, 201, 211, 28, 177, 128, 128, 172, 0, 231, 112, 44, 103, 78, 65, 202, 122, 245, 107, 163, 216, 82, 194, 103, 121, 22, 189, 166, 206, 25, 54, 75, 183, 96, 220, 175, 251, 56, 182, 146, 198, 79, 111, 189, 152, 34, 157, 104, 45, 242, 139, 81, 132, 69, 205, 37, 4, 163, 237, 147, 224, 144, 216, 197, 48, 143, 108, 160, 154, 113, 18, 194, 236, 51, 24, 60, 139, 76, 117, 106, 138, 5, 13, 161, 239, 103, 121, 44, 139, 47, 69, 203, 21, 1, 45, 207, 249, 227, 27, 156, 117, 49, 93, 3, 255, 1, 121, 50, 20, 165, 55, 104, 107, 237, 87, 2, 34, 34, 226, 34, 16, 52, 22, 164, 4 },
                             Role = 468255,
                             UserName = "metmoichua"
                         },
                         new
                         {
                             Id = 4,
-                            PasswordHash = new byte[] { 98, 27, 205, 236, 49, 110, 82, 148, 83, 86, 251, 86, 45, 232, 182, 44, 169, 185, 168, 237, 85, 179, 118, 79, 177, 81, 176, 33, 173, 209, 116, 183, 97, 76, 18, 142, 47, 188, 79, 47, 78, 76, 205, 14, 0, 110, 29, 81, 70, 145, 38, 87, 238, 118, 127, 214, 27, 154, 81, 44, 14, 249, 64, 219 },
-                            PasswordSalt = new byte[] { 107, 163, 89, 33, 206, 203, 57, 245, 190, 221, 74, 174, 80, 180, 80, 233, 22, 15, 172, 164, 29, 239, 214, 149, 234, 118, 152, 56, 248, 135, 172, 248, 98, 3, 96, 7, 171, 174, 41, 129, 47, 145, 92, 185, 80, 250, 139, 133, 83, 118, 211, 145, 190, 132, 197, 123, 129, 221, 38, 81, 12, 22, 33, 102, 45, 16, 84, 137, 186, 243, 99, 216, 106, 50, 48, 133, 168, 165, 104, 120, 206, 133, 241, 49, 118, 102, 65, 158, 97, 218, 238, 55, 113, 233, 231, 97, 27, 32, 41, 177, 90, 196, 186, 53, 101, 56, 71, 101, 15, 41, 162, 49, 140, 34, 224, 103, 244, 143, 177, 254, 18, 15, 39, 38, 202, 221, 150, 100 },
+                            PasswordHash = new byte[] { 127, 8, 163, 209, 118, 180, 77, 79, 200, 30, 66, 237, 32, 80, 29, 53, 67, 127, 73, 173, 33, 46, 190, 248, 3, 187, 76, 99, 116, 3, 187, 0, 70, 106, 74, 65, 165, 149, 157, 69, 175, 225, 90, 44, 176, 35, 66, 153, 47, 75, 156, 151, 235, 143, 148, 194, 247, 124, 82, 27, 7, 228, 238, 78 },
+                            PasswordSalt = new byte[] { 138, 5, 129, 59, 179, 174, 220, 153, 32, 92, 243, 246, 200, 88, 137, 55, 22, 240, 11, 25, 183, 71, 105, 89, 129, 221, 162, 133, 223, 175, 145, 222, 83, 95, 41, 1, 174, 93, 166, 140, 15, 143, 68, 157, 202, 75, 138, 145, 222, 148, 177, 57, 192, 0, 226, 93, 66, 155, 76, 86, 26, 156, 9, 121, 197, 51, 215, 52, 179, 32, 31, 195, 65, 166, 39, 109, 43, 235, 236, 114, 20, 43, 161, 60, 58, 249, 14, 113, 183, 52, 236, 192, 245, 1, 125, 127, 140, 38, 58, 209, 209, 85, 63, 165, 0, 191, 192, 101, 209, 175, 72, 232, 72, 45, 240, 27, 2, 35, 175, 40, 241, 49, 138, 18, 21, 201, 58, 251 },
                             Role = 468255,
                             UserName = "hoiaita"
                         });

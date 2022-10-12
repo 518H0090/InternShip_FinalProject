@@ -41,6 +41,9 @@ namespace ShopeeApi.Datas
             modelBuilder.ApplyConfiguration(new FoodRes4Seed());
             modelBuilder.ApplyConfiguration(new FoodRes5Seed());
             modelBuilder.ApplyConfiguration(new FoodRes6Seed());
+            modelBuilder.ApplyConfiguration(new FoodRes7Seed());
+            modelBuilder.ApplyConfiguration(new FoodRes8Seed());
+            modelBuilder.ApplyConfiguration(new FoodRes9Seed());
 
             //User
             modelBuilder.Entity<User>(user =>
