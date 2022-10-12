@@ -46,7 +46,7 @@
   display: inline-block;
 }
 
-.layout-fooddetail .fooddetail__breadcrumb-item + .fooddetail__breadcrumb-item {
+.layout-fooddetail .fooddetail__breadcrumb-item+.fooddetail__breadcrumb-item {
   margin-left: 0.6rem;
 }
 
@@ -362,16 +362,32 @@
   height: 8.1rem;
 }
 
-.layout-foodoptions .foodoptions__menulist-item + .foodoptions__menulist-item {
+.foodoptions__menulist-item.foodoptions__menulist-item--costless .foodoptions__menuitem-costactual {
+  font-size: 1.4rem;
+  color: var(--color-black-bl);
+  font-weight: 600;
+  text-decoration: line-through;
+  margin-left: 1.44rem;
+}
+
+.foodoptions__menulist-item.foodoptions__menulist-item--costless .foodoptions__menuitem-cost {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-blue);
+}
+
+.foodoptions__menulist-item.foodoptions__menulist-item--costless .foodoptions__menuitem-btn {
+  transform: translateY(-100%);
+}
+
+.layout-foodoptions .foodoptions__menulist-item+.foodoptions__menulist-item {
   margin-top: 0.1rem;
   position: relative;
   top: 0;
   left: 0;
 }
 
-.layout-foodoptions
-  .foodoptions__menulist-item
-  + .foodoptions__menulist-item::after {
+.layout-foodoptions .foodoptions__menulist-item+.foodoptions__menulist-item::after {
   content: "";
   display: block;
   width: 100%;

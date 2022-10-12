@@ -2,11 +2,12 @@
 + Completed Task: 
   - Seed Data For Every Table.
   - Fix several for ui and crud. 
+  - Fetch Data And Check In Console Log.
 
 + Current Tasks:    
-  - Fetch Data And Check In Console Log.   
+  - Fetch Data In Layout.   
           
-+ Next Task: Fetch Data In Layout. 
++ Next Task: Process Login and Register. 
 + Issue: none.
 
 Estimate 12/10/2022

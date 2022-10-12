@@ -19,7 +19,7 @@ namespace ShopeeApi.Controllers
 
         [HttpGet]
         [Route("ViewRole")]
-        public async Task<IActionResult> ViewRole()
+        public IActionResult ViewRole()
         {
             //return Ok(JsonConvert.SerializeObject(new {Role.Admin, Role.User}, new Newtonsoft.Json.Converters.StringEnumConverter()));
             return Ok(JsonConvert.SerializeObject(Enum.GetNames(typeof(Role)).ToList()
