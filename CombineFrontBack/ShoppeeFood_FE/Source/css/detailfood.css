@@ -279,15 +279,15 @@
   padding: 0.8rem 0.2rem;
 }
 
-.layout-foodoptions .foodoptions__item {
+.layout-foodoptions .foodoptions__item:not(:nth-child(1)) {
   margin: 1rem 0;
 }
 
-.layout-foodoptions .foodoptions__item.foodoptions__item--select {
+.layout-foodoptions .foodoptions__item:nth-child(1) {
   transform: translateX(-3%);
 }
 
-.layout-foodoptions .foodoptions__item.foodoptions__item--select span {
+.layout-foodoptions .foodoptions__item:nth-child(1) span {
   background: var(--color-silver-b);
   color: var(--color-white);
   padding: 0.6rem 0.6rem;

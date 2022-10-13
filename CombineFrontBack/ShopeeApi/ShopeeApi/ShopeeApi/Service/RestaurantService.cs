@@ -217,15 +217,15 @@ namespace ShopeeApi.Service
             return serviceResponse;
         }
 
-        public async Task<ServiceResponse<ResponseGetRestaurant>> GetRestaurantByTitle(string resTitle)
+        public async Task<ServiceResponse<ResponseGetRestaurantWithId>> GetRestaurantByTitle(string resTitle)
         {
-            var serviceResponse = new ServiceResponse<ResponseGetRestaurant>();
+            var serviceResponse = new ServiceResponse<ResponseGetRestaurantWithId>();
 
             try
             {
                 var getResByIdRepo = await _repository.GetRestaurantByTitle(resTitle);
 
-                serviceResponse.Data = _mapper.Map<ResponseGetRestaurant>(getResByIdRepo);
+                serviceResponse.Data = _mapper.Map<ResponseGetRestaurantWithId>(getResByIdRepo);
             }
             catch (Exception e)
             {

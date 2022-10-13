@@ -13,7 +13,7 @@ namespace ShopeeApi.Service
 
         Task<ServiceResponse<ResponseGetRestaurant>> GetRestaurantById(int ResId);
 
-        Task<ServiceResponse<ResponseGetRestaurant>> GetRestaurantByTitle(string resTitle);
+        Task<ServiceResponse<ResponseGetRestaurantWithId>> GetRestaurantByTitle(string resTitle);
 
         Task<ServiceResponse<ResponseGetRestaurantWithFoodTag>> GetRestaurantByIdWithTagAndFood(int ResId);
 

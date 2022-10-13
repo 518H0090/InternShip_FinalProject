@@ -175,6 +175,9 @@ function fetchMenuListRestaurant() {
         }).join(" ");
 
         bannerMenuListresFoodlist.innerHTML = newList  
+    }).catch(error => {
+      console.error(error.message)
+      bannerMenuListresFoodlist.innerHTML = `<h1 style="margin: 20rem; color : red">Not Found Any Value Please Refresh Again</h1>`
     })
 }
 

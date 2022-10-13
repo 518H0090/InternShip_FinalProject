@@ -14,6 +14,8 @@ function FetchDataInDetailFood(locationSearch) {
     
         const itemValue = data.data
     
+        FetchCategoryInRestaurant(itemValue.rsId)
+
         const itemValueLikeReferences = itemValue.rsRefeLike == true?
         `<!-- Type Shop -->
         <div class="fooddetail__kind">
@@ -229,6 +231,24 @@ function FetchDataInDetailFood(locationSearch) {
     }
 }
 
+function FetchCategoryInRestaurant(params) {
+  const foodOptionsList = document.querySelector('.foodoptions__list')
 
 
+fetchAllCategoryWithResId(params).then(data => {
+  let listCategory = data.data;
 
+  let newList = listCategory.map((element) => {
+
+    let setCategoryName = element.categoryName.length > 22 ? element.categoryName.slice(0,22) + "..." : element.categoryName;
+
+    return ` <!-- Category Item -->
+    <li class="foodoptions__item">
+      <span>${setCategoryName}</span>
+    </li>`;
+  }).join(" ")
+
+  foodOptionsList.innerHTML = newList;
+})
+
+}
