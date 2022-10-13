@@ -1,6 +1,6 @@
-+Huỳnh Trần Trung Hiếu - 12/10/2022
++Huỳnh Trần Trung Hiếu - 13/10/2022
 + Completed Task: 
-  - Finish Fetch Data In Index Layout
+  - Finish Fetch Data In Index Layout.
 
 + Current Tasks:    
   - Fetch Data In Detail Layout.   
@@ -8,13 +8,13 @@
 + Next Task: Process Login and Register. 
 + Issue: none.
 
-Estimate 12/10/2022
+Estimate 13/10/2022
 - https://docs.google.com/spreadsheets/d/1SHZb_m95PsywkJGtWuHCOZo0GvyPMaLQtvDmqM1CTVQ/edit#gid=0
 
-Demo 12/10/2022
+Demo 13/10/2022
 - https://github.com/518H0090/InternShip_FinalProject.
 
-References 12/10/2022
+References 13/10/2022
 - None
 
 Example Todo List
