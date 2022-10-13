@@ -195,5 +195,45 @@ namespace ShopeeApi.Service
 
             return response;
         }
+
+        public async Task<ServiceResponse<IEnumerable<ResponseGetRestaurant>>> GetAllRestaurantTop9()
+        {
+            var serviceResponse = new ServiceResponse<IEnumerable<ResponseGetRestaurant>>();
+
+            var getAllResFromRepo = await _repository.GetAllRestaurantTop9();
+
+            if (getAllResFromRepo.ToList().Count <= 0)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = "Don't Have Any Data";
+            }
+            else
+            {
+                var responseAllRes = getAllResFromRepo.Select(u => _mapper.Map<ResponseGetRestaurant>(u)).ToList();
+
+                serviceResponse.Data = responseAllRes;
+            }
+
+            return serviceResponse;
+        }
+
+        public async Task<ServiceResponse<ResponseGetRestaurant>> GetRestaurantByTitle(string resTitle)
+        {
+            var serviceResponse = new ServiceResponse<ResponseGetRestaurant>();
+
+            try
+            {
+                var getResByIdRepo = await _repository.GetRestaurantByTitle(resTitle);
+
+                serviceResponse.Data = _mapper.Map<ResponseGetRestaurant>(getResByIdRepo);
+            }
+            catch (Exception e)
+            {
+                serviceResponse.Success = false;
+                serviceResponse.Message = $"Over Range or Not Exist or {e.Message}";
+            }
+
+            return serviceResponse;
+        }
     }
 }

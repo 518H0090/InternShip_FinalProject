@@ -8,7 +8,11 @@ namespace ShopeeApi.Repository
 
         Task<IEnumerable<Restaurant>> GetAllRestaurant();
 
+        Task<IEnumerable<Restaurant>> GetAllRestaurantTop9();
+
         Task<Restaurant> GetRestaurantById(int ResId);
+
+        Task<Restaurant> GetRestaurantByTitle(string resTitle);
 
         Task<Restaurant> GetRestaurantByIdWithTagAndFood(int ResId);
 

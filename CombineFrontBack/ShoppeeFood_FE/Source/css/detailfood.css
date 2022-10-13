@@ -70,6 +70,11 @@
   cursor: pointer;
 }
 
+.layout-fooddetail .fooddetail__type-pref.fooddetail__type-prefnone {
+  background: none;
+  margin: 1rem 0 1rem -1.2rem;
+}
+
 .layout-fooddetail .fooddetail__type-pref-icon {
   display: inline-block;
   font-size: 1.6rem;

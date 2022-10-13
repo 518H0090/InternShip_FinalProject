@@ -58,6 +58,11 @@ namespace ShopeeApi.Repository
             return await _context.Restaurants.ToListAsync();
         }
 
+        public async Task<IEnumerable<Restaurant>> GetAllRestaurantTop9()
+        {
+            return await _context.Restaurants.TakeLast(9).ToListAsync();
+        }
+
         public async Task<IEnumerable<Restaurant>> GetAllRestaurantWithCategoryTag()
         {
             return await _context.Restaurants.Include(x => x.Categories).ToListAsync();
@@ -81,6 +86,11 @@ namespace ShopeeApi.Repository
         public async Task<Restaurant> GetRestaurantByIdWithTagAndFood(int ResId)
         {
             return await _context.Restaurants.Where(x => x.RsId == ResId).Include(x => x.Foods).Include(x => x.Categories).FirstOrDefaultAsync();
+        }
+
+        public async Task<Restaurant> GetRestaurantByTitle(string resTitle)
+        {
+            return await _context.Restaurants.FirstAsync(u => u.RsTitle == resTitle);
         }
 
         public async Task<Restaurant> UpdateRestaurant(int ResId, Restaurant request)

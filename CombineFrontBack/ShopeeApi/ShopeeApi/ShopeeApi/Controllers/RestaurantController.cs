@@ -74,10 +74,38 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
+        [Route("GetAllRestaurantsTopNew9")]
+        public async Task<IActionResult> GetAllRestaurantsTopNew9()
+        {
+            var getAllRes = await _service.GetAllRestaurantTop9();
+
+            if (getAllRes.Data == null)
+            {
+                return BadRequest(getAllRes);
+            }
+
+            return Ok(getAllRes);
+        }
+
+        [HttpGet]
         [Route("GetRestaurantById/{id}")]
         public async Task<IActionResult> GetRestaurantById(int id)
         {
             var getAllResById = await _service.GetRestaurantById(id);
+
+            if (getAllResById.Data == null)
+            {
+                return BadRequest(getAllResById);
+            }
+
+            return Ok(getAllResById);
+        }
+
+        [HttpGet]
+        [Route("GetRestaurantByTitle/{resTitle}")]
+        public async Task<IActionResult> GetRestaurantById(string resTitle)
+        {
+            var getAllResById = await _service.GetRestaurantByTitle(resTitle);
 
             if (getAllResById.Data == null)
             {
