@@ -5,9 +5,9 @@
   - Build Basic Pagination For List Food.
 
 + Current Tasks:    
-  - Fetch Data SearchFood Layout With Their RestaurantType.   
+  - Process Login and Register, Logout.
           
-+ Next Task: Process Login and Register. 
++ Next Task: Process Authentication with Admin Role For Manage. 
 + Issue: none.
 
 Estimate 14/10/2022
