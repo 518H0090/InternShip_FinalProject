@@ -105,6 +105,25 @@ namespace ShopeeApi.Service
             return response;
         }
 
+        public async Task<ServiceResponse<IEnumerable<ResponseGetFood>>> GetAllFoodPagination(int indexPage)
+        {
+            var response = new ServiceResponse<IEnumerable<ResponseGetFood>>();
+
+            var getAllWithoutRestaurant = await _repository.GetAllFoodPagination(indexPage);
+
+            if (getAllWithoutRestaurant.ToList().Count <= 0)
+            {
+                response.Success = false;
+                response.Message = "Not Found Any Value Or Over Range";
+            }
+            else
+            {
+                response.Data = getAllWithoutRestaurant.Select(x => _mapper.Map<ResponseGetFood>(x));
+            }
+
+            return response;
+        }
+
         public async Task<ServiceResponse<ResponseGetFood>> GetFoodById(int foodId)
         {
             var response = new ServiceResponse<ResponseGetFood>();

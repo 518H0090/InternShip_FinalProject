@@ -169,7 +169,7 @@
 /* View Food Detail Menu */
 .layout-searchmenu {
   min-height: 50rem;
-  max-height: 120rem;
+  max-height: 140rem;
   overflow: hidden;
 }
 
@@ -199,7 +199,8 @@
 }
 
 .layout-searchmenu .searchitem__img {
-  width: 100%;
+  width: 21.9rem;
+  height: 13.7rem;
   object-fit: cover;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -272,7 +273,7 @@
 /* ============================================================================= */
 /* Pagination */
 .searchmenu__pagination {
-  height: 3rem;
+  height: 5rem;
   position: relative;
   top: 0;
   left: 0;
@@ -284,6 +285,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.searchmenu__pagination .searchpagination__list:nth-child(2) {
+  margin: 1.4rem 2rem;
 }
 
 .searchmenu__pagination .searchpagination__item {

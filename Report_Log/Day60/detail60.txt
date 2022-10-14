@@ -1,9 +1,11 @@
 +Huỳnh Trần Trung Hiếu - 14/10/2022
 + Completed Task: 
-  - Finish Fetch Data In Index Layout.
+  - Finish Fetch Data In Detail Food Layout.
+  - Finish Fetch Data In SearchFood Layout.
+  - Build Basic Pagination For List Food.
 
 + Current Tasks:    
-  - Fetch Data In Detail Layout.   
+  - Fetch Data SearchFood Layout With Their RestaurantType.   
           
 + Next Task: Process Login and Register. 
 + Issue: none.

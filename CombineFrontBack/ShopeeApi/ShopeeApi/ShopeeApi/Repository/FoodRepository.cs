@@ -13,6 +13,21 @@ namespace ShopeeApi.Repository
             _context = context;
         }
 
+        public async Task<int> AllIndexPagination()
+        {
+            double countTotalFoods = 0;
+            int totalIndexPage = 0;
+
+            await _context.Foods.ForEachAsync(element =>
+            {
+                countTotalFoods++;
+            });
+
+            totalIndexPage = (int) Math.Ceiling(countTotalFoods / 15);
+
+            return totalIndexPage;
+        }
+
         public async Task<Food> CreateFood(Food request)
         {
             //Basic Temp Check Priceless In Visualize
@@ -76,6 +91,23 @@ namespace ShopeeApi.Repository
         public async Task<IEnumerable<Food>> GetAllFoodInRestaurant(Food request)
         {
             return await _context.Foods.Where(f => f.RestaurantId == request.RestaurantId).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Food>> GetAllFoodPagination(int indexPage)
+        {
+            int numberFoodGenerate = 15;
+            int numberFoodSkip = 15 * (indexPage - 1);
+
+            if (indexPage > 1)
+            {
+                return await _context.Foods.Skip(numberFoodSkip).Take(numberFoodGenerate).ToListAsync();
+            } 
+            
+            else
+            {
+                return await _context.Foods.Take(numberFoodGenerate).ToListAsync();
+            }
+            
         }
 
         public async Task<Food> GetFoodById(Food request)

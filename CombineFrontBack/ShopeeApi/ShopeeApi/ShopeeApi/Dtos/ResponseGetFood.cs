@@ -2,6 +2,9 @@
 {
     public class ResponseGetFood
     {
+        //Temp
+        public int FoodId { set; get; }
+
         public string FoodImageUrl { set; get; } = string.Empty;
 
         public string FoodTitle { set; get; } = string.Empty;

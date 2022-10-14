@@ -8,6 +8,10 @@ namespace ShopeeApi.Repository
 
         Task<IEnumerable<Food>> GetAllFood();
 
+        Task<int> AllIndexPagination();
+
+        Task<IEnumerable<Food>> GetAllFoodPagination(int indexPage);
+
         Task<IEnumerable<Food>> GetAllFoodInRestaurant(Food request);
 
         Task<Food> GetFoodById(Food request);

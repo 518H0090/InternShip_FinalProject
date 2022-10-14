@@ -1,53 +1,58 @@
-var locationSearch = decodeURIComponent(window.location.search.split("?")[1].split("=")[1])
+var locationSearch = decodeURIComponent(
+  window.location.search.split("?")[1].split("=")[1]
+);
 
-console.log(locationSearch)
+console.log(locationSearch);
 
-window.addEventListener('load',(e) => {
-    e.preventDefault();
+window.addEventListener("load", (e) => {
+  e.preventDefault();
 
-    FetchDataInDetailFood(locationSearch)
-})
+  FetchDataInDetailFood(locationSearch);
+});
 
 function FetchDataInDetailFood(locationSearch) {
-    fetchRestaurantByTitle(locationSearch).then(data => {
-        const layoutFoodDetail = document.querySelector('.layout-fooddetail');
-    
-        const itemValue = data.data
-    
-        FetchCategoryInRestaurant(itemValue.rsId)
-        FetchCategoryFollowFood(itemValue.rsId)
+  fetchRestaurantByTitle(locationSearch)
+    .then((data) => {
+      const layoutFoodDetail = document.querySelector(".layout-fooddetail");
 
-        const itemValueLikeReferences = itemValue.rsRefeLike == true?
-        `<!-- Type Shop -->
+      const itemValue = data.data;
+
+      FetchCategoryInRestaurant(itemValue.rsId);
+      FetchCategoryFollowFood(itemValue.rsId);
+
+      const itemValueLikeReferences =
+        itemValue.rsRefeLike == true
+          ? `<!-- Type Shop -->
         <div class="fooddetail__kind">
           <!-- Preference Type -->
           <div class="fooddetail__type-pref">
             <i class="fa-solid fa-thumbs-up fooddetail__type-pref-icon"></i>
             <p class="fooddetail__type-pref-paragraph">Yêu thích</p>
-          </div>`: 
-          `
+          </div>`
+          : `
             <!-- Type Shop -->
             <div class="fooddetail__kind">
             <!-- Preference Type -->
             <div class="fooddetail__type-pref fooddetail__type-prefnone">
             </div>
-          `; 
-    
-        const itemValueReviews = Number(itemValue.rsReviews) <= 999 ?  
-        `
+          `;
+
+      const itemValueReviews =
+        Number(itemValue.rsReviews) <= 999
+          ? `
         <!-- Number Review -->
         <p class="fooddetail__rating-countreview">
           ${itemValue.rsReviews}
         </p>
-        ` :
         `
+          : `
         <!-- Number Review -->
         <p class="fooddetail__rating-countreview">
           999+
         </p>
-        `
-    
-        let newInfo = `<!-- Container -->
+        `;
+
+      let newInfo = `<!-- Container -->
         <div class="container fooddetail__container">
           <!-- Food Detail Image -->
           <div class="fooddetail__image">
@@ -168,114 +173,179 @@ function FetchDataInDetailFood(locationSearch) {
     
           </div>
         </div>`;
-    
-        layoutFoodDetail.innerHTML = newInfo
-    
-    }).catch(errorValue => {
-        console.log(errorValue.message)
-        layoutFoodDetail.innerHTML = "Not Found Ok";
-    })
 
-    function checkStarts(number) {
-        let generateStar = `<div class="full-star">
+      layoutFoodDetail.innerHTML = newInfo;
+    })
+    .catch((errorValue) => {
+      console.log(errorValue.message);
+      layoutFoodDetail.innerHTML = "Not Found Ok";
+    });
+
+  function checkStarts(number) {
+    let generateStar = `<div class="full-star">
         <i class="fa-solid fa-star"></i>
-      </div>`
-    
-        let generateHalfStar = `
+      </div>`;
+
+    let generateHalfStar = `
         <div class="half-star">
         <i class="fa-sharp fa-solid fa-star-half-stroke"></i>
       </div>
-        `
-    
-        let generateNoneStar = `
+        `;
+
+    let generateNoneStar = `
         <div class="none-star">
         <i class="fa-regular fa-star"></i>
       </div>
-        `
-    
-        let generateStarInHtml = [];
-    
-        switch (Number(number)) {
-            case 5:
-                generateStarInHtml.push(generateStar,generateStar,generateStar,generateStar,generateStar)
-                break;
-            case 4.5:    
-                generateStarInHtml.push(generateStar,generateStar,generateStar,generateStar,generateHalfStar)
-                break;
-            case 4:    
-                generateStarInHtml.push(generateStar,generateStar,generateStar,generateStar,generateNoneStar)
-                break;
-            case 3.5:
-                generateStarInHtml.push(generateStar,generateStar,generateStar,generateHalfStar,generateNoneStar)
-                break;    
-            case 3:
-                generateStarInHtml.push(generateStar,generateStar,generateStar,generateNoneStar,generateNoneStar)
-                break;   
-            case 2.5:
-                generateStarInHtml.push(generateStar,generateStar,generateHalfStar,generateNoneStar,generateNoneStar)
-                break;   
-            case 2:
-                generateStarInHtml.push(generateStar,generateStar,generateNoneStar,generateNoneStar,generateNoneStar)
-                break;  
-            case 1.5:
-                    generateStarInHtml.push(generateStar,generateHalfStar,generateNoneStar,generateNoneStar,generateNoneStar)
-                    break;      
-            case 1:
-                generateStarInHtml.push(generateStar,generateNoneStar,generateNoneStar,generateNoneStar,generateNoneStar)
-                break;    
-    
-            default:
-                generateStarInHtml.push(generateNoneStar,generateNoneStar,generateNoneStar,generateNoneStar,generateNoneStar)
-                break;
-        }
-    
-        return generateStarInHtml.join(" ");
+        `;
+
+    let generateStarInHtml = [];
+
+    switch (Number(number)) {
+      case 5:
+        generateStarInHtml.push(
+          generateStar,
+          generateStar,
+          generateStar,
+          generateStar,
+          generateStar
+        );
+        break;
+      case 4.5:
+        generateStarInHtml.push(
+          generateStar,
+          generateStar,
+          generateStar,
+          generateStar,
+          generateHalfStar
+        );
+        break;
+      case 4:
+        generateStarInHtml.push(
+          generateStar,
+          generateStar,
+          generateStar,
+          generateStar,
+          generateNoneStar
+        );
+        break;
+      case 3.5:
+        generateStarInHtml.push(
+          generateStar,
+          generateStar,
+          generateStar,
+          generateHalfStar,
+          generateNoneStar
+        );
+        break;
+      case 3:
+        generateStarInHtml.push(
+          generateStar,
+          generateStar,
+          generateStar,
+          generateNoneStar,
+          generateNoneStar
+        );
+        break;
+      case 2.5:
+        generateStarInHtml.push(
+          generateStar,
+          generateStar,
+          generateHalfStar,
+          generateNoneStar,
+          generateNoneStar
+        );
+        break;
+      case 2:
+        generateStarInHtml.push(
+          generateStar,
+          generateStar,
+          generateNoneStar,
+          generateNoneStar,
+          generateNoneStar
+        );
+        break;
+      case 1.5:
+        generateStarInHtml.push(
+          generateStar,
+          generateHalfStar,
+          generateNoneStar,
+          generateNoneStar,
+          generateNoneStar
+        );
+        break;
+      case 1:
+        generateStarInHtml.push(
+          generateStar,
+          generateNoneStar,
+          generateNoneStar,
+          generateNoneStar,
+          generateNoneStar
+        );
+        break;
+
+      default:
+        generateStarInHtml.push(
+          generateNoneStar,
+          generateNoneStar,
+          generateNoneStar,
+          generateNoneStar,
+          generateNoneStar
+        );
+        break;
     }
+
+    return generateStarInHtml.join(" ");
+  }
 }
 
 function FetchCategoryInRestaurant(params) {
-  const foodOptionsList = document.querySelector('.foodoptions__list')
+  const foodOptionsList = document.querySelector(".foodoptions__list");
 
+  fetchAllCategoryWithResId(params)
+    .then((data) => {
+      let listCategory = data.data;
 
-fetchAllCategoryWithResId(params).then(data => {
-  let listCategory = data.data;
+      let newList = listCategory
+        .map((element) => {
+          let setCategoryName =
+            element.categoryName.length > 22
+              ? element.categoryName.slice(0, 22) + "..."
+              : element.categoryName;
 
-  let newList = listCategory.map((element) => {
+          console.log(element.categoryTag);
 
-    let setCategoryName = element.categoryName.length > 22 ? element.categoryName.slice(0,22) + "..." : element.categoryName;
-
-    console.log(element.categoryTag)
-
-    return ` <!-- Category Item -->
+          return ` <!-- Category Item -->
     <li class="foodoptions__item">
       <a href="#${element.categoryTag}" style="text-decoration:none;color:#333;">
         <span>${setCategoryName}</span>
       </a>
     </li>`;
-  }).join(" ")
+        })
+        .join(" ");
 
-  foodOptionsList.innerHTML = newList;
-}).catch(error => {
-  console.log(error)
-  foodOptionsList.innerHTML = "Not Found Ok";
-})
-
+      foodOptionsList.innerHTML = newList;
+    })
+    .catch((error) => {
+      console.log(error);
+      foodOptionsList.innerHTML = "Not Found Ok";
+    });
 }
 
 function FetchCategoryFollowFood(params) {
-  const foodOptionsDetailMenulist = document.querySelector('.foodoptions__detail-menulist');
+  const foodOptionsDetailMenulist = document.querySelector(
+    ".foodoptions__detail-menulist"
+  );
 
-FetchAllCategoryCombineFood(params).then(data => {
-  let listCategoryCombineFood = data.data;
+  FetchAllCategoryCombineFood(params)
+    .then((data) => {
+      let listCategoryCombineFood = data.data;
 
-  let newList = listCategoryCombineFood.map(element => {
+      let newList = listCategoryCombineFood.map((element) => {
+        let listFoodInCategory = element.foods.map((food) => {
+          let havePricesLess = food.foodPriceLess > 0 ? true : false;
 
-    let listFoodInCategory = element.foods.map(food => {
-
-      let havePricesLess  = food.foodPriceLess > 0 ? true : false;
-
-      if (havePricesLess) {
-        return `
+          if (havePricesLess) {
+            return `
         <!-- Item -->
         <div class="foodoptions__menulist-item foodoptions__menulist-item--costless">
           <!-- Image -->
@@ -306,12 +376,9 @@ FetchAllCategoryCombineFood(params).then(data => {
           </div>
 
         </div>
-      `
-      }
-
-      else {
-
-        return `
+      `;
+          } else {
+            return `
         <!-- Item -->
         <div class="foodoptions__menulist-item">
           <!-- Image -->
@@ -339,13 +406,11 @@ FetchAllCategoryCombineFood(params).then(data => {
           </div>
 
         </div>
-      `
-      }
+      `;
+          }
+        });
 
-      
-    })
-
-    return ` 
+        return ` 
     <!-- Title -->
     <div class="foodoptions__menulist-title">
         <span id="${element.categoryTag}">${element.categoryName}</span>
@@ -353,20 +418,15 @@ FetchAllCategoryCombineFood(params).then(data => {
 
     <!-- List Food  -->
     <div class="foodoptions__menulist-foodlist">
-    ${
-      listFoodInCategory
-    }
+    ${listFoodInCategory}
     </div>
     `;
-  });
+      });
 
-  foodOptionsDetailMenulist.innerHTML =  newList.join(" ");
-
-
-}).catch(error => {
-  console.log(error)
-  foodOptionsDetailMenulist.innerHTML = "Not Found Ok";
-})
-
+      foodOptionsDetailMenulist.innerHTML = newList.join(" ");
+    })
+    .catch((error) => {
+      console.log(error);
+      foodOptionsDetailMenulist.innerHTML = "Not Found Ok";
+    });
 }
-

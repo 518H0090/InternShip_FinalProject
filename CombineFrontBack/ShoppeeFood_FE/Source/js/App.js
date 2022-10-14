@@ -75,3 +75,25 @@ async function FetchAllCategoryCombineFood(restaurantId) {
 
     return dataJson;
 }
+
+// Get Total Index Food
+async function getTotalIndexFood() {
+    const url = "http://localhost:49071/api/Food/GetTotalIndex";
+
+    const fetchUrl = await fetch(url);
+
+    const dataJson = await fetchUrl.json();
+
+    return dataJson;
+}
+
+// Get Food In IndexPage
+async function FetchFoodIndexPage(indexPage) {
+    let url = 'http://localhost:49071/api/Food/GetFoodWithIndex/';
+
+    let fetchUrl = await fetch(url+indexPage);
+
+    let dataJson = await fetchUrl.json();
+
+    return dataJson;
+}

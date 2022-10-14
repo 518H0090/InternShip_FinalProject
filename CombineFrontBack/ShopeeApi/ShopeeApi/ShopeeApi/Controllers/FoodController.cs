@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShopeeApi.Dtos;
+using ShopeeApi.Repository;
 using ShopeeApi.Service;
 
 namespace ShopeeApi.Controllers
@@ -9,10 +10,12 @@ namespace ShopeeApi.Controllers
     public class FoodController : ControllerBase
     {
         private readonly IFoodService _service;
+        private readonly IFoodRepository _repository;
 
-        public FoodController(IFoodService service)
+        public FoodController(IFoodService service, IFoodRepository repository)
         {
             _service = service;
+            _repository = repository;
         }
 
         [HttpGet]
@@ -28,6 +31,36 @@ namespace ShopeeApi.Controllers
 
             return Ok(getAllFood);
         }
+
+        [HttpGet]
+        [Route("GetTotalIndex")]
+        public async Task<IActionResult> GetTotalIndex()
+        {
+            var allIndexPage = await _repository.AllIndexPagination();
+
+            if (allIndexPage == 0)
+            {
+                return NotFound(allIndexPage);
+            }
+
+            return Ok(allIndexPage);
+        }
+
+        //Function Test
+        [HttpGet]
+        [Route("GetFoodWithIndex/{indexpage}")]
+        public async Task<IActionResult> GetFoodWithIndex(int indexpage)
+        {
+            var allIndexPage = await _service.GetAllFoodPagination(indexpage);
+
+            if (allIndexPage.Data == null)
+            {
+                return NotFound(allIndexPage);
+            }
+
+            return Ok(allIndexPage);
+        }
+        //End Function Test
 
         [HttpGet]
         [Route("GetAllFoodWithRestaurant/{resId}")]
