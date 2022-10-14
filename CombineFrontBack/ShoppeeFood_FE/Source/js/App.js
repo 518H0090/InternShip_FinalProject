@@ -59,3 +59,19 @@ let fetchAllCategoryWithResId = async (restaurantId) => {
         return dataJson;
     }
 }
+
+// Fetch All Category Combine With It Food In Restaurant
+async function FetchAllCategoryCombineFood(restaurantId) {
+    const url = "http://localhost:49071/api/CategoryFood/GetAllCategoryCombineFood/";
+
+    const fetchUrl = await fetch(url+restaurantId, {
+        method: "GET",
+        headers : {
+            "Content-Type" : "application/json"
+        }
+    });
+
+    const dataJson = await fetchUrl.json();
+
+    return dataJson;
+}

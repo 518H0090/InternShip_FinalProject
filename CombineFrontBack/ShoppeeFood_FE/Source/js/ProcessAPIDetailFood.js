@@ -15,6 +15,7 @@ function FetchDataInDetailFood(locationSearch) {
         const itemValue = data.data
     
         FetchCategoryInRestaurant(itemValue.rsId)
+        FetchCategoryFollowFood(itemValue.rsId)
 
         const itemValueLikeReferences = itemValue.rsRefeLike == true?
         `<!-- Type Shop -->
@@ -172,6 +173,7 @@ function FetchDataInDetailFood(locationSearch) {
     
     }).catch(errorValue => {
         console.log(errorValue.message)
+        layoutFoodDetail.innerHTML = "Not Found Ok";
     })
 
     function checkStarts(number) {
@@ -242,13 +244,129 @@ fetchAllCategoryWithResId(params).then(data => {
 
     let setCategoryName = element.categoryName.length > 22 ? element.categoryName.slice(0,22) + "..." : element.categoryName;
 
+    console.log(element.categoryTag)
+
     return ` <!-- Category Item -->
     <li class="foodoptions__item">
-      <span>${setCategoryName}</span>
+      <a href="#${element.categoryTag}" style="text-decoration:none;color:#333;">
+        <span>${setCategoryName}</span>
+      </a>
     </li>`;
   }).join(" ")
 
   foodOptionsList.innerHTML = newList;
+}).catch(error => {
+  console.log(error)
+  foodOptionsList.innerHTML = "Not Found Ok";
 })
 
 }
+
+function FetchCategoryFollowFood(params) {
+  const foodOptionsDetailMenulist = document.querySelector('.foodoptions__detail-menulist');
+
+FetchAllCategoryCombineFood(params).then(data => {
+  let listCategoryCombineFood = data.data;
+
+  let newList = listCategoryCombineFood.map(element => {
+
+    let listFoodInCategory = element.foods.map(food => {
+
+      let havePricesLess  = food.foodPriceLess > 0 ? true : false;
+
+      if (havePricesLess) {
+        return `
+        <!-- Item -->
+        <div class="foodoptions__menulist-item foodoptions__menulist-item--costless">
+          <!-- Image -->
+          <div class="foodoptions__menuitem-image">
+            <img src="${food.foodImageUrl}" alt=""
+              class="foodoptions__menuitem-img">
+          </div>
+
+          <!-- Content -->
+          <div class="foodoptions__menuitem-content">
+            <h4 class="foodoptions__menuitem-title">${food.foodTitle}</h4>
+            <p class="foodoptions__menuitem-subtitle">${food.foodDescription}</p>
+          </div>
+
+          <!-- More -->
+          <div class="foodoptions__menuitem-more">
+            <p class="foodoptions__menuitem-costactual">
+              ${food.foodPrice} <sup>đ</sup>
+            </p>
+
+            <p class="foodoptions__menuitem-cost">
+              ${food.foodPriceLess} <sup>đ</sup>
+            </p>
+
+            <button type="button" class="foodoptions__menuitem-btn">
+              <i class="fa-solid fa-plus foodoptions__menuitem-icon"></i>
+            </button>
+          </div>
+
+        </div>
+      `
+      }
+
+      else {
+
+        return `
+        <!-- Item -->
+        <div class="foodoptions__menulist-item">
+          <!-- Image -->
+          <div class="foodoptions__menuitem-image">
+            <img src="${food.foodImageUrl}" alt=""
+              class="foodoptions__menuitem-img">
+          </div>
+
+          <!-- Content -->
+          <div class="foodoptions__menuitem-content">
+            <h4 class="foodoptions__menuitem-title">${food.foodTitle}</h4>
+            <p class="foodoptions__menuitem-subtitle">${food.foodDescription}</p>
+          </div>
+
+          <!-- More -->
+          <div class="foodoptions__menuitem-more">
+
+            <p class="foodoptions__menuitem-cost">
+              ${food.foodPrice} <sup>đ</sup>
+            </p>
+
+            <button type="button" class="foodoptions__menuitem-btn">
+              <i class="fa-solid fa-plus foodoptions__menuitem-icon"></i>
+            </button>
+          </div>
+
+        </div>
+      `
+      }
+
+      
+    })
+
+    return ` 
+    <!-- Title -->
+    <div class="foodoptions__menulist-title">
+        <span id="${element.categoryTag}">${element.categoryName}</span>
+    </div>
+
+    <!-- List Food  -->
+    <div class="foodoptions__menulist-foodlist">
+    ${
+      listFoodInCategory
+    }
+    </div>
+    `;
+  });
+
+  foodOptionsDetailMenulist.innerHTML =  newList.join(" ");
+
+
+}).catch(error => {
+  console.log(error)
+  foodOptionsDetailMenulist.innerHTML = "Not Found Ok";
+})
+
+}
+

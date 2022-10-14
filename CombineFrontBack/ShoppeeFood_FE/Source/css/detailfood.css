@@ -372,7 +372,7 @@
   color: var(--color-black-bl);
   font-weight: 600;
   text-decoration: line-through;
-  margin-left: 1.44rem;
+  transform: translate(-0.2rem, 0.4rem);
 }
 
 .foodoptions__menulist-item.foodoptions__menulist-item--costless .foodoptions__menuitem-cost {
@@ -436,8 +436,7 @@
   color: var(--color-blue-l);
   font-weight: 700;
   display: inline-block;
-  margin-left: 0.8rem;
-  margin-right: 1rem;
+  transform: translate(-1rem, 1rem);
 }
 
 .layout-foodoptions .foodoptions__menuitem-btn {
