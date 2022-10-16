@@ -1,73 +1,81 @@
-const searchPaginationList = document.querySelector('.searchpagination__list:nth-child(1)');
-const searchPaginationListSelect = document.querySelector('.searchpagination__list:nth-child(2)')
+const searchPaginationList = document.querySelector(
+  ".searchpagination__list:nth-child(1)"
+);
+const searchPaginationListSelect = document.querySelector(
+  ".searchpagination__list:nth-child(2)"
+);
+
+const searchMenuList = document.querySelector(".searchmenu__list");
 
 var indexSelect = 1;
 
-getTotalIndexFood().then(data => {
+window.addEventListener("load", (e) => {
+  getTotalIndexFood()
+    .then((data) => {
+      SelectNavigation(data);
+      FetchInMenuSearchBarList(indexSelect);
 
-    SelectNavigation(data)
-    FetchInMenuSearchBarList(indexSelect)
+      const searchPaginationItem = document.querySelectorAll(
+        ".searchpagination__item"
+      );
 
-    const searchPaginationItem = document.querySelectorAll('.searchpagination__item')
+      searchPaginationItem.forEach((element) => {
+        element.firstElementChild.addEventListener("click", (e) => {
+          var changeValueIndexPage = Number(e.target.textContent);
 
-    searchPaginationItem.forEach(element => {
+          if (changeValueIndexPage > 0) {
+            this.indexSelect = changeValueIndexPage;
 
-        element.firstElementChild.addEventListener('click', (e) => {
-            var changeValueIndexPage = Number(e.target.textContent);
+            actualSelectIndex(indexSelect);
+          } else {
+            if (
+              e.target.classList.contains("searchpagination__item-link--left")
+            ) {
+              if (indexSelect > 1) {
+                this.indexSelect = indexSelect - 1;
+              } else if (indexSelect <= 0) {
+                this.indexSelect = 1;
+              }
 
-            if (changeValueIndexPage > 0) {
-                this.indexSelect = changeValueIndexPage;
+              actualSelectIndex(indexSelect);
+            } else if (
+              e.target.classList.contains("searchpagination__item-link--right")
+            ) {
+              if (indexSelect >= 1 && indexSelect < data) {
+                indexSelect = indexSelect + 1;
+              } else if (indexSelect > data) {
+                indexSelect = indexSelect - 1;
+              }
 
-                actualSelectIndex(indexSelect)
-            } 
-            
-            else {
-                if(e.target.classList.contains("searchpagination__item-link--left")) {
-                    if (indexSelect > 1) {
-                        this.indexSelect = indexSelect - 1;
-                    } else if (indexSelect <= 0) {
-                        this.indexSelect = 1;
-                    }
-                    
-                    actualSelectIndex(indexSelect)
-                }
-
-                else if (e.target.classList.contains("searchpagination__item-link--right")) {
-                   
-                    if (indexSelect >= 1 && indexSelect < data) {
-                        indexSelect = indexSelect + 1;
-                    } else if ( indexSelect > data) {
-                        indexSelect = indexSelect - 1;
-                    }
-
-                    actualSelectIndex(indexSelect)
-                }
+              actualSelectIndex(indexSelect);
             }
+          }
 
-            
-            FetchInMenuSearchBarList(indexSelect)
-        })
-
+          FetchInMenuSearchBarList(indexSelect);
+        });
+      });
     })
-
-    
-    
-})
+    .catch((error) => {
+      console.log(error);
+      searchPaginationList.innerHTML = `<h1 style="height:10rem;transform:translate(20%,140%);color:red;">Not Found Any Value</h1>`;
+      searchPaginationListSelect.style.display = "none";
+      searchMenuList.style.display = "none";
+    });
+});
 
 function actualSelectIndex(indexSelect) {
-    searchPaginationListSelect.innerHTML = `
+  searchPaginationListSelect.innerHTML = `
     <!-- Pagination List -->
     <ul class="searchpagination__list">
         <li class="searchpagination__item searchpagination__item--select">
             <a href="#" class="searchpagination__item-link">${indexSelect}</a>
         </li>
     </ul>
-    `
+    `;
 }
 
 function SelectNavigation(data) {
-
-    let newPagination = `
+  let newPagination = `
     <!-- Item -->
     <li class="searchpagination__item">
         <a href="#" class="searchpagination__item-link
@@ -86,46 +94,52 @@ function SelectNavigation(data) {
     </li>
     `;
 
-    searchPaginationList.innerHTML = newPagination
+  searchPaginationList.innerHTML = newPagination;
 }
 
 function SelectNumberIndexPage(params) {
-    let indexShowInLayout = [];
-    
-    for (let i = 1; i <= params; i++) {
+  let indexShowInLayout = [];
 
-        let dataGet = `
+  for (let i = 1; i <= params; i++) {
+    let dataGet = `
             <li class="searchpagination__item">
                 <a href="#"  class="searchpagination__item-link">${i}</a>
             </li>
-            `
+            `;
 
-        indexShowInLayout.push(dataGet);
-    }
+    indexShowInLayout.push(dataGet);
+  }
 
-    return indexShowInLayout.join(" ");
+  return indexShowInLayout.join(" ");
 }
 
 function FetchInMenuSearchBarList(params) {
+  FetchFoodIndexPage(params)
+    .then((data) => {
+      let listFoodFollowIndexPage = data.data;
+      let newList = listFoodFollowIndexPage.map((element) => {
+        var estimateFoodTitle =
+          element.foodTitle.length > 14
+            ? element.foodTitle.slice(0, 14) + "..."
+            : element.foodTitle;
 
-    const searchMenuList = document.querySelector('.searchmenu__list');
+        var estimateFoodDescription =
+          element.foodDescription.length > 14
+            ? element.foodDescription.slice(0, 14) + "..."
+            : element.foodDescription;
 
-    FetchFoodIndexPage(params).then(data => {
-        let listFoodFollowIndexPage= data.data;
-        let newList = listFoodFollowIndexPage.map(element => {
+        var existDescription =
+          estimateFoodDescription === ""
+            ? `Not Found`
+            : estimateFoodDescription;
 
-            var estimateFoodTitle = (element.foodTitle.length) > 14 ? element.foodTitle.slice(0,14) + "..." : element.foodTitle;
+        var foodPrice =
+          element.foodPriceLess > 0 ? element.foodPriceLess : element.foodPrice;
 
-            var estimateFoodDescription = (element.foodDescription.length) > 14 ? element.foodDescription.slice(0,14) + "..." : element.foodDescription;
-
-            var existDescription = estimateFoodDescription === "" ? `Not Found` : estimateFoodDescription;
-
-            var foodPrice = (element.foodPriceLess > 0) ? element.foodPriceLess : element.foodPrice;
-
-            return `
+        return `
             <!-- Menu Item -->
             <div class="searchmenu__item">
-                <a href="./detailfood.html" class="searchmenu__item-link">
+                <a href="./detailfood.html?restaurantId=${element.restaurantId}" class="searchmenu__item-link">
                     <!-- Item Image -->
                     <div class="searchitem__image">
                         <img src="${element.foodImageUrl}" alt="" class="searchitem__img">
@@ -161,11 +175,13 @@ function FetchInMenuSearchBarList(params) {
 
                 </a>
             </div>
-            `
-        })
+            `;
+      });
 
-        searchMenuList.innerHTML = newList
-    }).catch(error => {
-        searchMenuList.innerHTML = "Not Found Any Value";
+      searchMenuList.innerHTML = newList;
     })
+    .catch((error) => {
+      console.log(error);
+      searchMenuList.innerHTML = "Not Found Any Value";
+    });
 }

@@ -1,99 +1,110 @@
-// Fetch All Restaurant Information 
+// Fetch All Restaurant Information
 let fetchAllRestaurants = async () => {
+  const url = "http://localhost:49071/api/Restaurant/GetAllRestaurants";
 
-    const url = 'http://localhost:49071/api/Restaurant/GetAllRestaurants';
+  const fetchUrl = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
-    const fetchUrl = await fetch(url, {
-        method : "GET",
-        headers : {
-            "Content-Type" : "application/json"
-        }
-    });
+  if (fetchUrl.status !== 200) {
+    throw new Error();
+  }
 
-    if (fetchUrl.status !== 200) {
-        throw new Error();
-    }
-    
+  const dataJson = await fetchUrl.json();
+
+  return dataJson;
+};
+
+// Fetch Restaurant By Title
+let fetchRestaurantByTitle = async (title) => {
+  const url = "http://localhost:49071/api/Restaurant/GetRestaurantByTitle/";
+
+  const fetchUrl = await fetch(url + title, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (fetchUrl.status !== 200) {
+    throw new Error();
+  } else {
     const dataJson = await fetchUrl.json();
 
     return dataJson;
-}
+  }
+};
 
-// Fetch Restaurant By Title 
-let fetchRestaurantByTitle = async (title) => {
-    const url = "http://localhost:49071/api/Restaurant/GetRestaurantByTitle/";
-
-    const fetchUrl = await fetch(url+title, {
-        method: "GET",
-        headers : {
-            "Content-Type" : "application/json"
-        }
-    });
-
-    if (fetchUrl.status !== 200) {
-        throw new Error();
-    } else {
-        const dataJson = await fetchUrl.json();
-
-        return dataJson;
-    }
-   
-}
-
-// Fetch All Category Combine With RestaurantId 
+// Fetch All Category Combine With RestaurantId
 let fetchAllCategoryWithResId = async (restaurantId) => {
-    const url = "http://localhost:49071/api/Category/GetAllCategoriesWithRestaurant/";
+  const url =
+    "http://localhost:49071/api/Category/GetAllCategoriesWithRestaurant/";
 
-    const fetchUrl = await fetch(url+restaurantId, {
-        method: "GET",
-        headers : {
-            "Content-Type" : "application/json"
-        }
-    });
+  const fetchUrl = await fetch(url + restaurantId, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
-    if (fetchUrl.status !== 200) {
-        throw new Error();
-    } else {
-        const dataJson = await fetchUrl.json();
+  if (fetchUrl.status !== 200) {
+    throw new Error();
+  } else {
+    const dataJson = await fetchUrl.json();
 
-        return dataJson;
-    }
-}
+    return dataJson;
+  }
+};
 
 // Fetch All Category Combine With It Food In Restaurant
 async function FetchAllCategoryCombineFood(restaurantId) {
-    const url = "http://localhost:49071/api/CategoryFood/GetAllCategoryCombineFood/";
+  const url =
+    "http://localhost:49071/api/CategoryFood/GetAllCategoryCombineFood/";
 
-    const fetchUrl = await fetch(url+restaurantId, {
-        method: "GET",
-        headers : {
-            "Content-Type" : "application/json"
-        }
-    });
+  const fetchUrl = await fetch(url + restaurantId, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 
-    const dataJson = await fetchUrl.json();
+  const dataJson = await fetchUrl.json();
 
-    return dataJson;
+  return dataJson;
 }
 
 // Get Total Index Food
 async function getTotalIndexFood() {
-    const url = "http://localhost:49071/api/Food/GetTotalIndex";
+  const url = "http://localhost:49071/api/Food/GetTotalIndex";
 
-    const fetchUrl = await fetch(url);
+  const fetchUrl = await fetch(url);
 
-    const dataJson = await fetchUrl.json();
+  const dataJson = await fetchUrl.json();
 
-    return dataJson;
+  return dataJson;
 }
 
 // Get Food In IndexPage
 async function FetchFoodIndexPage(indexPage) {
-    let url = 'http://localhost:49071/api/Food/GetFoodWithIndex/';
+  let url = "http://localhost:49071/api/Food/GetFoodWithIndex/";
 
-    let fetchUrl = await fetch(url+indexPage);
+  let fetchUrl = await fetch(url + indexPage);
 
-    let dataJson = await fetchUrl.json();
+  let dataJson = await fetchUrl.json();
 
-    return dataJson;
+  return dataJson;
+}
+
+// Get Restaurant By Id
+async function FetchRestaurantById(restaurantId) {
+  let url = "http://localhost:49071/api/Restaurant/GetRestaurantById/";
+
+  let fetchUrl = await fetch(url + restaurantId);
+
+  let dataJson = await fetchUrl.json();
+
+  return dataJson;
 }
