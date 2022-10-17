@@ -1,3 +1,19 @@
+const bannerSearchFormInput = document.querySelector('.banner-search__form-input');
+const bannerSearchFormBtn = document.querySelector('.banner-search__form-btn');
+
+bannerSearchFormBtn.addEventListener('click',(e) => {
+
+  if (bannerSearchFormInput.value !== "") {
+
+    let urlChange = './searchfood.html?keywords=' + encodeURIComponent(bannerSearchFormInput.value);
+
+    window.location.href = urlChange;
+
+  } else {
+    e.preventDefault();
+  }
+  
+})
 
 window.addEventListener('load',(e) => {
 

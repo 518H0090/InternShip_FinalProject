@@ -56,3 +56,46 @@ navbarLogo.addEventListener("click", (e) => {
   window.location.href = "./index.html";
 });
 
+// Move To Search 
+const modalNavbarSearchSearchInput = document.querySelector('.modal-navbarsearch__search-input');
+
+
+modalNavbarSearchSearchInput.addEventListener('keyup', function(event) {
+
+  try {
+      if (event.keyCode == 13 || e.key === 'Enter') {
+          let keywords = event.target.value;
+
+          if (keywords === "") {
+            throw new Error('Must Type Keywords');
+
+            event.preventDefault();
+          } 
+          
+          else {
+            let urlChange = './searchfood.html?keywords=' + encodeURIComponent(keywords);
+
+            window.location.href = urlChange;
+          }
+      }
+      false;
+  } catch (e) { 
+    console.log(`Can't Process`)
+  };
+  return true
+})
+
+
+// modalNavbarSearchSearchInput.addEventListener('click',(e) => {
+
+//   if (bannerSearchFormInput.value !== "") {
+
+//     let urlChange = './searchfood.html?keywords=' + encodeURIComponent(bannerSearchFormInput.value);
+
+//     window.location.href = urlChange;
+
+//   } else {
+//     e.preventDefault();
+//   }
+  
+// })

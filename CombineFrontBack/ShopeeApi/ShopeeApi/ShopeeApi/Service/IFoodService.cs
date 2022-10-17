@@ -10,6 +10,7 @@ namespace ShopeeApi.Service
         Task<ServiceResponse<IEnumerable<ResponseGetFood>>> GetAllFood();
 
         Task<ServiceResponse<IEnumerable<ResponseGetFood>>> GetAllFoodPagination(int indexPage);
+        Task<ServiceResponse<IEnumerable<ResponseGetFood>>> GetAllFoodPaginationWithKeywords(int indexPage, string keywords);
 
         Task<ServiceResponse<IEnumerable<ResponseGetFood>>> GetAllFoodInRestaurant(int resId);
 

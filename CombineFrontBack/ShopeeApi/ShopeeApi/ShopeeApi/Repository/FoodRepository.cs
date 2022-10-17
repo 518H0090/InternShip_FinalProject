@@ -28,6 +28,21 @@ namespace ShopeeApi.Repository
             return totalIndexPage;
         }
 
+        public async Task<int> AllIndexPaginationWithKeywords(string keywords)
+        {
+            double countTotalFoods = 0;
+            int totalIndexPage = 0;
+
+            await _context.Foods.Where(x => x.FoodTitle.Contains(keywords)).ForEachAsync(element =>
+            {
+                countTotalFoods++;
+            });
+
+            totalIndexPage = (int)Math.Ceiling(countTotalFoods / 15);
+
+            return totalIndexPage;
+        }
+
         public async Task<Food> CreateFood(Food request)
         {
             //Basic Temp Check Priceless In Visualize
@@ -108,6 +123,24 @@ namespace ShopeeApi.Repository
                 return await _context.Foods.Take(numberFoodGenerate).ToListAsync();
             }
             
+        }
+
+        public async Task<IEnumerable<Food>> GetAllFoodPaginationWithKeywords(int indexPage, string keywords)
+        {
+            int numberFoodGenerate = 15;
+            int numberFoodSkip = 15 * (indexPage - 1);
+
+            if (indexPage > 1)
+            {
+                return await _context.Foods.Where(x => x.FoodTitle.Contains(keywords))
+                    .Skip(numberFoodSkip).Take(numberFoodGenerate).ToListAsync();
+            }
+
+            else
+            {
+                return await _context.Foods.Where(x => x.FoodTitle.Contains(keywords))
+                    .Take(numberFoodGenerate).ToListAsync();
+            }
         }
 
         public async Task<Food> GetFoodById(Food request)

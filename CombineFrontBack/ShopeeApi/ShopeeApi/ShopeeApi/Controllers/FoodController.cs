@@ -46,6 +46,20 @@ namespace ShopeeApi.Controllers
             return Ok(allIndexPage);
         }
 
+        [HttpGet]
+        [Route("GetTotalIndexWithKeywords")]
+        public async Task<IActionResult> GetTotalIndex(string keywords)
+        {
+            var allIndexPage = await _repository.AllIndexPaginationWithKeywords(keywords);
+
+            if (allIndexPage == 0)
+            {
+                return NotFound(allIndexPage);
+            }
+
+            return Ok(allIndexPage);
+        }
+
         //Function Test
         [HttpGet]
         [Route("GetFoodWithIndex/{indexpage}")]
@@ -60,6 +74,22 @@ namespace ShopeeApi.Controllers
 
             return Ok(allIndexPage);
         }
+
+        [HttpGet]
+        [Route("GetFoodWithIndexAndTitle")]
+        public async Task<IActionResult> GetFoodWithIndexAndTitle(int indexpage, string keywords)
+        {
+            var allIndexPage = await _service.GetAllFoodPaginationWithKeywords(indexpage, keywords);
+
+            if (allIndexPage.Data == null)
+            {
+                return NotFound(allIndexPage);
+            }
+
+            return Ok(allIndexPage);
+        }
+
+
         //End Function Test
 
         [HttpGet]

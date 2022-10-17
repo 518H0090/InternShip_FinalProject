@@ -98,6 +98,34 @@ async function FetchFoodIndexPage(indexPage) {
   return dataJson;
 }
 
+// Get Total Index Food With Keywords
+async function getTotalIndexFoodWithKeywords(keywords) {
+  const url = "http://localhost:49071/api/Food/GetTotalIndexWithKeywords?keywords=";
+
+  const fetchUrl = await fetch(url+keywords);
+
+
+  if (fetchUrl.ok) {
+    const dataJson = await fetchUrl.json();
+
+    return dataJson;
+  }
+
+  throw new Error('Not Match Value');
+ 
+}
+
+// Get Food In IndexPage With Keywords
+async function FetchFoodIndexPageWithKeywords(indexPage,keywords) {
+  let url = `http://localhost:49071/api/Food/GetFoodWithIndexAndTitle?indexpage=${indexPage}&keywords=${keywords}`;
+
+  let fetchUrl = await fetch(url);
+
+  let dataJson = await fetchUrl.json();
+
+  return dataJson;
+}
+
 // Get Restaurant By Id
 async function FetchRestaurantById(restaurantId) {
   let url = "http://localhost:49071/api/Restaurant/GetRestaurantById/";
@@ -220,3 +248,4 @@ window.addEventListener("load",(e) => {
     })
   }
 })
+
