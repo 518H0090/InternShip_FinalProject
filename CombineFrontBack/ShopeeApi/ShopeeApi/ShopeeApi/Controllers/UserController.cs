@@ -70,11 +70,9 @@ namespace ShopeeApi.Controllers
 
         [HttpGet]
         [Route("ViewUserInfo")]
-        public async Task<IActionResult> ViewUserInfo()
+        public async Task<IActionResult> ViewUserInfo(string jwtToken)
         {
-            var jwtTokenFromCookies = Request.Cookies["JwtToken"];
-
-            var checkUserInfo = await _repository.ViewUserInfo(jwtTokenFromCookies);
+            var checkUserInfo = await _repository.ViewUserInfo(jwtToken);
 
             if (checkUserInfo.Data == null)
             {

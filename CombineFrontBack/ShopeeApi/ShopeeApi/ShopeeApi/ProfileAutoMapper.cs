@@ -32,6 +32,8 @@ namespace ShopeeApi
             CreateMap<RequestFoodCombineCategory, RelationCategoryFood>();
             CreateMap<RequestCategoryCombineFood, RelationCategoryFood>();
             CreateMap<Restaurant, ResponseGetRestaurantWithId>();
+            CreateMap<User, ResponseViewUser>();
+            
         }
     }
 }

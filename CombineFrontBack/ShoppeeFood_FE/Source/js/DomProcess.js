@@ -43,7 +43,7 @@ dropdownSwitchToggle.addEventListener("click", (e) => {
 });
 
 // Move To Login Page
-const navbarLogin = document.querySelector(".navbar-login");
+const navbarLogin = document.querySelector(".navbar-login button[type='button']");
 
 navbarLogin.addEventListener("click", (e) => {
   window.location.href = "./login.html";

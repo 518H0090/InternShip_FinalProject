@@ -20,12 +20,18 @@ string devCorsPolicy = builder.Configuration.GetSection("CorsPolicy:PolicyString
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
+string localDotnet = builder.Configuration.GetSection("CorsPolicy:DotNetLocalHost").Value;
+string localFrontend = builder.Configuration.GetSection("CorsPolicy:FrontendLocalHost").Value;
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(devCorsPolicy,
             builder =>
             {
-                builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+                builder
+                .WithOrigins("*")
+                .AllowAnyMethod()
+                .AllowAnyHeader();
             }
         );
 });

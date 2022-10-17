@@ -36,6 +36,14 @@
   filter: brightness(120%);
 }
 
+.layout-form__title+.layout-form__showprocess {
+  margin: -1rem 0 3rem;
+  text-align: center;
+  font-size: 1.6rem;
+  color: red;
+  display: none;
+}
+
 .layout-form .layout-form__options-device {
   margin-bottom: 1.6em;
   position: relative;
@@ -102,7 +110,7 @@
   color: var(--color-blue-l);
 }
 
-.layout-form__useroptions + button[type="submit"] {
+.layout-form__useroptions+button[type="submit"] {
   margin-top: 1.2em;
 }
 

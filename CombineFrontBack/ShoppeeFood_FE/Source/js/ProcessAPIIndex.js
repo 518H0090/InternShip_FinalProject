@@ -131,8 +131,6 @@ function fetchMenuListRestaurant() {
     fetchAllRestaurants().then(data => {
         const listValue = data.data
 
-        console.log(listValue)
-
         var newList = listValue.map(element => {
             return `
             <!-- Food Item -->

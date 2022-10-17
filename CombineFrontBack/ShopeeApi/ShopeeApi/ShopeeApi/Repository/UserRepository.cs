@@ -98,7 +98,7 @@ namespace ShopeeApi.Repository
             {
                 Subject = new ClaimsIdentity(claims),
                 SigningCredentials = credentials,
-                Expires = DateTime.Now.AddDays(1)
+                Expires = DateTime.Now.AddDays(1),
             };
 
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
@@ -149,20 +149,19 @@ namespace ShopeeApi.Repository
 
             var userName = token.Claims.FirstOrDefault(u => u.Type == ClaimTypes.Name || u.Type == "unique_name").Value;
 
-            //var findUserName = await _context.Users
-            //    .FirstOrDefaultAsync(u => u.UserName == userName);
+            var findUserName = await _context.Users
+                .FirstOrDefaultAsync(u => u.UserName == userName);
 
-            //if (findUserName != null)
-            //{
-            //serviceResponse.Data = _mapper.Map<ResponseViewUser>(findUserName);
-            serviceResponse.Message = userName;
-            //}
+            if (findUserName != null)
+            {
+                serviceResponse.Data = _mapper.Map<ResponseViewUser>(findUserName);
+            }
 
-            //else
-            //{
-            //    serviceResponse.Message = "Please Check Your Authentication";
-            //    serviceResponse.Success = false;
-            //}
+            else
+            {
+                serviceResponse.Message = "Please Check Your Authentication";
+                serviceResponse.Success = false;
+            }
 
             return serviceResponse;
         }

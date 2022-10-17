@@ -1,9 +1,9 @@
 +Huỳnh Trần Trung Hiếu - 17/10/2022
 + Completed Task: 
-  - 
+  - Process Login and Register, Logout.
 
 + Current Tasks:    
-  - Process Login and Register, Logout.
+  - Search With Food Name.
           
 + Next Task: Process Authentication with Admin Role For Manage. 
 + Issue: none.
