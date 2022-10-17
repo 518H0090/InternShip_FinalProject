@@ -108,3 +108,29 @@ async function FetchRestaurantById(restaurantId) {
 
   return dataJson;
 }
+
+// Post Register Account
+async function RegisterAccount(userName, password, rePassword) {
+  let url = "http://localhost:49071/api/User/Register";
+
+  let fetchUrl = await fetch(url, {
+    method : "POST",
+    headers: {
+      "Content-Type" : "application/json"
+    },
+    body: JSON.stringify({
+        "userName": userName,
+        "password": password,
+        "rePassword": rePassword
+    })
+  });
+
+  if(fetchUrl.ok) {
+    let dataJson = await fetchUrl.json();
+
+    return dataJson;
+  }
+
+  throw new Error('Exist Account')
+ 
+}
