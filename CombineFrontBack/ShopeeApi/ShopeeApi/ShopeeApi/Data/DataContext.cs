@@ -15,6 +15,7 @@ namespace ShopeeApi.Datas
         public DbSet<Category> Categories { set; get; }
         public DbSet<Food> Foods { set; get; }
         public DbSet<RelationCategoryFood> RelationCategoryFoods { set; get; }
+        public DbSet<SelectFoodRecord> SelectFoodRecords { set; get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -200,6 +201,17 @@ namespace ShopeeApi.Datas
                .WithMany(c => c.RelationCategoryFoods)
                .HasForeignKey(rcf => rcf.FoodId)
                .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            //Select Food Record
+            modelBuilder.Entity<SelectFoodRecord>(x =>
+            {
+                x.HasKey(sfr => sfr.RecordId);
+
+                x.HasOne<User>(sfr => sfr.User)
+                .WithMany(u => u.SelectFoodRecords)
+                .HasForeignKey(sfr => sfr.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
             });
         }
     }
