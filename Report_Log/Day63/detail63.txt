@@ -1,8 +1,10 @@
 +Huỳnh Trần Trung Hiếu - 19/10/2022
 + Completed Task: 
-  - Process Shopping Cart In Layout
+  - Process Fetch Shopping Cart In Layout.
+  - Process Add Item In Shopping Cart When Login.
 
 + Current Tasks:    
+  - Process Add/Remove Item In Shopping Cart Detail.
   - Process Payment.
           
 + Next Task: Process Authentication with Admin Role For Manage. 

@@ -446,6 +446,7 @@
   border: none;
   border-radius: 0.3rem;
   display: inline-block;
+  cursor: pointer;
 }
 
 .layout-foodoptions .foodoptions__menuitem-icon {

@@ -195,20 +195,6 @@ function fetchMenuListRestaurant() {
     })
 }
 
-// Move To Shopping Cart Page
-const navbarShoppingViewmore = document.querySelector('.navbar-shopping__viewmore');
-
-navbarShoppingViewmore.addEventListener('click',(e) => {
-  window.location.href = "./shoppingcard.html"
-})
-
-// Toggle Shopping Cart View
-const navbarLoginShoppingcart = document.querySelector('.navbar-login__shoppingcart');
-const navbarLoginShoppingcartViewlistitem = document.querySelector('.navbar-login.navbar-iflogin .navbar-login__shoppingcart-viewlistitem');
-
-navbarLoginShoppingcart.addEventListener('click',(e) => {
-  navbarLoginShoppingcartViewlistitem.classList.toggle('show')
-})
     
 
 

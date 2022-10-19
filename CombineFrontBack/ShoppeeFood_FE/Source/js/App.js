@@ -208,6 +208,115 @@ async function CheckUserInfo(jwtToken) {
   throw new Error(`Can't Find Account`)
 }
 
+// Get Count Number item in Shopping Cart Follow Username
+async function countItemInShoppingCart(username) {
+  let url = "http://localhost:49071/api/FoodRecord/GetCountNumberRecordFollowUserName/"
+
+  let fetchUrl = await fetch(url+username, {
+   method : "GET",
+   headers: {
+     "Content-Type" : "application/json"
+   },
+ });
+
+ if(fetchUrl.ok) {
+   let dataJson = await fetchUrl.json();
+
+   return dataJson;
+ }
+
+ throw new Error(`Doesn't Have Any value`)
+}
+
+// Get 6 item in Shopping Cart Follow Username
+async function Get6ItemInShoppingCart(username) {
+  let url = "http://localhost:49071/api/FoodRecord/GetTop6Record/"
+
+  let fetchUrl = await fetch(url+username, {
+   method : "GET",
+   headers: {
+     "Content-Type" : "application/json"
+   },
+ });
+
+ if(fetchUrl.ok) {
+   let dataJson = await fetchUrl.json();
+
+   return dataJson;
+ }
+
+ throw new Error(`Doesn't Have Any value`)
+}
+
+// Get All item in Shopping Cart Follow Username
+async function GetAllItemInShoppingCart(username) {
+  let url = "http://localhost:49071/api/FoodRecord/GetAllRecord/"
+
+  let fetchUrl = await fetch(url+username, {
+   method : "GET",
+   headers: {
+     "Content-Type" : "application/json"
+   },
+ });
+
+ if(fetchUrl.ok) {
+   let dataJson = await fetchUrl.json();
+
+   return dataJson;
+ }
+
+ throw new Error(`Doesn't Have Any value`)
+}
+
+// Get Total Price in Shopping Cart Follow Username
+async function GetTotalPriceInShoppingCart(username) {
+  let url = "http://localhost:49071/api/FoodRecord/GetTotalPriceBill/"
+
+  let fetchUrl = await fetch(url+username, {
+   method : "GET",
+   headers: {
+     "Content-Type" : "application/json"
+   },
+ });
+
+ if(fetchUrl.ok) {
+   let dataJson = await fetchUrl.json();
+
+   return dataJson;
+ }
+
+ throw new Error(`Doesn't Have Any value`)
+}
+
+
+// Add item in Shopping Cart Follow Username
+async function AddNewItemInShoppingCart(username,foodInfo) {
+  let url = "http://localhost:49071/api/FoodRecord/AddNewItemInShoppingCart/"
+
+  let fetchUrl = await fetch(url+username, {
+   method : "POST",
+   headers: {
+     "Content-Type" : "application/json"
+   },
+   body : JSON.stringify({
+    "foodImageUrl": foodInfo.foodImageUrl,
+    "foodTitle": foodInfo.foodTitle,
+    "foodDescription": foodInfo.foodDescription,
+    "foodPrice": foodInfo.foodPrice
+   })
+ });
+
+ console.log(foodInfo)
+
+ if(fetchUrl.ok) {
+   let dataJson = await fetchUrl.json();
+
+   return dataJson;
+ }
+
+ throw new Error(`Doesn't Have Any value`)
+}
+
 window.addEventListener("load",(e) => {
   let jwtToken =  localStorage.getItem("jwttoken");
   const navbarSearch = document.querySelector('.navbar-search');
@@ -220,23 +329,112 @@ window.addEventListener("load",(e) => {
       navbarLogin.classList.add("navbar-iflogin")
 
       let userNameReduce = data.userName.length > 10 ? data.userName.slice(0,10) + "..." : data.userName;
+      localStorage.setItem("username",data.userName)
 
-      let newLayoutNavbar = `
-        <p title="${data.userName}">${userNameReduce}</p>
-        <button type="button" class="btn btn-login btn-logout">Đăng xuất</button>
-        <div class="navbar-login__shoppingcart">
-          <i class="fa-sharp fa-solid fa-cart-plus"></i>
-          <p class="navbar-shoppingcart__countitem">0</p>
-        </div>
-      `
+        let newLayoutNavbar = `
+          <p title="${data.userName}">${userNameReduce}</p>
+          <button type="button" class="btn btn-login btn-logout">Đăng xuất</button>
+          <div class="navbar-login__shoppingcart">
+            <i class="fa-sharp fa-solid fa-cart-plus"></i>
+            <p class="navbar-shoppingcart__countitem">0</p>
+          </div>
+        `
 
-      navbarLogin.innerHTML = newLayoutNavbar;  
+        let viewListShoppingCart = `
+        <!-- Display Dropdown Shopping Cart -->
+              <div class="navbar-login__shoppingcart-viewlistitem">
+                  
+                <!-- List Item -->
+                <ul class="navbar-shopping__list">
+                 
+                </ul>
+
+                <!-- View More Shopping Card -->
+                <div class="navbar-shopping__viewmore">
+                  <p>Xem thêm</p>
+                </div>
+              </div>`
+
+        countItemInShoppingCart(data.userName)
+        .then(countItem => {
+          newLayoutNavbar = `
+          <p title="${data.userName}">${userNameReduce}</p>
+          <button type="button" class="btn btn-login btn-logout">Đăng xuất</button>
+          <div class="navbar-login__shoppingcart">
+            <i class="fa-sharp fa-solid fa-cart-plus"></i>
+            <p class="navbar-shoppingcart__countitem">${countItem}</p>
+          </div>
+        `
+
+        navbarLogin.innerHTML = newLayoutNavbar + viewListShoppingCart;
+        ProcessEventShoppingDropdown();
+
+        Logout();
+
+        }).catch(error => {
+          console.log(error);
+          
+          newLayoutNavbar = `
+          <p title="${data.userName}">${userNameReduce}</p>
+          <button type="button" class="btn btn-login btn-logout">Đăng xuất</button>
+          <div class="navbar-login__shoppingcart">
+            <i class="fa-sharp fa-solid fa-cart-plus"></i>
+            <p class="navbar-shoppingcart__countitem">0</p>
+          </div>
+        `
+
+        navbarLogin.innerHTML = newLayoutNavbar + viewListShoppingCart;
+        ProcessEventShoppingDropdown();
+        })
+
+        Get6ItemInShoppingCart(data.userName)
+        .then(itemlist => {
+          let listItemShoppingCart = itemlist.data;
+
+          const navbarShoppingList = document.querySelector('.navbar-login.navbar-iflogin .navbar-shopping__list')
+
+          let newListItem = listItemShoppingCart.map(element => {
+
+
+            return `  <!-- Item -->
+            <li class="navbar-shopping__item">
+              <!-- Image -->
+              <div class="navbar-shopping__image">
+                <img src="${element.foodImageUrl}" alt="" class="navbar-shopping__img">
+              </div>
+
+              <!-- Content -->
+              <div class="navbar-shopping__content">
+                <h3 class="navbar-shopping__content-title">${element.foodTitle}</h3>
+                <p class="navbar-shopping__content-cost">${element.foodPrice} <sup>đ</sup> </p>
+              </div>
+            </li>`
+          });
+                
+
+          navbarShoppingList.innerHTML = newListItem
+         
+
+         
+          Logout();
+        }).catch(error => {
+          console.log(error)
+          const navbarShoppingList = document.querySelector('.navbar-login.navbar-iflogin .navbar-shopping__list')
+
+          window.location.reload();
+        })
+
+        navbarLogin.innerHTML = newLayoutNavbar + viewListShoppingCart;
+
+        ProcessEventShoppingDropdown();
+        Logout();
 
       const btnLogout = document.querySelector(".navbar-login button[type='button']")
 
       if(btnLogout.value !== null) {
         btnLogout.addEventListener('click',(e) => {
           localStorage.removeItem("jwttoken")
+          localStorage.removeItem("username")
           window.location.reload();
         })
       }
@@ -248,4 +446,38 @@ window.addEventListener("load",(e) => {
     })
   }
 })
+
+
+function ProcessEventShoppingDropdown() {
+  // Move To Shopping Cart Page
+  const navbarShoppingViewmore = document.querySelector('.navbar-shopping__viewmore');
+  const navbarLoginShoppingcartViewlistitemValue = document.querySelector('.navbar-login__shoppingcart-viewlistitem .navbar-shopping__list')
+
+  navbarShoppingViewmore.addEventListener('click',(e) => {
+    window.location.href = "./shoppingcard.html?username=" + localStorage.getItem("username")
+  })
+
+  // Toggle Shopping Cart View
+  const navbarLoginShoppingcart = document.querySelector('.navbar-login__shoppingcart');
+  const navbarLoginShoppingcartViewlistitem = document.querySelector('.navbar-login .navbar-login__shoppingcart-viewlistitem');
+
+  navbarLoginShoppingcart.addEventListener('click',(e) => {
+    navbarLoginShoppingcartViewlistitem.classList.toggle('show')
+
+      if (navbarLoginShoppingcartViewlistitem.firstElementChild.innerText === '') {
+        window.location.reload();
+      }
+  })
+}
+
+function Logout() {
+  const btnLogout = document.querySelector(".navbar-login button[type='button']")
+
+      if(btnLogout.value !== null) {
+        btnLogout.addEventListener('click',(e) => {
+          localStorage.removeItem("jwttoken")
+          window.location.reload();
+        })
+      }
+}
 

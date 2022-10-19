@@ -27,6 +27,13 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
+        [Route("GetCountNumberRecordFollowUserName/{username}")]
+        public async Task<IActionResult> GetCountNumberRecordFollowUserName(string username)
+        {
+            return Ok(await _repository.CountNumberRecord(username));
+        }
+
+        [HttpGet]
         [Route("GetAllRecord/{username}")]
         public async Task<IActionResult> GetAllRecordFollowUser(string username)
         {
@@ -38,6 +45,20 @@ namespace ShopeeApi.Controllers
             }
 
             return Ok(getAllRecord);
+        }
+
+        [HttpGet]
+        [Route("GetTop6Record/{username}")]
+        public async Task<IActionResult> GetTop6Record(string username)
+        {
+            var getTop6Record = await _service.GetTop6RecordFollowUsername(username);
+
+            if (getTop6Record.Data == null)
+            {
+                return BadRequest(getTop6Record);
+            }
+
+            return Ok(getTop6Record);
         }
 
         [HttpPost]

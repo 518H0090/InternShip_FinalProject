@@ -594,6 +594,55 @@ function FetchCategoryFollowFood(params) {
       });
 
       foodOptionsDetailMenulist.innerHTML = newList.join(" ");
+
+
+      // click
+      const foodoptionsMenuitemBtn = document.querySelectorAll('.foodoptions__menulist-item');
+
+      foodoptionsMenuitemBtn.forEach(element => {
+        element.lastElementChild.lastElementChild.addEventListener('click',(e) => {
+
+          let checkContainsLess = e.target.parentElement.parentElement.parentElement.classList
+          .contains("foodoptions__menulist-item--costless");
+
+          let foodInfo = ""
+
+          if (checkContainsLess) {
+            foodInfo = {
+            foodImageUrl : e.target.parentElement.parentElement.parentElement.firstElementChild
+            .firstElementChild.getAttribute("src"),
+            foodTitle : e.target.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.firstElementChild.innerText,
+            foodDescription: e.target.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.lastElementChild.innerText,
+            foodPrice : e.target.parentElement.parentElement.firstElementChild.nextElementSibling
+            .innerText.split(" ")[0]
+            }  
+          } else {
+            foodInfo = {
+              foodImageUrl : e.target.parentElement.parentElement.parentElement.firstElementChild
+              .firstElementChild.getAttribute("src"),
+              foodTitle : e.target.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.firstElementChild.innerText,
+              foodDescription: e.target.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.lastElementChild.innerText,
+              foodPrice : e.target.parentElement.parentElement.firstElementChild.innerText.split(" ")[0]
+              }  
+          }
+
+
+          if (localStorage.getItem("username") === null) {
+            window.location.reload();
+          } else {
+            AddNewItemInShoppingCart(localStorage.getItem("username"), foodInfo)
+            .then(data => {
+              console.log(data.data)
+              window.location.reload();
+            }).catch(error => {
+              console.log(error)
+            })
+            ;
+          }
+
+        })
+      })
+
     })
     .catch((error) => {
       console.log(error);

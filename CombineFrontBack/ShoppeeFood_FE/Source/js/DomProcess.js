@@ -101,3 +101,6 @@ modalNavbarSearchSearchInput.addEventListener('keyup', function(event) {
 // })
 
 
+window.addEventListener('beforeunload',(e) => {
+  window.location.reload();
+})

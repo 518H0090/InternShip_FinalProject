@@ -9,6 +9,8 @@ namespace ShopeeApi.Service
 
         Task<ServiceResponse<IEnumerable<ResponseGetFoodRecord>>> GetAllRecordFollowUsername(string username);
 
+        Task<ServiceResponse<IEnumerable<ResponseGetFoodRecord>>> GetTop6RecordFollowUsername(string username);
+
         Task<ServiceResponse<string>> DeleteRecord(RequestDeleteFoodRecord request);
     }
 }

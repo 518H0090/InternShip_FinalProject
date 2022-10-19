@@ -56,6 +56,26 @@ namespace ShopeeApi.Service
             return response;
         }
 
+        public async Task<ServiceResponse<IEnumerable<ResponseGetFoodRecord>>> GetTop6RecordFollowUsername(string username)
+        {
+            var response = new ServiceResponse<IEnumerable<ResponseGetFoodRecord>>();
+
+            var get6RecordFollowUser = await _repository.GetTop6RecordFollowUsername(username);
+
+            if (get6RecordFollowUser == null || get6RecordFollowUser.ToList().Count <= 0)
+            {
+                response.Success = false;
+                response.Message = "Can't Find Any value";
+            }
+
+            else
+            {
+                response.Data = get6RecordFollowUser.Select(x => _mapper.Map<ResponseGetFoodRecord>(x));
+            }
+
+            return response;
+        }
+
         public async Task<ServiceResponse<ResponseGetFoodRecord>> NewRecord(RequestAddFoodRecord request, string username)
         {
             var response = new ServiceResponse<ResponseGetFoodRecord>();

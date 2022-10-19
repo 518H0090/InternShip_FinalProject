@@ -13,6 +13,28 @@ namespace ShopeeApi.Repository
             _context = context;
         }
 
+        public async Task<int> CountNumberRecord(string username)
+        {
+            var findUser = await _context.Users.FirstOrDefaultAsync(x => x.UserName == username);
+
+            int countRecord = 0;
+
+            if (findUser == null)
+            {
+                countRecord = 0;
+            }
+
+            var listRecordFoodFollowUser = await _context.SelectFoodRecords
+                .Where(x => x.User == findUser).ToListAsync();
+
+            listRecordFoodFollowUser.ForEach(element =>
+            {
+                countRecord++;
+            });
+
+            return countRecord;
+        }
+
         public async Task<bool> DeleteRecord(int recordId, string username)
         {
             var findUser = await _context.Users.FirstOrDefaultAsync(x => x.UserName == username);
@@ -42,6 +64,19 @@ namespace ShopeeApi.Repository
 
             return await _context.SelectFoodRecords
                 .Where(x => x.User == findUser).ToListAsync();
+        }
+
+        public async Task<IEnumerable<SelectFoodRecord>> GetTop6RecordFollowUsername(string username)
+        {
+            var findUser = await _context.Users.FirstOrDefaultAsync(x => x.UserName == username);
+
+            if (findUser == null)
+            {
+                return null;
+            }
+
+            return await _context.SelectFoodRecords
+                .Where(x => x.User == findUser).Take(6).ToListAsync();
         }
 
         public async Task<SelectFoodRecord> NewRecord(SelectFoodRecord request, string username)
