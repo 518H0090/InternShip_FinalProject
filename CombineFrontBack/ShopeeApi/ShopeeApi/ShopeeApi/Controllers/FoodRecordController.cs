@@ -75,7 +75,7 @@ namespace ShopeeApi.Controllers
             return Ok(getAllRecord);
         }
 
-        [HttpPost]
+        [HttpDelete]
         [Route("DeleteItemInShoppingCart")]
         public async Task<IActionResult> DeleteItemInShoppingCart(RequestDeleteFoodRecord request)
         {

@@ -285,7 +285,7 @@ async function GetTotalPriceInShoppingCart(username) {
    return dataJson;
  }
 
- throw new Error(`Doesn't Have Any value`)
+ throw new Error(`Can't Add Item`)
 }
 
 
@@ -315,6 +315,30 @@ async function AddNewItemInShoppingCart(username,foodInfo) {
  }
 
  throw new Error(`Doesn't Have Any value`)
+}
+
+// Delete item in Shopping Cart Follow Username
+async function DeleteNewItemInShoppingCart(username,recordId) {
+  let url = "http://localhost:49071/api/FoodRecord/DeleteItemInShoppingCart"
+
+  let fetchUrl = await fetch(url, {
+   method : "Delete",
+   headers: {
+     "Content-Type" : "application/json"
+   },
+   body : JSON.stringify({
+    "recordId": recordId,
+    "username": username
+    })
+ });
+
+ if(fetchUrl.ok) {
+   let dataJson = await fetchUrl.json();
+
+   return dataJson;
+ }
+
+ throw new Error(`Can't Delete Item`)
 }
 
 window.addEventListener("load",(e) => {
@@ -476,6 +500,7 @@ function Logout() {
       if(btnLogout.value !== null) {
         btnLogout.addEventListener('click',(e) => {
           localStorage.removeItem("jwttoken")
+          localStorage.removeItem("username")
           window.location.reload();
         })
       }
