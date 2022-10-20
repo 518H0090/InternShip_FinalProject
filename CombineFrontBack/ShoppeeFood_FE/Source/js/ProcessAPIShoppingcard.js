@@ -1,6 +1,7 @@
 const querySearch = window.location.search.split("?")[1].split("=")[1];
 const layoutShoppinglist = document.querySelector('.layout__shoppinglist');
 const layoutContainer = document.querySelector('.layout .layout__container');
+const layoutProcessBillBtn = document.querySelector('.layout__processbill button[type="button"]')
 
 
 window.addEventListener('load',(e) => {
@@ -129,3 +130,34 @@ GetTotalPriceInShoppingCart(querySearch)
 })
 
 
+
+layoutProcessBillBtn.addEventListener('click',(e) => {
+    const totalCost =  e.target.previousElementSibling.lastElementChild.innerText
+
+    const acceptPayment = window.confirm("Pay For This Bill ?");
+
+    if (acceptPayment) { 
+        const username = localStorage.getItem("username")
+
+        let processbill = {
+            totalCost : totalCost,
+            username : username
+        }
+
+        console.log(processbill)
+
+        NewBillInShoppingCart(username,totalCost)
+        .then(data => {
+            window.alert("Create Succesful" + "\n" + data.data.billId);
+            window.location.href = "./index.html";
+        })
+        .catch(error => {
+            window.alert(error.message);
+        })
+    } 
+
+    else {
+        window.alert('Not Accept Process')
+        window.location.reload()
+    }
+})

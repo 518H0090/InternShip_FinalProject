@@ -38,6 +38,10 @@ namespace ShopeeApi
             CreateMap<RequestAddFoodRecord, SelectFoodRecord>();
             CreateMap<RequestDeleteFoodRecord, SelectFoodRecord>();
 
+
+            CreateMap<RequestAddBill, Bill>();
+            CreateMap<Bill, ResponseGetBill>();
+
         }
     }
 }

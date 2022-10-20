@@ -63,12 +63,14 @@ builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IFoodRepository, FoodRepository>();
 builder.Services.AddScoped<ICategoryFoodRepository, CategoryFoodRepository>();
 builder.Services.AddScoped<IRecordRepository, RecordRepository>();
+builder.Services.AddScoped<IBillRepository, BillRepository>();
 
 builder.Services.AddScoped<IRestaurantService, RestaurantService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IFoodService, FoodService>();
 builder.Services.AddScoped<ICategoryFoodService, CategoryFoodService>();
 builder.Services.AddScoped<IRecordService, RecordService>();
+builder.Services.AddScoped<IBillService, BillService>();
 
 var app = builder.Build();
 

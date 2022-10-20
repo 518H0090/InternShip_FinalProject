@@ -16,6 +16,7 @@ namespace ShopeeApi.Datas
         public DbSet<Food> Foods { set; get; }
         public DbSet<RelationCategoryFood> RelationCategoryFoods { set; get; }
         public DbSet<SelectFoodRecord> SelectFoodRecords { set; get; }
+        public DbSet<Bill> Bills { set; get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -213,6 +214,25 @@ namespace ShopeeApi.Datas
                 .HasForeignKey(sfr => sfr.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
             });
+
+            //Bill
+            modelBuilder.Entity<Bill>(x =>
+            {
+                x.HasKey(b => b.BillId);
+
+                x.HasIndex(b => b.BillId).IsUnique();
+
+                x.Property(b => b.totalPayment).HasDefaultValue<float>(0);
+
+
+                x.HasOne<User>(b => b.User)
+                .WithMany(u => u.Bills)
+                .HasForeignKey(b => b.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            });
+
+
         }
     }
 }

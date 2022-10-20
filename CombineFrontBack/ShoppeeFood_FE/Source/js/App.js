@@ -306,8 +306,6 @@ async function AddNewItemInShoppingCart(username,foodInfo) {
    })
  });
 
- console.log(foodInfo)
-
  if(fetchUrl.ok) {
    let dataJson = await fetchUrl.json();
 
@@ -339,6 +337,32 @@ async function DeleteNewItemInShoppingCart(username,recordId) {
  }
 
  throw new Error(`Can't Delete Item`)
+}
+
+// Create Bill in Shopping Cart Follow Username
+async function NewBillInShoppingCart(username,totalCost) {
+  let url = "http://localhost:49071/api/Bill/CreateNewBill"
+
+  let fetchUrl = await fetch(url, {
+   method : "POST",
+   headers: {
+     "Content-Type" : "application/json"
+   },
+   body : JSON.stringify(
+    {
+      "totalPayment": totalCost,
+      "useName": username
+    }
+   )
+ });
+
+ if(fetchUrl.ok) {
+   let dataJson = await fetchUrl.json();
+
+   return dataJson;
+ }
+
+ throw new Error(`Can't Process Bill`)
 }
 
 window.addEventListener("load",(e) => {
@@ -419,6 +443,7 @@ window.addEventListener("load",(e) => {
 
           let newListItem = listItemShoppingCart.map(element => {
 
+            let reduceFoodTitle = element.foodTitle.length > 14 ? element.foodTitle.slice(0,14) + "..." : element.foodTitle;
 
             return `  <!-- Item -->
             <li class="navbar-shopping__item">
@@ -429,7 +454,7 @@ window.addEventListener("load",(e) => {
 
               <!-- Content -->
               <div class="navbar-shopping__content">
-                <h3 class="navbar-shopping__content-title">${element.foodTitle}</h3>
+                <h3 class="navbar-shopping__content-title">${reduceFoodTitle}</h3>
                 <p class="navbar-shopping__content-cost">${element.foodPrice} <sup>đ</sup> </p>
               </div>
             </li>`
@@ -444,8 +469,6 @@ window.addEventListener("load",(e) => {
         }).catch(error => {
           console.log(error)
           const navbarShoppingList = document.querySelector('.navbar-login.navbar-iflogin .navbar-shopping__list')
-
-          window.location.reload();
         })
 
         navbarLogin.innerHTML = newLayoutNavbar + viewListShoppingCart;
@@ -489,7 +512,11 @@ function ProcessEventShoppingDropdown() {
     navbarLoginShoppingcartViewlistitem.classList.toggle('show')
 
       if (navbarLoginShoppingcartViewlistitem.firstElementChild.innerText === '') {
+        
+        window.alert("You Must Have Item In Shopping Cart \n Or Maybe System Is Lagging so It Will Refresh Later \n Please Wait");
+        navbarLoginShoppingcartViewlistitem.classList.remove("show");
         window.location.reload();
+
       }
   })
 }
