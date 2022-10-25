@@ -7,10 +7,14 @@ namespace ShopeeApi.Repository
     public class FoodRepository : IFoodRepository
     {
         private readonly DataContext _context;
+        private readonly IConfiguration _configuration;
+        private readonly int _totalFoodGenerate;
 
-        public FoodRepository(DataContext context)
+        public FoodRepository(DataContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
+            _totalFoodGenerate = int.Parse(_configuration.GetSection("SetIndexPageForFood:NumberFoodGenerate").Value);
         }
 
         public async Task<int> AllIndexPagination()
@@ -23,7 +27,7 @@ namespace ShopeeApi.Repository
                 countTotalFoods++;
             });
 
-            totalIndexPage = (int) Math.Ceiling(countTotalFoods / 15);
+            totalIndexPage = (int) Math.Ceiling(countTotalFoods / _totalFoodGenerate);
 
             return totalIndexPage;
         }

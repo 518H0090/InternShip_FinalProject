@@ -164,7 +164,7 @@ async function RegisterAccount(userName, password, rePassword) {
 }
 
 // Fetch API Login
-async function RegisterAccount(userName, password) {
+async function AuthenAccount(userName, password) {
   let url = "http://localhost:49071/api/User/AuthenLogin";
 
   let fetchUrl = await fetch(url, {

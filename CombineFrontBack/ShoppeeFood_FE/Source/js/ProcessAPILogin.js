@@ -21,7 +21,7 @@ btnLoginInSystem.addEventListener('click',(e) => {
     } 
 
     else {
-        RegisterAccount(userGet,passwordGet)
+        AuthenAccount(userGet,passwordGet)
         .then(data => {
             layoutFormShowprocess.innerHTML = 
             `<p class="layout-form__showprocess">
