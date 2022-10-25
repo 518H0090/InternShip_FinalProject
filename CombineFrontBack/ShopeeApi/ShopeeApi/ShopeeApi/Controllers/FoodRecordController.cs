@@ -27,7 +27,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetCountNumberRecordFollowUserName/{username}")]
+        [Route("count-number-record-follow-user/{username}")]
         public async Task<IActionResult> GetCountNumberRecordFollowUserName(string username)
         {
             return Ok(await _repository.CountNumberRecord(username));

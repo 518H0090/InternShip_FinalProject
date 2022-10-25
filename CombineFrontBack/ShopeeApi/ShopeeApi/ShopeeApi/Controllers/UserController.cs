@@ -27,7 +27,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpPost]
-        [Route("Register")]
+        [Route("register")]
         public async Task<IActionResult> RegisterUser(RequestUserRegister request)
         {
             var registerCheck = await _repository.Register(request);
@@ -45,7 +45,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpPost]
-        [Route("AuthenLogin")]
+        [Route("authen-login")]
         public async Task<IActionResult> AuthenLogin(RequestUserLogin request)
         {
             var authenUser = await _repository.AuthenLogin(request);
@@ -59,17 +59,11 @@ namespace ShopeeApi.Controllers
                 });
             }
 
-            Response.Cookies.Append("JwtToken", authenUser.Data, new CookieOptions
-            {
-                HttpOnly = true,
-                Expires = DateTime.Now.AddDays(1)
-            });
-
             return Ok(authenUser);
         }
 
         [HttpGet]
-        [Route("ViewUserInfo")]
+        [Route("view-user-info")]
         public async Task<IActionResult> ViewUserInfo(string jwtToken)
         {
             var checkUserInfo = await _repository.ViewUserInfo(jwtToken);

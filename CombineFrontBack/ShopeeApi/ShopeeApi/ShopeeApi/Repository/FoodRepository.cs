@@ -37,7 +37,7 @@ namespace ShopeeApi.Repository
             double countTotalFoods = 0;
             int totalIndexPage = 0;
 
-            await _context.Foods.Where(x => x.FoodTitle.Contains(keywords)).ForEachAsync(element =>
+            await _context.Foods.Where(x => x.FoodTitle.ToLower().Contains(keywords.ToLower())).ForEachAsync(element =>
             {
                 countTotalFoods++;
             });
@@ -136,13 +136,13 @@ namespace ShopeeApi.Repository
 
             if (indexPage > 1)
             {
-                return await _context.Foods.Where(x => x.FoodTitle.Contains(keywords))
+                return await _context.Foods.Where(x => x.FoodTitle.ToLower().Contains(keywords.ToLower()))
                     .Skip(numberFoodSkip).Take(numberFoodGenerate).ToListAsync();
             }
 
             else
             {
-                return await _context.Foods.Where(x => x.FoodTitle.Contains(keywords))
+                return await _context.Foods.Where(x => x.FoodTitle.ToLower().Contains(keywords.ToLower()))
                     .Take(numberFoodGenerate).ToListAsync();
             }
         }

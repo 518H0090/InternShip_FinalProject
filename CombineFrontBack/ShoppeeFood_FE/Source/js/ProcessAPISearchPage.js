@@ -68,7 +68,7 @@ window.addEventListener("load", (e) => {
   } 
   
   else {
-    let keyWordsForSearch = keysearch.split("?")[1].split("=")[1];
+    let keyWordsForSearch = decodeURIComponent(keysearch.split("?")[1].split("=")[1]);
 
     getTotalIndexFoodWithKeywords(keyWordsForSearch)
     .then((data) => {

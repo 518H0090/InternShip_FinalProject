@@ -1,6 +1,6 @@
 // Fetch All Restaurant Information
 let fetchAllRestaurants = async () => {
-  const url = "http://localhost:49071/api/Restaurant/GetAllRestaurants";
+  const url = "http://localhost:49071/api/Restaurant/all-restaurants";
 
   const fetchUrl = await fetch(url, {
     method: "GET",
@@ -20,7 +20,7 @@ let fetchAllRestaurants = async () => {
 
 // Fetch Restaurant By Title
 let fetchRestaurantByTitle = async (title) => {
-  const url = "http://localhost:49071/api/Restaurant/GetRestaurantByTitle/";
+  const url = "http://localhost:49071/api/Restaurant/restaurant-by-title/";
 
   const fetchUrl = await fetch(url + title, {
     method: "GET",
@@ -41,7 +41,7 @@ let fetchRestaurantByTitle = async (title) => {
 // Fetch All Category Combine With RestaurantId
 let fetchAllCategoryWithResId = async (restaurantId) => {
   const url =
-    "http://localhost:49071/api/Category/GetAllCategoriesWithRestaurant/";
+    "http://localhost:49071/api/Category/all-categories-with-restaurantid/";
 
   const fetchUrl = await fetch(url + restaurantId, {
     method: "GET",
@@ -62,7 +62,7 @@ let fetchAllCategoryWithResId = async (restaurantId) => {
 // Fetch All Category Combine With It Food In Restaurant
 async function FetchAllCategoryCombineFood(restaurantId) {
   const url =
-    "http://localhost:49071/api/CategoryFood/GetAllCategoryCombineFood/";
+    "http://localhost:49071/api/CategoryFood/all-categories-combine-food/";
 
   const fetchUrl = await fetch(url + restaurantId, {
     method: "GET",
@@ -78,7 +78,7 @@ async function FetchAllCategoryCombineFood(restaurantId) {
 
 // Get Total Index Food
 async function getTotalIndexFood() {
-  const url = "http://localhost:49071/api/Food/GetTotalIndex";
+  const url = "http://localhost:49071/api/Food/total-index";
 
   const fetchUrl = await fetch(url);
 
@@ -89,7 +89,7 @@ async function getTotalIndexFood() {
 
 // Get Food In IndexPage
 async function FetchFoodIndexPage(indexPage) {
-  let url = "http://localhost:49071/api/Food/GetFoodWithIndex/";
+  let url = "http://localhost:49071/api/Food/food-with-index/";
 
   let fetchUrl = await fetch(url + indexPage);
 
@@ -100,7 +100,7 @@ async function FetchFoodIndexPage(indexPage) {
 
 // Get Total Index Food With Keywords
 async function getTotalIndexFoodWithKeywords(keywords) {
-  const url = "http://localhost:49071/api/Food/GetTotalIndexWithKeywords?keywords=";
+  const url = "http://localhost:49071/api/Food/total-index-with-keywords/";
 
   const fetchUrl = await fetch(url+keywords);
 
@@ -117,9 +117,18 @@ async function getTotalIndexFoodWithKeywords(keywords) {
 
 // Get Food In IndexPage With Keywords
 async function FetchFoodIndexPageWithKeywords(indexPage,keywords) {
-  let url = `http://localhost:49071/api/Food/GetFoodWithIndexAndTitle?indexpage=${indexPage}&keywords=${keywords}`;
+  let url = `http://localhost:49071/api/Food/food-with-index-and-title`;
 
-  let fetchUrl = await fetch(url);
+  let fetchUrl = await fetch(url, {
+    method : "POST",
+    headers: {
+      "Content-Type" : "application/json"
+    },
+    body: JSON.stringify({
+        "indexpage": indexPage,
+        "keywords": keywords
+    })
+  });
 
   let dataJson = await fetchUrl.json();
 
@@ -128,7 +137,7 @@ async function FetchFoodIndexPageWithKeywords(indexPage,keywords) {
 
 // Get Restaurant By Id
 async function FetchRestaurantById(restaurantId) {
-  let url = "http://localhost:49071/api/Restaurant/GetRestaurantById/";
+  let url = "http://localhost:49071/api/Restaurant/restaurant-by-id/";
 
   let fetchUrl = await fetch(url + restaurantId);
 
@@ -139,7 +148,7 @@ async function FetchRestaurantById(restaurantId) {
 
 // Post Register Account
 async function RegisterAccount(userName, password, rePassword) {
-  let url = "http://localhost:49071/api/User/Register";
+  let url = "http://localhost:49071/api/User/register";
 
   let fetchUrl = await fetch(url, {
     method : "POST",
@@ -165,7 +174,7 @@ async function RegisterAccount(userName, password, rePassword) {
 
 // Fetch API Login
 async function AuthenAccount(userName, password) {
-  let url = "http://localhost:49071/api/User/AuthenLogin";
+  let url = "http://localhost:49071/api/User/authen-login";
 
   let fetchUrl = await fetch(url, {
     method : "POST",
@@ -190,12 +199,12 @@ async function AuthenAccount(userName, password) {
 
 // Check User Info
 async function CheckUserInfo(jwtToken) {
-   let url = "http://localhost:49071/api/User/ViewUserInfo?jwtToken="
+   let url = "http://localhost:49071/api/User/view-user-info?jwtToken="
 
    let fetchUrl = await fetch(url+jwtToken, {
     method : "GET",
     headers: {
-      "Content-Type" : "application/json"
+      "Content-Type" : "application/json",
     },
   });
 
@@ -210,7 +219,7 @@ async function CheckUserInfo(jwtToken) {
 
 // Get Count Number item in Shopping Cart Follow Username
 async function countItemInShoppingCart(username) {
-  let url = "http://localhost:49071/api/FoodRecord/GetCountNumberRecordFollowUserName/"
+  let url = "http://localhost:49071/api/FoodRecord/count-number-record-follow-user/"
 
   let fetchUrl = await fetch(url+username, {
    method : "GET",

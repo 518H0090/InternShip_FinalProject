@@ -33,7 +33,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetTotalIndex")]
+        [Route("total-index")]
         public async Task<IActionResult> GetTotalIndex()
         {
             var allIndexPage = await _repository.AllIndexPagination();
@@ -47,7 +47,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetTotalIndexWithKeywords")]
+        [Route("total-index-with-keywords/{keywords}")]
         public async Task<IActionResult> GetTotalIndex(string keywords)
         {
             var allIndexPage = await _repository.AllIndexPaginationWithKeywords(keywords);
@@ -62,7 +62,7 @@ namespace ShopeeApi.Controllers
 
         //Function Test
         [HttpGet]
-        [Route("GetFoodWithIndex/{indexpage}")]
+        [Route("food-with-index/{indexpage}")]
         public async Task<IActionResult> GetFoodWithIndex(int indexpage)
         {
             var allIndexPage = await _service.GetAllFoodPagination(indexpage);
@@ -75,11 +75,11 @@ namespace ShopeeApi.Controllers
             return Ok(allIndexPage);
         }
 
-        [HttpGet]
-        [Route("GetFoodWithIndexAndTitle")]
-        public async Task<IActionResult> GetFoodWithIndexAndTitle(int indexpage, string keywords)
+        [HttpPost]
+        [Route("food-with-index-and-title")]
+        public async Task<IActionResult> GetFoodWithIndexAndTitle(RequestFoodWithIndexAndTitle request)
         {
-            var allIndexPage = await _service.GetAllFoodPaginationWithKeywords(indexpage, keywords);
+            var allIndexPage = await _service.GetAllFoodPaginationWithKeywords(request.indexpage, request.keywords);
 
             if (allIndexPage.Data == null)
             {
@@ -88,7 +88,6 @@ namespace ShopeeApi.Controllers
 
             return Ok(allIndexPage);
         }
-
 
         //End Function Test
 

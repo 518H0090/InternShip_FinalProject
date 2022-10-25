@@ -60,7 +60,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllRestaurants")]
+        [Route("all-restaurants")]
         public async Task<IActionResult> GetAllRestaurants()
         {
             var getAllRes = await _service.GetAllRestaurant();
@@ -88,7 +88,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetRestaurantById/{id}")]
+        [Route("restaurant-by-id/{id}")]
         public async Task<IActionResult> GetRestaurantById(int id)
         {
             var getAllResById = await _service.GetRestaurantById(id);
@@ -102,7 +102,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetRestaurantByTitle/{resTitle}")]
+        [Route("restaurant-by-title/{resTitle}")]
         public async Task<IActionResult> GetRestaurantById(string resTitle)
         {
             var getAllResById = await _service.GetRestaurantByTitle(resTitle);
