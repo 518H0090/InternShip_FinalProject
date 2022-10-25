@@ -42,7 +42,7 @@ namespace ShopeeApi.Repository
                 countTotalFoods++;
             });
 
-            totalIndexPage = (int)Math.Ceiling(countTotalFoods / 15);
+            totalIndexPage = (int)Math.Ceiling(countTotalFoods / _totalFoodGenerate);
 
             return totalIndexPage;
         }
@@ -114,8 +114,8 @@ namespace ShopeeApi.Repository
 
         public async Task<IEnumerable<Food>> GetAllFoodPagination(int indexPage)
         {
-            int numberFoodGenerate = 15;
-            int numberFoodSkip = 15 * (indexPage - 1);
+            int numberFoodGenerate = _totalFoodGenerate;
+            int numberFoodSkip = _totalFoodGenerate * (indexPage - 1);
 
             if (indexPage > 1)
             {
@@ -131,7 +131,7 @@ namespace ShopeeApi.Repository
 
         public async Task<IEnumerable<Food>> GetAllFoodPaginationWithKeywords(int indexPage, string keywords)
         {
-            int numberFoodGenerate = 15;
+            int numberFoodGenerate = _totalFoodGenerate;
             int numberFoodSkip = 15 * (indexPage - 1);
 
             if (indexPage > 1)
