@@ -47,6 +47,8 @@ namespace ShopeeApi.Repository
             return totalIndexPage;
         }
 
+       
+
         public async Task<Food> CreateFood(Food request)
         {
             //Basic Temp Check Priceless In Visualize
@@ -140,7 +142,7 @@ namespace ShopeeApi.Repository
                     .Skip(numberFoodSkip).Take(numberFoodGenerate).ToListAsync();
             }
 
-            else
+            else 
             {
                 return await _context.Foods.Where(x => x.FoodTitle.ToLower().Contains(keywords.ToLower()))
                     .Take(numberFoodGenerate).ToListAsync();
@@ -177,6 +179,64 @@ namespace ShopeeApi.Repository
             await _context.SaveChangesAsync();
 
             return updatedFood.Entity;
+        }
+
+
+        public async Task<int> AllIndexPaginationWithRestaurantType(string resType)
+        {
+            double countTotalFoods = 0;
+            int totalIndexPage = 0;
+
+            var listFood = new List<Food>();
+
+            var processResType = resType.Replace("%2F", "/");
+
+            var listRestaurant = await _context.Restaurants.Where(x => x.RsType == processResType).ToListAsync();
+
+            listRestaurant.ForEach(element =>
+            {
+                var foodInItem = _context.Foods.Where(x => x.Restaurant == element).ToList();
+
+                listFood.AddRange(foodInItem);
+            });
+
+            listFood.ForEach(element =>
+            {
+                countTotalFoods++;
+            });
+
+            totalIndexPage = (int)Math.Ceiling(countTotalFoods / _totalFoodGenerate);
+
+            return totalIndexPage;
+        }
+
+        public async Task<IEnumerable<Food>> GetAllFoodPaginationWithRestaurantType(int indexPage, string resType)
+        {
+            var listFood = new List<Food>();
+            
+            var listRestaurant = await _context.Restaurants.Where(x => x.RsType == resType).ToListAsync();
+
+            int numberFoodGenerate = _totalFoodGenerate;
+            int numberFoodSkip = 15 * (indexPage - 1);
+
+            listRestaurant.ForEach(element =>
+            {
+                var foodInItem = _context.Foods.Where(x => x.Restaurant == element).ToList();
+
+                listFood.AddRange(foodInItem);
+            });
+
+            if (indexPage > 1)
+            {
+                return listFood.Skip(numberFoodSkip).Take(numberFoodGenerate).ToList();
+            }
+
+            else if (indexPage == 1)
+            {
+                return listFood.Take(numberFoodGenerate).ToList();
+            }
+
+            return null;
         }
     }
 }

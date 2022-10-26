@@ -29,5 +29,10 @@ namespace ShopeeApi.Repository
         Task<bool> DeleteFood(Food request);
 
         Task<Food> UpdateFood(Food request);
+
+
+        Task<int> AllIndexPaginationWithRestaurantType(string resType);
+
+        Task<IEnumerable<Food>> GetAllFoodPaginationWithRestaurantType(int indexPage, string resType);
     }
 }

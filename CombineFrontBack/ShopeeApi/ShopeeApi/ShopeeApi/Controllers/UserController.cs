@@ -3,7 +3,6 @@ using Newtonsoft.Json;
 using ShopeeApi.Dtos;
 using ShopeeApi.Models;
 using ShopeeApi.Repository;
-using System.Web.Http.Cors;
 
 namespace ShopeeApi.Controllers
 {

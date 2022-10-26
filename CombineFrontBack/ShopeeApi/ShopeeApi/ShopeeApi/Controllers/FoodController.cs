@@ -48,7 +48,7 @@ namespace ShopeeApi.Controllers
 
         [HttpGet]
         [Route("total-index-with-keywords/{keywords}")]
-        public async Task<IActionResult> GetTotalIndex(string keywords)
+        public async Task<IActionResult> GetTotalIndexWithKeywords(string keywords)
         {
             var allIndexPage = await _repository.AllIndexPaginationWithKeywords(keywords);
 
@@ -60,7 +60,6 @@ namespace ShopeeApi.Controllers
             return Ok(allIndexPage);
         }
 
-        //Function Test
         [HttpGet]
         [Route("food-with-index/{indexpage}")]
         public async Task<IActionResult> GetFoodWithIndex(int indexpage)
@@ -75,6 +74,38 @@ namespace ShopeeApi.Controllers
             return Ok(allIndexPage);
         }
 
+        //Functions Test
+        [HttpPost]
+        [Route("total-index-with-restype")]
+        public async Task<IActionResult> GetTotalIndexWithResType(RequestTotalIndexFoodWithResType request)
+        {
+            var allIndexPage = await _repository.AllIndexPaginationWithRestaurantType(request.RestaurantType);
+
+            if (allIndexPage == 0)
+            {
+                return NotFound(allIndexPage);
+            }
+
+            return Ok(allIndexPage);
+        }
+
+        [HttpPost]
+        [Route("food-with-index-and-restype")]
+        public async Task<IActionResult> GetFoodWithIndexAndRestaurantType(RequestFoodWithIndexAndResType request)
+        {
+            var allIndexPage = await _service.GetAllFoodPaginationWithRestaurantType(request.indexpage, request.restype);
+
+            if (allIndexPage.Data == null)
+            {
+                return NotFound(allIndexPage);
+            }
+
+            return Ok(allIndexPage);
+        }
+
+        //Functions Test
+
+
         [HttpPost]
         [Route("food-with-index-and-title")]
         public async Task<IActionResult> GetFoodWithIndexAndTitle(RequestFoodWithIndexAndTitle request)
@@ -88,6 +119,7 @@ namespace ShopeeApi.Controllers
 
             return Ok(allIndexPage);
         }
+
 
         //End Function Test
 

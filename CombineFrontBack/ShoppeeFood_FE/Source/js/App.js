@@ -374,6 +374,59 @@ async function NewBillInShoppingCart(username,totalCost) {
  throw new Error(`Can't Process Bill`)
 }
 
+
+// Get Total Index Food With RestaurantType
+async function getTotalIndexFoodWithRestaurantType(restype) {
+  const url = "http://localhost:49071/api/Food/total-index-with-restype";
+
+  const fetchUrl = await fetch(url, {
+    method : "POST",
+    headers : {
+      "Content-Type" : "application/json"
+    },
+    body : JSON.stringify({
+      "restaurantType": restype
+    })
+  });
+
+
+  if (fetchUrl.ok) {
+    const dataJson = await fetchUrl.json();
+
+    return dataJson;
+  }
+
+  throw new Error('Not Match Value');
+ 
+}
+
+// Get Food In IndexPage With RestaurantType
+async function FetchFoodIndexPageWithRestaurantType(indexPage,restype) {
+  let url = `http://localhost:49071/api/Food/food-with-index-and-restype`;
+
+  let fetchUrl = await fetch(url, {
+    method : "POST",
+    headers: {
+      "Content-Type" : "application/json"
+    },
+    body: JSON.stringify(
+      {
+        "indexpage": indexPage,
+        "restype": restype
+      }
+    )
+  });
+
+  if (fetchUrl.ok) {
+    let dataJson = await fetchUrl.json();
+
+    return dataJson;
+  }
+
+  throw new Error('Not Found Any Value');
+  
+}
+
 window.addEventListener("load",(e) => {
   let jwtToken =  localStorage.getItem("jwttoken");
   const navbarSearch = document.querySelector('.navbar-search');
