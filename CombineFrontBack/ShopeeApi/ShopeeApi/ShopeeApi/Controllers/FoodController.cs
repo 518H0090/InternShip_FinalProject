@@ -19,7 +19,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllFoodWithoutRestaurant")]
+        [Route("all-foods-without-restaurant")]
         public async Task<IActionResult> GetAllFoodWithoutRestaurant()
         {
             var getAllFood = await _service.GetAllFood();
@@ -92,7 +92,7 @@ namespace ShopeeApi.Controllers
         //End Function Test
 
         [HttpGet]
-        [Route("GetAllFoodWithRestaurant/{resId}")]
+        [Route("all-foods-with-restaurant/{resId}")]
         public async Task<IActionResult> GetAllFoodWithRestaurant(int resId)
         {
             var getAllFood = await _service.GetAllFoodInRestaurant(resId);
@@ -106,7 +106,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetFoodWithItsId/{foodId}")]
+        [Route("food-with-its-id/{foodId}")]
         public async Task<IActionResult> GetFoodWithItsId(int foodId)
         {
             var getFoodById = await _service.GetFoodById(foodId);
@@ -120,7 +120,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetFoodInRestaurantById")]
+        [Route("food-in-restaurant-by-id")]
         public async Task<IActionResult> GetFoodInRestaurantById([FromQuery] RequestFoodContainRestaurant request)
         {
             var getFoodInResById = await _service.GetFoodInRestaurantById(request);
@@ -134,7 +134,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpPost]
-        [Route("CreateNewFood")]
+        [Route("new-food")]
         public async Task<IActionResult> CreateNewFood(RequestAddFood request)
         {
             var newFood = await _service.CreateFood(request);
@@ -148,7 +148,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpDelete]
-        [Route("DeleteFood")]
+        [Route("delete-food")]
         public async Task<IActionResult> CreateNewFood(RequestFoodContainRestaurant request)
         {
             var deleteFood = await _service.DeleteFood(request);
@@ -162,7 +162,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpPut]
-        [Route("UpdateFood")]
+        [Route("update-food")]
         public async Task<IActionResult> UpdateFood(RequestUpdateFood request)
         {
             var updateFood = await _service.UpdateFood(request);

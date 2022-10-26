@@ -16,7 +16,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllCategoriesWithoutRestaurant")]
+        [Route("all-categories-without-restaurant")]
         public async Task<IActionResult> GetAllCategoriesWithoutRestaurant()
         {
             var getFullCategories = await _service.GetFullCategories();
@@ -44,7 +44,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetCategoryWithId")]
+        [Route("category-with-id")]
         public async Task<IActionResult> GetCategoryWithId([FromQuery] RequestCategoryById request)
         {
             var GetCategoryById = await _service.GetCategoryById(request);
@@ -58,7 +58,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetCategoryWithTag")]
+        [Route("category-with-tag")]
         public async Task<IActionResult> GetCategoryWithTag([FromQuery] RequestCategoryByTag request)
         {
             var GetCategoryByTag = await _service.GetCategoryByTag(request);
@@ -72,7 +72,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpPost]
-        [Route("NewCategoryInRestaurant")]
+        [Route("new-category-in-restaurant")]
         public async Task<IActionResult> NewCategoryInRestaurant(RequestAddCategory request)
         {
             var newCategory = await _service.CreateCategory(request);
@@ -86,7 +86,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpDelete]
-        [Route("DeleteCategoryInRestaurant")]
+        [Route("delete-category-in-restaurant")]
         public async Task<IActionResult> DeleteCategoryInRestaurant(RequestDeleteCategory request)
         {
             var deleteCategory = await _service.DeleteCategory(request);
@@ -100,7 +100,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpPut]
-        [Route("UpdateCategory")]
+        [Route("update-category")]
         public async Task<IActionResult> UpdateCategory(RequestEditCategory request)
         {
             var updateCategory = await _service.UpdateCategory(request);

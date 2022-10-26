@@ -17,7 +17,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllRelation")]
+        [Route("all-relations")]
         public async Task<IActionResult> GetAllRelation()
         {
             var getAllRelate = await _service.GetAllRelation();
@@ -40,7 +40,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllFoodCombineCategory/{resID}")]
+        [Route("all-food-combine-category/{resID}")]
         public async Task<IActionResult> GetAllFoodCombineCategory(int resID)
         {
             var getAllRelate = await _service.GetAllFoodwithRestaurantIdCombineCategory(resID);
@@ -49,7 +49,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetFoodCombineCategory")]
+        [Route("food-combine-category")]
         public async Task<IActionResult> GetFoodCombineCategory([FromQuery] RequestFoodCombineCategory request)
         {
             var getRelate = await _service.GetFoodwithRestaurantIdCombineCategory(request);
@@ -58,7 +58,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetCategoryCombineFood")]
+        [Route("category-combine-food")]
         public async Task<IActionResult> GetCategoryCombineFood([FromQuery] RequestCategoryCombineFood request)
         {
             var getRelate = await _service.GetCategorywithRestaurantIdCombineFood(request);
@@ -67,7 +67,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpPost]
-        [Route("NewRelationship")]
+        [Route("new-relationship")]
         public async Task<IActionResult> NewRelationship(int resId, RequestCategoryFood request)
         {
             var newRelationship = await _service.ConnectFoodTag(resId, request);
@@ -81,7 +81,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpDelete]
-        [Route("DeleteRelationship")]
+        [Route("delete-relationship")]
         public async Task<IActionResult> DeleteRelationship(int resId, RequestCategoryFood request)
         {
             var deleteRelationship = await _service.DeleteRelationFoodTag(resId, request);

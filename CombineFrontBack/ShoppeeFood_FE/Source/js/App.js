@@ -199,7 +199,7 @@ async function AuthenAccount(userName, password) {
 
 // Check User Info
 async function CheckUserInfo(jwtToken) {
-   let url = "http://localhost:49071/api/User/view-user-info?jwtToken="
+   let url = "http://localhost:49071/api/User/view-user-info?token="
 
    let fetchUrl = await fetch(url+jwtToken, {
     method : "GET",

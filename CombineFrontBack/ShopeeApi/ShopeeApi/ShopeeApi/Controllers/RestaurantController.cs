@@ -18,7 +18,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllRestaurantWithTag")]
+        [Route("all-restaurants-with-tag")]
         public async Task<IActionResult> GetAllRestaurantWithTag()
         {
             var getAllRes = await _service.GetAllRestaurantWithTag();
@@ -32,7 +32,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllRestaurantWithFood")]
+        [Route("all-restaurants-with-food")]
         public async Task<IActionResult> GetAllRestaurantWithFood()
         {
             var getAllRes = await _service.GetAllRestaurantWithFood();
@@ -46,7 +46,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllRestaurantWithFoodTag")]
+        [Route("all-restaurants-with-food-tag")]
         public async Task<IActionResult> GetAllRestaurantWithFoodTag()
         {
             var getAllRes = await _service.GetAllRestaurantWithFoodTag();
@@ -74,7 +74,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllRestaurantsTopNew9")]
+        [Route("all-restaurants-top-new9")]
         public async Task<IActionResult> GetAllRestaurantsTopNew9()
         {
             var getAllRes = await _service.GetAllRestaurantTop9();
@@ -116,7 +116,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetRestaurantByIdWithFoodTag/{resId}")]
+        [Route("restaurant-by-id-with-food-tag/{resId}")]
         public async Task<IActionResult> GetRestaurantByIdWithFoodTag(int resId)
         {
             var getResById = await _service.GetRestaurantByIdWithTagAndFood(resId);
@@ -130,7 +130,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("ViewPromotion")]
+        [Route("view-promotion")]
         public IActionResult ViewPromotion()
         {
             //return Ok(Enum.GetValues(typeof(Promotion)));
@@ -148,7 +148,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpPost]
-        [Route("NewRestaurant")]
+        [Route("new-restaurant")]
         public async Task<IActionResult> NewRestaurant(RequestAddRestaurant request)
         {
             var newRes = await _service.CreateRestaurant(request);
@@ -162,7 +162,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpPut]
-        [Route("UpdateRestaurant/{id}")]
+        [Route("update-restaurant/{id}")]
         public async Task<IActionResult> UpdateRestaurant(int id, RequestEditRestaurant request)
         {
             var newRes = await _service.UpdateRestaurant(id, request);
@@ -176,7 +176,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpDelete]
-        [Route("DeleteRestaurant/{id}")]
+        [Route("delete-restaurant/{id}")]
         public async Task<IActionResult> DeleteRestaurant(int id)
         {
             var deleteRes = await _service.DeleteRestaurant(id);

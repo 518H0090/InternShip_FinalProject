@@ -17,7 +17,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllBills")]
+        [Route("all-bills")]
         public async Task<IActionResult> GetAllBills()
         {
             var getAllBills = await _service.GetAllBill();
@@ -31,7 +31,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllBillFollowUsername")]
+        [Route("all-bill-follow-username")]
         public async Task<IActionResult> GetAllBillFollowUsername(string username)
         {
             var getAllBills = await _service.GetAllBillFollowUsername(username);

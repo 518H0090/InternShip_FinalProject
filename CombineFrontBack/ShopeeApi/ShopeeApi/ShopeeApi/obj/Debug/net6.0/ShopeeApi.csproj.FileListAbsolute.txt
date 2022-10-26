@@ -262,3 +262,8 @@ D:\S3corp\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi
 D:\S3corp\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\obj\Debug\net6.0\ShopeeApi.pdb
 D:\S3corp\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\obj\Debug\net6.0\ShopeeApi.genruntimeconfig.cache
 D:\S3corp\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\obj\Debug\net6.0\ref\ShopeeApi.dll
+D:\InternShip\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\System.Web.Cors.dll
+D:\InternShip\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+D:\InternShip\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\System.Web.Http.dll
+D:\InternShip\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\System.Web.Http.Cors.dll
+D:\InternShip\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

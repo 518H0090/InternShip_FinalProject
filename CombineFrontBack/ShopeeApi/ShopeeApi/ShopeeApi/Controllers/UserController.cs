@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using ShopeeApi.Dtos;
 using ShopeeApi.Models;
 using ShopeeApi.Repository;
+using System.Web.Http.Cors;
 
 namespace ShopeeApi.Controllers
 {
@@ -18,7 +19,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("ViewRole")]
+        [Route("view-role")]
         public IActionResult ViewRole()
         {
             //return Ok(JsonConvert.SerializeObject(new {Role.Admin, Role.User}, new Newtonsoft.Json.Converters.StringEnumConverter()));
@@ -64,9 +65,9 @@ namespace ShopeeApi.Controllers
 
         [HttpGet]
         [Route("view-user-info")]
-        public async Task<IActionResult> ViewUserInfo(string jwtToken)
+        public async Task<IActionResult> ViewUserInfo(string token)
         {
-            var checkUserInfo = await _repository.ViewUserInfo(jwtToken);
+            var checkUserInfo = await _repository.ViewUserInfo(token);
 
             if (checkUserInfo.Data == null)
             {
@@ -79,13 +80,6 @@ namespace ShopeeApi.Controllers
 
             return Ok(checkUserInfo.Data);
         }
-
-        [HttpPost]
-        [Route("Logout")]
-        public IActionResult Logout()
-        {
-            Response.Cookies.Delete("JwtToken");
-            return Ok("Logout");
-        }
+      
     }
 }
