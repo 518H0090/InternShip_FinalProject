@@ -20,7 +20,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetTotalPriceBill/{username}")]
+        [Route("total-bill/{username}")]
         public async Task<IActionResult> GetTotalPriceBill(string username)
         {
             return Ok(await _repository.TotalPriceRecord(username));
@@ -34,7 +34,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllRecord/{username}")]
+        [Route("all-record-follow-user/{username}")]
         public async Task<IActionResult> GetAllRecordFollowUser(string username)
         {
             var getAllRecord = await _service.GetAllRecordFollowUsername(username);
@@ -48,7 +48,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetTop6Record/{username}")]
+        [Route("top-6-record/{username}")]
         public async Task<IActionResult> GetTop6Record(string username)
         {
             var getTop6Record = await _service.GetTop6RecordFollowUsername(username);
@@ -62,7 +62,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpPost]
-        [Route("AddNewItemInShoppingCart/{username}")]
+        [Route("new-item/{username}")]
         public async Task<IActionResult> AddNewItemInShoppingCart(RequestAddFoodRecord request, string username)
         {
             var getAllRecord = await _service.NewRecord(request,username);
@@ -76,7 +76,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpDelete]
-        [Route("DeleteItemInShoppingCart")]
+        [Route("remove-item")]
         public async Task<IActionResult> DeleteItemInShoppingCart(RequestDeleteFoodRecord request)
         {
             var deleteRecord = await _service.DeleteRecord(request);

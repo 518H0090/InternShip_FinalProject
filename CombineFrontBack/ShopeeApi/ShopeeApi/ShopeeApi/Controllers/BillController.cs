@@ -45,7 +45,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpPost]
-        [Route("CreateNewBill")]
+        [Route("new-bill")]
         public async Task<IActionResult> CreateNewBill(RequestAddBill request)
         {
             var newBill = await _service.CreateNewBill(request);

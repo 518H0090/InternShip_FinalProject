@@ -239,7 +239,7 @@ async function countItemInShoppingCart(username) {
 
 // Get 6 item in Shopping Cart Follow Username
 async function Get6ItemInShoppingCart(username) {
-  let url = "http://localhost:49071/api/FoodRecord/GetTop6Record/"
+  let url = "http://localhost:49071/api/FoodRecord/top-6-record/"
 
   let fetchUrl = await fetch(url+username, {
    method : "GET",
@@ -259,7 +259,7 @@ async function Get6ItemInShoppingCart(username) {
 
 // Get All item in Shopping Cart Follow Username
 async function GetAllItemInShoppingCart(username) {
-  let url = "http://localhost:49071/api/FoodRecord/GetAllRecord/"
+  let url = "http://localhost:49071/api/FoodRecord/all-record-follow-user/"
 
   let fetchUrl = await fetch(url+username, {
    method : "GET",
@@ -279,7 +279,7 @@ async function GetAllItemInShoppingCart(username) {
 
 // Get Total Price in Shopping Cart Follow Username
 async function GetTotalPriceInShoppingCart(username) {
-  let url = "http://localhost:49071/api/FoodRecord/GetTotalPriceBill/"
+  let url = "http://localhost:49071/api/FoodRecord/total-bill/"
 
   let fetchUrl = await fetch(url+username, {
    method : "GET",
@@ -300,7 +300,7 @@ async function GetTotalPriceInShoppingCart(username) {
 
 // Add item in Shopping Cart Follow Username
 async function AddNewItemInShoppingCart(username,foodInfo) {
-  let url = "http://localhost:49071/api/FoodRecord/AddNewItemInShoppingCart/"
+  let url = "http://localhost:49071/api/FoodRecord/new-item/"
 
   let fetchUrl = await fetch(url+username, {
    method : "POST",
@@ -326,7 +326,7 @@ async function AddNewItemInShoppingCart(username,foodInfo) {
 
 // Delete item in Shopping Cart Follow Username
 async function DeleteNewItemInShoppingCart(username,recordId) {
-  let url = "http://localhost:49071/api/FoodRecord/DeleteItemInShoppingCart"
+  let url = "http://localhost:49071/api/FoodRecord/remove-item"
 
   let fetchUrl = await fetch(url, {
    method : "Delete",
@@ -350,7 +350,7 @@ async function DeleteNewItemInShoppingCart(username,recordId) {
 
 // Create Bill in Shopping Cart Follow Username
 async function NewBillInShoppingCart(username,totalCost) {
-  let url = "http://localhost:49071/api/Bill/CreateNewBill"
+  let url = "http://localhost:49071/api/Bill/new-bill"
 
   let fetchUrl = await fetch(url, {
    method : "POST",

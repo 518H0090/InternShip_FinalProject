@@ -31,7 +31,7 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetAllCategoryCombineFood/{resID}")]
+        [Route("all-categories-combine-food/{resID}")]
         public async Task<IActionResult> GetAllCategoryCombineFood(int resID)
         {
             var getAllRelate = await _service.GetAllCategorywithRestaurantIdCombineFood(resID);
