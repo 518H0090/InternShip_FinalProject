@@ -192,7 +192,7 @@ function FetchInMenuSearchBarList(params) {
 
         var existDescription =
           estimateFoodDescription === ""
-            ? `Not Found`
+            ? `<hr style="opacity:0.2">`
             : estimateFoodDescription;
 
         var foodPrice =
