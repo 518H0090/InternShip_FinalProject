@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using LoggerService;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ShopeeApi.Datas;
@@ -16,27 +17,33 @@ namespace ShopeeApi.Repository
         private readonly DataContext _context;
         private readonly IMapper _mapper;
         private readonly IConfiguration _configuration;
+        private readonly ILoggerManager _logger;
 
-        public UserRepository(DataContext context, IMapper mapper, IConfiguration configuration)
+        public UserRepository(DataContext context, IMapper mapper, IConfiguration configuration, ILoggerManager logger)
         {
             _context = context;
             _mapper = mapper;
             _configuration = configuration;
+            _logger = logger;
         }
 
         public async Task<ServiceResponse<string>> AuthenLogin(RequestUserLogin request)
         {
             var serviceResponse = new ServiceResponse<string>();
 
+            _logger.LogInfo("<START>Login</START>");
+
             User findCharacter = await _context.Users.FirstOrDefaultAsync(u => u.UserName == request.UserName);
 
             if (findCharacter == null)
             {
+                _logger.LogError("<ERROR>Not Found Username</ERROR>");
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Not Found User";
             }
             else if (!VerifyPassword(request.Password, findCharacter.PasswordSalt, findCharacter.PasswordHash))
             {
+                _logger.LogError("<ERROR>Invalid Password</ERROR>");
                 serviceResponse.Success = false;
                 serviceResponse.Message = "Not Validate Password";
             }
@@ -45,20 +52,28 @@ namespace ShopeeApi.Repository
                 serviceResponse.Data = GenerateJwtToken(findCharacter);
             }
 
+            _logger.LogInfo("<END>Login</END>");
+
             return serviceResponse;
+
+            
         }
 
         public async Task<ServiceResponse<ResponseUserRegister>> Register(RequestUserRegister request)
         {
             var serviceResponse = new ServiceResponse<ResponseUserRegister>();
 
+            _logger.LogInfo("<START>Register</START>");
+
             if (ExistsUser(request.UserName) || !request.Password.SequenceEqual(request.RePassword))
             {
+                _logger.LogError("<ERROR>Values Have Null</ERROR>");
                 serviceResponse.Success = false;
                 serviceResponse.Message = "User Exists or Invaliad Password Compare";
             }
             else
             {
+                _logger.LogInfo("<PROCESS>Register Account</PROCESS>");
                 HashPassword(request.Password, out byte[] passwordSalt, out byte[] passwordHash);
 
                 User newUser = new User
@@ -74,9 +89,14 @@ namespace ShopeeApi.Repository
                 var responseRegister = _mapper.Map<ResponseUserRegister>(newUser);
 
                 serviceResponse.Data = responseRegister;
+
+                _logger.LogInfo("<ENDPROCESS>Register Account</ENDPROCESS>");
             }
 
+            _logger.LogInfo("<END>Register</END>");
+
             return serviceResponse;
+            
         }
 
         public string GenerateJwtToken(User request)
@@ -141,6 +161,8 @@ namespace ShopeeApi.Repository
 
         public async Task<ServiceResponse<ResponseViewUser>> ViewUserInfo(string jwtToken)
         {
+            _logger.LogInfo("<START>GET USER INFORMATION</START>");
+
             ServiceResponse<ResponseViewUser> serviceResponse = new ServiceResponse<ResponseViewUser>();
 
             JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
@@ -154,14 +176,18 @@ namespace ShopeeApi.Repository
 
             if (findUserName != null)
             {
+                _logger.LogInfo("<ANNOUNCE>Found Username</ANNOUNCE>");
                 serviceResponse.Data = _mapper.Map<ResponseViewUser>(findUserName);
             }
 
             else
             {
+                _logger.LogError("<ERROR>Not Found Username</ERROR>");
                 serviceResponse.Message = "Please Check Your Authentication";
                 serviceResponse.Success = false;
             }
+
+            _logger.LogInfo("<END>GET USER INFORMATION</END>");
 
             return serviceResponse;
         }

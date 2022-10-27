@@ -1,6 +1,8 @@
+using LoggerService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using NLog;
 using ShopeeApi.Datas;
 using ShopeeApi.Repository;
 using ShopeeApi.SeedData;
@@ -8,6 +10,11 @@ using ShopeeApi.Service;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Add Nlog References
+LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
+
+builder.Services.AddScoped<ILoggerManager, LoggerManager>();
 
 // Add services to the container.
 
