@@ -148,11 +148,12 @@ function fetchMenuListRestaurant() {
         const listValue = data.data
 
         var newList = listValue.map(element => {
+
             return `
             <!-- Food Item -->
                     <div class="banner-menu__listres-fooditem">
                       <!-- Food Item Link -->
-                      <a href="#" class="banner-menu__listres-foodlink">
+                      <a href="./detailfood.html?restitle=${element.rsTitle}" class="banner-menu__listres-foodlink">
                         <!-- Image -->
                         <div class="banner-menu__fooditem-image">
                           <img
