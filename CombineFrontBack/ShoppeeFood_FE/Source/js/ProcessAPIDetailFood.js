@@ -5,6 +5,16 @@ var locationSearch = decodeURIComponent(
 window.addEventListener("load", (e) => {
   e.preventDefault();
 
+  if (localStorage.getItem("username")) {
+    const foodOptionsRelative = document.querySelector('.foodoptions__relative');
+    foodOptionsRelative.classList.add("login");
+  } 
+  
+  else {
+    const foodOptionsRelative = document.querySelector('.foodoptions__relative');
+    foodOptionsRelative.classList.remove("login");
+  }
+
   FetchDataInDetailFood(locationSearch);
 });
 

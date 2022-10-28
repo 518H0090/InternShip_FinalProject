@@ -454,3 +454,183 @@
 }
 
 /* ============================================================== */
+
+.foodoptions__relative .foodoptions__shoppingcart {
+  display: none;
+}
+
+.foodoptions__relative.login .foodoptions__category {
+  width: 20%;
+  margin-right: 2rem;
+}
+
+.foodoptions__relative.login .foodoptions__detail {
+  width: 50%;
+  margin: 0 2rem;
+  transform: translateX(6%);
+}
+
+.foodoptions__relative.login .foodoptions__Qr {
+  display: none;
+}
+
+.foodoptions__relative.login .foodoptions__shoppingcart {
+  display: block;
+  width: 30%;
+  height: 50rem;
+  transform: translateX(30%);
+  background-color: var(--color-white);
+  border-radius: 0.2rem;
+}
+
+
+/* ============================================================== */
+.foodoptions__relative.login .foodoptions__shoppingcart-userinfo {
+  width: 100%;
+  background-color: var(--color-silver-b);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  font-size: 1.4rem;
+  padding: 0 1.6rem;
+}
+
+.foodoptions__relative.login .foodoptions__shoppingcart-list {
+  list-style: none;
+  height: 16rem;
+  overflow-y: scroll;
+}
+
+.foodoptions__relative.login .foodoptions__shoppingcart-item {
+  display: flex;
+}
+
+.foodoptions__relative.login .foodoptions__shoppingcart-item+.foodoptions__shoppingcart-item {
+  margin-top: 1rem;
+  border-top: 0.1rem solid var(--color-orange);
+}
+
+.foodoptions__relative.login .foodoptons__shoppingcart-option {
+  flex: 1;
+}
+
+.foodoptions__relative.login .foodoptons__shoppingcart-content {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.foodoptions__relative.login .foodoptions__item-add,
+.foodoptions__relative.login .foodoptions__item-minus {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  color: var(--color-white);
+  border-radius: 0.2rem;
+  margin: 1rem 1rem;
+}
+
+.foodoptions__relative.login .foodoptions__item-add:hover,
+.foodoptions__relative.login .foodoptions__item-minus:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.foodoptions__relative.login .foodoptions__item-add:active,
+.foodoptions__relative.login .foodoptions__item-minus:active {
+  cursor: pointer;
+  opacity: 0.6;
+  filter: brightness(120%);
+}
+
+.foodoptions__relative.login .foodoptions__item-add {
+  background-color: var(--color-green);
+}
+
+.foodoptions__relative.login .foodoptions__item-minus {
+  background-color: var(--color-black-bl);
+}
+
+.foodoptions__relative.login .foodoptions__item-count {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--color-red);
+  margin: 1rem 0.2rem;
+  display: inline-block;
+}
+
+.foodoptions__relative.login .foodoptions__item-title {
+  font-size: 1.4rem;
+  display: inline-block;
+  margin-bottom: 0.2rem;
+}
+
+.foodoptions__relative.login .foodoptions__item-desc {
+  font-size: 1.2rem;
+  display: inline-block;
+}
+
+.foodoptions__relative.login .foodoptions__shoppingcart-note {
+  margin-top: 1rem;
+}
+
+.foodoptions__relative.login .foodoptions__note-distance,
+.foodoptions__relative.login .foodoptions__note-totalmoney,
+.foodoptions__relative.login .foodoptions__note-costtransfer,
+.foodoptions__relative.login .foodoptions__note-actualmoney {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+}
+
+.foodoptions__relative.login .foodoptions__note-distance .foodoptions__title,
+.foodoptions__relative.login .foodoptions__note-totalmoney .foodoptions__title,
+.foodoptions__relative.login .foodoptions__note-costtransfer .foodoptions__title,
+.foodoptions__relative.login .foodoptions__note-actualmoney .foodoptions__title {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.foodoptions__relative.login .foodoptions__note-remindpromotion {
+  background-color: var(--color-yellow-l);
+  height: 4rem;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.4rem;
+}
+
+.foodoptions__relative.login .foodoptions__note-remindpromotion span {
+  color: var(--color-red-l);
+  margin-left: -1rem;
+  margin-right: 1rem;
+}
+
+.foodoptions__relative.login .foodoptions__shoppingcart-buttonorder {
+  width: 90%;
+  height: 4rem;
+  background-color: var(--color-red-l);
+  margin: 2rem 1rem 2rem 1.6rem;
+  text-align: center;
+  padding: 0.6rem 0;
+  font-size: 1.6rem;
+  color: var(--color-white);
+  border-radius: 0.4rem;
+}
+
+.foodoptions__relative.login .foodoptions__shoppingcart-buttonorder:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.foodoptions__relative.login .foodoptions__shoppingcart-buttonorder:active {
+  cursor: pointer;
+  opacity: 0.6;
+  filter: brightness(120%);
+}
+
+
+/* ============================================================== */
