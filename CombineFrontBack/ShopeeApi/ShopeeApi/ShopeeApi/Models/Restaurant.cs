@@ -34,5 +34,9 @@ namespace ShopeeApi.Models
         public IEnumerable<Category> Categories { set; get; }
 
         public IEnumerable<Food> Foods { set; get; }
+
+
+        //In Test
+        public IEnumerable<RestaurantOrder> RestaurantOrders { set; get; }
     }
 }

@@ -17,6 +17,7 @@ namespace ShopeeApi.Datas
         public DbSet<RelationCategoryFood> RelationCategoryFoods { set; get; }
         public DbSet<SelectFoodRecord> SelectFoodRecords { set; get; }
         public DbSet<Bill> Bills { set; get; }
+        public DbSet<RestaurantOrder> RestaurantOrders { set; get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -230,6 +231,22 @@ namespace ShopeeApi.Datas
                 .HasForeignKey(b => b.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            });
+
+            //Restaurant Order
+            modelBuilder.Entity<RestaurantOrder>(x =>
+            {
+                x.HasKey(ro => ro.OrderId);
+
+                x.HasOne<User>(ro => ro.User)
+                .WithMany(u => u.RestaurantOrders)
+                .HasForeignKey(ro => ro.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+                x.HasOne<Restaurant>(ro => ro.Restaurant)
+                .WithMany(r => r.RestaurantOrders)
+                .HasForeignKey(ro => ro.RestaurantId)
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
 
