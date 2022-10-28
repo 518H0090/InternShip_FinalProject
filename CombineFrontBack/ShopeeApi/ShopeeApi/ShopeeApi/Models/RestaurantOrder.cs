@@ -12,6 +12,8 @@
 
         public float FoodPrice { set; get; }
 
+        public int CountFoodChoice { set; get; }
+
         public string CreatedBy { set; get; } = string.Empty;
 
         public DateTime CreatedOn { set; get; } = DateTime.Now;

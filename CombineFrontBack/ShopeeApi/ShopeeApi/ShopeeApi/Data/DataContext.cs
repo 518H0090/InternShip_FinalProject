@@ -238,6 +238,8 @@ namespace ShopeeApi.Datas
             {
                 x.HasKey(ro => ro.OrderId);
 
+                x.Property(ro => ro.CountFoodChoice).HasDefaultValue<int>(1);
+
                 x.HasOne<User>(ro => ro.User)
                 .WithMany(u => u.RestaurantOrders)
                 .HasForeignKey(ro => ro.UserId)
