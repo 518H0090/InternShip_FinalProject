@@ -27,16 +27,13 @@ string devCorsPolicy = builder.Configuration.GetSection("CorsPolicy:PolicyString
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
-string localDotnet = builder.Configuration.GetSection("CorsPolicy:DotNetLocalHost").Value;
-string localFrontend = builder.Configuration.GetSection("CorsPolicy:FrontendLocalHost").Value;
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(devCorsPolicy,
             builder =>
             {
                 builder
-                .AllowAnyOrigin()
+                .WithOrigins(@"http://localhost:49071", @"http://127.0.0.1:5501")
                 .AllowAnyMethod()
                 .AllowAnyHeader();
             }

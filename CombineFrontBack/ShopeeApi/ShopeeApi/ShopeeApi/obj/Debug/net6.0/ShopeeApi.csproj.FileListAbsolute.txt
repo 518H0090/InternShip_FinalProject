@@ -267,3 +267,8 @@ D:\InternShip\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\Shope
 D:\InternShip\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\NLog.Extensions.Logging.dll
 D:\InternShip\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\LoggerService.dll
 D:\InternShip\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\LoggerService.pdb
+D:\S3corp\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\nlog.config
+D:\S3corp\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\NLog.dll
+D:\S3corp\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+D:\S3corp\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\LoggerService.dll
+D:\S3corp\InternShip_FinalProject\CombineFrontBack\ShopeeApi\ShopeeApi\ShopeeApi\bin\Debug\net6.0\LoggerService.pdb

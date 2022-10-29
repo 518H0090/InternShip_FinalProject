@@ -62,9 +62,9 @@ namespace ShopeeApi.Controllers
             return Ok(authenUser);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("view-user-info")]
-        public async Task<IActionResult> ViewUserInfo(string token)
+        public async Task<IActionResult> ViewUserInfo([FromHeader(Name = "token")] string token)
         {
             var checkUserInfo = await _repository.ViewUserInfo(token);
 
