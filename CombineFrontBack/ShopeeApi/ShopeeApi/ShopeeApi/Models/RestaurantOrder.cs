@@ -1,4 +1,6 @@
-﻿namespace ShopeeApi.Models
+﻿using System.Text.Json.Serialization;
+
+namespace ShopeeApi.Models
 {
     public class RestaurantOrder
     {

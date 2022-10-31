@@ -42,6 +42,11 @@ namespace ShopeeApi
             CreateMap<RequestAddBill, Bill>();
             CreateMap<Bill, ResponseGetBill>();
 
+            CreateMap<RequestAddResOrder, RestaurantOrder>();
+            CreateMap<RestaurantOrder, ResponseRestaurantOrder>();
+            CreateMap<RequestAddResOrder, RequestUpdateResOrder>();
+            CreateMap<RequestDeleteRestaurantOrder, RequestUpdateResOrder>();
+
         }
     }
 }

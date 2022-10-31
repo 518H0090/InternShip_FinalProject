@@ -47,7 +47,7 @@ namespace ShopeeApi.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Bills");
+                    b.ToTable("Bills", (string)null);
                 });
 
             modelBuilder.Entity("ShopeeApi.Models.Category", b =>
@@ -76,7 +76,7 @@ namespace ShopeeApi.Migrations
                     b.HasIndex("CategoryTag", "RestaurantId")
                         .IsUnique();
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
 
                     b.HasData(
                         new
@@ -499,7 +499,7 @@ namespace ShopeeApi.Migrations
                     b.HasIndex("FoodTitle", "RestaurantId")
                         .IsUnique();
 
-                    b.ToTable("Foods");
+                    b.ToTable("Foods", (string)null);
 
                     b.HasData(
                         new
@@ -1886,7 +1886,7 @@ namespace ShopeeApi.Migrations
 
                     b.HasIndex("FoodId");
 
-                    b.ToTable("RelationCategoryFoods");
+                    b.ToTable("RelationCategoryFoods", (string)null);
 
                     b.HasData(
                         new
@@ -2650,7 +2650,7 @@ namespace ShopeeApi.Migrations
                     b.HasIndex("RsTitle")
                         .IsUnique();
 
-                    b.ToTable("Restaurants");
+                    b.ToTable("Restaurants", (string)null);
 
                     b.HasData(
                         new
@@ -2844,7 +2844,7 @@ namespace ShopeeApi.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("RestaurantOrders");
+                    b.ToTable("RestaurantOrders", (string)null);
                 });
 
             modelBuilder.Entity("ShopeeApi.Models.SelectFoodRecord", b =>
@@ -2877,7 +2877,7 @@ namespace ShopeeApi.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("SelectFoodRecords");
+                    b.ToTable("SelectFoodRecords", (string)null);
                 });
 
             modelBuilder.Entity("ShopeeApi.Models.User", b =>
@@ -2908,7 +2908,7 @@ namespace ShopeeApi.Migrations
                     b.HasIndex("UserName")
                         .IsUnique();
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
 
                     b.HasData(
                         new

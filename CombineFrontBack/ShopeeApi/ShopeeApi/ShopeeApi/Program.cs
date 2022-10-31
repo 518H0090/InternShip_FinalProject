@@ -33,7 +33,7 @@ builder.Services.AddCors(options =>
             builder =>
             {
                 builder
-                .WithOrigins(@"http://localhost:49071", @"http://127.0.0.1:5501")
+                .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader();
             }
@@ -76,6 +76,7 @@ builder.Services.AddScoped<IFoodService, FoodService>();
 builder.Services.AddScoped<ICategoryFoodService, CategoryFoodService>();
 builder.Services.AddScoped<IRecordService, RecordService>();
 builder.Services.AddScoped<IBillService, BillService>();
+builder.Services.AddScoped<IRestaurantOrderService, RestaurantOrderService>();
 
 var app = builder.Build();
 
