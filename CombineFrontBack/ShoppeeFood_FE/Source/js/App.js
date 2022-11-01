@@ -416,6 +416,84 @@ async function FetchFoodIndexPageWithRestaurantType(indexPage, restype) {
   throw new Error("Not Found Any Value");
 }
 
+// Get All Food Order In Restaurant
+async function FetchAllFoodOrderInRestaurant(username, restaurantId) {
+  let url = "http://localhost:49071/api/RestaurantOrder/all-restaurant-order";
+
+  let fetchUrl = await fetch(url, {
+    method : "POST",
+    headers : {
+      "Content-Type" : "application/json"
+    },
+    body : JSON.stringify({
+      "restaurantId": restaurantId,
+      "username": username
+    })
+  });
+
+  if (fetchUrl.ok) {
+    const dataJson = await fetchUrl.json();
+
+    return dataJson;
+  }
+
+  throw new Error("Not Found Any Value");
+}
+
+// Add Restaurant Order Food
+async function FetchAddRestaurantOrderFood(orderoptions) {
+  let url = "http://localhost:49071/api/RestaurantOrder/new-restaurant-order";
+
+  let fetchUrl = await fetch(url , {
+    method : "POST",
+    headers : {
+      "Content-Type" : "application/json"
+    },
+    body : JSON.stringify({
+      "foodImageUrl": orderoptions.foodImageUrl,
+      "foodTitle": orderoptions.foodTitle,
+      "foodDescription": orderoptions.foodDescription,
+      "foodPrice": orderoptions.foodPrice,
+      "restaurantId": orderoptions.restaurantId,
+      "userName": orderoptions.userName
+    })
+  });
+
+  if (fetchUrl.ok) {
+    let dataJson = await fetchUrl.json();
+
+    return dataJson;
+  }
+
+  throw new Error("Can't Create New Order")
+}
+
+// Delete Restaurant Order Food
+async function FetchDeleteRestaurantOrderFood(orderoptions) {
+  let url = "http://localhost:49071/api/RestaurantOrder/delete-restaurant-order";
+
+  let fetchUrl = await fetch(url , {
+    method : "DELETE",
+    headers : {
+      "Content-Type" : "application/json"
+    },
+    body : JSON.stringify({
+        "foodTitle": orderoptions.foodTitle,
+        "userName": orderoptions.userName,
+        "restaurantId": orderoptions.restaurantId
+    })
+  });
+
+  if (fetchUrl.ok) {
+    let dataJson = await fetchUrl.json();
+
+    return dataJson;
+  }
+
+  throw new Error("Can't Create New Order")
+}
+
+
 window.addEventListener("load", (e) => {
   let jwtToken = localStorage.getItem("jwttoken");
   const navbarSearch = document.querySelector(".navbar-search");

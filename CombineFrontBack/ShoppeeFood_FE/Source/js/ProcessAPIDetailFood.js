@@ -5,16 +5,6 @@ var locationSearch = decodeURIComponent(
 window.addEventListener("load", (e) => {
   e.preventDefault();
 
-  if (localStorage.getItem("username")) {
-    const foodOptionsRelative = document.querySelector('.foodoptions__relative');
-    foodOptionsRelative.classList.add("login");
-  } 
-  
-  else {
-    const foodOptionsRelative = document.querySelector('.foodoptions__relative');
-    foodOptionsRelative.classList.remove("login");
-  }
-
   FetchDataInDetailFood(locationSearch);
 });
 
@@ -30,6 +20,7 @@ function FetchDataInDetailFood(locationSearch) {
 
         FetchCategoryInRestaurant(itemValue.rsId);
         FetchCategoryFollowFood(itemValue.rsId);
+        FetchRestaurantOrderShoppingCart(itemValue.rsId)
 
         const itemValueLikeReferences =
           itemValue.rsRefeLike == true
@@ -200,6 +191,7 @@ function FetchDataInDetailFood(locationSearch) {
 
         FetchCategoryInRestaurant(checkNumber);
         FetchCategoryFollowFood(checkNumber);
+        FetchRestaurantOrderShoppingCart(checkNumber);
 
         const itemValueLikeReferences =
           itemValue.rsRefeLike == true
@@ -605,7 +597,6 @@ function FetchCategoryFollowFood(params) {
 
       foodOptionsDetailMenulist.innerHTML = newList.join(" ");
 
-
       // click
       const foodoptionsMenuitemBtn = document.querySelectorAll('.foodoptions__menulist-item');
 
@@ -624,7 +615,9 @@ function FetchCategoryFollowFood(params) {
             foodTitle : e.target.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.firstElementChild.innerText,
             foodDescription: e.target.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.lastElementChild.innerText,
             foodPrice : e.target.parentElement.parentElement.firstElementChild.nextElementSibling
-            .innerText.split(" ")[0]
+            .innerText.split(" ")[0],
+            restaurantId : data.data["0"].restaurantId,
+            userName : localStorage.getItem("username")  
             }  
           } else {
             foodInfo = {
@@ -632,7 +625,9 @@ function FetchCategoryFollowFood(params) {
               .firstElementChild.getAttribute("src"),
               foodTitle : e.target.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.firstElementChild.innerText,
               foodDescription: e.target.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.lastElementChild.innerText,
-              foodPrice : e.target.parentElement.parentElement.firstElementChild.innerText.split(" ")[0]
+              foodPrice : e.target.parentElement.parentElement.firstElementChild.innerText.split(" ")[0],
+              restaurantId : data.data["0"].restaurantId,
+              userName : localStorage.getItem("username")  
               }  
           }
 
@@ -640,7 +635,8 @@ function FetchCategoryFollowFood(params) {
           if (localStorage.getItem("username") === null) {
             window.location.reload();
           } else {
-            AddNewItemInShoppingCart(localStorage.getItem("username"), foodInfo)
+            console.log(foodInfo)
+            FetchAddRestaurantOrderFood(foodInfo)
             .then(data => {
               console.log(data.data)
               window.location.reload();
@@ -658,4 +654,262 @@ function FetchCategoryFollowFood(params) {
       console.log(error);
       foodOptionsDetailMenulist.innerHTML = "Not Found Ok";
     });
+}
+
+function FetchRestaurantOrderShoppingCart(restaurantId) {
+
+  if (localStorage.getItem("username")) {
+    const foodOptionsRelative = document.querySelector('.foodoptions__relative');
+    foodOptionsRelative.classList.add("login");
+
+    totalOrderInShoppingCart(localStorage.getItem("username"), restaurantId, ProcessLayoutUserInfo, ProcessLayoutShoppingList, ProcessEventShoppingItem, ProcessNoteMoney)
+    
+  } 
+  
+  else {
+    const foodOptionsRelative = document.querySelector('.foodoptions__relative');
+    foodOptionsRelative.classList.remove("login");
+  }
+  
+}
+
+function totalOrderInShoppingCart(username,restaurantId, layoutuserinfo,layoutshoppinglist, layoutshoppingitem, layoutnote) {
+  
+  FetchAllFoodOrderInRestaurant(username, restaurantId)
+  .then(data => {
+
+    let listData = data.data;
+
+    layoutuserinfo(listData.length)
+    layoutshoppinglist(listData);
+    layoutshoppingitem(restaurantId);
+    layoutnote(listData)
+  })
+  .catch(error => {
+    console.log(error.message)
+    layoutuserinfo()
+    layoutshoppinglist();
+  })
+}
+
+function ProcessLayoutUserInfo(countFood) {
+
+  const foodOptionsShoppingcartUserinfo = document.querySelector(".foodoptions__relative.login .foodoptions__shoppingcart-userinfo");
+
+  let userReduce = localStorage.getItem("username").length > 18 ? localStorage.getItem("username").slice(0,18) + "..." : localStorage.getItem("username");
+  let newLayoutUserInfo;
+
+  if (typeof countFood === 'undefined') {
+    newLayoutUserInfo = `
+    <!-- User Info -->
+    <div class="foodoptions__shoppingcart-userinfo">
+      
+      <!-- Username -->
+      <h3 class="foodoptions__userinfo-name" title="${localStorage.getItem("username")}">${userReduce}</h3>
+
+
+      <!-- Total Number All Food Order -->
+      <p class="foodoptions__userinfo-count">0 món</p>
+      
+    </div>
+    `;
+  }
+
+  else 
+  {
+
+    newLayoutUserInfo = `
+    <!-- User Info -->
+    <div class="foodoptions__shoppingcart-userinfo">
+      
+      <!-- Username -->
+      <h3 class="foodoptions__userinfo-name" title="${localStorage.getItem("username")}">${userReduce}</h3>
+
+
+      <!-- Total Number All Food Order -->
+      <p class="foodoptions__userinfo-count">${countFood} món</p>
+      
+    </div>
+    `;
+  }
+
+  foodOptionsShoppingcartUserinfo.innerHTML = newLayoutUserInfo
+}
+
+function ProcessLayoutShoppingList(data) {
+  const foodOptionsShoppingCartList  = document.querySelector(".foodoptions__relative.login .foodoptions__shoppingcart-list");
+  
+  let newLayout;
+
+  if (typeof data === "undefined") {
+    newLayout = ""
+  }
+ 
+  else {
+    newLayout = data.map(element => {
+      return `
+        <!-- Item -->
+        <li class="foodoptions__shoppingcart-item">
+  
+          <div class="foodoptons__shoppingcart-options">
+  
+                <!-- Add Button -->
+              <button class="foodoptions__item-add">
+                +
+              </button>
+  
+              <!-- Count Number Food Item  -->
+              <p class="foodoptions__item-count">
+                ${element.countFoodChoice}
+              </p>
+  
+              <!-- Minus Button -->
+              <button class="foodoptions__item-minus">
+                -
+              </button>
+  
+          </div>
+  
+          <div class="foodoptons__shoppingcart-content">
+                <!-- Food Title -->
+              <h3 class="foodoptions__item-title">
+                ${element.foodTitle}
+              </h3>
+  
+              <!-- Food Description -->
+              <p class="foodoptions__item-desc">
+                ${element.foodDescription}
+              </p>
+          </div>
+  
+        </li>
+      `
+    });
+  }
+
+  foodOptionsShoppingCartList.innerHTML = newLayout;
+}
+
+function ProcessEventShoppingItem(restaurantId) {
+  const foodOptionsShoppingcartItemAll = document.querySelectorAll(".foodoptions__relative.login .foodoptions__shoppingcart-item");
+
+  foodOptionsShoppingcartItemAll.forEach(element => {
+
+    const username = localStorage.getItem("username");
+
+    element.firstElementChild.firstElementChild.addEventListener("click",(e) => {
+      let foodTitle = e.target.parentElement.nextElementSibling.firstElementChild.innerText
+      let foodDescription  = e.target.parentElement.nextElementSibling.lastElementChild.innerText
+
+      let orderoptions = {
+        foodTitle : foodTitle,
+        foodDescription : foodDescription,
+        userName : username,
+        restaurantId : restaurantId
+      }
+
+      FetchAddRestaurantOrderFood(orderoptions)
+      .then(data => {
+
+        if (data.success) {
+          window.location.reload();
+          e.preventDefault();
+        }
+       
+      })
+      .catch(error => {
+        alert("Can't Create Or Increase");
+        window.location.reload();
+      })
+
+    })
+
+    element.firstElementChild.lastElementChild.addEventListener("click",(e) => {
+      let foodTitle = e.target.parentElement.nextElementSibling.firstElementChild.innerText
+      let foodDescription  = e.target.parentElement.nextElementSibling.lastElementChild.innerText
+
+      let orderoptions = {
+        foodTitle : foodTitle,
+        foodDescription : foodDescription,
+        userName : username,
+        restaurantId : restaurantId
+      }
+
+      FetchDeleteRestaurantOrderFood(orderoptions)
+      .then(data => {
+        if (data.success) {
+          window.location.reload();
+          e.preventDefault();
+        }
+      })
+      .catch(error => {
+        alert("Can't Delete Or Decrease");
+        window.location.reload();
+      })
+
+    })
+  })
+}
+
+function ProcessNoteMoney(data) {
+
+  const foodOptionsShoppingCartNote = document.querySelector(".foodoptions__relative.login .foodoptions__shoppingcart-note");
+
+  let totalMoneyTemp = 0;
+  let randomDistance = Math.floor(Math.random() * (20 - 1 + 1)) + 1
+  let costTransfer = 10000
+
+  data.forEach(element => {
+    totalMoneyTemp += Number(element.countFoodChoice) * Number(element.foodPrice)
+  })
+
+  let totalMoney = totalMoneyTemp + Number( randomDistance *   costTransfer);
+
+  let newLayout = `
+     <!-- Distance -->
+      <div class="foodoptions__note-distance">
+        
+        <p class="foodoptions__title">Khoảng Cách</p>
+
+        <p class="foodoptions__desc">${randomDistance} km</p>
+
+      </div>
+
+      <!-- Total Money -->
+      <div class="foodoptions__note-totalmoney">
+
+        <p class="foodoptions__title">Tổng Giá Tiền : </p>
+
+        <p class="foodoptions__desc">${totalMoneyTemp} đ</p>
+
+      </div>
+
+      <!-- Cost Transfer -->
+      <div class="foodoptions__note-costtransfer">
+        
+        <p class="foodoptions__title">Chi phí vận chuyển : </p>
+
+        <p class="foodoptions__desc">10000 đ / km</p>
+
+      </div>
+
+      <!-- Remind Promotion -->
+      <p class="foodoptions__note-remindpromotion">
+        <span>(*)</span> Nhập mã khuyến mãi ở bước hoàn tất
+      </p>
+
+      <!-- Actual Money -->
+      <div class="foodoptions__note-actualmoney">
+
+        <p class="foodoptions__title">Tạm tính : </p>
+
+        <p class="foodoptions__desc">${totalMoney} đ</p>
+
+      </div>
+
+    </div>
+  `
+
+  foodOptionsShoppingCartNote.innerHTML = newLayout;
+
 }
