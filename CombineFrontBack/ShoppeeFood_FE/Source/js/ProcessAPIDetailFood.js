@@ -854,7 +854,9 @@ function ProcessEventShoppingItem(restaurantId) {
 function ProcessNoteMoney(data) {
 
   const foodOptionsShoppingCartNote = document.querySelector(".foodoptions__relative.login .foodoptions__shoppingcart-note");
+  const foodOptionsShoppingCartButtonOrder = document.querySelector(".foodoptions__relative.login .foodoptions__shoppingcart-buttonorder");
 
+  let username = localStorage.getItem("username")
   let totalMoneyTemp = 0;
   let randomDistance = Math.floor(Math.random() * (20 - 1 + 1)) + 1
   let costTransfer = 10000
@@ -909,7 +911,67 @@ function ProcessNoteMoney(data) {
 
     </div>
   `
-
   foodOptionsShoppingCartNote.innerHTML = newLayout;
 
+  ProcessButtonPayment(foodOptionsShoppingCartButtonOrder)
+
+}
+
+function ProcessButtonPayment(layout) {
+
+  layout.addEventListener("click",(e) => {
+    let username = layout.parentElement.firstElementChild.firstElementChild.firstElementChild.getAttribute("title")
+
+    let countItem = layout.parentElement.firstElementChild.firstElementChild.lastElementChild.innerText.split(" ")[0]
+  
+    let distance = layout.previousElementSibling.firstElementChild.lastElementChild.innerText.split(" ")[0]
+  
+    let moneyTotal = layout.previousElementSibling.lastElementChild.lastElementChild.innerText.split(" ")[0]
+  
+    let transferOrderInfor = {
+      username,
+      countItem,
+      distance,
+      moneyTotal
+    }
+  
+    ProcessOrderModal(transferOrderInfor)
+  })
+  
+}
+
+function ProcessOrderModal(transferOrderInfor) {
+
+  if (typeof transferOrderInfor === 'undefined') {
+    alert("Value is missing please try again");
+  }
+
+  else {
+    const modalTransferorder = document.querySelector(".modal-transferorder");
+    const userInfor = document.querySelector(".modal-transferorder__detail:nth-child(1)");
+    const totalItem = document.querySelector(".modal-transferorder__detail:nth-child(2)");
+    const distance = document.querySelector(".modal-transferorder__detail:nth-child(3)");
+    const promotion = document.querySelector(".modal-transferorder__detail:nth-child(4)");
+    const tempmoney = document.querySelector(".modal-transferorder__detail:nth-child(5)");
+    const modalTransferOrderOverlay = document.querySelector(".modal-transferorder__overlay");
+    const modalTransferOrderClose = document.querySelector(".modal-transferorder__close");
+
+    modalTransferorder.classList.add("hide")
+
+    modalTransferOrderOverlay.addEventListener("click",(e) => {
+      modalTransferorder.classList.remove("hide")
+    })
+
+    modalTransferOrderClose.addEventListener("click",(e) => {
+      modalTransferorder.classList.remove("hide")
+    })
+
+    userInfor.lastElementChild.innerText = `${transferOrderInfor.username}`
+    totalItem.lastElementChild.innerText = `${transferOrderInfor.countItem}`
+    distance.lastElementChild.innerText = `${transferOrderInfor.distance}`
+    tempmoney.lastElementChild.innerText =  `${transferOrderInfor.moneyTotal}`
+
+    console.log(promotion.lastElementChild.value)
+
+  }
 }

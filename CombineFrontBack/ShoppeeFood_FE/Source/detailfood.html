@@ -603,10 +603,10 @@
               </div>
 
               <!-- Button Order -->
-              <div class="foodoptions__shoppingcart-buttonorder">
+              <button type="button" class="foodoptions__shoppingcart-buttonorder">
                 <i class="fa-regular fa-circle-check"></i>
                 <span>Đặt trước</span>
-              </div>
+              </button>
 
             </div>
 
@@ -792,6 +792,78 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Transfer Order Modal -->
+  <div class="modal-transferorder">
+
+    <!-- Overlay -->
+    <div class="modal-transferorder__overlay"></div>
+
+    <!-- Body -->
+    <div class="modal-transferorder__body">
+      <!-- Content -->
+      <div class="modal-transferorder__inner">
+
+        <!-- Close Button -->
+        <div class="modal-transferorder__close">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+
+        <!-- Content -->
+        <div class="modal-transferorder__content">
+
+          <!-- Description -->
+          <p class="modal-transferorder__content-desc">Chi tiết đơn hàng</p>
+
+          <!-- Detail -->
+          <div class="modal-transferorder__content-detail">
+
+            <!-- User Info -->
+            <div class="modal-transferorder__detail">
+              <h3 class="modal-transferorder__detail-title">Khách Hàng : </h3>
+              <p class="modal-transferorder__detail-desc">Huỳnh Trần Trung Hiếu</p>
+            </div>
+
+            <!-- Total Item -->
+            <div class="modal-transferorder__detail">
+              <h3 class="modal-transferorder__detail-title">Tổng Số Món :</h3>
+              <p class="modal-transferorder__detail-desc">1 món</p>
+            </div>
+
+            <!-- Distance Cost -->
+            <div class="modal-transferorder__detail">
+              <h3 class="modal-transferorder__detail-title">Khoảng cách vận chuyển : </h3>
+              <p class="modal-transferorder__detail-desc">2.5 km</p>
+            </div>
+
+            <!-- PROMOTION -->
+            <div class="modal-transferorder__detail">
+              <h3 class="modal-transferorder__detail-title">Mã khuyến mãi</h3>
+              <input type="text" class="modal-transferorder__detail-desc" >
+            </div>
+
+            <!-- Temp Money -->
+            <div class="modal-transferorder__detail">
+              <h3 class="modal-transferorder__detail-title">Tạm tính : </h3>
+              <p class="modal-transferorder__detail-desc">20000 đ</p>
+            </div>
+
+          </div>
+
+          
+
+        </div>
+
+        <!-- Button Accept Order -->
+
+        <button class="modal-transferorder__acceptbtn">
+          Hoàn tất đơn hàng <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+      </div>
+    </div>
+
   </div>
 
   <!-- Javascript -->

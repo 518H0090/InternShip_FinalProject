@@ -493,7 +493,6 @@ async function FetchDeleteRestaurantOrderFood(orderoptions) {
   throw new Error("Can't Create New Order")
 }
 
-
 window.addEventListener("load", (e) => {
   let jwtToken = localStorage.getItem("jwttoken");
   const navbarSearch = document.querySelector(".navbar-search");

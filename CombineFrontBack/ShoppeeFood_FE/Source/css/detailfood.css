@@ -636,3 +636,106 @@
 
 
 /* ============================================================== */
+.modal-transferorder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.modal-transferorder.hide {
+  display: block;
+}
+
+.modal-transferorder .modal-transferorder__overlay {
+  background-color: var(--color-black-l);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-transferorder .modal-transferorder__body {
+  position: absolute;
+  width: 50rem;
+  min-height: 30rem;
+  top: 30%;
+  left: 40%;
+  background-color: var(--color-white);
+  border-radius: 0.3rem;
+}
+
+/* ============================================================== */
+.modal-transferorder .modal-transferorder__inner {
+  padding: 1.6rem;
+  position: relative;
+}
+
+.modal-transferorder .modal-transferorder__close {
+  position: absolute;
+  top: 0.4rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-transferorder .modal-transferorder__content-desc {
+  font-size: 2.8rem;
+  margin: 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.modal-transferorder .modal-transferorder__detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-transferorder .modal-transferorder__detail+.modal-transferorder__detail {
+  margin-top: 1rem;
+}
+
+.modal-transferorder .modal-transferorder__detail-title {
+  font-size: 1.6rem;
+}
+
+.modal-transferorder .modal-transferorder__detail-desc {
+  font-size: 1.4rem;
+  color: var(--color-orange);
+}
+
+.modal-transferorder input[type="text"].modal-transferorder__detail-desc {
+  padding-left: 1rem;
+  border: 0.1rem solid var(--color-orange);
+}
+
+.modal-transferorder input[type="text"]:focus.modal-transferorder__detail-desc {
+  outline: none;
+}
+
+.modal-transferorder .modal-transferorder__acceptbtn {
+  width: 100%;
+  height: 4rem;
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  outline: none;
+  background-color: var(--color-white);
+  border: 0.1rem solid var(--color-orange);
+  color: var(--color-orange);
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.modal-transferorder .modal-transferorder__acceptbtn:hover {
+  opacity: 0.8;
+  filter: brightness(110%);
+}
+
+.modal-transferorder .modal-transferorder__acceptbtn:active {
+  opacity: 0.6;
+  filter: brightness(140%);
+}
+
+/* ============================================================== */
