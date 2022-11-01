@@ -955,6 +955,7 @@ function ProcessOrderModal(transferOrderInfor) {
     const tempmoney = document.querySelector(".modal-transferorder__detail:nth-child(5)");
     const modalTransferOrderOverlay = document.querySelector(".modal-transferorder__overlay");
     const modalTransferOrderClose = document.querySelector(".modal-transferorder__close");
+    const modalTransferOrderAcceptbtn = document.querySelector(".modal-transferorder__acceptbtn");
 
     modalTransferorder.classList.add("hide")
 
@@ -971,7 +972,12 @@ function ProcessOrderModal(transferOrderInfor) {
     distance.lastElementChild.innerText = `${transferOrderInfor.distance}`
     tempmoney.lastElementChild.innerText =  `${transferOrderInfor.moneyTotal}`
 
-    console.log(promotion.lastElementChild.value)
+
+    modalTransferOrderAcceptbtn.addEventListener("click",(e) => {
+      let acceptPayment = confirm("Would you like to order food ?");
+
+      console.log(acceptPayment)
+    })
 
   }
 }

@@ -19,8 +19,9 @@ namespace ShopeeApi.Models
 
         public IEnumerable<Bill> Bills { set; get; }
 
+        public IEnumerable<RestaurantOrder> RestaurantOrders { set; get; } 
 
         //In Test
-        public IEnumerable<RestaurantOrder> RestaurantOrders { set; get; } 
+        public IEnumerable<TransferOrder> TransferOrders { set; get; }
     }
 }
