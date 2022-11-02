@@ -683,7 +683,7 @@ function totalOrderInShoppingCart(username,restaurantId, layoutuserinfo,layoutsh
     layoutuserinfo(listData.length)
     layoutshoppinglist(listData);
     layoutshoppingitem(restaurantId);
-    layoutnote(listData)
+    layoutnote(listData, restaurantId)
   })
   .catch(error => {
     console.log(error.message)
@@ -851,7 +851,7 @@ function ProcessEventShoppingItem(restaurantId) {
   })
 }
 
-function ProcessNoteMoney(data) {
+function ProcessNoteMoney(data, restaurantId) {
 
   const foodOptionsShoppingCartNote = document.querySelector(".foodoptions__relative.login .foodoptions__shoppingcart-note");
   const foodOptionsShoppingCartButtonOrder = document.querySelector(".foodoptions__relative.login .foodoptions__shoppingcart-buttonorder");
@@ -913,11 +913,11 @@ function ProcessNoteMoney(data) {
   `
   foodOptionsShoppingCartNote.innerHTML = newLayout;
 
-  ProcessButtonPayment(foodOptionsShoppingCartButtonOrder)
+  ProcessButtonPayment(foodOptionsShoppingCartButtonOrder, restaurantId)
 
 }
 
-function ProcessButtonPayment(layout) {
+function ProcessButtonPayment(layout, restaurantId) {
 
   layout.addEventListener("click",(e) => {
     let username = layout.parentElement.firstElementChild.firstElementChild.firstElementChild.getAttribute("title")
@@ -932,7 +932,8 @@ function ProcessButtonPayment(layout) {
       username,
       countItem,
       distance,
-      moneyTotal
+      moneyTotal,
+      restaurantId
     }
   
     ProcessOrderModal(transferOrderInfor)
@@ -951,11 +952,13 @@ function ProcessOrderModal(transferOrderInfor) {
     const userInfor = document.querySelector(".modal-transferorder__detail:nth-child(1)");
     const totalItem = document.querySelector(".modal-transferorder__detail:nth-child(2)");
     const distance = document.querySelector(".modal-transferorder__detail:nth-child(3)");
-    const promotion = document.querySelector(".modal-transferorder__detail:nth-child(4)");
     const tempmoney = document.querySelector(".modal-transferorder__detail:nth-child(5)");
     const modalTransferOrderOverlay = document.querySelector(".modal-transferorder__overlay");
     const modalTransferOrderClose = document.querySelector(".modal-transferorder__close");
+
     const modalTransferOrderAcceptbtn = document.querySelector(".modal-transferorder__acceptbtn");
+
+    
 
     modalTransferorder.classList.add("hide")
 
@@ -972,11 +975,55 @@ function ProcessOrderModal(transferOrderInfor) {
     distance.lastElementChild.innerText = `${transferOrderInfor.distance}`
     tempmoney.lastElementChild.innerText =  `${transferOrderInfor.moneyTotal}`
 
+    
+  
+
+    
 
     modalTransferOrderAcceptbtn.addEventListener("click",(e) => {
       let acceptPayment = confirm("Would you like to order food ?");
 
-      console.log(acceptPayment)
+      if (acceptPayment) {
+
+        let orderoptions;
+        const promotionInput = document.querySelector(".modal-transferorder__detail:nth-child(4)");
+        let promotionValue = promotionInput.lastElementChild.value;
+
+        if (typeof promotionValue === 'undefined' || promotionValue === "") {
+          orderoptions = {
+            username : localStorage.getItem("username"),
+            numberItem : transferOrderInfor.countItem,
+            orderDistance : transferOrderInfor.distance,
+            tempMoney : transferOrderInfor.moneyTotal,
+            restaurantId : transferOrderInfor.restaurantId
+          };
+        }
+    
+        else {
+          orderoptions = {
+            username : localStorage.getItem("username"),
+            numberItem : transferOrderInfor.countItem,
+            orderDistance : transferOrderInfor.distance,
+            promotion : promotionValue,
+            tempMoney : transferOrderInfor.moneyTotal,
+            restaurantId : transferOrderInfor.restaurantId,
+          };
+        }
+
+        FetchAddTransferOrder(orderoptions)
+        .then(data => {
+          alert("Create Success " + data.data.orderId);
+          window.location.reload();
+        })
+        .catch(error => {
+          alert(error);
+        })
+
+      }
+
+      else {
+        alert("Destroy Session")
+      }
     })
 
   }

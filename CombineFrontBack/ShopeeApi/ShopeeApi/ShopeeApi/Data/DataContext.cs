@@ -264,6 +264,7 @@ namespace ShopeeApi.Datas
 
                 x.Property(to => to.NumberItem).HasDefaultValue<int>(0);
                 x.Property(to => to.OrderDistance).HasDefaultValue<int>(0);
+                x.Property(to => to.TempMoney).HasDefaultValue<int>(0);
                 x.Property(to => to.TotalMoney).HasDefaultValue<int>(0);
 
             });

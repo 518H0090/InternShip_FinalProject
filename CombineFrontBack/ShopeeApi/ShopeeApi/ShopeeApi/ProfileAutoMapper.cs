@@ -47,6 +47,10 @@ namespace ShopeeApi
             CreateMap<RequestAddResOrder, RequestUpdateResOrder>();
             CreateMap<RequestDeleteRestaurantOrder, RequestUpdateResOrder>();
 
+            CreateMap<RequestAddTransferOrder, TransferOrder>();
+            CreateMap<TransferOrder, ResponseTransferOrder>();
+            CreateMap<RequestDeleteTransferOrder, TransferOrder>();
+
         }
     }
 }

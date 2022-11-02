@@ -17,10 +17,18 @@ namespace ShopeeApi.Models
         [JsonConverter(typeof(StringEnumConverter))]
         public Promotion Promotion { set; get; } = Promotion.reduceNone;
 
+        public int TempMoney { set; get; }
+
         public int TotalMoney { set; get; }
 
         [JsonConverter(typeof(StringEnumConverter))]
         public ORDERSTATUS ORDERSTATUS { set; get; } = ORDERSTATUS.PROCESS;
+
+        public string CreatedBy { set; get; } = string.Empty;
+        public DateTime CreatedOn { set; get; } = DateTime.Now;
+
+        public string UpdatedBy { set; get; } = string.Empty;
+        public DateTime UpdatedOn { set; get; }
 
         public User User { set; get; }
         public int UserId { set; get; }

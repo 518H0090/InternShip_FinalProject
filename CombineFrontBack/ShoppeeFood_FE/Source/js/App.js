@@ -493,6 +493,29 @@ async function FetchDeleteRestaurantOrderFood(orderoptions) {
   throw new Error("Can't Create New Order")
 }
 
+// Add Transfer Order
+async function FetchAddTransferOrder(orderoptions) {
+  let url = "http://localhost:49071/api/TransferOrder/new-transfer-order";
+
+  let fetchUrl = await fetch(url , {
+    method : "POST",
+    headers : {
+      "Content-Type" : "application/json"
+    },
+    body : JSON.stringify(
+      orderoptions
+    )
+  });
+
+  if (fetchUrl.ok) {
+    let dataJson = await fetchUrl.json();
+
+    return dataJson;
+  }
+
+  throw new Error("Can't Create New Transfer Order")
+}
+
 window.addEventListener("load", (e) => {
   let jwtToken = localStorage.getItem("jwttoken");
   const navbarSearch = document.querySelector(".navbar-search");
