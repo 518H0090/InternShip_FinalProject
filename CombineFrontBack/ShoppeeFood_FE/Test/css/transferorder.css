@@ -42,6 +42,8 @@
 .layout .layout__shoppingitem {
     display: flex;
     margin-top: 2rem;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -49,28 +51,34 @@
     margin: 2rem 0;
 }
 
-.layout .layout__item-image {
+.layout .layout__item-orderid {
     flex: 1;
+    border: 0.1rem solid var(--color-orange);
+    margin-right: 2rem;
+    border-radius: 0.4rem;
 }
 
-.layout .layout__item-img {
-    width: 12rem;
-    height: 12rem;
-    object-fit: cover;
-    border-radius: 1rem;
+.layout .layout__item-orderid p {
+    font-size: 1.4rem;
+    color: var(--color-orange);
+    font-weight: 700;
+    text-align: center;
+    padding: 1.6rem 2.4rem;
 }
 
 .layout .layout__item-content {
     flex: 2;
+    text-align: center;
 }
 
-.layout .layout-item__title {
-    font-size: 3rem;
+.layout .layout-item__count,
+.layout .layout-item__distance,
+.layout .layout-item__dateorder {
+    font-size: 1.6rem;
+    margin: 0.4rem 0;
+    color: var(--color-badge);
 }
 
-.layout .layout-item__description {
-    font-size: 1.8rem;
-}
 
 .layout .layout__item-cost {
     flex: 1;
@@ -78,7 +86,6 @@
 
 .layout .layout__item-cost p {
     font-size: 2rem;
-    transform: translateY(100%);
     color: var(--color-blue);
     font-weight: 700;
 }
@@ -87,28 +94,25 @@
     flex: 1;
 }
 
-.layout .layout-item__btnup,
-.layout .layout-item__btndown {
+.layout .layout-item__btnprocess {
     border: 0.1rem solid var(--color-badge);
-    transform: translateY(100%);
     background: none;
     margin: 0 0.6rem;
-    min-width: 10rem;
+    min-width: 16rem;
     padding: 1rem 2rem;
     font-size: 1.4rem;
     border-radius: 0.2rem;
     color: var(--color-badge);
     cursor: pointer;
+    text-transform: uppercase;
 }
 
-.layout .layout-item__btnup:hover,
-.layout .layout-item__btndown:hover {
+.layout .layout-item__btnprocess:hover {
     opacity: 0.8;
     filter: brightness(120%);
 }
 
-.layout .layout-item__btnup:active,
-.layout .layout-item__btndown:active {
+.layout .layout-item__btnprocess:active {
     opacity: 0.4;
     filter: brightness(140%);
 }

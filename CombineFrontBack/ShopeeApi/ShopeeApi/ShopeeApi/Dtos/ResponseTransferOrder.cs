@@ -24,10 +24,10 @@ namespace ShopeeApi.Dtos
         public ORDERSTATUS ORDERSTATUS { set; get; } = ORDERSTATUS.PROCESS;
 
         public string CreatedBy { set; get; } = string.Empty;
-        public DateTime CreatedOn { set; get; } = DateTime.Now;
+        public DateTime CreatedOn { set; get; }
 
         public string UpdatedBy { set; get; } = string.Empty;
-        public DateTime UpdatedOn { set; get; } = DateTime.Now;
+        public DateTime UpdatedOn { set; get; } 
 
         public int UserId { set; get; }
     }

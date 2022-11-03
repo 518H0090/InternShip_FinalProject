@@ -32,6 +32,7 @@ namespace ShopeeApi.Repository
                     if (request.TotalMoney <= 0)
                     {
                         request.TotalMoney = 0;
+                        request.ORDERSTATUS = ORDERSTATUS.FINISH;
                     }
 
                     var newTransferOrder = await _context.TransferOrders.AddAsync(request);
@@ -97,7 +98,7 @@ namespace ShopeeApi.Repository
 
         public async Task<IEnumerable<TransferOrder>> GetAllTransferOrder(string username)
         {
-            return await _context.TransferOrders.Where(x => x.Username == username).ToListAsync();
+            return await _context.TransferOrders.Where(x => x.Username == username).OrderBy(x => x.CreatedOn).ToListAsync();
         }
 
         public async Task<bool> isTransferOrderPayment(TransferOrder request)

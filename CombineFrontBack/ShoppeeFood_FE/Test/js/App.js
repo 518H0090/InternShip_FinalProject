@@ -766,7 +766,7 @@ function ProcessEventMoveToPayment() {
   navbarLoginShoppingCart.addEventListener('click',(e) => {
 
     if (localStorage.getItem("username")) {
-      window.location.href = "./shoppingcard.html?username=" + localStorage.getItem("username")
+      window.location.href = "./transferorder.html"
     }
 
     else {
