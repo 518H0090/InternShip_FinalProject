@@ -537,7 +537,89 @@ async function FetchAllTransferOrder(username) {
   throw new Error("Can't Find Any Value")
 }
 
+//  Get All Transfer Order Process
+async function FetchAllTransferOrderProcess(username) {
+  let url = "http://localhost:49071/api/TransferOrder/all-transfer-order-process";
 
+  let fetchUrl = await fetch(url , {
+    method : "GET",
+    headers : {
+      "Content-Type" : "application/json",
+      username : username
+    },
+  });
+
+  if (fetchUrl.ok) {
+    let dataJson = await fetchUrl.json();
+
+    return dataJson;
+  }
+
+  throw new Error("Can't Find Any Value")
+}
+
+//  New Bill Order
+async function FetchNewBillOrder(billoptions) {
+  let url = "http://localhost:49071/api/BillOrder/new-bill-order";
+
+  let fetchUrl = await fetch(url , {
+    method : "POST",
+    headers : {
+      "Content-Type" : "application/json",
+    },
+    body : JSON.stringify(billoptions)
+  });
+
+  if (fetchUrl.ok) {
+    let dataJson = await fetchUrl.json();
+
+    return dataJson;
+  }
+
+  throw new Error("Can't Create New Bill")
+}
+
+//  Delete Transfer Order
+async function FetchDeleteTransferOrder(transferoptions) {
+  let url = "http://localhost:49071/api/TransferOrder/delete-transfer-order";
+
+  let fetchUrl = await fetch(url , {
+    method : "DELETE",
+    headers : {
+      "Content-Type" : "application/json",
+    },
+    body : JSON.stringify(transferoptions)
+  });
+
+  if (fetchUrl.ok) {
+    let dataJson = await fetchUrl.json();
+
+    return dataJson;
+  }
+
+  throw new Error("Can't Delete Transfer Order")
+}
+
+//  New Bill With All Transfer Order
+async function FetchNewBillAllTransferOrder(username) {
+  let url = "http://localhost:49071/api/BillOrder/new-bill-transfer-process-order";
+
+  let fetchUrl = await fetch(url , {
+    method : "POST",
+    headers : {
+      "Content-Type" : "application/json",
+      "username" : username
+    }
+  });
+
+  if (fetchUrl.ok) {
+    let dataJson = await fetchUrl.json();
+
+    return dataJson;
+  }
+
+  throw new Error("Can't Create New Bill")
+}
 
 window.addEventListener("load", (e) => {
   let jwtToken = localStorage.getItem("jwttoken");
@@ -580,7 +662,7 @@ window.addEventListener("load", (e) => {
                 </div>
               </div>`;
 
-          FetchAllTransferOrder(data.userName)
+          FetchAllTransferOrderProcess(data.userName)
           .then((countItem) => {
 
             newLayoutNavbar = `
@@ -612,6 +694,8 @@ window.addEventListener("load", (e) => {
         `;
 
             navbarLogin.innerHTML = newLayoutNavbar + viewListShoppingCart;
+
+            ProcessEventMoveToPayment()
           });     
 
         // countItemInShoppingCart(data.userName)

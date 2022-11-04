@@ -9,6 +9,8 @@ namespace ShopeeApi.Service
 
         Task<ServiceResponse<IEnumerable<ResponseTransferOrder>>> GetAllTransferOrder(string username);
 
+        Task<ServiceResponse<IEnumerable<ResponseTransferOrder>>> GetAllTransferOrderProcess(string username);
+
         Task<ServiceResponse<string>> DeleteTransferOrder(RequestDeleteTransferOrder request);
 
     }

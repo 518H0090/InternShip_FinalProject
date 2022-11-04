@@ -79,13 +79,19 @@ function ProcessLayoutInTransferOrder(username) {
         layoutShoppingList.innerHTML = newLayout
 
         let totalMoneyProcess = dataInTransferOrder.reduce( (total, currentvalue) => {
-            return total + currentvalue.totalMoney
+
+            if (currentvalue.orderstatus === "PROCESS") {
+                return total + currentvalue.totalMoney
+            }
+
+            return total
         },0);
 
         const layoutBillTotalcost = document.querySelector(".layout-bill__totalcost");
         layoutBillTotalcost.textContent = totalMoneyProcess;
 
         ProcessPaymentTransferOrder()
+        ProcessPaymentTotalTransferOrder()
     })
     .catch(error => {
         console.log(error.message)
@@ -105,7 +111,33 @@ function ProcessPaymentTransferOrder() {
                 const acceptPayment = confirm("Xác nhận thanh toán ?")
 
                 if (acceptPayment) {
-                    console.log(acceptPayment)
+                    if (localStorage.getItem("username")) {
+                        let orderId =  e.target.parentElement.parentElement.firstElementChild.innerText
+
+                        let totalMoney = e.target.parentElement.previousElementSibling.firstElementChild.innerText.split(" ")[0]
+
+                        let billOptions = {
+                            "orderId": orderId,
+                            "createdBy": localStorage.getItem("username"),
+                            "totalMoney": totalMoney
+                          }
+
+                          FetchNewBillOrder(billOptions)
+                          .then(data => {
+                            window.alert(`Payment Bill ${data.data.billId} Successfully`);
+                            window.location.reload();
+                          })
+                          .catch(error => {
+                            window.alert(`Có lõi  ${error.message}`);
+                            window.location.reload();
+                          })
+
+                    }
+
+                    else {
+                        window.alert("Mất Thông tin người dùng trang web sẽ tải lại")
+                        window.location.reload();
+                    }
                 }
 
                 else {
@@ -119,13 +151,35 @@ function ProcessPaymentTransferOrder() {
 
 
                 if (acceptDelete) {
-                    console.log(acceptDelete)
+                    if (localStorage.getItem("username")) {
+                        let orderId =  e.target.parentElement.parentElement.firstElementChild.innerText
+
+                        let orderOptions = {
+                            "orderId": orderId,
+                            "username": localStorage.getItem("username")
+                          }
+
+                          FetchDeleteTransferOrder(orderOptions)
+                          .then(data => {
+                            window.alert("Delete Succesfully");
+                            window.location.reload();
+                          })
+                          .catch(error => {
+                            window.alert(`có lỗi  ${error.message}`);
+                            window.location.reload();
+                          })
+
+                    }
+
+                    else {
+                        window.alert("Mất Thông tin người dùng trang web sẽ tải lại")
+                        window.location.reload();
+                    }
                 }
 
                 else {
                     alert("Hủy tiến trình")
                 }
-
             }
 
             else {
@@ -136,5 +190,38 @@ function ProcessPaymentTransferOrder() {
 
 
         })
+    })
+}
+
+function ProcessPaymentTotalTransferOrder() {
+    const layoutBillPurchase = document.querySelector(".layout-bill_purchase");
+
+    layoutBillPurchase.addEventListener("click",(e) => {
+
+        const acceptPayment = window.confirm("Xác nhận thanh toán hết hóa đơn ?")
+
+        if (acceptPayment) {
+            if(localStorage.getItem("username")) {
+                FetchNewBillAllTransferOrder(localStorage.getItem("username"))
+                .then(data => {
+                    window.alert(`Thanh Toán Hoàn Tất Hóa Đơn  ${data.data.billId}`);
+                    window.location.reload();
+                })
+                .catch(error => {
+                    window.alert(`Có lỗi ${error.message} trang web sẽ tải lại`);
+                    window.location.reload();
+                })
+            }
+    
+            else {
+                window.alert("Có lỗi trang web sẽ tải lại");
+                window.location.reload();
+            }
+        }
+
+        else {
+            window.alert("Hủy Tiến Trình");
+        }
+      
     })
 }

@@ -11,8 +11,9 @@ namespace ShopeeApi.Repository
 
         Task<IEnumerable<TransferOrder>> GetAllTransferOrder(string username);
 
-        Task<bool> ExistUser(string username);
+        Task<IEnumerable<TransferOrder>> GetAllTransferOrderProcess(string username);
 
+        Task<bool> ExistUser(string username);
 
         Task<bool> DeleteTransferOrder(TransferOrder request);
 

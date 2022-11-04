@@ -102,6 +102,13 @@ namespace ShopeeApi.Repository
             return await _context.TransferOrders.Where(x => x.Username == username).OrderBy(x => x.CreatedOn).ToListAsync();
         }
 
+        public async Task<IEnumerable<TransferOrder>> GetAllTransferOrderProcess(string username)
+        {
+            return await _context.TransferOrders.Where(x => x.Username == username &&
+                x.ORDERSTATUS == ORDERSTATUS.PROCESS
+            ).OrderBy(x => x.CreatedOn).ToListAsync();
+        }
+
         public async Task<bool> isExistTransferOrder(TransferOrder request)
         {
             var findTransferOrder = await _context.TransferOrders.Where(x => x.Username == request.Username

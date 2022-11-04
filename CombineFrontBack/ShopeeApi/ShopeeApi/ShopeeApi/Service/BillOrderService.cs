@@ -21,6 +21,26 @@ namespace ShopeeApi.Service
             _logger = logger;
         }
 
+        public async Task<ServiceResponse<ResponseBillOrder>> CreateBillAllOrderProcess(string username)
+        {
+            var response = new ServiceResponse<ResponseBillOrder>();
+
+            var createBill = await _billRepository.CreateBillAllOrderProcess(username);
+
+            if (createBill == null)
+            {
+                response.Success = false;
+                response.Message = "Can't Create Bill";
+            }
+
+            else
+            {
+                response.Data = _mapper.Map<ResponseBillOrder>(createBill);
+            }
+
+            return response;
+        }
+
         public async Task<ServiceResponse<ResponseBillOrder>> CreateBillOrder(RequestAddBillOrder request)
         {
             var response = new ServiceResponse<ResponseBillOrder>();
@@ -94,7 +114,27 @@ namespace ShopeeApi.Service
             if (getAllBill.ToList().Count <= 0)
             {
                 response.Success = false;
-                response.Message = "Not Permitted Create New Bill";
+                response.Message = "Not Found Any Value";
+            }
+
+            else
+            {
+                response.Data = getAllBill.Select(x => _mapper.Map<ResponseBillOrder>(x));
+            }
+
+            return response;
+        }
+
+        public async Task<ServiceResponse<IEnumerable<ResponseBillOrder>>> GetAllBillOrderIncludeOrder(string username)
+        {
+            var response = new ServiceResponse<IEnumerable<ResponseBillOrder>>();
+
+            var getAllBill = await _billRepository.GetAllBillOrderIncludeOrder(username);
+
+            if (getAllBill.ToList().Count <= 0)
+            {
+                response.Success = false;
+                response.Message = "Not Found Any Value";
             }
 
             else

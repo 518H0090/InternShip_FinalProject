@@ -30,6 +30,20 @@ namespace ShopeeApi.Controllers
             return Ok(getAllOrder);
         }
 
+        [HttpGet]
+        [Route("all-transfer-order-process")]
+        public async Task<IActionResult> GetAllTransferOrderProcess([FromHeader(Name = "username")] string username)
+        {
+            var getAllOrder = await _service.GetAllTransferOrderProcess(username);
+
+            if (getAllOrder.Data == null)
+            {
+                return BadRequest(getAllOrder);
+            }
+
+            return Ok(getAllOrder);
+        }
+
         [HttpPost]
         [Route("new-transfer-order")]
         public async Task<IActionResult> CreateTransferOrder(RequestAddTransferOrder request)

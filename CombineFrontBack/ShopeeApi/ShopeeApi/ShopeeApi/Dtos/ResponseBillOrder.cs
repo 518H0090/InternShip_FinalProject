@@ -1,4 +1,7 @@
-﻿namespace ShopeeApi.Dtos
+﻿using ShopeeApi.Models;
+using System.Text.Json.Serialization;
+
+namespace ShopeeApi.Dtos
 {
     public class ResponseBillOrder
     {
@@ -13,6 +16,8 @@
         public string UpdatedBy { set; get; } = string.Empty;
 
         public DateTime UpdatedOn { set; get; }
+
+        public IEnumerable<ResponseTransferOrder> TransferOrders { set; get; }
 
     }
 }

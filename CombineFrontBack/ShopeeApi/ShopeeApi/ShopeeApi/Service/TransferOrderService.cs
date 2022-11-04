@@ -96,6 +96,24 @@ namespace ShopeeApi.Service
             return response;
         }
 
-        
+        public async Task<ServiceResponse<IEnumerable<ResponseTransferOrder>>> GetAllTransferOrderProcess(string username)
+        {
+            var response = new ServiceResponse<IEnumerable<ResponseTransferOrder>>();
+
+            var getAllOrder = await _repository.GetAllTransferOrderProcess(username);
+
+            if (getAllOrder.ToList().Count <= 0)
+            {
+                response.Success = false;
+                response.Message = "Not Found Any Value";
+            }
+
+            else
+            {
+                response.Data = getAllOrder.Select(x => _mapper.Map<ResponseTransferOrder>(x));
+            }
+
+            return response;
+        }
     }
 }

@@ -8,5 +8,9 @@ namespace ShopeeApi.Service
         Task<ServiceResponse<ResponseBillOrder>> CreateBillOrder(RequestAddBillOrder request);
 
         Task<ServiceResponse<IEnumerable<ResponseBillOrder>>> GetAllBillOrder(string username);
+
+        Task<ServiceResponse<ResponseBillOrder>> CreateBillAllOrderProcess(string username);
+
+        Task<ServiceResponse<IEnumerable<ResponseBillOrder>>> GetAllBillOrderIncludeOrder(string username);
     }
 }
