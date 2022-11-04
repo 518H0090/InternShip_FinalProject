@@ -96,4 +96,45 @@ function ProcessLayoutInTransferOrder(username) {
 
 function ProcessPaymentTransferOrder() {
     const layoutShoppingItemAll = document.querySelectorAll(".layout__shoppingitem");
+
+    layoutShoppingItemAll.forEach(element => {
+        element.lastElementChild.firstElementChild.addEventListener("click",(e) => {
+            let textInnerElement =  e.target.innerText
+
+            if (textInnerElement === "THANH TOÁN") {
+                const acceptPayment = confirm("Xác nhận thanh toán ?")
+
+                if (acceptPayment) {
+                    console.log(acceptPayment)
+                }
+
+                else {
+                    alert("Hủy tiến trình")
+                }
+
+            }
+
+            else if (textInnerElement === "XÓA") {
+                const acceptDelete = confirm("Xác nhận xóa thông tin hóa đơn ?")
+
+
+                if (acceptDelete) {
+                    console.log(acceptDelete)
+                }
+
+                else {
+                    alert("Hủy tiến trình")
+                }
+
+            }
+
+            else {
+                window.alert("Have Error Refresh Again")
+                window.location.reload()
+                e.preventDefault()
+            }
+
+
+        })
+    })
 }
