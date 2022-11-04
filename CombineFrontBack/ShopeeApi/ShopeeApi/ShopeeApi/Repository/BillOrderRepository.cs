@@ -38,6 +38,11 @@ namespace ShopeeApi.Repository
                         totalMoney += element.TotalMoney;
                     });
 
+                    if (totalMoney == 0)
+                    {
+                        throw new Exception();
+                    }
+
                     BillOrder billOrder = new BillOrder
                     {
                         CreatedBy = username,
