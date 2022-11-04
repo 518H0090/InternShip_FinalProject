@@ -51,6 +51,10 @@ namespace ShopeeApi
             CreateMap<TransferOrder, ResponseTransferOrder>();
             CreateMap<RequestDeleteTransferOrder, TransferOrder>();
 
+            CreateMap<BillOrder, ResponseBillOrder>();
+            CreateMap<RequestAddBillOrder, BillOrder>();
+
+
         }
     }
 }

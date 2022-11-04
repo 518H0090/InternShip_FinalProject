@@ -32,5 +32,8 @@ namespace ShopeeApi.Models
 
         public User User { set; get; }
         public int UserId { set; get; }
+
+        public BillOrder? BillOrder { set; get; }
+        public Guid? BillOrderId { set; get; }
     }
 }

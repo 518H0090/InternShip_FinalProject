@@ -23,5 +23,8 @@ namespace ShopeeApi.Models
 
         //In Test
         public IEnumerable<TransferOrder> TransferOrders { set; get; }
+
+        public IEnumerable<BillOrder> BillOrders { set; get; } 
+        
     }
 }

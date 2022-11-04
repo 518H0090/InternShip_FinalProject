@@ -19,6 +19,7 @@ namespace ShopeeApi.Datas
         public DbSet<Bill> Bills { set; get; }
         public DbSet<RestaurantOrder> RestaurantOrders { set; get; }
         public DbSet<TransferOrder> TransferOrders { set; get; }
+        public DbSet<BillOrder> BillOrders { set; get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -269,6 +270,24 @@ namespace ShopeeApi.Datas
 
             });
 
+            //Bill Order
+            modelBuilder.Entity<BillOrder>(x =>
+            {
+                x.HasKey(bo => bo.BillId);
+
+                x.Property(bo => bo.TotalMoney).HasDefaultValue<int>(0);
+
+                x.HasMany<TransferOrder>(bo => bo.TransferOrders)
+                .WithOne(to => to.BillOrder)
+                .HasForeignKey(to => to.BillOrderId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+                x.HasOne<User>(bo => bo.User)
+                .WithMany(u => u.BillOrders)
+                .HasForeignKey(bo => bo.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            });
 
         }
     }

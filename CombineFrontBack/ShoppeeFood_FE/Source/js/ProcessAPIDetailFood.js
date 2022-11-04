@@ -642,6 +642,8 @@ function FetchCategoryFollowFood(params) {
               window.location.reload();
             }).catch(error => {
               console.log(error)
+              window.alert("Have Error Website will refresh")
+              window.location.reload();
             })
             ;
           }

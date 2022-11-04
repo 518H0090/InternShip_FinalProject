@@ -537,6 +537,8 @@ async function FetchAllTransferOrder(username) {
   throw new Error("Can't Find Any Value")
 }
 
+
+
 window.addEventListener("load", (e) => {
   let jwtToken = localStorage.getItem("jwttoken");
   const navbarSearch = document.querySelector(".navbar-search");
@@ -766,7 +768,7 @@ function ProcessEventMoveToPayment() {
   navbarLoginShoppingCart.addEventListener('click',(e) => {
 
     if (localStorage.getItem("username")) {
-      window.location.href = "./shoppingcard.html?username=" + localStorage.getItem("username")
+      window.location.href = "./transferorder.html"
     }
 
     else {

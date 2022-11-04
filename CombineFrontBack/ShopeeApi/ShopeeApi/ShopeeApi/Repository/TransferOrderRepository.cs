@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using ShopeeApi.Datas;
+using ShopeeApi.Dtos;
 using ShopeeApi.Models;
 
 namespace ShopeeApi.Repository
@@ -101,6 +102,20 @@ namespace ShopeeApi.Repository
             return await _context.TransferOrders.Where(x => x.Username == username).OrderBy(x => x.CreatedOn).ToListAsync();
         }
 
+        public async Task<bool> isExistTransferOrder(TransferOrder request)
+        {
+            var findTransferOrder = await _context.TransferOrders.Where(x => x.Username == request.Username
+            && x.OrderId == request.OrderId
+            ).FirstOrDefaultAsync();
+
+            if (findTransferOrder == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public async Task<bool> isTransferOrderPayment(TransferOrder request)
         {
             var findTransferOrder = await _context.TransferOrders.Where(x => x.Username == request.Username
@@ -114,6 +129,37 @@ namespace ShopeeApi.Repository
 
             return true;
         }
-        
+
+        public async Task<TransferOrder> UpdateTransferOrder(TransferOrder request)
+        {
+            using (var transaction = await _context.Database.BeginTransactionAsync())
+            {
+                try
+                {
+                    var findUser = await _context.Users.FirstAsync(x => x.UserName == request.Username);
+
+                    var findOrder = await _context.TransferOrders.Where(x => x.User == findUser && x.OrderId.ToString().ToLower()
+                    == request.OrderId.ToString().ToLower() ).FirstAsync();
+
+                    findOrder.UpdatedBy = request.Username;
+                    findOrder.UpdatedOn = DateTime.Now;
+                    findOrder.ORDERSTATUS = ORDERSTATUS.FINISH;
+
+                    var updateOrder = _context.TransferOrders.Update(findOrder);
+                    await _context.SaveChangesAsync();
+
+                    await transaction.CommitAsync();
+
+                    return updateOrder.Entity;
+                }
+
+                catch (Exception e)
+                {
+                    await transaction.RollbackAsync();
+                    return null;
+                }
+            }
+
+        }
     }
 }
