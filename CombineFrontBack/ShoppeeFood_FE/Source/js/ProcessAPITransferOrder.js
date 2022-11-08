@@ -96,6 +96,8 @@ function ProcessLayoutInTransferOrder(username) {
     .catch(error => {
         console.log(error.message)
         layoutShoppingList.innerHTML = ""
+        const layoutBillTotalcost = document.querySelector(".layout-bill__totalcost");
+        layoutBillTotalcost.textContent = "0";
     })
 }
 

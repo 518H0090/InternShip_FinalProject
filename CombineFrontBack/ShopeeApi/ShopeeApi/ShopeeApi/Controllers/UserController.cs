@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using ShopeeApi.Dtos;
-using ShopeeApi.Models;
-using ShopeeApi.Repository;
+using ShopeeApi.Dtos.Request;
+using ShopeeApi.EnumData;
+using ShopeeApi.IService;
 
 namespace ShopeeApi.Controllers
 {

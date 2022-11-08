@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using NLog;
 using ShopeeApi.Datas;
+using ShopeeApi.IRepository;
+using ShopeeApi.IService;
 using ShopeeApi.Repository;
 using ShopeeApi.SeedData;
 using ShopeeApi.Service;

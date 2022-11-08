@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using ShopeeApi.Dtos;
-using ShopeeApi.Models;
-using ShopeeApi.Service;
+using ShopeeApi.Dtos.Request;
+using ShopeeApi.EnumData;
+using ShopeeApi.IService;
 
 namespace ShopeeApi.Controllers
 {
@@ -131,8 +131,7 @@ namespace ShopeeApi.Controllers
 
         [HttpGet]
         [Route("view-promotion")]
-        public IActionResult ViewPromotion()
-        {
+        public IActionResult ViewPromotion() =>
             //return Ok(Enum.GetValues(typeof(Promotion)));
             //return Ok(JsonConvert.SerializeObject(new
             //{
@@ -143,9 +142,8 @@ namespace ShopeeApi.Controllers
             //    Promotion.reduce40K
             //}, new Newtonsoft.Json.Converters.StringEnumConverter()));
 
-            return Ok(JsonConvert.SerializeObject(Enum.GetNames(typeof(Promotion)).ToList()
+            Ok(JsonConvert.SerializeObject(Enum.GetNames(typeof(Promotion)).ToList()
                 , new Newtonsoft.Json.Converters.StringEnumConverter()));
-        }
 
         [HttpPost]
         [Route("new-restaurant")]

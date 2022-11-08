@@ -5,7 +5,9 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopeeApi", "ShopeeApi\ShopeeApi.csproj", "{95D515BC-F4AD-4363-88D6-312E9FD0A955}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerService", "LoggerService\LoggerService.csproj", "{D133678A-DA12-468E-9051-90D09CF8CFC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerService", "LoggerService\LoggerService.csproj", "{D133678A-DA12-468E-9051-90D09CF8CFC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicLayer", "LogicLayer\LogicLayer.csproj", "{E3A34E20-2B8F-44B0-B78A-09D7C0AD21EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D133678A-DA12-468E-9051-90D09CF8CFC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D133678A-DA12-468E-9051-90D09CF8CFC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D133678A-DA12-468E-9051-90D09CF8CFC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A34E20-2B8F-44B0-B78A-09D7C0AD21EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A34E20-2B8F-44B0-B78A-09D7C0AD21EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A34E20-2B8F-44B0-B78A-09D7C0AD21EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A34E20-2B8F-44B0-B78A-09D7C0AD21EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

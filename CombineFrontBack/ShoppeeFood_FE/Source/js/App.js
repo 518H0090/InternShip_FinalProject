@@ -696,6 +696,7 @@ window.addEventListener("load", (e) => {
             navbarLogin.innerHTML = newLayoutNavbar + viewListShoppingCart;
 
             ProcessEventMoveToPayment()
+            Logout();
           });     
 
         // countItemInShoppingCart(data.userName)

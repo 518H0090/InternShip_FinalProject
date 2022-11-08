@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ShopeeApi.Dtos;
+using ShopeeApi.Dtos.Request;
+using ShopeeApi.IService;
 using ShopeeApi.Models;
 using ShopeeApi.Repository;
-using ShopeeApi.Service;
 
 namespace ShopeeApi.Controllers
 {

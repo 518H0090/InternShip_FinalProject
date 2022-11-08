@@ -257,8 +257,19 @@ function FetchInMenuSearchBarList(params) {
 
         var existDescription =
           estimateFoodDescription === ""
-            ? `Not Found`
-            : estimateFoodDescription;
+            ? 
+            `
+            <p class="searchitem__content-subtitle" style="opacity:0">
+                            ${existDescription}
+                        </p>
+            `
+            : 
+            
+            `
+            <p class="searchitem__content-subtitle">
+                            ${estimateFoodDescription}
+              </p>
+            `;
 
         var foodPrice =
           element.foodPriceLess > 0 ? element.foodPriceLess : element.foodPrice;
@@ -281,9 +292,8 @@ function FetchInMenuSearchBarList(params) {
                             ${estimateFoodTitle}
                         </h3>
 
-                        <p class="searchitem__content-subtitle">
-                            ${existDescription}
-                        </p>
+                        ${existDescription}
+
                     </div>
 
                     <!-- Item  Promotion-->

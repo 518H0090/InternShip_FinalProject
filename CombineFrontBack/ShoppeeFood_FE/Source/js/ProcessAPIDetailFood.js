@@ -482,8 +482,8 @@ function FetchCategoryInRestaurant(params) {
       let newList = listCategory
         .map((element) => {
           let setCategoryName =
-            element.categoryName.length > 22
-              ? element.categoryName.slice(0, 22) + "..."
+            element.categoryName.length > 18
+              ? element.categoryName.slice(0, 18) + "..."
               : element.categoryName;
 
           return ` <!-- Category Item -->
