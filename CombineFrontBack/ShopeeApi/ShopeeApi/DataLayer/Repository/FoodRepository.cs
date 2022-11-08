@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using ShopeeApi.Datas;
 using ShopeeApi.IRepository;
 using ShopeeApi.Models;

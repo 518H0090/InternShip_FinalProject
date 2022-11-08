@@ -15,8 +15,6 @@ namespace ShopeeApi.Datas
         public DbSet<Category> Categories { set; get; }
         public DbSet<Food> Foods { set; get; }
         public DbSet<RelationCategoryFood> RelationCategoryFoods { set; get; }
-        public DbSet<SelectFoodRecord> SelectFoodRecords { set; get; }
-        public DbSet<Bill> Bills { set; get; }
         public DbSet<RestaurantOrder> RestaurantOrders { set; get; }
         public DbSet<TransferOrder> TransferOrders { set; get; }
         public DbSet<BillOrder> BillOrders { set; get; }
@@ -205,34 +203,6 @@ namespace ShopeeApi.Datas
                .WithMany(c => c.RelationCategoryFoods)
                .HasForeignKey(rcf => rcf.FoodId)
                .OnDelete(DeleteBehavior.Restrict);
-            });
-
-            //Select Food Record
-            modelBuilder.Entity<SelectFoodRecord>(x =>
-            {
-                x.HasKey(sfr => sfr.RecordId);
-
-                x.HasOne<User>(sfr => sfr.User)
-                .WithMany(u => u.SelectFoodRecords)
-                .HasForeignKey(sfr => sfr.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
-            });
-
-            //Bill
-            modelBuilder.Entity<Bill>(x =>
-            {
-                x.HasKey(b => b.BillId);
-
-                x.HasIndex(b => b.BillId).IsUnique();
-
-                x.Property(b => b.totalPayment).HasDefaultValue<float>(0);
-
-
-                x.HasOne<User>(b => b.User)
-                .WithMany(u => u.Bills)
-                .HasForeignKey(b => b.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
-
             });
 
             //Restaurant Order

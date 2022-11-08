@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using ShopeeApi.Datas;
-using ShopeeApi.Dtos;
 using ShopeeApi.EnumData;
 using ShopeeApi.IRepository;
 using ShopeeApi.Models;
@@ -153,6 +152,7 @@ namespace ShopeeApi.Repository
                     findOrder.UpdatedBy = request.Username;
                     findOrder.UpdatedOn = DateTime.Now;
                     findOrder.ORDERSTATUS = ORDERSTATUS.FINISH;
+                    findOrder.BillOrderId = request.BillOrderId;
 
                     var updateOrder = _context.TransferOrders.Update(findOrder);
                     await _context.SaveChangesAsync();

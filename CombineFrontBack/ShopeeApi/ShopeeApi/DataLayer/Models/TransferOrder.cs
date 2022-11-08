@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+using Newtonsoft.Json.Converters;
 using ShopeeApi.EnumData;
 using System.Text.Json.Serialization;
 

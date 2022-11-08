@@ -16,10 +16,6 @@ namespace ShopeeApi.Models
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public Role Role { get; set; } = Role.User;
 
-        public IEnumerable<SelectFoodRecord> SelectFoodRecords { set; get; }
-
-        public IEnumerable<Bill> Bills { set; get; }
-
         public IEnumerable<RestaurantOrder> RestaurantOrders { set; get; } 
 
         //In Test

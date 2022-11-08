@@ -214,161 +214,6 @@ async function CheckUserInfo(jwtToken) {
   throw new Error(`Can't Find Account`);
 }
 
-// Get Count Number item in Shopping Cart Follow Username
-async function countItemInShoppingCart(username) {
-  let url =
-    "http://localhost:49071/api/FoodRecord/count-number-record-follow-user/";
-
-  let fetchUrl = await fetch(url + username, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  if (fetchUrl.ok) {
-    let dataJson = await fetchUrl.json();
-
-    return dataJson;
-  }
-
-  throw new Error(`Doesn't Have Any value`);
-}
-
-// Get 6 item in Shopping Cart Follow Username
-async function Get6ItemInShoppingCart(username) {
-  let url = "http://localhost:49071/api/FoodRecord/top-6-record/";
-
-  let fetchUrl = await fetch(url + username, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  if (fetchUrl.ok) {
-    let dataJson = await fetchUrl.json();
-
-    return dataJson;
-  }
-
-  throw new Error(`Doesn't Have Any value`);
-}
-
-// Get All item in Shopping Cart Follow Username
-async function GetAllItemInShoppingCart(username) {
-  let url = "http://localhost:49071/api/FoodRecord/all-record-follow-user/";
-
-  let fetchUrl = await fetch(url + username, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  if (fetchUrl.ok) {
-    let dataJson = await fetchUrl.json();
-
-    return dataJson;
-  }
-
-  throw new Error(`Doesn't Have Any value`);
-}
-
-// Get Total Price in Shopping Cart Follow Username
-async function GetTotalPriceInShoppingCart(username) {
-  let url = "http://localhost:49071/api/FoodRecord/total-bill/";
-
-  let fetchUrl = await fetch(url + username, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  if (fetchUrl.ok) {
-    let dataJson = await fetchUrl.json();
-
-    return dataJson;
-  }
-
-  throw new Error(`Can't Add Item`);
-}
-
-// Add item in Shopping Cart Follow Username
-async function AddNewItemInShoppingCart(username, foodInfo) {
-  let url = "http://localhost:49071/api/FoodRecord/new-item/";
-
-  let fetchUrl = await fetch(url + username, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      foodImageUrl: foodInfo.foodImageUrl,
-      foodTitle: foodInfo.foodTitle,
-      foodDescription: foodInfo.foodDescription,
-      foodPrice: foodInfo.foodPrice,
-    }),
-  });
-
-  if (fetchUrl.ok) {
-    let dataJson = await fetchUrl.json();
-
-    return dataJson;
-  }
-
-  throw new Error(`Doesn't Have Any value`);
-}
-
-// Delete item in Shopping Cart Follow Username
-async function DeleteNewItemInShoppingCart(username, recordId) {
-  let url = "http://localhost:49071/api/FoodRecord/remove-item";
-
-  let fetchUrl = await fetch(url, {
-    method: "Delete",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      recordId: recordId,
-      username: username,
-    }),
-  });
-
-  if (fetchUrl.ok) {
-    let dataJson = await fetchUrl.json();
-
-    return dataJson;
-  }
-
-  throw new Error(`Can't Delete Item`);
-}
-
-// Create Bill in Shopping Cart Follow Username
-async function NewBillInShoppingCart(username, totalCost) {
-  let url = "http://localhost:49071/api/Bill/new-bill";
-
-  let fetchUrl = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      totalPayment: totalCost,
-      useName: username,
-    }),
-  });
-
-  if (fetchUrl.ok) {
-    let dataJson = await fetchUrl.json();
-
-    return dataJson;
-  }
-
-  throw new Error(`Can't Process Bill`);
-}
-
 // Get Total Index Food With RestaurantType
 async function getTotalIndexFoodWithRestaurantType(restype) {
   const url = "http://localhost:49071/api/Food/total-index-with-restype";
@@ -675,7 +520,6 @@ window.addEventListener("load", (e) => {
         `;
 
             navbarLogin.innerHTML = newLayoutNavbar + viewListShoppingCart;
-            // ProcessEventShoppingDropdown();
 
             ProcessEventMoveToPayment()
 
@@ -699,81 +543,8 @@ window.addEventListener("load", (e) => {
             Logout();
           });     
 
-        // countItemInShoppingCart(data.userName)
-        //   .then((countItem) => {
-        //     newLayoutNavbar = `
-        //   <p title="${data.userName}">${userNameReduce}</p>
-        //   <button type="button" class="btn btn-login btn-logout">Đăng xuất</button>
-        //   <div class="navbar-login__shoppingcart">
-        //     <i class="fa-sharp fa-solid fa-cart-plus"></i>
-        //     <p class="navbar-shoppingcart__countitem">${countItem}</p>
-        //   </div>
-        // `;
-
-        //     navbarLogin.innerHTML = newLayoutNavbar + viewListShoppingCart;
-        //     ProcessEventShoppingDropdown();
-
-        //     Logout();
-        //   })
-        //   .catch((error) => {
-        //     console.log(error);
-
-        //     newLayoutNavbar = `
-        //   <p title="${data.userName}">${userNameReduce}</p>
-        //   <button type="button" class="btn btn-login btn-logout">Đăng xuất</button>
-        //   <div class="navbar-login__shoppingcart">
-        //     <i class="fa-sharp fa-solid fa-cart-plus"></i>
-        //     <p class="navbar-shoppingcart__countitem">0</p>
-        //   </div>
-        // `;
-
-        //     navbarLogin.innerHTML = newLayoutNavbar + viewListShoppingCart;
-        //     ProcessEventShoppingDropdown();
-        //   });
-
-        // Get6ItemInShoppingCart(data.userName)
-        //   .then((itemlist) => {
-        //     let listItemShoppingCart = itemlist.data;
-
-        //     const navbarShoppingList = document.querySelector(
-        //       ".navbar-login.navbar-iflogin .navbar-shopping__list"
-        //     );
-
-        //     let newListItem = listItemShoppingCart.map((element) => {
-        //       let reduceFoodTitle =
-        //         element.foodTitle.length > 14
-        //           ? element.foodTitle.slice(0, 14) + "..."
-        //           : element.foodTitle;
-
-        //       return `  <!-- Item -->
-        //     <li class="navbar-shopping__item">
-        //       <!-- Image -->
-        //       <div class="navbar-shopping__image">
-        //         <img src="${element.foodImageUrl}" alt="" class="navbar-shopping__img">
-        //       </div>
-
-        //       <!-- Content -->
-        //       <div class="navbar-shopping__content">
-        //         <h3 class="navbar-shopping__content-title">${reduceFoodTitle}</h3>
-        //         <p class="navbar-shopping__content-cost">${element.foodPrice} <sup>đ</sup> </p>
-        //       </div>
-        //     </li>`;
-        //     });
-
-        //     navbarShoppingList.innerHTML = newListItem;
-
-        //     Logout();
-        //   })
-        //   .catch((error) => {
-        //     console.log(error);
-        //     const navbarShoppingList = document.querySelector(
-        //       ".navbar-login.navbar-iflogin .navbar-shopping__list"
-        //     );
-        //   });
-
         navbarLogin.innerHTML = newLayoutNavbar + viewListShoppingCart;
 
-        // ProcessEventShoppingDropdown();
         Logout();
 
         const btnLogout = document.querySelector(
@@ -795,43 +566,6 @@ window.addEventListener("load", (e) => {
       });
   }
 });
-
-// function ProcessEventShoppingDropdown() {
-//   // Move To Shopping Cart Page
-//   const navbarShoppingViewmore = document.querySelector(
-//     ".navbar-shopping__viewmore"
-//   );
-//   const navbarLoginShoppingcartViewlistitemValue = document.querySelector(
-//     ".navbar-login__shoppingcart-viewlistitem .navbar-shopping__list"
-//   );
-
-//   navbarShoppingViewmore.addEventListener("click", (e) => {
-//     window.location.href =
-//       "./shoppingcard.html?username=" + localStorage.getItem("username");
-//   });
-
-//   // Toggle Shopping Cart View
-//   const navbarLoginShoppingcart = document.querySelector(
-//     ".navbar-login__shoppingcart"
-//   );
-//   const navbarLoginShoppingcartViewlistitem = document.querySelector(
-//     ".navbar-login .navbar-login__shoppingcart-viewlistitem"
-//   );
-
-//   navbarLoginShoppingcart.addEventListener("click", (e) => {
-//     navbarLoginShoppingcartViewlistitem.classList.toggle("show");
-
-//     if (
-//       navbarLoginShoppingcartViewlistitem.firstElementChild.innerText === ""
-//     ) {
-//       window.alert(
-//         "You Must Have Item In Shopping Cart \n Or Maybe System Is Lagging so It Will Refresh Later \n Please Wait"
-//       );
-//       navbarLoginShoppingcartViewlistitem.classList.remove("show");
-//       window.location.reload();
-//     }
-//   });
-// }
 
 function Logout() {
   const btnLogout = document.querySelector(
