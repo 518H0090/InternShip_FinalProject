@@ -1,6 +1,5 @@
 ﻿using ShopeeApi.Dtos.Request;
 using ShopeeApi.Dtos.Response;
-using ShopeeApi.Models;
 using ShopeeApi.Service;
 
 namespace ShopeeApi.IService

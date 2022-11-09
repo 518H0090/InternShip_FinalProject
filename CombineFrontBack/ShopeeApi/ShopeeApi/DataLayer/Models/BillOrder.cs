@@ -1,8 +1,9 @@
-﻿namespace ShopeeApi.Models
+﻿using DataLayer.StaticClass;
+
+namespace ShopeeApi.Models
 {
     public class BillOrder
     {
-
         public Guid BillId { set; get; } = Guid.NewGuid();
 
         public int TotalMoney { set; get; }
@@ -20,5 +21,7 @@
         public User User { set; get; }
         public int UserId { set; get; }
 
+        //In Test
+        public string OrderCode { set; get; } = RandomString.RandomStringSequence();
     }
 }

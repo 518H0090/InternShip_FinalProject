@@ -6,7 +6,7 @@ using ShopeeApi.IService;
 
 namespace ShopeeApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/user")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -28,7 +28,7 @@ namespace ShopeeApi.Controllers
 
         [HttpPost]
         [Route("register")]
-        public async Task<IActionResult> RegisterUser(RequestUserRegister request)
+        public async Task<IActionResult> RegisterUser([FromBody] RequestUserRegister request)
         {
             var registerCheck = await _repository.Register(request);
 
@@ -46,7 +46,7 @@ namespace ShopeeApi.Controllers
 
         [HttpPost]
         [Route("authen-login")]
-        public async Task<IActionResult> AuthenLogin(RequestUserLogin request)
+        public async Task<IActionResult> AuthenLogin([FromBody] RequestUserLogin request)
         {
             var authenUser = await _repository.AuthenLogin(request);
 
@@ -79,6 +79,5 @@ namespace ShopeeApi.Controllers
 
             return Ok(checkUserInfo.Data);
         }
-      
     }
 }

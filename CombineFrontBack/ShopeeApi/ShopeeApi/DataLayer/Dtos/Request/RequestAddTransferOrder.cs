@@ -17,6 +17,5 @@ namespace ShopeeApi.Dtos.Request
         public int TempMoney { set; get; }
 
         public int RestaurantId { set; get; }
-
     }
 }

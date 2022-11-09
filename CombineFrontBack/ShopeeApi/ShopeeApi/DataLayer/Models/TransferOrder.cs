@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+﻿using DataLayer.StaticClass;
 using Newtonsoft.Json.Converters;
 using ShopeeApi.EnumData;
 using System.Text.Json.Serialization;
@@ -36,5 +36,8 @@ namespace ShopeeApi.Models
 
         public BillOrder? BillOrder { set; get; }
         public Guid? BillOrderId { set; get; }
+
+        //In Test
+        public string OrderCode { set; get; } = RandomString.RandomStringSequence();
     }
 }

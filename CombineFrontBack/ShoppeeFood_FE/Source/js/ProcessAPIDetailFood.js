@@ -15,12 +15,19 @@ function FetchDataInDetailFood(locationSearch) {
     fetchRestaurantByTitle(locationSearch)
       .then((data) => {
         const layoutFoodDetail = document.querySelector(".layout-fooddetail");
+        const foodOptionsDesc = document.querySelector(".foodoptions__note-distance .foodoptions__desc");
 
         const itemValue = data.data;
 
         FetchCategoryInRestaurant(itemValue.rsId);
         FetchCategoryFollowFood(itemValue.rsId);
-        FetchRestaurantOrderShoppingCart(itemValue.rsId)
+        FetchRestaurantOrderShoppingCart(itemValue.rsId);
+
+        localStorage.setItem("RsDistance", itemValue.rsDistance)
+
+        if (localStorage.getItem("RsDistance")) {
+          foodOptionsDesc.textContent = localStorage.getItem("RsDistance") + " km"
+        }
 
         const itemValueLikeReferences =
           itemValue.rsRefeLike == true
@@ -181,11 +188,13 @@ function FetchDataInDetailFood(locationSearch) {
       .catch((errorValue) => {
         console.log(errorValue.message);
         layoutFoodDetail.innerHTML = "Not Found Ok";
+        localStorage.removeItem("RsDistance")
       });
   } else {
     FetchRestaurantById(checkNumber)
       .then((data) => {
         const layoutFoodDetail = document.querySelector(".layout-fooddetail");
+        const foodOptionsDesc = document.querySelector(".foodoptions__note-distance .foodoptions__desc");
 
         const itemValue = data.data;
 
@@ -193,6 +202,12 @@ function FetchDataInDetailFood(locationSearch) {
         FetchCategoryFollowFood(checkNumber);
         FetchRestaurantOrderShoppingCart(checkNumber);
 
+        localStorage.setItem("RsDistance", itemValue.rsDistance)
+
+        if (localStorage.getItem("RsDistance")) {
+          foodOptionsDesc.textContent = localStorage.getItem("RsDistance") + " km"
+        }
+
         const itemValueLikeReferences =
           itemValue.rsRefeLike == true
             ? `<!-- Type Shop -->
@@ -352,6 +367,7 @@ function FetchDataInDetailFood(locationSearch) {
       .catch((errorValue) => {
         console.log(errorValue.message);
         layoutFoodDetail.innerHTML = "Not Found Ok";
+        localStorage.removeItem("RsDistance")
       });
   }
 }
@@ -598,59 +614,83 @@ function FetchCategoryFollowFood(params) {
       foodOptionsDetailMenulist.innerHTML = newList.join(" ");
 
       // click
-      const foodoptionsMenuitemBtn = document.querySelectorAll('.foodoptions__menulist-item');
+      const foodoptionsMenuitemBtn = document.querySelectorAll(
+        ".foodoptions__menulist-item"
+      );
 
-      foodoptionsMenuitemBtn.forEach(element => {
-        element.lastElementChild.lastElementChild.addEventListener('click',(e) => {
+      foodoptionsMenuitemBtn.forEach((element) => {
+        element.lastElementChild.lastElementChild.addEventListener(
+          "click",
+          (e) => {
+            let checkContainsLess =
+              e.target.parentElement.parentElement.parentElement.classList.contains(
+                "foodoptions__menulist-item--costless"
+              );
 
-          let checkContainsLess = e.target.parentElement.parentElement.parentElement.classList
-          .contains("foodoptions__menulist-item--costless");
+            let foodInfo = "";
 
-          let foodInfo = ""
+            if (checkContainsLess) {
+              foodInfo = {
+                foodImageUrl:
+                  e.target.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.getAttribute(
+                    "src"
+                  ),
+                foodTitle:
+                  e.target.parentElement.parentElement.parentElement
+                    .firstElementChild.nextElementSibling.firstElementChild
+                    .innerText,
+                foodDescription:
+                  e.target.parentElement.parentElement.parentElement
+                    .firstElementChild.nextElementSibling.lastElementChild
+                    .innerText,
+                foodPrice:
+                  e.target.parentElement.parentElement.firstElementChild.nextElementSibling.innerText.split(
+                    " "
+                  )[0],
+                restaurantId: data.data["0"].restaurantId,
+                userName: localStorage.getItem("username"),
+              };
+            } else {
+              foodInfo = {
+                foodImageUrl:
+                  e.target.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.getAttribute(
+                    "src"
+                  ),
+                foodTitle:
+                  e.target.parentElement.parentElement.parentElement
+                    .firstElementChild.nextElementSibling.firstElementChild
+                    .innerText,
+                foodDescription:
+                  e.target.parentElement.parentElement.parentElement
+                    .firstElementChild.nextElementSibling.lastElementChild
+                    .innerText,
+                foodPrice:
+                  e.target.parentElement.parentElement.firstElementChild.innerText.split(
+                    " "
+                  )[0],
+                restaurantId: data.data["0"].restaurantId,
+                userName: localStorage.getItem("username"),
+              };
+            }
 
-          if (checkContainsLess) {
-            foodInfo = {
-            foodImageUrl : e.target.parentElement.parentElement.parentElement.firstElementChild
-            .firstElementChild.getAttribute("src"),
-            foodTitle : e.target.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.firstElementChild.innerText,
-            foodDescription: e.target.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.lastElementChild.innerText,
-            foodPrice : e.target.parentElement.parentElement.firstElementChild.nextElementSibling
-            .innerText.split(" ")[0],
-            restaurantId : data.data["0"].restaurantId,
-            userName : localStorage.getItem("username")  
-            }  
-          } else {
-            foodInfo = {
-              foodImageUrl : e.target.parentElement.parentElement.parentElement.firstElementChild
-              .firstElementChild.getAttribute("src"),
-              foodTitle : e.target.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.firstElementChild.innerText,
-              foodDescription: e.target.parentElement.parentElement.parentElement.firstElementChild.nextElementSibling.lastElementChild.innerText,
-              foodPrice : e.target.parentElement.parentElement.firstElementChild.innerText.split(" ")[0],
-              restaurantId : data.data["0"].restaurantId,
-              userName : localStorage.getItem("username")  
-              }  
+            if (localStorage.getItem("username") === null) {
+              window.FlashMessage.warning("Làm ơn đăng nhập để thực hiện chức năng này");
+              // window.location.reload();
+            } else {
+              console.log(foodInfo);
+              FetchAddRestaurantOrderFood(foodInfo)
+                .then((data) => {
+                  console.log(data.data);
+                  window.location.reload();
+                })
+                .catch((error) => {
+                  console.log(error);
+                  window.FlashMessage.error("Đã xảy ra lỗi vui lòng thử lại");
+                });
+            }
           }
-
-
-          if (localStorage.getItem("username") === null) {
-            window.location.reload();
-          } else {
-            console.log(foodInfo)
-            FetchAddRestaurantOrderFood(foodInfo)
-            .then(data => {
-              console.log(data.data)
-              window.location.reload();
-            }).catch(error => {
-              console.log(error)
-              window.alert("Have Error Website will refresh")
-              window.location.reload();
-            })
-            ;
-          }
-
-        })
-      })
-
+        );
+      });
     })
     .catch((error) => {
       console.log(error);
@@ -659,55 +699,72 @@ function FetchCategoryFollowFood(params) {
 }
 
 function FetchRestaurantOrderShoppingCart(restaurantId) {
-
   if (localStorage.getItem("username")) {
-    const foodOptionsRelative = document.querySelector('.foodoptions__relative');
+    const foodOptionsRelative = document.querySelector(
+      ".foodoptions__relative"
+    );
     foodOptionsRelative.classList.add("login");
 
-    totalOrderInShoppingCart(localStorage.getItem("username"), restaurantId, ProcessLayoutUserInfo, ProcessLayoutShoppingList, ProcessEventShoppingItem, ProcessNoteMoney)
-    
-  } 
-  
-  else {
-    const foodOptionsRelative = document.querySelector('.foodoptions__relative');
+    totalOrderInShoppingCart(
+      localStorage.getItem("username"),
+      restaurantId,
+      ProcessLayoutUserInfo,
+      ProcessLayoutShoppingList,
+      ProcessEventShoppingItem,
+      ProcessNoteMoney
+    );
+  } else {
+    const foodOptionsRelative = document.querySelector(
+      ".foodoptions__relative"
+    );
     foodOptionsRelative.classList.remove("login");
   }
-  
 }
 
-function totalOrderInShoppingCart(username,restaurantId, layoutuserinfo,layoutshoppinglist, layoutshoppingitem, layoutnote) {
-  
+function totalOrderInShoppingCart(
+  username,
+  restaurantId,
+  layoutuserinfo,
+  layoutshoppinglist,
+  layoutshoppingitem,
+  layoutnote
+) {
   FetchAllFoodOrderInRestaurant(username, restaurantId)
-  .then(data => {
+    .then((data) => {
+      let listData = data.data;
 
-    let listData = data.data;
-
-    layoutuserinfo(listData.length)
-    layoutshoppinglist(listData);
-    layoutshoppingitem(restaurantId);
-    layoutnote(listData, restaurantId)
-  })
-  .catch(error => {
-    console.log(error.message)
-    layoutuserinfo()
-    layoutshoppinglist();
-  })
+      layoutuserinfo(listData.length);
+      layoutshoppinglist(listData);
+      layoutshoppingitem(restaurantId);
+      layoutnote(listData, restaurantId);
+    })
+    .catch((error) => {
+      console.log(error.message);
+      layoutuserinfo();
+      layoutshoppinglist();
+    });
 }
 
 function ProcessLayoutUserInfo(countFood) {
+  const foodOptionsShoppingcartUserinfo = document.querySelector(
+    ".foodoptions__relative.login .foodoptions__shoppingcart-userinfo"
+  );
 
-  const foodOptionsShoppingcartUserinfo = document.querySelector(".foodoptions__relative.login .foodoptions__shoppingcart-userinfo");
-
-  let userReduce = localStorage.getItem("username").length > 18 ? localStorage.getItem("username").slice(0,18) + "..." : localStorage.getItem("username");
+  let userReduce =
+    localStorage.getItem("username").length > 18
+      ? localStorage.getItem("username").slice(0, 18) + "..."
+      : localStorage.getItem("username");
   let newLayoutUserInfo;
 
-  if (typeof countFood === 'undefined') {
+  if (typeof countFood === "undefined") {
     newLayoutUserInfo = `
     <!-- User Info -->
     <div class="foodoptions__shoppingcart-userinfo">
       
       <!-- Username -->
-      <h3 class="foodoptions__userinfo-name" title="${localStorage.getItem("username")}">${userReduce}</h3>
+      <h3 class="foodoptions__userinfo-name" title="${localStorage.getItem(
+        "username"
+      )}">${userReduce}</h3>
 
 
       <!-- Total Number All Food Order -->
@@ -715,17 +772,15 @@ function ProcessLayoutUserInfo(countFood) {
       
     </div>
     `;
-  }
-
-  else 
-  {
-
+  } else {
     newLayoutUserInfo = `
     <!-- User Info -->
     <div class="foodoptions__shoppingcart-userinfo">
       
       <!-- Username -->
-      <h3 class="foodoptions__userinfo-name" title="${localStorage.getItem("username")}">${userReduce}</h3>
+      <h3 class="foodoptions__userinfo-name" title="${localStorage.getItem(
+        "username"
+      )}">${userReduce}</h3>
 
 
       <!-- Total Number All Food Order -->
@@ -735,20 +790,20 @@ function ProcessLayoutUserInfo(countFood) {
     `;
   }
 
-  foodOptionsShoppingcartUserinfo.innerHTML = newLayoutUserInfo
+  foodOptionsShoppingcartUserinfo.innerHTML = newLayoutUserInfo;
 }
 
 function ProcessLayoutShoppingList(data) {
-  const foodOptionsShoppingCartList  = document.querySelector(".foodoptions__relative.login .foodoptions__shoppingcart-list");
-  
+  const foodOptionsShoppingCartList = document.querySelector(
+    ".foodoptions__relative.login .foodoptions__shoppingcart-list"
+  );
+
   let newLayout;
 
   if (typeof data === "undefined") {
-    newLayout = ""
-  }
- 
-  else {
-    newLayout = data.map(element => {
+    newLayout = "";
+  } else {
+    newLayout = data.map((element) => {
       return `
         <!-- Item -->
         <li class="foodoptions__shoppingcart-item">
@@ -785,7 +840,7 @@ function ProcessLayoutShoppingList(data) {
           </div>
   
         </li>
-      `
+      `;
     });
   }
 
@@ -793,81 +848,94 @@ function ProcessLayoutShoppingList(data) {
 }
 
 function ProcessEventShoppingItem(restaurantId) {
-  const foodOptionsShoppingcartItemAll = document.querySelectorAll(".foodoptions__relative.login .foodoptions__shoppingcart-item");
+  const foodOptionsShoppingcartItemAll = document.querySelectorAll(
+    ".foodoptions__relative.login .foodoptions__shoppingcart-item"
+  );
 
-  foodOptionsShoppingcartItemAll.forEach(element => {
-
+  foodOptionsShoppingcartItemAll.forEach((element) => {
     const username = localStorage.getItem("username");
 
-    element.firstElementChild.firstElementChild.addEventListener("click",(e) => {
-      let foodTitle = e.target.parentElement.nextElementSibling.firstElementChild.innerText
-      let foodDescription  = e.target.parentElement.nextElementSibling.lastElementChild.innerText
+    element.firstElementChild.firstElementChild.addEventListener(
+      "click",
+      (e) => {
+        let foodTitle =
+          e.target.parentElement.nextElementSibling.firstElementChild.innerText;
+        let foodDescription =
+          e.target.parentElement.nextElementSibling.lastElementChild.innerText;
 
-      let orderoptions = {
-        foodTitle : foodTitle,
-        foodDescription : foodDescription,
-        userName : username,
-        restaurantId : restaurantId
+        let orderoptions = {
+          foodTitle: foodTitle,
+          foodDescription: foodDescription,
+          userName: username,
+          restaurantId: restaurantId,
+        };
+
+        FetchAddRestaurantOrderFood(orderoptions)
+          .then((data) => {
+            if (data.success) {
+              window.location.reload();
+              e.preventDefault();
+            }
+          })
+          .catch((error) => {
+            alert("Can't Create Or Increase");
+            // window.location.reload();
+            window.FlashMessage.error('Có lỗi xảy ra vui lòng thử lại');
+          });
       }
+    );
 
-      FetchAddRestaurantOrderFood(orderoptions)
-      .then(data => {
+    element.firstElementChild.lastElementChild.addEventListener(
+      "click",
+      (e) => {
+        let foodTitle =
+          e.target.parentElement.nextElementSibling.firstElementChild.innerText;
+        let foodDescription =
+          e.target.parentElement.nextElementSibling.lastElementChild.innerText;
 
-        if (data.success) {
-          window.location.reload();
-          e.preventDefault();
-        }
-       
-      })
-      .catch(error => {
-        alert("Can't Create Or Increase");
-        window.location.reload();
-      })
+        let orderoptions = {
+          foodTitle: foodTitle,
+          foodDescription: foodDescription,
+          userName: username,
+          restaurantId: restaurantId,
+        };
 
-    })
-
-    element.firstElementChild.lastElementChild.addEventListener("click",(e) => {
-      let foodTitle = e.target.parentElement.nextElementSibling.firstElementChild.innerText
-      let foodDescription  = e.target.parentElement.nextElementSibling.lastElementChild.innerText
-
-      let orderoptions = {
-        foodTitle : foodTitle,
-        foodDescription : foodDescription,
-        userName : username,
-        restaurantId : restaurantId
+        FetchDeleteRestaurantOrderFood(orderoptions)
+          .then((data) => {
+            if (data.success) {
+              window.location.reload();
+              e.preventDefault();
+            }
+          })
+          .catch((error) => {
+            alert("Can't Delete Or Decrease");
+            // window.location.reload();
+            window.FlashMessage.error('Có lỗi xảy ra vui lòng thử lại');
+          });
       }
-
-      FetchDeleteRestaurantOrderFood(orderoptions)
-      .then(data => {
-        if (data.success) {
-          window.location.reload();
-          e.preventDefault();
-        }
-      })
-      .catch(error => {
-        alert("Can't Delete Or Decrease");
-        window.location.reload();
-      })
-
-    })
-  })
+    );
+  });
 }
 
 function ProcessNoteMoney(data, restaurantId) {
+  const foodOptionsShoppingCartNote = document.querySelector(
+    ".foodoptions__relative.login .foodoptions__shoppingcart-note"
+  );
+  const foodOptionsShoppingCartButtonOrder = document.querySelector(
+    ".foodoptions__relative.login .foodoptions__shoppingcart-buttonorder"
+  );
 
-  const foodOptionsShoppingCartNote = document.querySelector(".foodoptions__relative.login .foodoptions__shoppingcart-note");
-  const foodOptionsShoppingCartButtonOrder = document.querySelector(".foodoptions__relative.login .foodoptions__shoppingcart-buttonorder");
-
-  let username = localStorage.getItem("username")
+  let username = localStorage.getItem("username");
   let totalMoneyTemp = 0;
-  let randomDistance = Math.floor(Math.random() * (20 - 1 + 1)) + 1
-  let costTransfer = 10000
+  let randomDistance = localStorage.getItem("RsDistance");
+  let costTransfer = 10000;
 
-  data.forEach(element => {
-    totalMoneyTemp += Number(element.countFoodChoice) * Number(element.foodPrice)
-  })
+  data.forEach((element) => {
+    totalMoneyTemp +=
+      Number(element.countFoodChoice) * Number(element.foodPrice);
+  });
 
-  let totalMoney = totalMoneyTemp + Number( randomDistance *   costTransfer);
+  let totalMoney = totalMoneyTemp + Number(randomDistance * costTransfer);
 
   let newLayout = `
      <!-- Distance -->
@@ -912,121 +980,129 @@ function ProcessNoteMoney(data, restaurantId) {
       </div>
 
     </div>
-  `
+  `;
   foodOptionsShoppingCartNote.innerHTML = newLayout;
 
-  ProcessButtonPayment(foodOptionsShoppingCartButtonOrder, restaurantId)
-
+  ProcessButtonPayment(foodOptionsShoppingCartButtonOrder, restaurantId);
 }
 
 function ProcessButtonPayment(layout, restaurantId) {
+  layout.addEventListener("click", (e) => {
+    let username =
+      layout.parentElement.firstElementChild.firstElementChild.firstElementChild.getAttribute(
+        "title"
+      );
 
-  layout.addEventListener("click",(e) => {
-    let username = layout.parentElement.firstElementChild.firstElementChild.firstElementChild.getAttribute("title")
+    let countItem =
+      layout.parentElement.firstElementChild.firstElementChild.lastElementChild.innerText.split(
+        " "
+      )[0];
 
-    let countItem = layout.parentElement.firstElementChild.firstElementChild.lastElementChild.innerText.split(" ")[0]
-  
-    let distance = layout.previousElementSibling.firstElementChild.lastElementChild.innerText.split(" ")[0]
-  
-    let moneyTotal = layout.previousElementSibling.lastElementChild.lastElementChild.innerText.split(" ")[0]
-  
+    let distance =
+      layout.previousElementSibling.firstElementChild.lastElementChild.innerText.split(
+        " "
+      )[0];
+
+    let moneyTotal =
+      layout.previousElementSibling.lastElementChild.lastElementChild.innerText.split(
+        " "
+      )[0];
+
     let transferOrderInfor = {
       username,
       countItem,
       distance,
       moneyTotal,
-      restaurantId
-    }
-  
-    ProcessOrderModal(transferOrderInfor)
-  })
-  
+      restaurantId,
+    };
+
+    ProcessOrderModal(transferOrderInfor);
+  });
 }
 
 function ProcessOrderModal(transferOrderInfor) {
-
-  if (typeof transferOrderInfor === 'undefined') {
+  if (typeof transferOrderInfor === "undefined") {
     alert("Value is missing please try again");
-  }
-
-  else {
+  } else {
     const modalTransferorder = document.querySelector(".modal-transferorder");
-    const userInfor = document.querySelector(".modal-transferorder__detail:nth-child(1)");
-    const totalItem = document.querySelector(".modal-transferorder__detail:nth-child(2)");
-    const distance = document.querySelector(".modal-transferorder__detail:nth-child(3)");
-    const tempmoney = document.querySelector(".modal-transferorder__detail:nth-child(5)");
-    const modalTransferOrderOverlay = document.querySelector(".modal-transferorder__overlay");
-    const modalTransferOrderClose = document.querySelector(".modal-transferorder__close");
+    const userInfor = document.querySelector(
+      ".modal-transferorder__detail:nth-child(1)"
+    );
+    const totalItem = document.querySelector(
+      ".modal-transferorder__detail:nth-child(2)"
+    );
+    const distance = document.querySelector(
+      ".modal-transferorder__detail:nth-child(3)"
+    );
+    const tempmoney = document.querySelector(
+      ".modal-transferorder__detail:nth-child(5)"
+    );
+    const modalTransferOrderOverlay = document.querySelector(
+      ".modal-transferorder__overlay"
+    );
+    const modalTransferOrderClose = document.querySelector(
+      ".modal-transferorder__close"
+    );
 
-    const modalTransferOrderAcceptbtn = document.querySelector(".modal-transferorder__acceptbtn");
+    const modalTransferOrderAcceptbtn = document.querySelector(
+      ".modal-transferorder__acceptbtn"
+    );
 
-    
+    modalTransferorder.classList.add("hide");
 
-    modalTransferorder.classList.add("hide")
+    modalTransferOrderOverlay.addEventListener("click", (e) => {
+      modalTransferorder.classList.remove("hide");
+    });
 
-    modalTransferOrderOverlay.addEventListener("click",(e) => {
-      modalTransferorder.classList.remove("hide")
-    })
+    modalTransferOrderClose.addEventListener("click", (e) => {
+      modalTransferorder.classList.remove("hide");
+    });
 
-    modalTransferOrderClose.addEventListener("click",(e) => {
-      modalTransferorder.classList.remove("hide")
-    })
+    userInfor.lastElementChild.innerText = `${transferOrderInfor.username}`;
+    totalItem.lastElementChild.innerText = `${transferOrderInfor.countItem}`;
+    distance.lastElementChild.innerText = `${transferOrderInfor.distance}`;
+    tempmoney.lastElementChild.innerText = `${transferOrderInfor.moneyTotal}`;
 
-    userInfor.lastElementChild.innerText = `${transferOrderInfor.username}`
-    totalItem.lastElementChild.innerText = `${transferOrderInfor.countItem}`
-    distance.lastElementChild.innerText = `${transferOrderInfor.distance}`
-    tempmoney.lastElementChild.innerText =  `${transferOrderInfor.moneyTotal}`
-
-    
-  
-
-    
-
-    modalTransferOrderAcceptbtn.addEventListener("click",(e) => {
+    modalTransferOrderAcceptbtn.addEventListener("click", (e) => {
       let acceptPayment = confirm("Would you like to order food ?");
 
       if (acceptPayment) {
-
         let orderoptions;
-        const promotionInput = document.querySelector(".modal-transferorder__detail:nth-child(4)");
+        const promotionInput = document.querySelector(
+          ".modal-transferorder__detail:nth-child(4)"
+        );
         let promotionValue = promotionInput.lastElementChild.value;
 
-        if (typeof promotionValue === 'undefined' || promotionValue === "") {
+        if (typeof promotionValue === "undefined" || promotionValue === "") {
           orderoptions = {
-            username : localStorage.getItem("username"),
-            numberItem : transferOrderInfor.countItem,
-            orderDistance : transferOrderInfor.distance,
-            tempMoney : transferOrderInfor.moneyTotal,
-            restaurantId : transferOrderInfor.restaurantId
+            username: localStorage.getItem("username"),
+            numberItem: transferOrderInfor.countItem,
+            orderDistance: transferOrderInfor.distance,
+            tempMoney: transferOrderInfor.moneyTotal,
+            restaurantId: transferOrderInfor.restaurantId,
           };
-        }
-    
-        else {
+        } else {
           orderoptions = {
-            username : localStorage.getItem("username"),
-            numberItem : transferOrderInfor.countItem,
-            orderDistance : transferOrderInfor.distance,
-            promotion : promotionValue,
-            tempMoney : transferOrderInfor.moneyTotal,
-            restaurantId : transferOrderInfor.restaurantId,
+            username: localStorage.getItem("username"),
+            numberItem: transferOrderInfor.countItem,
+            orderDistance: transferOrderInfor.distance,
+            promotion: promotionValue,
+            tempMoney: transferOrderInfor.moneyTotal,
+            restaurantId: transferOrderInfor.restaurantId,
           };
         }
 
         FetchAddTransferOrder(orderoptions)
-        .then(data => {
-          alert("Create Success " + data.data.orderId);
-          window.location.reload();
-        })
-        .catch(error => {
-          alert(error);
-        })
-
+          .then((data) => {
+            alert("Đặt Thức Ăn Thành Công");
+            window.location.reload();
+          })
+          .catch((error) => {
+            window.FlashMessage.error('Có lỗi xảy ra vui lòng thử lại');
+          });
+      } else {
+        window.FlashMessage.info('Hủy Tiến Trình');
       }
-
-      else {
-        alert("Destroy Session")
-      }
-    })
-
+    });
   }
 }

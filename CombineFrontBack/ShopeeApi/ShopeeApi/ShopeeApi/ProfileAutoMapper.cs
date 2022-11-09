@@ -45,8 +45,6 @@ namespace ShopeeApi
 
             CreateMap<BillOrder, ResponseBillOrder>();
             CreateMap<RequestAddBillOrder, BillOrder>();
-
-
         }
     }
 }

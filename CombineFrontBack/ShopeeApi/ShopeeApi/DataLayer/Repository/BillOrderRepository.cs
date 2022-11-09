@@ -65,14 +65,11 @@ namespace ShopeeApi.Repository
                         throw new Exception();
                     }
 
-                  
-
                     await transaction.CommitAsync();
 
                     return newBillOrder.Entity;
                 }
-
-                catch(Exception e)
+                catch (Exception e)
                 {
                     await transaction.RollbackAsync();
                     Console.WriteLine(e.Message);
@@ -98,8 +95,7 @@ namespace ShopeeApi.Repository
 
                     return newBill.Entity;
                 }
-
-                catch(Exception e)
+                catch (Exception e)
                 {
                     await transaction.RollbackAsync();
                     Console.WriteLine($"<ERROR>{e.Message}</ERROR>");

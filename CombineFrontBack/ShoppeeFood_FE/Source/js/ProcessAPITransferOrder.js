@@ -35,6 +35,7 @@ function ProcessLayoutInTransferOrder(username) {
     .then(data => {
         let dataInTransferOrder = data.data
 
+        console.log(dataInTransferOrder)
 
         let newLayout = dataInTransferOrder.map(x => {
 
@@ -141,12 +142,11 @@ function ProcessPaymentTransferOrder() {
 
                           FetchNewBillOrder(billOptions)
                           .then(data => {
-                            window.alert(`Payment Bill ${data.data.billId} Successfully`);
+                            window.alert(`Thanh toán hóa đơn thành công`);
                             window.location.reload();
                           })
                           .catch(error => {
-                            window.alert(`Có lõi  ${error.message}`);
-                            window.location.reload();
+                            window.FlashMessage.error('Có lỗi xảy ra vui lòng thử lại');
                           })
 
                     }
@@ -158,14 +158,13 @@ function ProcessPaymentTransferOrder() {
                 }
 
                 else {
-                    alert("Hủy tiến trình")
+                    window.FlashMessage.info('Hủy tiến trình');
                 }
 
             }
 
             else if (textInnerElement === "XÓA") {
                 const acceptDelete = confirm("Xác nhận xóa thông tin hóa đơn ?")
-
 
                 if (acceptDelete) {
                     if (localStorage.getItem("username")) {
@@ -178,12 +177,12 @@ function ProcessPaymentTransferOrder() {
 
                           FetchDeleteTransferOrder(orderOptions)
                           .then(data => {
-                            window.alert("Delete Succesfully");
+                            window.alert("Xóa hóa đơn thành công");
                             window.location.reload();
                           })
                           .catch(error => {
-                            window.alert(`có lỗi  ${error.message}`);
-                            window.location.reload();
+                            console.log(error.message)
+                            window.FlashMessage.error('Có lỗi xảy ra vui lòng thử lại');
                           })
 
                     }
@@ -195,17 +194,14 @@ function ProcessPaymentTransferOrder() {
                 }
 
                 else {
-                    alert("Hủy tiến trình")
+                    window.FlashMessage.info('Hủy tiến trình');
                 }
             }
 
             else {
-                window.alert("Have Error Refresh Again")
+                window.alert("Có lỗi xảy ra trang web sẽ tải lại")
                 window.location.reload()
-                e.preventDefault()
             }
-
-
         })
     })
 }
@@ -221,12 +217,12 @@ function ProcessPaymentTotalTransferOrder() {
             if(localStorage.getItem("username")) {
                 FetchNewBillAllTransferOrder(localStorage.getItem("username"))
                 .then(data => {
-                    window.alert(`Thanh Toán Hoàn Tất Hóa Đơn  ${data.data.billId}`);
+                    window.alert(`Thanh Toán Hoàn Tất Hóa Đơn`);
                     window.location.reload();
                 })
                 .catch(error => {
-                    window.alert(`Có lỗi ${error.message} trang web sẽ tải lại`);
-                    window.location.reload();
+                    console.log(error.message)
+                    window.FlashMessage.error('Có lỗi xảy ra vui lòng thử lại');
                 })
             }
     
@@ -237,7 +233,7 @@ function ProcessPaymentTotalTransferOrder() {
         }
 
         else {
-            window.alert("Hủy Tiến Trình");
+            window.FlashMessage.info("Hủy tiến trình");
         }
       
     })

@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace ShopeeApi.Models
+﻿namespace ShopeeApi.Models
 {
     public class Food
     {

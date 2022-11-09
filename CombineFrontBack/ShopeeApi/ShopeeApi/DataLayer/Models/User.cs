@@ -16,12 +16,11 @@ namespace ShopeeApi.Models
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public Role Role { get; set; } = Role.User;
 
-        public IEnumerable<RestaurantOrder> RestaurantOrders { set; get; } 
+        public IEnumerable<RestaurantOrder> RestaurantOrders { set; get; }
 
         //In Test
         public IEnumerable<TransferOrder> TransferOrders { set; get; }
 
-        public IEnumerable<BillOrder> BillOrders { set; get; } 
-        
+        public IEnumerable<BillOrder> BillOrders { set; get; }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 using LoggerService;
 using ShopeeApi.Dtos.Request;
 using ShopeeApi.Dtos.Response;
@@ -41,10 +40,8 @@ namespace ShopeeApi.Service
 
                     response.Data = _mapper.Map<ResponseRestaurantOrder>(updateOrder);
                 }
-
                 else
                 {
-
                     var deleteOrder = await _repository.DeleteRestaurant(request.RestaurantId, request.UserName, request.FoodTitle);
 
                     if (deleteOrder)
@@ -52,7 +49,6 @@ namespace ShopeeApi.Service
                         _logger.LogInfo("<PROCESS>Delete Restaurant Order</PROCESS>");
                         response.Message = "Delete Succesfully";
                     }
-
                     else
                     {
                         _logger.LogError("<ERROR>Can't Delete Order</ERROR>");
@@ -61,7 +57,6 @@ namespace ShopeeApi.Service
                     }
                 }
             }
-
             else if (checkExistRecord == null)
             {
                 _logger.LogError("<ERROR>Can't Delete Order</ERROR>");
@@ -88,7 +83,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Any Restaurant Order";
             }
-
             else
             {
                 _logger.LogInfo("<PROCESS>Get All Restaurant Order</PROCESS>");
@@ -96,7 +90,6 @@ namespace ShopeeApi.Service
             }
 
             _logger.LogInfo("<END>Get All Restaurant Order</END>");
-
 
             return response;
         }
@@ -116,8 +109,7 @@ namespace ShopeeApi.Service
                 var updateOrder = await _repository.UpdateRestaurantOrder(requestUpdate);
 
                 response.Data = _mapper.Map<ResponseRestaurantOrder>(updateOrder);
-            } 
-
+            }
             else if (!checkExistRecord)
             {
                 _logger.LogInfo("<PROCESS>New Restaurant Order</PROCESS>");
@@ -126,7 +118,6 @@ namespace ShopeeApi.Service
 
                 response.Data = _mapper.Map<ResponseRestaurantOrder>(newOrder);
             }
-            
             else
             {
                 _logger.LogError("<ERROR>Can't Create Restaurant Order</ERROR>");

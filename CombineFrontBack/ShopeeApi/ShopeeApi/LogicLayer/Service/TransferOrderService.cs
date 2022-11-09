@@ -31,7 +31,6 @@ namespace ShopeeApi.Service
 
             if (checkUserExist)
             {
-
                 var newTransferOder = await _repository.CreateTransferOrder(_mapper.Map<TransferOrder>(request), request.RestaurantId);
 
                 if (newTransferOder == null)
@@ -41,11 +40,9 @@ namespace ShopeeApi.Service
                     response.Message = "Can't Create Transfer Order";
                 }
 
-
                 _logger.LogInfo("<PROCESS>Create Transfer Order</PROCESS>");
                 response.Data = _mapper.Map<ResponseTransferOrder>(newTransferOder);
             }
-
             else
             {
                 _logger.LogWarning("<WARN>Not Found User</WARN>");
@@ -56,7 +53,6 @@ namespace ShopeeApi.Service
             _logger.LogInfo("<END>Create Transfer Order</END>");
 
             return response;
-
         }
 
         public async Task<ServiceResponse<string>> DeleteTransferOrder(RequestDeleteTransferOrder request)
@@ -82,7 +78,6 @@ namespace ShopeeApi.Service
 
                 response.Data = "Delete Succesfully";
             }
-
             else
             {
                 _logger.LogError("<ERROR>Can't Delete Order</ERROR>");
@@ -109,7 +104,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Any Value";
             }
-
             else
             {
                 _logger.LogInfo("<PROCESS>Get All Transfer Order</PROCESS>");
@@ -135,7 +129,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Any Value";
             }
-
             else
             {
                 _logger.LogInfo("<PROCESS>Get All Transfer Order Process</PROCESS>");

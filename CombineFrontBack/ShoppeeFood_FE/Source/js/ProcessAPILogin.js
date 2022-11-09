@@ -13,11 +13,11 @@ btnLoginInSystem.addEventListener('click',(e) => {
     if (userGet === "" || passwordGet === "") {
         layoutFormShowprocess.innerHTML = 
         `<p class="layout-form__showprocess">
-            Don't Miss Any Value
+            Không được để trổng bất kì thông tin nào 
         </p>`;
 
         layoutFormShowprocess.style.display = "block";
-
+        window.FlashMessage.warning(' Không được để trổng bất kì thông tin nào  !');
     } 
 
     else {
@@ -25,10 +25,14 @@ btnLoginInSystem.addEventListener('click',(e) => {
         .then(data => {
             layoutFormShowprocess.innerHTML = 
             `<p class="layout-form__showprocess">
-                Login Successful
+                Đăng nhập thành công
             </p>`;
 
+            window.FlashMessage.success(' Đăng nhập thành công !');
+
         layoutFormShowprocess.style.display = "block";
+        layoutFormShowprocess.style.color = "green";
+
 
         localStorage.setItem("jwttoken",data.data);
 

@@ -37,7 +37,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Can't Create Bill";
             }
-
             else
             {
                 _logger.LogInfo("<PROCESS>Create Bill All Order Process</PROCESS>");
@@ -69,7 +68,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Can't Create Bill";
             }
-
             else
             {
                 try
@@ -105,17 +103,14 @@ namespace ShopeeApi.Service
                     }
 
                     response.Data = _mapper.Map<ResponseBillOrder>(newBill);
-
                 }
-
-                catch(Exception e)
+                catch (Exception e)
                 {
                     _logger.LogInfo("<ERROR>Can't Create Bill</ERROR>");
                     Console.WriteLine(e.Message);
                     response.Success = false;
                     response.Message = "Can't Create Bill";
                 }
-
             }
 
             _logger.LogInfo("<END>Create Bill Order Process</END>");
@@ -137,7 +132,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Any Value";
             }
-
             else
             {
                 _logger.LogInfo("<PROCESS>Get All Bill Order</PROCESS>");
@@ -163,7 +157,6 @@ namespace ShopeeApi.Service
                 response.Success = false;
                 response.Message = "Not Found Any Value";
             }
-
             else
             {
                 _logger.LogInfo("<PROCESS>Get All Bill Order Include Order</PROCESS>");

@@ -30,7 +30,6 @@ namespace ShopeeApi.IRepository
 
         Task<Food> UpdateFood(Food request);
 
-
         Task<int> AllIndexPaginationWithRestaurantType(string resType);
 
         Task<IEnumerable<Food>> GetAllFoodPaginationWithRestaurantType(int indexPage, string resType);

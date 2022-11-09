@@ -58,8 +58,6 @@ namespace ShopeeApi.Service
             _logger.LogInfo("<END>Login</END>");
 
             return serviceResponse;
-
-
         }
 
         public async Task<ServiceResponse<ResponseUserRegister>> Register(RequestUserRegister request)
@@ -99,7 +97,6 @@ namespace ShopeeApi.Service
             _logger.LogInfo("<END>Register</END>");
 
             return serviceResponse;
-
         }
 
         public string GenerateJwtToken(User request)
@@ -182,7 +179,6 @@ namespace ShopeeApi.Service
                 _logger.LogInfo("<ANNOUNCE>Found Username</ANNOUNCE>");
                 serviceResponse.Data = _mapper.Map<ResponseViewUser>(findUserName);
             }
-
             else
             {
                 _logger.LogError("<ERROR>Not Found Username</ERROR>");

@@ -13,8 +13,8 @@ buttonFormRegisterSubmit.addEventListener('click',(e) => {
 })
 
 function ProcessForm(userName, password, rePassword) {
-    const titleEmpty = "Don't Miss Any Value In this Form";
-    const notMatchPassword = `Doesn't match password`;
+    const titleEmpty = "Đừng để mất bất kì thông tin nào";
+    const notMatchPassword = `Mật khẩu không khớp nhau`;
 
     if(userName === "" || password === "" || rePassword === "") {
         layoutFormProcess.innerHTML = ` <!-- Form Error Show -->
@@ -23,15 +23,18 @@ function ProcessForm(userName, password, rePassword) {
        </p>`;
 
        layoutFormProcess.style.display = "block";
+       window.FlashMessage.warning(`${titleEmpty}`);
     } 
 
     else if (password !== rePassword) {
-        layoutFormProcess.innerHTML = ` <!-- Form Error Show -->
+        layoutFormProcess.innerHTML = 
+        ` <!-- Form Error Show -->
         <p class="layout-form__process">
            ${notMatchPassword}
        </p>`;
 
        layoutFormProcess.style.display = "block";
+       window.FlashMessage.warning(`${notMatchPassword}`);
     }
    
     else {
@@ -46,10 +49,13 @@ function ProcessApiRegister(userName, password, rePassword) {
        .then(data => {
         layoutFormProcess.innerHTML = ` <!-- Form Error Show -->
         <p class="layout-form__process">
-           Register Success Account <br> ${data.userName}
+           Đăng kí thành công tài khoản <br> ${data.userName}
        </p>`;
 
          layoutFormProcess.style.display = "block";
+         layoutFormProcess.style.color = "green";
+         window.FlashMessage.success('Đăng kí thành công !');
+
        }).catch(error => {
         layoutFormProcess.innerHTML = ` <!-- Form Error Show -->
         <p class="layout-form__process">
@@ -57,5 +63,6 @@ function ProcessApiRegister(userName, password, rePassword) {
        </p>`;
 
        layoutFormProcess.style.display = "block";
+       window.FlashMessage.error('Đăng kí thất bại !');
        })
 }

@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Serialization;
+﻿using DataLayer.StaticClass;
 
 namespace ShopeeApi.Models
 {

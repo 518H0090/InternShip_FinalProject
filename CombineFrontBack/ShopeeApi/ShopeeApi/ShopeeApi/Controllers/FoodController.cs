@@ -5,7 +5,7 @@ using ShopeeApi.IService;
 
 namespace ShopeeApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/food")]
     [ApiController]
     public class FoodController : ControllerBase
     {
@@ -74,10 +74,9 @@ namespace ShopeeApi.Controllers
             return Ok(allIndexPage);
         }
 
-        //Functions Test
         [HttpPost]
         [Route("total-index-with-restype")]
-        public async Task<IActionResult> GetTotalIndexWithResType(RequestTotalIndexFoodWithResType request)
+        public async Task<IActionResult> GetTotalIndexWithResType([FromBody] RequestTotalIndexFoodWithResType request)
         {
             var allIndexPage = await _repository.AllIndexPaginationWithRestaurantType(request.RestaurantType);
 
@@ -91,7 +90,7 @@ namespace ShopeeApi.Controllers
 
         [HttpPost]
         [Route("food-with-index-and-restype")]
-        public async Task<IActionResult> GetFoodWithIndexAndRestaurantType(RequestFoodWithIndexAndResType request)
+        public async Task<IActionResult> GetFoodWithIndexAndRestaurantType([FromBody] RequestFoodWithIndexAndResType request)
         {
             var allIndexPage = await _service.GetAllFoodPaginationWithRestaurantType(request.indexpage, request.restype);
 
@@ -103,12 +102,9 @@ namespace ShopeeApi.Controllers
             return Ok(allIndexPage);
         }
 
-        //Functions Test
-
-
         [HttpPost]
         [Route("food-with-index-and-title")]
-        public async Task<IActionResult> GetFoodWithIndexAndTitle(RequestFoodWithIndexAndTitle request)
+        public async Task<IActionResult> GetFoodWithIndexAndTitle([FromBody] RequestFoodWithIndexAndTitle request)
         {
             var allIndexPage = await _service.GetAllFoodPaginationWithKeywords(request.indexpage, request.keywords);
 
@@ -119,9 +115,6 @@ namespace ShopeeApi.Controllers
 
             return Ok(allIndexPage);
         }
-
-
-        //End Function Test
 
         [HttpGet]
         [Route("all-foods-with-restaurant/{resId}")]
@@ -151,9 +144,9 @@ namespace ShopeeApi.Controllers
             return Ok(getFoodById);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("food-in-restaurant-by-id")]
-        public async Task<IActionResult> GetFoodInRestaurantById([FromQuery] RequestFoodContainRestaurant request)
+        public async Task<IActionResult> GetFoodInRestaurantById([FromBody] RequestFoodContainRestaurant request)
         {
             var getFoodInResById = await _service.GetFoodInRestaurantById(request);
 
@@ -167,7 +160,7 @@ namespace ShopeeApi.Controllers
 
         [HttpPost]
         [Route("new-food")]
-        public async Task<IActionResult> CreateNewFood(RequestAddFood request)
+        public async Task<IActionResult> CreateNewFood([FromBody] RequestAddFood request)
         {
             var newFood = await _service.CreateFood(request);
 
@@ -181,7 +174,7 @@ namespace ShopeeApi.Controllers
 
         [HttpDelete]
         [Route("delete-food")]
-        public async Task<IActionResult> CreateNewFood(RequestFoodContainRestaurant request)
+        public async Task<IActionResult> CreateNewFood([FromBody] RequestFoodContainRestaurant request)
         {
             var deleteFood = await _service.DeleteFood(request);
 
@@ -195,7 +188,7 @@ namespace ShopeeApi.Controllers
 
         [HttpPut]
         [Route("update-food")]
-        public async Task<IActionResult> UpdateFood(RequestUpdateFood request)
+        public async Task<IActionResult> UpdateFood([FromBody] RequestUpdateFood request)
         {
             var updateFood = await _service.UpdateFood(request);
 

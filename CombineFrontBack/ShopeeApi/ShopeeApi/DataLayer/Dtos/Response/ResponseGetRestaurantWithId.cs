@@ -29,5 +29,8 @@ namespace ShopeeApi.Dtos.Response
 
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public Promotion RsPromotion { set; get; }
+
+        //In Test
+        public int RsDistance { set; get; }
     }
 }

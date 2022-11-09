@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ShopeeApi.Dtos.Request;
 using ShopeeApi.IService;
 
 namespace ShopeeApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/transfer-order")]
     [ApiController]
     public class TransferOrderController : ControllerBase
     {
@@ -46,7 +45,7 @@ namespace ShopeeApi.Controllers
 
         [HttpPost]
         [Route("new-transfer-order")]
-        public async Task<IActionResult> CreateTransferOrder(RequestAddTransferOrder request)
+        public async Task<IActionResult> CreateTransferOrder([FromBody] RequestAddTransferOrder request)
         {
             var newOrder = await _service.CreateTransferOrder(request);
 
@@ -60,7 +59,7 @@ namespace ShopeeApi.Controllers
 
         [HttpDelete]
         [Route("delete-transfer-order")]
-        public async Task<IActionResult> DeleteTransferOrder(RequestDeleteTransferOrder request)
+        public async Task<IActionResult> DeleteTransferOrder([FromBody] RequestDeleteTransferOrder request)
         {
             var deleteOrder = await _service.DeleteTransferOrder(request);
 
@@ -71,7 +70,5 @@ namespace ShopeeApi.Controllers
 
             return Ok(deleteOrder);
         }
-
-
     }
 }
