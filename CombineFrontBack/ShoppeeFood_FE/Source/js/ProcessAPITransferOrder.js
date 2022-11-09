@@ -9,24 +9,9 @@ window.addEventListener("load",(e) => {
     }
 
     else {
-
-        i = 0;
-
-        while (true) {
-
-            if ( i > 0 ) {
-                alert("Không tìm thấy thông tin người dùng nên trang web sẽ chuyển về trang chính");
-                window.location.href = "./index.html"
-                break;
-            }
-
-            alert("Mất Thông tin người dùng nên trang web sẽ tải lại");
-            layoutShoppingList.innerHTML = ""
-
-            window.location.reload()
-            i++;
-        }
-        
+        layoutShoppingList.innerHTML = ""
+        alert("Không tìm thấy thông tin người dùng nên trang web sẽ chuyển về trang chính");
+        window.location.href = "./index.html"
     }
 })
 
