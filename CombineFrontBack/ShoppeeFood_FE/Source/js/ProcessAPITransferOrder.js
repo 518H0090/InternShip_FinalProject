@@ -35,8 +35,6 @@ function ProcessLayoutInTransferOrder(username) {
     .then(data => {
         let dataInTransferOrder = data.data
 
-        console.log(dataInTransferOrder)
-
         let newLayout = dataInTransferOrder.map(x => {
 
             let newDatetime = new Date(x.createdOn)
@@ -68,7 +66,7 @@ function ProcessLayoutInTransferOrder(username) {
 
                 <!-- Orderid -->
                 <div class="layout__item-orderid">
-                   <p>${x.orderId}</p>
+                   <p>${x.orderCode}</p>
                 </div>
 
                 <!-- Content -->
@@ -106,7 +104,7 @@ function ProcessLayoutInTransferOrder(username) {
         const layoutBillTotalcost = document.querySelector(".layout-bill__totalcost");
         layoutBillTotalcost.textContent = totalMoneyProcess;
 
-        ProcessPaymentTransferOrder()
+        ProcessPaymentTransferOrder(dataInTransferOrder)
         ProcessPaymentTotalTransferOrder()
     })
     .catch(error => {
@@ -118,8 +116,10 @@ function ProcessLayoutInTransferOrder(username) {
 }
 
 
-function ProcessPaymentTransferOrder() {
+function ProcessPaymentTransferOrder(data) {
     const layoutShoppingItemAll = document.querySelectorAll(".layout__shoppingitem");
+
+    console.log(data)
 
     layoutShoppingItemAll.forEach(element => {
         element.lastElementChild.firstElementChild.addEventListener("click",(e) => {
@@ -130,7 +130,16 @@ function ProcessPaymentTransferOrder() {
 
                 if (acceptPayment) {
                     if (localStorage.getItem("username")) {
-                        let orderId =  e.target.parentElement.parentElement.firstElementChild.innerText
+
+                        let orderId;
+
+                        let orderCode =  e.target.parentElement.parentElement.firstElementChild.innerText
+
+                        data.forEach(element => {
+                            if (orderCode === element.orderCode) {
+                                orderId = element.orderId;
+                            }
+                        })
 
                         let totalMoney = e.target.parentElement.previousElementSibling.firstElementChild.innerText.split(" ")[0]
 
@@ -168,7 +177,16 @@ function ProcessPaymentTransferOrder() {
 
                 if (acceptDelete) {
                     if (localStorage.getItem("username")) {
-                        let orderId =  e.target.parentElement.parentElement.firstElementChild.innerText
+
+                        let orderId;
+
+                        let orderCode =  e.target.parentElement.parentElement.firstElementChild.innerText
+
+                        data.forEach(element => {
+                            if (orderCode === element.orderCode) {
+                                orderId = element.orderId;
+                            }
+                        })
 
                         let orderOptions = {
                             "orderId": orderId,
