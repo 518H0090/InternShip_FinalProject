@@ -1,5 +1,4 @@
-﻿using ShopeeApi.Models;
-using System.Text.Json.Serialization;
+﻿using DataLayer.StaticClass;
 
 namespace ShopeeApi.Dtos.Response
 {
@@ -19,5 +18,7 @@ namespace ShopeeApi.Dtos.Response
 
         public IEnumerable<ResponseTransferOrder> TransferOrders { set; get; }
 
+        //In Test
+        public string OrderCode { set; get; } 
     }
 }

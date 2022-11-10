@@ -22,7 +22,7 @@ namespace ShopeeApi.Repository
         {
             var findUser = await _context.Users.FirstOrDefaultAsync(x => x.UserName == userName);
 
-            var findExistRecord = await _context.RestaurantOrders.Where(x => x.User == findUser 
+            var findExistRecord = await _context.RestaurantOrders.Where(x => x.User == findUser
             && x.RestaurantId == restaurantId && x.FoodTitle == foodTitle).FirstOrDefaultAsync();
 
             if (findExistRecord == null)
@@ -107,7 +107,6 @@ namespace ShopeeApi.Repository
             var createdOrder = await _context.RestaurantOrders.AddAsync(newOrder);
             await _context.SaveChangesAsync();
 
-
             return createdOrder.Entity;
         }
 
@@ -115,7 +114,7 @@ namespace ShopeeApi.Repository
         {
             var findUser = await _context.Users.FirstOrDefaultAsync(x => x.UserName == request.UserName);
 
-            var findOrderExist = await _context.RestaurantOrders.Where(x => x.User == findUser 
+            var findOrderExist = await _context.RestaurantOrders.Where(x => x.User == findUser
             && x.RestaurantId == request.RestaurantId && x.FoodTitle == request.FoodTitle).FirstOrDefaultAsync()
                 ;
 

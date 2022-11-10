@@ -29,7 +29,7 @@ namespace ShopeeApi.Repository
                 countTotalFoods++;
             });
 
-            totalIndexPage = (int) Math.Ceiling(countTotalFoods / _totalFoodGenerate);
+            totalIndexPage = (int)Math.Ceiling(countTotalFoods / _totalFoodGenerate);
 
             return totalIndexPage;
         }
@@ -48,8 +48,6 @@ namespace ShopeeApi.Repository
 
             return totalIndexPage;
         }
-
-       
 
         public async Task<Food> CreateFood(Food request)
         {
@@ -124,13 +122,11 @@ namespace ShopeeApi.Repository
             if (indexPage > 1)
             {
                 return await _context.Foods.Skip(numberFoodSkip).Take(numberFoodGenerate).ToListAsync();
-            } 
-            
+            }
             else
             {
                 return await _context.Foods.Take(numberFoodGenerate).ToListAsync();
             }
-            
         }
 
         public async Task<IEnumerable<Food>> GetAllFoodPaginationWithKeywords(int indexPage, string keywords)
@@ -143,8 +139,7 @@ namespace ShopeeApi.Repository
                 return await _context.Foods.Where(x => x.FoodTitle.ToLower().Contains(keywords.ToLower()))
                     .Skip(numberFoodSkip).Take(numberFoodGenerate).ToListAsync();
             }
-
-            else 
+            else
             {
                 return await _context.Foods.Where(x => x.FoodTitle.ToLower().Contains(keywords.ToLower()))
                     .Take(numberFoodGenerate).ToListAsync();
@@ -183,7 +178,6 @@ namespace ShopeeApi.Repository
             return updatedFood.Entity;
         }
 
-
         public async Task<int> AllIndexPaginationWithRestaurantType(string resType)
         {
             double countTotalFoods = 0;
@@ -215,7 +209,7 @@ namespace ShopeeApi.Repository
         public async Task<IEnumerable<Food>> GetAllFoodPaginationWithRestaurantType(int indexPage, string resType)
         {
             var listFood = new List<Food>();
-            
+
             var listRestaurant = await _context.Restaurants.Where(x => x.RsType == resType).ToListAsync();
 
             int numberFoodGenerate = _totalFoodGenerate;
@@ -232,7 +226,6 @@ namespace ShopeeApi.Repository
             {
                 return listFood.Skip(numberFoodSkip).Take(numberFoodGenerate).ToList();
             }
-
             else if (indexPage == 1)
             {
                 return listFood.Take(numberFoodGenerate).ToList();

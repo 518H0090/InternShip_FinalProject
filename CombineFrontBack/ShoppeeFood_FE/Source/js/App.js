@@ -1,6 +1,26 @@
 // Fetch All Restaurant Information
 let fetchAllRestaurants = async () => {
-  const url = "http://localhost:49071/api/Restaurant/all-restaurants";
+  const url = "http://localhost:49071/api/restaurant/all-restaurants";
+
+  const fetchUrl = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (fetchUrl.status !== 200) {
+    throw new Error();
+  }
+
+  const dataJson = await fetchUrl.json();
+
+  return dataJson;
+};
+
+// Fetch Top 9 New Restaurant Information
+let fetchTop9NewRestaurants = async () => {
+  const url = "http://localhost:49071/api/restaurant/all-restaurants-top-new9";
 
   const fetchUrl = await fetch(url, {
     method: "GET",
@@ -20,7 +40,7 @@ let fetchAllRestaurants = async () => {
 
 // Fetch Restaurant By Title
 let fetchRestaurantByTitle = async (title) => {
-  const url = "http://localhost:49071/api/Restaurant/restaurant-by-title/";
+  const url = "http://localhost:49071/api/restaurant/restaurant-by-title/";
 
   const fetchUrl = await fetch(url + title, {
     method: "GET",
@@ -41,7 +61,7 @@ let fetchRestaurantByTitle = async (title) => {
 // Fetch All Category Combine With RestaurantId
 let fetchAllCategoryWithResId = async (restaurantId) => {
   const url =
-    "http://localhost:49071/api/Category/all-categories-with-restaurantid/";
+    "http://localhost:49071/api/category/all-categories-with-restaurantid/";
 
   const fetchUrl = await fetch(url + restaurantId, {
     method: "GET",
@@ -62,7 +82,7 @@ let fetchAllCategoryWithResId = async (restaurantId) => {
 // Fetch All Category Combine With It Food In Restaurant
 async function FetchAllCategoryCombineFood(restaurantId) {
   const url =
-    "http://localhost:49071/api/CategoryFood/all-categories-combine-food/";
+    "http://localhost:49071/api/category-food/all-categories-combine-food/";
 
   const fetchUrl = await fetch(url + restaurantId, {
     method: "GET",
@@ -78,7 +98,7 @@ async function FetchAllCategoryCombineFood(restaurantId) {
 
 // Get Total Index Food
 async function getTotalIndexFood() {
-  const url = "http://localhost:49071/api/Food/total-index";
+  const url = "http://localhost:49071/api/food/total-index";
 
   const fetchUrl = await fetch(url);
 
@@ -89,7 +109,7 @@ async function getTotalIndexFood() {
 
 // Get Food In IndexPage
 async function FetchFoodIndexPage(indexPage) {
-  let url = "http://localhost:49071/api/Food/food-with-index/";
+  let url = "http://localhost:49071/api/food/food-with-index/";
 
   let fetchUrl = await fetch(url + indexPage);
 
@@ -100,7 +120,7 @@ async function FetchFoodIndexPage(indexPage) {
 
 // Get Total Index Food With Keywords
 async function getTotalIndexFoodWithKeywords(keywords) {
-  const url = "http://localhost:49071/api/Food/total-index-with-keywords/";
+  const url = "http://localhost:49071/api/food/total-index-with-keywords/";
 
   const fetchUrl = await fetch(url + keywords);
 
@@ -115,7 +135,7 @@ async function getTotalIndexFoodWithKeywords(keywords) {
 
 // Get Food In IndexPage With Keywords
 async function FetchFoodIndexPageWithKeywords(indexPage, keywords) {
-  let url = `http://localhost:49071/api/Food/food-with-index-and-title`;
+  let url = `http://localhost:49071/api/food/food-with-index-and-title`;
 
   let fetchUrl = await fetch(url, {
     method: "POST",
@@ -135,7 +155,7 @@ async function FetchFoodIndexPageWithKeywords(indexPage, keywords) {
 
 // Get Restaurant By Id
 async function FetchRestaurantById(restaurantId) {
-  let url = "http://localhost:49071/api/Restaurant/restaurant-by-id/";
+  let url = "http://localhost:49071/api/restaurant/restaurant-by-id/";
 
   let fetchUrl = await fetch(url + restaurantId);
 
@@ -146,7 +166,7 @@ async function FetchRestaurantById(restaurantId) {
 
 // Post Register Account
 async function RegisterAccount(userName, password, rePassword) {
-  let url = "http://localhost:49071/api/User/register";
+  let url = "http://localhost:49071/api/user/register";
 
   let fetchUrl = await fetch(url, {
     method: "POST",
@@ -171,7 +191,7 @@ async function RegisterAccount(userName, password, rePassword) {
 
 // Fetch API Login
 async function AuthenAccount(userName, password) {
-  let url = "http://localhost:49071/api/User/authen-login";
+  let url = "http://localhost:49071/api/user/authen-login";
 
   let fetchUrl = await fetch(url, {
     method: "POST",
@@ -195,7 +215,7 @@ async function AuthenAccount(userName, password) {
 
 // Check User Info
 async function CheckUserInfo(jwtToken) {
-  let url = "http://localhost:49071/api/User/view-user-info";
+  let url = "http://localhost:49071/api/user/view-user-info";
 
   let fetchUrl = await fetch(url, {
     method: "POST",
@@ -216,7 +236,7 @@ async function CheckUserInfo(jwtToken) {
 
 // Get Total Index Food With RestaurantType
 async function getTotalIndexFoodWithRestaurantType(restype) {
-  const url = "http://localhost:49071/api/Food/total-index-with-restype";
+  const url = "http://localhost:49071/api/food/total-index-with-restype";
 
   const fetchUrl = await fetch(url, {
     method: "POST",
@@ -239,7 +259,7 @@ async function getTotalIndexFoodWithRestaurantType(restype) {
 
 // Get Food In IndexPage With RestaurantType
 async function FetchFoodIndexPageWithRestaurantType(indexPage, restype) {
-  let url = `http://localhost:49071/api/Food/food-with-index-and-restype`;
+  let url = `http://localhost:49071/api/food/food-with-index-and-restype`;
 
   let fetchUrl = await fetch(url, {
     method: "POST",
@@ -263,14 +283,14 @@ async function FetchFoodIndexPageWithRestaurantType(indexPage, restype) {
 
 // Get All Food Order In Restaurant
 async function FetchAllFoodOrderInRestaurant(username, restaurantId) {
-  let url = "http://localhost:49071/api/RestaurantOrder/all-restaurant-order";
+  let url = "http://localhost:49071/api/restaurant-order/all-restaurant-order";
 
   let fetchUrl = await fetch(url, {
-    method : "POST",
-    headers : {
-      "Content-Type" : "application/json"
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
     },
-    body : JSON.stringify({
+    body: JSON.stringify({
       "restaurantId": restaurantId,
       "username": username
     })
@@ -287,14 +307,14 @@ async function FetchAllFoodOrderInRestaurant(username, restaurantId) {
 
 // Add Restaurant Order Food
 async function FetchAddRestaurantOrderFood(orderoptions) {
-  let url = "http://localhost:49071/api/RestaurantOrder/new-restaurant-order";
+  let url = "http://localhost:49071/api/restaurant-order/new-restaurant-order";
 
-  let fetchUrl = await fetch(url , {
-    method : "POST",
-    headers : {
-      "Content-Type" : "application/json"
+  let fetchUrl = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
     },
-    body : JSON.stringify({
+    body: JSON.stringify({
       "foodImageUrl": orderoptions.foodImageUrl,
       "foodTitle": orderoptions.foodTitle,
       "foodDescription": orderoptions.foodDescription,
@@ -315,17 +335,17 @@ async function FetchAddRestaurantOrderFood(orderoptions) {
 
 // Delete Restaurant Order Food
 async function FetchDeleteRestaurantOrderFood(orderoptions) {
-  let url = "http://localhost:49071/api/RestaurantOrder/delete-restaurant-order";
+  let url = "http://localhost:49071/api/restaurant-order/delete-restaurant-order";
 
-  let fetchUrl = await fetch(url , {
-    method : "DELETE",
-    headers : {
-      "Content-Type" : "application/json"
+  let fetchUrl = await fetch(url, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json"
     },
-    body : JSON.stringify({
-        "foodTitle": orderoptions.foodTitle,
-        "userName": orderoptions.userName,
-        "restaurantId": orderoptions.restaurantId
+    body: JSON.stringify({
+      "foodTitle": orderoptions.foodTitle,
+      "userName": orderoptions.userName,
+      "restaurantId": orderoptions.restaurantId
     })
   });
 
@@ -340,14 +360,14 @@ async function FetchDeleteRestaurantOrderFood(orderoptions) {
 
 // Add Transfer Order
 async function FetchAddTransferOrder(orderoptions) {
-  let url = "http://localhost:49071/api/TransferOrder/new-transfer-order";
+  let url = "http://localhost:49071/api/transfer-order/new-transfer-order";
 
-  let fetchUrl = await fetch(url , {
-    method : "POST",
-    headers : {
-      "Content-Type" : "application/json"
+  let fetchUrl = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
     },
-    body : JSON.stringify(
+    body: JSON.stringify(
       orderoptions
     )
   });
@@ -363,13 +383,13 @@ async function FetchAddTransferOrder(orderoptions) {
 
 //  Get All Transfer Order
 async function FetchAllTransferOrder(username) {
-  let url = "http://localhost:49071/api/TransferOrder/all-transfer-order";
+  let url = "http://localhost:49071/api/transfer-order/all-transfer-order";
 
-  let fetchUrl = await fetch(url , {
-    method : "GET",
-    headers : {
-      "Content-Type" : "application/json",
-      username : username
+  let fetchUrl = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      username: username
     },
   });
 
@@ -384,13 +404,13 @@ async function FetchAllTransferOrder(username) {
 
 //  Get All Transfer Order Process
 async function FetchAllTransferOrderProcess(username) {
-  let url = "http://localhost:49071/api/TransferOrder/all-transfer-order-process";
+  let url = "http://localhost:49071/api/transfer-order/all-transfer-order-process";
 
-  let fetchUrl = await fetch(url , {
-    method : "GET",
-    headers : {
-      "Content-Type" : "application/json",
-      username : username
+  let fetchUrl = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      username: username
     },
   });
 
@@ -405,14 +425,14 @@ async function FetchAllTransferOrderProcess(username) {
 
 //  New Bill Order
 async function FetchNewBillOrder(billoptions) {
-  let url = "http://localhost:49071/api/BillOrder/new-bill-order";
+  let url = "http://localhost:49071/api/bill-order/new-bill-order";
 
-  let fetchUrl = await fetch(url , {
-    method : "POST",
-    headers : {
-      "Content-Type" : "application/json",
+  let fetchUrl = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
     },
-    body : JSON.stringify(billoptions)
+    body: JSON.stringify(billoptions)
   });
 
   if (fetchUrl.ok) {
@@ -426,14 +446,14 @@ async function FetchNewBillOrder(billoptions) {
 
 //  Delete Transfer Order
 async function FetchDeleteTransferOrder(transferoptions) {
-  let url = "http://localhost:49071/api/TransferOrder/delete-transfer-order";
+  let url = "http://localhost:49071/api/transfer-order/delete-transfer-order";
 
-  let fetchUrl = await fetch(url , {
-    method : "DELETE",
-    headers : {
-      "Content-Type" : "application/json",
+  let fetchUrl = await fetch(url, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
     },
-    body : JSON.stringify(transferoptions)
+    body: JSON.stringify(transferoptions)
   });
 
   if (fetchUrl.ok) {
@@ -447,13 +467,13 @@ async function FetchDeleteTransferOrder(transferoptions) {
 
 //  New Bill With All Transfer Order
 async function FetchNewBillAllTransferOrder(username) {
-  let url = "http://localhost:49071/api/BillOrder/new-bill-transfer-process-order";
+  let url = "http://localhost:49071/api/bill-order/new-bill-transfer-process-order";
 
-  let fetchUrl = await fetch(url , {
-    method : "POST",
-    headers : {
-      "Content-Type" : "application/json",
-      "username" : username
+  let fetchUrl = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "username": username
     }
   });
 
@@ -507,7 +527,7 @@ window.addEventListener("load", (e) => {
                 </div>
               </div>`;
 
-          FetchAllTransferOrderProcess(data.userName)
+        FetchAllTransferOrderProcess(data.userName)
           .then((countItem) => {
 
             newLayoutNavbar = `
@@ -541,7 +561,7 @@ window.addEventListener("load", (e) => {
 
             ProcessEventMoveToPayment()
             Logout();
-          });     
+          });
 
         navbarLogin.innerHTML = newLayoutNavbar + viewListShoppingCart;
 
@@ -584,7 +604,7 @@ function Logout() {
 function ProcessEventMoveToPayment() {
   const navbarLoginShoppingCart = document.querySelector(".navbar-login__shoppingcart");
 
-  navbarLoginShoppingCart.addEventListener('click',(e) => {
+  navbarLoginShoppingCart.addEventListener('click', (e) => {
 
     if (localStorage.getItem("username")) {
       window.location.href = "./transferorder.html"
@@ -594,7 +614,7 @@ function ProcessEventMoveToPayment() {
       window.alert("Have Error Then Website will refresh again");
       window.location.reload();
     }
-    
+
   })
 
 }

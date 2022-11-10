@@ -1,5 +1,4 @@
-﻿using ShopeeApi.Dtos;
-using ShopeeApi.Models;
+﻿using ShopeeApi.Models;
 
 namespace ShopeeApi.IRepository
 {

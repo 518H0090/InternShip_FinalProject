@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ShopeeApi.Datas;
 using ShopeeApi.EnumData;
 using ShopeeApi.IRepository;
@@ -18,7 +17,6 @@ namespace ShopeeApi.Repository
 
         public async Task<TransferOrder> CreateTransferOrder(TransferOrder request, int restaurantId)
         {
-            
             using (var transaction = await _context.Database.BeginTransactionAsync())
             {
                 try
@@ -40,7 +38,7 @@ namespace ShopeeApi.Repository
                     var newTransferOrder = await _context.TransferOrders.AddAsync(request);
                     await _context.SaveChangesAsync();
 
-                    var getAllRestaurantOrder = await _context.RestaurantOrders.Where(x => x.UserId == 
+                    var getAllRestaurantOrder = await _context.RestaurantOrders.Where(x => x.UserId ==
                     newTransferOrder.Entity.UserId && x.RestaurantId == restaurantId).ToListAsync();
 
                     _context.RestaurantOrders.RemoveRange(getAllRestaurantOrder);
@@ -49,20 +47,17 @@ namespace ShopeeApi.Repository
 
                     return newTransferOrder.Entity;
                 }
-
-                catch(Exception e)
+                catch (Exception e)
                 {
                     await transaction.RollbackAsync();
                     Console.WriteLine("Can't Create Order" + e.Message);
                     return null;
                 }
             }
-
         }
 
         public async Task<bool> DeleteTransferOrder(TransferOrder request)
         {
-
             using (var transaction = await _context.Database.BeginTransactionAsync())
             {
                 try
@@ -82,15 +77,13 @@ namespace ShopeeApi.Repository
 
                     return true;
                 }
-                
-                catch(Exception e)
+                catch (Exception e)
                 {
                     await transaction.RollbackAsync();
                     Console.WriteLine($"<ERROR> {e.Message} </ERROR>");
                     return false;
                 }
             }
-
         }
 
         public async Task<bool> ExistUser(string username)
@@ -147,7 +140,7 @@ namespace ShopeeApi.Repository
                     var findUser = await _context.Users.FirstAsync(x => x.UserName == request.Username);
 
                     var findOrder = await _context.TransferOrders.Where(x => x.User == findUser && x.OrderId.ToString().ToLower()
-                    == request.OrderId.ToString().ToLower() ).FirstAsync();
+                    == request.OrderId.ToString().ToLower()).FirstAsync();
 
                     findOrder.UpdatedBy = request.Username;
                     findOrder.UpdatedOn = DateTime.Now;
@@ -161,7 +154,6 @@ namespace ShopeeApi.Repository
 
                     return updateOrder.Entity;
                 }
-
                 catch (Exception e)
                 {
                     await transaction.RollbackAsync();
@@ -169,7 +161,6 @@ namespace ShopeeApi.Repository
                     return null;
                 }
             }
-
         }
     }
 }

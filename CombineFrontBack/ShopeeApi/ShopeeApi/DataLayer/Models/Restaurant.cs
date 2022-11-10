@@ -36,8 +36,9 @@ namespace ShopeeApi.Models
 
         public IEnumerable<Food> Foods { set; get; }
 
+        public IEnumerable<RestaurantOrder> RestaurantOrders { set; get; }
 
         //In Test
-        public IEnumerable<RestaurantOrder> RestaurantOrders { set; get; }
+        public int RsDistance { set; get; } = new Random().Next(1, 30);
     }
 }

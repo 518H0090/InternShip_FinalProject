@@ -5,6 +5,8 @@ namespace ShopeeApi.Dtos.Request
 {
     public class RequestEditRestaurant
     {
+        public int RsId { get; set; }
+
         public string RsTitle { set; get; } = string.Empty;
 
         public string RsProvince { set; get; } = string.Empty;

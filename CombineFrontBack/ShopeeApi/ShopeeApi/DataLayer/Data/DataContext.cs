@@ -237,7 +237,6 @@ namespace ShopeeApi.Datas
                 x.Property(to => to.OrderDistance).HasDefaultValue<int>(0);
                 x.Property(to => to.TempMoney).HasDefaultValue<int>(0);
                 x.Property(to => to.TotalMoney).HasDefaultValue<int>(0);
-
             });
 
             //Bill Order
@@ -256,9 +255,7 @@ namespace ShopeeApi.Datas
                 .WithMany(u => u.BillOrders)
                 .HasForeignKey(bo => bo.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
-
             });
-
         }
     }
 }

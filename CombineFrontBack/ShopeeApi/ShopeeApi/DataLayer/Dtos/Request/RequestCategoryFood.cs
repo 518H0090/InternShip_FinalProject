@@ -5,5 +5,7 @@
         public int CategoryId { get; set; }
 
         public int FoodId { set; get; }
+
+        public int RestaurantId { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using ShopeeApi.IService;
 
 namespace ShopeeApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/restaurant")]
     [ApiController]
     public class RestaurantController : ControllerBase
     {
@@ -132,22 +132,13 @@ namespace ShopeeApi.Controllers
         [HttpGet]
         [Route("view-promotion")]
         public IActionResult ViewPromotion() =>
-            //return Ok(Enum.GetValues(typeof(Promotion)));
-            //return Ok(JsonConvert.SerializeObject(new
-            //{
-            //    Promotion.reduce,
-            //    Promotion.reduce10K,
-            //    Promotion.reduce20K,
-            //    Promotion.reduce30K,
-            //    Promotion.reduce40K
-            //}, new Newtonsoft.Json.Converters.StringEnumConverter()));
 
             Ok(JsonConvert.SerializeObject(Enum.GetNames(typeof(Promotion)).ToList()
                 , new Newtonsoft.Json.Converters.StringEnumConverter()));
 
         [HttpPost]
         [Route("new-restaurant")]
-        public async Task<IActionResult> NewRestaurant(RequestAddRestaurant request)
+        public async Task<IActionResult> NewRestaurant([FromBody] RequestAddRestaurant request)
         {
             var newRes = await _service.CreateRestaurant(request);
 
@@ -160,10 +151,10 @@ namespace ShopeeApi.Controllers
         }
 
         [HttpPut]
-        [Route("update-restaurant/{id}")]
-        public async Task<IActionResult> UpdateRestaurant(int id, RequestEditRestaurant request)
+        [Route("update-restaurant")]
+        public async Task<IActionResult> UpdateRestaurant([FromBody] RequestEditRestaurant request)
         {
-            var newRes = await _service.UpdateRestaurant(id, request);
+            var newRes = await _service.UpdateRestaurant(request.RsId, request);
 
             if (newRes.Data == null)
             {

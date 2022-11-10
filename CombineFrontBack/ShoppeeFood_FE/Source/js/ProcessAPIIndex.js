@@ -26,7 +26,7 @@ window.addEventListener('load',(e) => {
 function fetchMenuDeal() {
     const bannerMenuDeallist = document.querySelector('.banner-menu__deallist')
 
-    fetchAllRestaurants().then(data => {
+    fetchTop9NewRestaurants().then(data => {
         let listRestaurants = data.data
         var newList = fetchDataInLayout(listRestaurants)
 
@@ -144,7 +144,7 @@ function fetchMenuDeal() {
 function fetchMenuListRestaurant() {
     const bannerMenuListresFoodlist = document.querySelector('.banner-menu__listres-foodlist');
 
-    fetchAllRestaurants().then(data => {
+    fetchTop9NewRestaurants().then(data => {
         const listValue = data.data
 
         var newList = listValue.map(element => {

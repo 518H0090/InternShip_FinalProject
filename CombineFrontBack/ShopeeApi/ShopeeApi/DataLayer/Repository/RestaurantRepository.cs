@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ShopeeApi.Datas;
 using ShopeeApi.IRepository;
 using ShopeeApi.Models;
@@ -9,12 +8,10 @@ namespace ShopeeApi.Repository
     public class RestaurantRepository : IRestaurantRepository
     {
         private readonly DataContext _context;
-        private readonly IMapper _mapper;
 
-        public RestaurantRepository(DataContext context, IMapper mapper)
+        public RestaurantRepository(DataContext context)
         {
             _context = context;
-            _mapper = mapper;
         }
 
         public async Task<Restaurant> CreateRestaurant(Restaurant request)
@@ -61,7 +58,7 @@ namespace ShopeeApi.Repository
 
         public async Task<IEnumerable<Restaurant>> GetAllRestaurantTop9()
         {
-            return await _context.Restaurants.TakeLast(9).ToListAsync();
+            return await _context.Restaurants.Take(9).OrderByDescending(x => x.RsId).ToListAsync();
         }
 
         public async Task<IEnumerable<Restaurant>> GetAllRestaurantWithCategoryTag()

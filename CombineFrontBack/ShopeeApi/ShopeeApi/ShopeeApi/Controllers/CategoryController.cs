@@ -4,7 +4,7 @@ using ShopeeApi.IService;
 
 namespace ShopeeApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/category")]
     [ApiController]
     public class CategoryController : ControllerBase
     {
@@ -43,9 +43,9 @@ namespace ShopeeApi.Controllers
             return Ok(getAllCategories);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("category-with-id")]
-        public async Task<IActionResult> GetCategoryWithId([FromQuery] RequestCategoryById request)
+        public async Task<IActionResult> GetCategoryWithId([FromBody] RequestCategoryById request)
         {
             var GetCategoryById = await _service.GetCategoryById(request);
 
@@ -57,9 +57,9 @@ namespace ShopeeApi.Controllers
             return Ok(GetCategoryById);
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("category-with-tag")]
-        public async Task<IActionResult> GetCategoryWithTag([FromQuery] RequestCategoryByTag request)
+        public async Task<IActionResult> GetCategoryWithTag([FromBody] RequestCategoryByTag request)
         {
             var GetCategoryByTag = await _service.GetCategoryByTag(request);
 
@@ -73,7 +73,7 @@ namespace ShopeeApi.Controllers
 
         [HttpPost]
         [Route("new-category-in-restaurant")]
-        public async Task<IActionResult> NewCategoryInRestaurant(RequestAddCategory request)
+        public async Task<IActionResult> NewCategoryInRestaurant([FromBody] RequestAddCategory request)
         {
             var newCategory = await _service.CreateCategory(request);
 
@@ -87,7 +87,7 @@ namespace ShopeeApi.Controllers
 
         [HttpDelete]
         [Route("delete-category-in-restaurant")]
-        public async Task<IActionResult> DeleteCategoryInRestaurant(RequestDeleteCategory request)
+        public async Task<IActionResult> DeleteCategoryInRestaurant([FromBody] RequestDeleteCategory request)
         {
             var deleteCategory = await _service.DeleteCategory(request);
 
@@ -101,7 +101,7 @@ namespace ShopeeApi.Controllers
 
         [HttpPut]
         [Route("update-category")]
-        public async Task<IActionResult> UpdateCategory(RequestEditCategory request)
+        public async Task<IActionResult> UpdateCategory([FromBody] RequestEditCategory request)
         {
             var updateCategory = await _service.UpdateCategory(request);
 

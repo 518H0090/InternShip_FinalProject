@@ -1,9 +1,4 @@
 ﻿using NLog;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LoggerService
 {
@@ -23,7 +18,7 @@ namespace LoggerService
 
         public void LogInfo(string message)
         {
-           _logger.Info(message);
+            _logger.Info(message);
         }
 
         public void LogWarning(string message)

@@ -18,6 +18,9 @@
     <!-- FontAweSome -->
     <script src="https://kit.fontawesome.com/85dd07e8e0.js"
       crossorigin="anonymous"></script>
+    <!--Flash Message  -->
+    <link rel="stylesheet"
+      href="./external-preference/flashjs-master/dist/flash.min.css">
     <!-- Base CSS -->
     <link rel="stylesheet" href="./css/base.css" />
     <link rel="stylesheet" href="./css/style.css" />
@@ -119,81 +122,93 @@
               </ul>
             </div>
 
-           <!-- Search -->
-           <div class="navbar-search">
-            <div class="navbar-search__btn">
-              <i class="fa-solid fa-magnifying-glass navbar-search__icon"></i>
-            </div>
-          </div>
-       
-          <!-- User Login -->
-          <div class="navbar-login">
-            <p>UserName</p>
-            <button type="button" class="btn btn-login">Đăng nhập</button>
-            <div class="navbar-login__shoppingcart">
-              <i class="fa-sharp fa-solid fa-cart-plus"></i>
-              <p class="navbar-shoppingcart__countitem">0</p>
-
-            </div>
-
-             <!-- Display Dropdown Shopping Cart -->
-             <div class="navbar-login__shoppingcart-viewlistitem">
-                
-              <!-- List Item -->
-              <ul class="navbar-shopping__list">
-                <!-- Item -->
-                <li class="navbar-shopping__item">
-                  <!-- Image -->
-                  <div class="navbar-shopping__image">
-                    <img src="./img/7493daa4-f432-4ad8-9cc1-c6ca4b38-9888484e-220428114251.jpeg" alt="" class="navbar-shopping__img">
-                  </div>
-
-                  <!-- Content -->
-                  <div class="navbar-shopping__content">
-                    <h3 class="navbar-shopping__content-title">Trà dưa lưới h...</h3>
-                    <p class="navbar-shopping__content-cost">25,000 <sup>đ</sup> </p>
-                  </div>
-
-                </li>
-
-                 <!-- Item -->
-                 <li class="navbar-shopping__item">
-                  <!-- Image -->
-                  <div class="navbar-shopping__image">
-                    <img src="./img/7493daa4-f432-4ad8-9cc1-c6ca4b38-9888484e-220428114251.jpeg" alt="" class="navbar-shopping__img">
-                  </div>
-
-                  <!-- Content -->
-                  <div class="navbar-shopping__content">
-                    <h3 class="navbar-shopping__content-title">Trà dưa lưới h...</h3>
-                    <p class="navbar-shopping__content-cost">25,000 <sup>đ</sup> </p>
-                  </div>
-
-                </li>
-
-                 <!-- Item -->
-                 <li class="navbar-shopping__item">
-                  <!-- Image -->
-                  <div class="navbar-shopping__image">
-                    <img src="./img/7493daa4-f432-4ad8-9cc1-c6ca4b38-9888484e-220428114251.jpeg" alt="" class="navbar-shopping__img">
-                  </div>
-
-                  <!-- Content -->
-                  <div class="navbar-shopping__content">
-                    <h3 class="navbar-shopping__content-title">Trà dưa lưới h...</h3>
-                    <p class="navbar-shopping__content-cost">25,000 <sup>đ</sup> </p>
-                  </div>
-
-                </li>
-
-              </ul>
-
-              <!-- View More Shopping Card -->
-              <div class="navbar-shopping__viewmore">
-                <p>Xem thêm</p>
+            <!-- Search -->
+            <div class="navbar-search">
+              <div class="navbar-search__btn">
+                <i class="fa-solid fa-magnifying-glass navbar-search__icon"></i>
               </div>
             </div>
-          </div>
+
+            <!-- User Login -->
+            <div class="navbar-login">
+              <p>UserName</p>
+              <button type="button" class="btn btn-login">Đăng nhập</button>
+              <div class="navbar-login__shoppingcart">
+                <i class="fa-sharp fa-solid fa-cart-plus"></i>
+                <p class="navbar-shoppingcart__countitem">0</p>
+
+              </div>
+
+              <!-- Display Dropdown Shopping Cart -->
+              <div class="navbar-login__shoppingcart-viewlistitem">
+
+                <!-- List Item -->
+                <ul class="navbar-shopping__list">
+                  <!-- Item -->
+                  <li class="navbar-shopping__item">
+                    <!-- Image -->
+                    <div class="navbar-shopping__image">
+                      <img
+                        src="./img/7493daa4-f432-4ad8-9cc1-c6ca4b38-9888484e-220428114251.jpeg"
+                        alt="" class="navbar-shopping__img">
+                    </div>
+
+                    <!-- Content -->
+                    <div class="navbar-shopping__content">
+                      <h3 class="navbar-shopping__content-title">Trà dưa lưới
+                        h...</h3>
+                      <p class="navbar-shopping__content-cost">25,000 <sup>đ</sup>
+                      </p>
+                    </div>
+
+                  </li>
+
+                  <!-- Item -->
+                  <li class="navbar-shopping__item">
+                    <!-- Image -->
+                    <div class="navbar-shopping__image">
+                      <img
+                        src="./img/7493daa4-f432-4ad8-9cc1-c6ca4b38-9888484e-220428114251.jpeg"
+                        alt="" class="navbar-shopping__img">
+                    </div>
+
+                    <!-- Content -->
+                    <div class="navbar-shopping__content">
+                      <h3 class="navbar-shopping__content-title">Trà dưa lưới
+                        h...</h3>
+                      <p class="navbar-shopping__content-cost">25,000 <sup>đ</sup>
+                      </p>
+                    </div>
+
+                  </li>
+
+                  <!-- Item -->
+                  <li class="navbar-shopping__item">
+                    <!-- Image -->
+                    <div class="navbar-shopping__image">
+                      <img
+                        src="./img/7493daa4-f432-4ad8-9cc1-c6ca4b38-9888484e-220428114251.jpeg"
+                        alt="" class="navbar-shopping__img">
+                    </div>
+
+                    <!-- Content -->
+                    <div class="navbar-shopping__content">
+                      <h3 class="navbar-shopping__content-title">Trà dưa lưới
+                        h...</h3>
+                      <p class="navbar-shopping__content-cost">25,000 <sup>đ</sup>
+                      </p>
+                    </div>
+
+                  </li>
+
+                </ul>
+
+                <!-- View More Shopping Card -->
+                <div class="navbar-shopping__viewmore">
+                  <p>Xem thêm</p>
+                </div>
+              </div>
+            </div>
 
 
 
@@ -274,55 +289,68 @@
                     <span class="btn btn-white-default">All</span>
                   </a>
 
-                  <a href="./searchfood.html?restype=QUANAN" class="banner-search__filter">
+                  <a href="./searchfood.html?restype=QUANAN"
+                    class="banner-search__filter">
                     <span class="btn btn-white-default">Đồ ăn</span>
                   </a>
 
-                  <a href="./searchfood.html?restype=CAFE/DESSERT" class="banner-search__filter">
+                  <a href="./searchfood.html?restype=CAFE/DESSERT"
+                    class="banner-search__filter">
                     <span class="btn btn-white-default">Đồ uống</span>
                   </a>
 
-                  <a href="./searchfood.html?restype=ANCHAY" class="banner-search__filter">
+                  <a href="./searchfood.html?restype=ANCHAY"
+                    class="banner-search__filter">
                     <span class="btn btn-white-default">Đồ chay</span>
                   </a>
 
-                  <a href="./searchfood.html?restype=TIEMBANH" class="banner-search__filter">
+                  <a href="./searchfood.html?restype=TIEMBANH"
+                    class="banner-search__filter">
                     <span class="btn btn-white-default">Bánh kem</span>
                   </a>
 
-                  <a href="./searchfood.html?restype=TIEMBANH" class="banner-search__filter">
+                  <a href="./searchfood.html?restype=TIEMBANH"
+                    class="banner-search__filter">
                     <span class="btn btn-white-default">Tráng miệng</span>
                   </a>
 
-                  <a href="./searchfood.html?restype=ANVAT/VIAHE" class="banner-search__filter">
+                  <a href="./searchfood.html?restype=ANVAT/VIAHE"
+                    class="banner-search__filter">
                     <span class="btn btn-white-default">Homemade</span>
                   </a>
 
-                  <a href="./searchfood.html?restype=ANVAT/VIAHE" class="banner-search__filter">
+                  <a href="./searchfood.html?restype=ANVAT/VIAHE"
+                    class="banner-search__filter">
                     <span class="btn btn-white-default">Vỉa hè</span>
                   </a>
 
-                  <a href="./searchfood.html?restype=QUANAN" class="banner-search__filter">
+                  <a href="./searchfood.html?restype=QUANAN"
+                    class="banner-search__filter">
                     <span class="btn btn-white-default">Pizza/Burger</span>
                   </a>
 
-                  <a href="./searchfood.html?restype=QUANAN" class="banner-search__filter">
+                  <a href="./searchfood.html?restype=QUANAN"
+                    class="banner-search__filter">
                     <span class="btn btn-white-default">Món gà</span>
                   </a>
 
-                  <a href="./searchfood.html?restype=QUANAN" class="banner-search__filter">
+                  <a href="./searchfood.html?restype=QUANAN"
+                    class="banner-search__filter">
                     <span class="btn btn-white-default">Món lẩu</span>
                   </a>
 
-                  <a href="./searchfood.html?restype=QUANAN" class="banner-search__filter">
+                  <a href="./searchfood.html?restype=QUANAN"
+                    class="banner-search__filter">
                     <span class="btn btn-white-default">Sushi</span>
                   </a>
 
-                  <a href="./searchfood.html?restype=QUANAN" class="banner-search__filter">
+                  <a href="./searchfood.html?restype=QUANAN"
+                    class="banner-search__filter">
                     <span class="btn btn-white-default">Mì phở</span>
                   </a>
 
-                  <a href="./searchfood.html?restype=QUANAN" class="banner-search__filter">
+                  <a href="./searchfood.html?restype=QUANAN"
+                    class="banner-search__filter">
                     <span class="btn btn-white-default">Cơm hộp</span>
                   </a>
                 </div>
@@ -829,7 +857,8 @@
                         <!-- Item Content -->
                         <div class="banner-menu__content">
                           <!-- Title -->
-                          <h4 class="banner-menu__collection-title">Quán mới lên sàn deal...</h4>
+                          <h4 class="banner-menu__collection-title">Quán mới lên
+                            sàn deal...</h4>
                           <!-- Subtitle -->
                           <p class="banner-menu__collection-subtitle">200 địa
                             điểm</p>
@@ -851,7 +880,8 @@
                         <!-- Item Content -->
                         <div class="banner-menu__content">
                           <!-- Title -->
-                          <h4 class="banner-menu__collection-title">Freeship yêu thương...</h4>
+                          <h4 class="banner-menu__collection-title">Freeship yêu
+                            thương...</h4>
                           <!-- Subtitle -->
                           <p class="banner-menu__collection-subtitle">200 địa
                             điểm</p>
@@ -873,7 +903,8 @@
                         <!-- Item Content -->
                         <div class="banner-menu__content">
                           <!-- Title -->
-                          <h4 class="banner-menu__collection-title">Tháng yêu thương - Fr...</h4>
+                          <h4 class="banner-menu__collection-title">Tháng yêu
+                            thương - Fr...</h4>
                           <!-- Subtitle -->
                           <p class="banner-menu__collection-subtitle">200 địa
                             điểm</p>
@@ -895,7 +926,8 @@
                         <!-- Item Content -->
                         <div class="banner-menu__content">
                           <!-- Title -->
-                          <h4 class="banner-menu__collection-title">Siêu Tiệc Giảm 99K</h4>
+                          <h4 class="banner-menu__collection-title">Siêu Tiệc
+                            Giảm 99K</h4>
                           <!-- Subtitle -->
                           <p class="banner-menu__collection-subtitle">200 địa
                             điểm</p>
@@ -917,7 +949,8 @@
                         <!-- Item Content -->
                         <div class="banner-menu__content">
                           <!-- Title -->
-                          <h4 class="banner-menu__collection-title">Siêu hội giảm 20k</h4>
+                          <h4 class="banner-menu__collection-title">Siêu hội
+                            giảm 20k</h4>
                           <!-- Subtitle -->
                           <p class="banner-menu__collection-subtitle">200 địa
                             điểm</p>
@@ -939,7 +972,8 @@
                         <!-- Item Content -->
                         <div class="banner-menu__content">
                           <!-- Title -->
-                          <h4 class="banner-menu__collection-title">Deal to bao no, giảm đ...</h4>
+                          <h4 class="banner-menu__collection-title">Deal to bao
+                            no, giảm đ...</h4>
                           <!-- Subtitle -->
                           <p class="banner-menu__collection-subtitle">200 địa
                             điểm</p>
@@ -961,7 +995,8 @@
                         <!-- Item Content -->
                         <div class="banner-menu__content">
                           <!-- Title -->
-                          <h4 class="banner-menu__collection-title">Freeship muôn nơi</h4>
+                          <h4 class="banner-menu__collection-title">Freeship
+                            muôn nơi</h4>
                           <!-- Subtitle -->
                           <p class="banner-menu__collection-subtitle">200 địa
                             điểm</p>
@@ -983,7 +1018,8 @@
                         <!-- Item Content -->
                         <div class="banner-menu__content">
                           <!-- Title -->
-                          <h4 class="banner-menu__collection-title">Lễ hội ẩm thực Coca...</h4>
+                          <h4 class="banner-menu__collection-title">Lễ hội ẩm
+                            thực Coca...</h4>
                           <!-- Subtitle -->
                           <p class="banner-menu__collection-subtitle">200 địa
                             điểm</p>
@@ -1005,7 +1041,8 @@
                         <!-- Item Content -->
                         <div class="banner-menu__content">
                           <!-- Title -->
-                          <h4 class="banner-menu__collection-title">Bùng nổ mùa hè</h4>
+                          <h4 class="banner-menu__collection-title">Bùng nổ mùa
+                            hè</h4>
                           <!-- Subtitle -->
                           <p class="banner-menu__collection-subtitle">200 địa
                             điểm</p>
@@ -1079,30 +1116,33 @@
                         <div class="banner-menu__listres-content">
                           <!-- Title -->
                           <h3 class="banner-menu__listres-title">Bò Kho Cô Mai</h3>
-
                           <!-- Location -->
-                          <p class="banner-menu__listres-location">384 Nguyễn Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
+                          <p class="banner-menu__listres-location">384 Nguyễn
+                            Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
 
                           <!-- Promotion -->
                           <div class="banner-menu__listres-promotion">
-                            <i class="fa-solid fa-tag banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-tag
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Tối thiểu 20k</span>
+                            <span class="banner-menu__listres-promotion-text">Tối
+                              thiểu 20k</span>
 
-                            <i class="fa-solid fa-money-bill banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-money-bill
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Giá 42k</span>
+                            <span class="banner-menu__listres-promotion-text">Giá
+                              42k</span>
                           </div>
 
                           <!-- Type -->
                           <p class="banner-menu__listres-type">quán ăn</p>
-
                         </div>
                       </a>
                     </div>
 
-                     <!-- Food Item -->
-                     <div class="banner-menu__listres-fooditem">
+                    <!-- Food Item -->
+                    <div class="banner-menu__listres-fooditem">
                       <!-- Food Item Link -->
                       <a href="#" class="banner-menu__listres-foodlink">
                         <!-- Image -->
@@ -1116,30 +1156,33 @@
                         <div class="banner-menu__listres-content">
                           <!-- Title -->
                           <h3 class="banner-menu__listres-title">Bò Kho Cô Mai</h3>
-
                           <!-- Location -->
-                          <p class="banner-menu__listres-location">384 Nguyễn Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
+                          <p class="banner-menu__listres-location">384 Nguyễn
+                            Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
 
                           <!-- Promotion -->
                           <div class="banner-menu__listres-promotion">
-                            <i class="fa-solid fa-tag banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-tag
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Tối thiểu 20k</span>
+                            <span class="banner-menu__listres-promotion-text">Tối
+                              thiểu 20k</span>
 
-                            <i class="fa-solid fa-money-bill banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-money-bill
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Giá 42k</span>
+                            <span class="banner-menu__listres-promotion-text">Giá
+                              42k</span>
                           </div>
 
                           <!-- Type -->
                           <p class="banner-menu__listres-type">quán ăn</p>
-
                         </div>
                       </a>
                     </div>
 
-                     <!-- Food Item -->
-                     <div class="banner-menu__listres-fooditem">
+                    <!-- Food Item -->
+                    <div class="banner-menu__listres-fooditem">
                       <!-- Food Item Link -->
                       <a href="#" class="banner-menu__listres-foodlink">
                         <!-- Image -->
@@ -1153,30 +1196,33 @@
                         <div class="banner-menu__listres-content">
                           <!-- Title -->
                           <h3 class="banner-menu__listres-title">Bò Kho Cô Mai</h3>
-
                           <!-- Location -->
-                          <p class="banner-menu__listres-location">384 Nguyễn Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
+                          <p class="banner-menu__listres-location">384 Nguyễn
+                            Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
 
                           <!-- Promotion -->
                           <div class="banner-menu__listres-promotion">
-                            <i class="fa-solid fa-tag banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-tag
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Tối thiểu 20k</span>
+                            <span class="banner-menu__listres-promotion-text">Tối
+                              thiểu 20k</span>
 
-                            <i class="fa-solid fa-money-bill banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-money-bill
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Giá 42k</span>
+                            <span class="banner-menu__listres-promotion-text">Giá
+                              42k</span>
                           </div>
 
                           <!-- Type -->
                           <p class="banner-menu__listres-type">quán ăn</p>
-
                         </div>
                       </a>
                     </div>
 
-                     <!-- Food Item -->
-                     <div class="banner-menu__listres-fooditem">
+                    <!-- Food Item -->
+                    <div class="banner-menu__listres-fooditem">
                       <!-- Food Item Link -->
                       <a href="#" class="banner-menu__listres-foodlink">
                         <!-- Image -->
@@ -1190,30 +1236,33 @@
                         <div class="banner-menu__listres-content">
                           <!-- Title -->
                           <h3 class="banner-menu__listres-title">Bò Kho Cô Mai</h3>
-
                           <!-- Location -->
-                          <p class="banner-menu__listres-location">384 Nguyễn Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
+                          <p class="banner-menu__listres-location">384 Nguyễn
+                            Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
 
                           <!-- Promotion -->
                           <div class="banner-menu__listres-promotion">
-                            <i class="fa-solid fa-tag banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-tag
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Tối thiểu 20k</span>
+                            <span class="banner-menu__listres-promotion-text">Tối
+                              thiểu 20k</span>
 
-                            <i class="fa-solid fa-money-bill banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-money-bill
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Giá 42k</span>
+                            <span class="banner-menu__listres-promotion-text">Giá
+                              42k</span>
                           </div>
 
                           <!-- Type -->
                           <p class="banner-menu__listres-type">quán ăn</p>
-
                         </div>
                       </a>
                     </div>
 
-                     <!-- Food Item -->
-                     <div class="banner-menu__listres-fooditem">
+                    <!-- Food Item -->
+                    <div class="banner-menu__listres-fooditem">
                       <!-- Food Item Link -->
                       <a href="#" class="banner-menu__listres-foodlink">
                         <!-- Image -->
@@ -1227,30 +1276,33 @@
                         <div class="banner-menu__listres-content">
                           <!-- Title -->
                           <h3 class="banner-menu__listres-title">Bò Kho Cô Mai</h3>
-
                           <!-- Location -->
-                          <p class="banner-menu__listres-location">384 Nguyễn Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
+                          <p class="banner-menu__listres-location">384 Nguyễn
+                            Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
 
                           <!-- Promotion -->
                           <div class="banner-menu__listres-promotion">
-                            <i class="fa-solid fa-tag banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-tag
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Tối thiểu 20k</span>
+                            <span class="banner-menu__listres-promotion-text">Tối
+                              thiểu 20k</span>
 
-                            <i class="fa-solid fa-money-bill banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-money-bill
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Giá 42k</span>
+                            <span class="banner-menu__listres-promotion-text">Giá
+                              42k</span>
                           </div>
 
                           <!-- Type -->
                           <p class="banner-menu__listres-type">quán ăn</p>
-
                         </div>
                       </a>
                     </div>
 
-                     <!-- Food Item -->
-                     <div class="banner-menu__listres-fooditem">
+                    <!-- Food Item -->
+                    <div class="banner-menu__listres-fooditem">
                       <!-- Food Item Link -->
                       <a href="#" class="banner-menu__listres-foodlink">
                         <!-- Image -->
@@ -1264,30 +1316,33 @@
                         <div class="banner-menu__listres-content">
                           <!-- Title -->
                           <h3 class="banner-menu__listres-title">Bò Kho Cô Mai</h3>
-
                           <!-- Location -->
-                          <p class="banner-menu__listres-location">384 Nguyễn Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
+                          <p class="banner-menu__listres-location">384 Nguyễn
+                            Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
 
                           <!-- Promotion -->
                           <div class="banner-menu__listres-promotion">
-                            <i class="fa-solid fa-tag banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-tag
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Tối thiểu 20k</span>
+                            <span class="banner-menu__listres-promotion-text">Tối
+                              thiểu 20k</span>
 
-                            <i class="fa-solid fa-money-bill banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-money-bill
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Giá 42k</span>
+                            <span class="banner-menu__listres-promotion-text">Giá
+                              42k</span>
                           </div>
 
                           <!-- Type -->
                           <p class="banner-menu__listres-type">quán ăn</p>
-
                         </div>
                       </a>
                     </div>
 
-                     <!-- Food Item -->
-                     <div class="banner-menu__listres-fooditem">
+                    <!-- Food Item -->
+                    <div class="banner-menu__listres-fooditem">
                       <!-- Food Item Link -->
                       <a href="#" class="banner-menu__listres-foodlink">
                         <!-- Image -->
@@ -1301,30 +1356,33 @@
                         <div class="banner-menu__listres-content">
                           <!-- Title -->
                           <h3 class="banner-menu__listres-title">Bò Kho Cô Mai</h3>
-
                           <!-- Location -->
-                          <p class="banner-menu__listres-location">384 Nguyễn Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
+                          <p class="banner-menu__listres-location">384 Nguyễn
+                            Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
 
                           <!-- Promotion -->
                           <div class="banner-menu__listres-promotion">
-                            <i class="fa-solid fa-tag banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-tag
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Tối thiểu 20k</span>
+                            <span class="banner-menu__listres-promotion-text">Tối
+                              thiểu 20k</span>
 
-                            <i class="fa-solid fa-money-bill banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-money-bill
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Giá 42k</span>
+                            <span class="banner-menu__listres-promotion-text">Giá
+                              42k</span>
                           </div>
 
                           <!-- Type -->
                           <p class="banner-menu__listres-type">quán ăn</p>
-
                         </div>
                       </a>
                     </div>
 
-                     <!-- Food Item -->
-                     <div class="banner-menu__listres-fooditem">
+                    <!-- Food Item -->
+                    <div class="banner-menu__listres-fooditem">
                       <!-- Food Item Link -->
                       <a href="#" class="banner-menu__listres-foodlink">
                         <!-- Image -->
@@ -1338,30 +1396,33 @@
                         <div class="banner-menu__listres-content">
                           <!-- Title -->
                           <h3 class="banner-menu__listres-title">Bò Kho Cô Mai</h3>
-
                           <!-- Location -->
-                          <p class="banner-menu__listres-location">384 Nguyễn Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
+                          <p class="banner-menu__listres-location">384 Nguyễn
+                            Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
 
                           <!-- Promotion -->
                           <div class="banner-menu__listres-promotion">
-                            <i class="fa-solid fa-tag banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-tag
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Tối thiểu 20k</span>
+                            <span class="banner-menu__listres-promotion-text">Tối
+                              thiểu 20k</span>
 
-                            <i class="fa-solid fa-money-bill banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-money-bill
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Giá 42k</span>
+                            <span class="banner-menu__listres-promotion-text">Giá
+                              42k</span>
                           </div>
 
                           <!-- Type -->
                           <p class="banner-menu__listres-type">quán ăn</p>
-
                         </div>
                       </a>
                     </div>
 
-                     <!-- Food Item -->
-                     <div class="banner-menu__listres-fooditem">
+                    <!-- Food Item -->
+                    <div class="banner-menu__listres-fooditem">
                       <!-- Food Item Link -->
                       <a href="#" class="banner-menu__listres-foodlink">
                         <!-- Image -->
@@ -1375,28 +1436,31 @@
                         <div class="banner-menu__listres-content">
                           <!-- Title -->
                           <h3 class="banner-menu__listres-title">Bò Kho Cô Mai</h3>
-
                           <!-- Location -->
-                          <p class="banner-menu__listres-location">384 Nguyễn Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
+                          <p class="banner-menu__listres-location">384 Nguyễn
+                            Trọng Tuyến, P.2, Tân Bình, TP.HCM</p>
 
                           <!-- Promotion -->
                           <div class="banner-menu__listres-promotion">
-                            <i class="fa-solid fa-tag banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-tag
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Tối thiểu 20k</span>
+                            <span class="banner-menu__listres-promotion-text">Tối
+                              thiểu 20k</span>
 
-                            <i class="fa-solid fa-money-bill banner-menu__listres-promotion-icon"></i>
+                            <i class="fa-solid fa-money-bill
+                              banner-menu__listres-promotion-icon"></i>
 
-                            <span class="banner-menu__listres-promotion-text">Giá 42k</span>
+                            <span class="banner-menu__listres-promotion-text">Giá
+                              42k</span>
                           </div>
 
                           <!-- Type -->
                           <p class="banner-menu__listres-type">quán ăn</p>
-
                         </div>
                       </a>
                     </div>
-                    
+
                   </div>
 
                   <!-- More -->
@@ -2152,6 +2216,7 @@
       <script src="./js/BannerModal.js"></script>
       <script src="./js/ScrollBanner.js"></script>
       <script src="./js/App.js"></script>
+      <script src="./external-preference/flashjs-master/dist/flash.min.js"></script>
       <script src="./js/ProcessAPIIndex.js"></script>
 
     </body>

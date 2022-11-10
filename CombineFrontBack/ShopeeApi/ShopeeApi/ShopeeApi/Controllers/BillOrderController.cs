@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ShopeeApi.Dtos.Request;
 using ShopeeApi.IService;
 
 namespace ShopeeApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/bill-order")]
     [ApiController]
     public class BillOrderController : ControllerBase
     {
@@ -46,7 +45,7 @@ namespace ShopeeApi.Controllers
 
         [HttpPost]
         [Route("new-bill-order")]
-        public async Task<IActionResult> CreateBillOrder(RequestAddBillOrder request)
+        public async Task<IActionResult> CreateBillOrder([FromBody] RequestAddBillOrder request)
         {
             var newBill = await _service.CreateBillOrder(request);
 
@@ -57,7 +56,6 @@ namespace ShopeeApi.Controllers
 
             return Ok(newBill);
         }
-
 
         [HttpPost]
         [Route("new-bill-transfer-process-order")]
@@ -72,6 +70,5 @@ namespace ShopeeApi.Controllers
 
             return Ok(newBill);
         }
-
     }
 }

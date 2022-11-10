@@ -2,7 +2,6 @@
 {
     public class RequestUpdateResOrder
     {
-
         public string FoodTitle { set; get; } = string.Empty;
 
         public int CountFoodChoice { set; get; }

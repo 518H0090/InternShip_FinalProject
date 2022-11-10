@@ -1,13 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ShopeeApi.Dtos.Request;
 using ShopeeApi.IService;
-using ShopeeApi.Models;
-using ShopeeApi.Repository;
 
 namespace ShopeeApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/restaurant-order")]
     [ApiController]
     public class RestaurantOrderController : ControllerBase
     {
@@ -20,7 +17,7 @@ namespace ShopeeApi.Controllers
 
         [HttpPost]
         [Route("all-restaurant-order")]
-        public async Task<IActionResult> GetAllRestaurantOrder(RequestAllRestaurantOrder request)
+        public async Task<IActionResult> GetAllRestaurantOrder([FromBody] RequestAllRestaurantOrder request)
         {
             var getAllResOrder = await _service.GetAllRestaurantOrder(request.RestaurantId, request.Username);
 
@@ -34,7 +31,7 @@ namespace ShopeeApi.Controllers
 
         [HttpPost]
         [Route("new-restaurant-order")]
-        public async Task<IActionResult> CreateRestaurantOrder(RequestAddResOrder request)
+        public async Task<IActionResult> CreateRestaurantOrder([FromBody] RequestAddResOrder request)
         {
             var newOrder = await _service.NewRestaurantOrder(request);
 
@@ -48,7 +45,7 @@ namespace ShopeeApi.Controllers
 
         [HttpDelete]
         [Route("delete-restaurant-order")]
-        public async Task<IActionResult> DeleteRestaurantOrder(RequestDeleteRestaurantOrder request)
+        public async Task<IActionResult> DeleteRestaurantOrder([FromBody] RequestDeleteRestaurantOrder request)
         {
             var deleteOrder = await _service.DeleteRestaurantOrder(request);
 
@@ -59,7 +56,5 @@ namespace ShopeeApi.Controllers
 
             return Ok(deleteOrder);
         }
-
-
     }
 }

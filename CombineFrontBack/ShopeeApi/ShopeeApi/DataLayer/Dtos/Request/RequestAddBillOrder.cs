@@ -7,6 +7,5 @@
         public string CreatedBy { set; get; } = string.Empty;
 
         public int TotalMoney { set; get; }
-
     }
 }

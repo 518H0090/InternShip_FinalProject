@@ -26,19 +26,19 @@ namespace ShopeeApi.Service
             _logger.LogInfo("<START>Connect Food Tag</START>");
 
             var response = new ServiceResponse<string>();
-
-            if (await _repository.ExistsRelationFoodTag(resId, _mapper.Map<RelationCategoryFood>(request)))
+            var modelMapped = _mapper.Map<RelationCategoryFood>(request);
+            var isExistFoodTag = await _repository.ExistsRelationFoodTag(resId, modelMapped);
+            if (isExistFoodTag)
             {
                 _logger.LogError("<ERROR>Can't Connect Food Tag</ERROR>");
                 response.Success = false;
                 response.Message = "Can't Create New Relationship";
+                return response;
             }
-            else
-            {
-                _logger.LogInfo("<PROCESS>Connect Food Tag</PROCESS>");
-                await _repository.ConnectFoodTag(_mapper.Map<RelationCategoryFood>(request));
-                response.Data = "Create New Relationship";
-            }
+
+            _logger.LogInfo("<PROCESS>Connect Food Tag</PROCESS>");
+            await _repository.ConnectFoodTag(_mapper.Map<RelationCategoryFood>(request));
+            response.Data = "Create New Relationship";
 
             _logger.LogInfo("<END>Connect Food Tag</END>");
 

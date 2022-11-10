@@ -1,4 +1,5 @@
-﻿using ShopeeApi.EnumData;
+﻿using DataLayer.StaticClass;
+using ShopeeApi.EnumData;
 using System.Text.Json.Serialization;
 
 namespace ShopeeApi.Dtos.Response
@@ -30,5 +31,8 @@ namespace ShopeeApi.Dtos.Response
         public DateTime UpdatedOn { set; get; }
 
         public int UserId { set; get; }
+
+        //In Test
+        public string OrderCode { set; get; }
     }
 }

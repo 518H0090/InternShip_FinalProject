@@ -191,7 +191,7 @@ namespace ShopeeApi.Service
 
             var getAllWitRestaurantType = await _repository.GetAllFoodPaginationWithRestaurantType(indexPage, resType);
 
-            if (getAllWitRestaurantType == null || getAllWitRestaurantType.ToList().Count <= 0 )
+            if (getAllWitRestaurantType == null || getAllWitRestaurantType.ToList().Count <= 0)
             {
                 _logger.LogWarning("<WARN>Can't Get All Food Pagination With Restaurant Type</WARN>");
                 response.Success = false;
