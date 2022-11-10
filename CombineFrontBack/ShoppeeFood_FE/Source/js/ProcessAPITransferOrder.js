@@ -10,8 +10,29 @@ window.addEventListener("load",(e) => {
 
     else {
         layoutShoppingList.innerHTML = ""
-        alert("Không tìm thấy thông tin người dùng nên trang web sẽ chuyển về trang chính");
-        window.location.href = "./index.html"
+
+        swal({
+            title: "Không tìm thấy thông tin người dùng",
+            text: "Bạn có muốn tải lại trang không",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal("Tải lại trang web", {
+                icon: "info",
+              }).then(() => {
+                window.location.reload();
+              });
+            } else {
+              swal("Bạn sẽ được chuyển về trang chính",{
+                icon : "info"
+              }).then( () => {
+                window.location.href = "./index.html"
+              } );
+            }
+          });
     }
 })
 
