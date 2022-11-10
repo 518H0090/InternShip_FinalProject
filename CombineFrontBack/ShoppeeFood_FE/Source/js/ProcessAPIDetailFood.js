@@ -1064,10 +1064,18 @@ function ProcessOrderModal(transferOrderInfor) {
     tempmoney.lastElementChild.innerText = `${transferOrderInfor.moneyTotal}`;
 
     modalTransferOrderAcceptbtn.addEventListener("click", (e) => {
-      let acceptPayment = confirm("Would you like to order food ?");
 
-      if (acceptPayment) {
-        let orderoptions;
+      swal({
+        title: "Bạn có chắc muốn đặt đồ ăn không?",
+        text: "Bấm xác nhận để đặt đồ ăn",
+        icon: "info",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+
+          let orderoptions;
         const promotionInput = document.querySelector(
           ".modal-transferorder__detail:nth-child(4)"
         );
@@ -1094,15 +1102,29 @@ function ProcessOrderModal(transferOrderInfor) {
 
         FetchAddTransferOrder(orderoptions)
           .then((data) => {
-            alert("Đặt Thức Ăn Thành Công");
-            window.location.reload();
+            swal("Bạn đặt đồ ăn thành công", {
+              icon: "success",
+            }).then( () => {
+              window.location.reload();
+            } );
+            
           })
           .catch((error) => {
-            window.FlashMessage.error('Có lỗi xảy ra vui lòng thử lại');
+            swal("Có lỗi xảy ra vui lòng thử lại", {
+              icon: "error",
+            })
           });
-      } else {
-        window.FlashMessage.info('Hủy Tiến Trình');
-      }
+
+          swal("Bạn đặt đồ ăn thành công", {
+            icon: "success",
+          });
+        } else {
+          swal("Hủy tiến trình",{
+            icon : "info"
+          });
+        }
+      });
+      
     });
   }
 }

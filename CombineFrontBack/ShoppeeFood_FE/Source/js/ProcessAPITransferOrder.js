@@ -111,99 +111,137 @@ function ProcessPaymentTransferOrder(data) {
             let textInnerElement =  e.target.innerText
 
             if (textInnerElement === "THANH TOÁN") {
-                const acceptPayment = confirm("Xác nhận thanh toán ?")
+                swal({
+                    title: "Bạn có chắc muốn thanh toán hóa đơn?",
+                    text: "Vui lòng xác nhận thanh toán hóa đơn",
+                    icon: "info",
+                    buttons: true,
+                    dangerMode: true,
+                  })
+                  .then((willDelete) => {
+                    if (willDelete) {
+                     
+                        if (localStorage.getItem("username")) {
 
-                if (acceptPayment) {
-                    if (localStorage.getItem("username")) {
+                            let orderId;
+    
+                            let orderCode =  e.target.parentElement.parentElement.firstElementChild.innerText
+    
+                            data.forEach(element => {
+                                if (orderCode === element.orderCode) {
+                                    orderId = element.orderId;
+                                }
+                            })
+    
+                            let totalMoney = e.target.parentElement.previousElementSibling.firstElementChild.innerText.split(" ")[0]
+    
+                            let billOptions = {
+                                "orderId": orderId,
+                                "createdBy": localStorage.getItem("username"),
+                                "totalMoney": totalMoney
+                              }
+    
+                              FetchNewBillOrder(billOptions)
+                              .then(data => {
 
-                        let orderId;
+                                swal("Thanh toán hóa đơn thành công", {
+                                    icon : "success"
+                                  }).then(() => {
+                                      window.location.reload();
+                                  });
 
-                        let orderCode =  e.target.parentElement.parentElement.firstElementChild.innerText
+                              })
+                              .catch(error => {
+                                swal("Có lỗi xảy ra vui lòng thử lại", {
+                                    icon : "error"
+                                  })
+                              })
+    
+                        }
+    
+                        else {
+                            swal("Mất Thông tin người dùng trang web sẽ tải lại", {
+                                icon : "warning"
+                              }).then(() => {
+                                  window.location.reload();
+                              })
+                        }
 
-                        data.forEach(element => {
-                            if (orderCode === element.orderCode) {
-                                orderId = element.orderId;
-                            }
-                        })
-
-                        let totalMoney = e.target.parentElement.previousElementSibling.firstElementChild.innerText.split(" ")[0]
-
-                        let billOptions = {
-                            "orderId": orderId,
-                            "createdBy": localStorage.getItem("username"),
-                            "totalMoney": totalMoney
-                          }
-
-                          FetchNewBillOrder(billOptions)
-                          .then(data => {
-                            window.alert(`Thanh toán hóa đơn thành công`);
-                            window.location.reload();
-                          })
-                          .catch(error => {
-                            window.FlashMessage.error('Có lỗi xảy ra vui lòng thử lại');
-                          })
-
+                    } else {
+                      swal("Hủy tiến trình", {
+                        icon : "info"
+                      });
                     }
-
-                    else {
-                        window.alert("Mất Thông tin người dùng trang web sẽ tải lại")
-                        window.location.reload();
-                    }
-                }
-
-                else {
-                    window.FlashMessage.info('Hủy tiến trình');
-                }
+                  });
 
             }
 
             else if (textInnerElement === "XÓA") {
-                const acceptDelete = confirm("Xác nhận xóa thông tin hóa đơn ?")
 
-                if (acceptDelete) {
-                    if (localStorage.getItem("username")) {
+                swal({
+                    title: "Xác nhận xóa thông tin hóa đơn?",
+                    text: "Vui lòng bấm xác nhận để xóa hóa đơn",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                  })
+                  .then((willDelete) => {
+                    if (willDelete) {
+                        if (localStorage.getItem("username")) {
 
-                        let orderId;
+                            let orderId;
+    
+                            let orderCode =  e.target.parentElement.parentElement.firstElementChild.innerText
+    
+                            data.forEach(element => {
+                                if (orderCode === element.orderCode) {
+                                    orderId = element.orderId;
+                                }
+                            })
+    
+                            let orderOptions = {
+                                "orderId": orderId,
+                                "username": localStorage.getItem("username")
+                              }
+    
+                              FetchDeleteTransferOrder(orderOptions)
+                              .then(data => {
+                                swal("Xóa hóa đơn thành công", {
+                                    icon : "success"
+                                  }).then(() => {
+                                      window.location.reload();
+                                  })
+                              })
+                              .catch(error => {
+                                swal("Có lỗi xảy ra vui lòng thử lại lần nữa", {
+                                    icon : "error"
+                                  })
+                              })
+    
+                        }
+    
+                        else {
+                            swal("Mất Thông tin người dùng trang web sẽ tải lại", {
+                                icon : "warning"
+                              }).then(() => {
+                                  window.location.reload();
+                              })
+                        }
 
-                        let orderCode =  e.target.parentElement.parentElement.firstElementChild.innerText
-
-                        data.forEach(element => {
-                            if (orderCode === element.orderCode) {
-                                orderId = element.orderId;
-                            }
-                        })
-
-                        let orderOptions = {
-                            "orderId": orderId,
-                            "username": localStorage.getItem("username")
-                          }
-
-                          FetchDeleteTransferOrder(orderOptions)
-                          .then(data => {
-                            window.alert("Xóa hóa đơn thành công");
-                            window.location.reload();
+                    } else {
+                        swal("Hủy tiến trình", {
+                            icon : "info"
                           })
-                          .catch(error => {
-                            console.log(error.message)
-                            window.FlashMessage.error('Có lỗi xảy ra vui lòng thử lại');
-                          })
-
                     }
-
-                    else {
-                        window.alert("Mất Thông tin người dùng trang web sẽ tải lại")
-                        window.location.reload();
-                    }
-                }
-
-                else {
-                    window.FlashMessage.info('Hủy tiến trình');
-                }
+                  });
             }
 
             else {
-                window.alert("Có lỗi xảy ra trang web sẽ tải lại")
-                window.location.reload()
+                swal("Có lỗi xãy ra nên trang web sẽ tải lại", {
+                    icon : "warning"
+                  }).then(() => {
+                      window.location.reload();
+                  })
             }
         })
     })
@@ -214,30 +252,43 @@ function ProcessPaymentTotalTransferOrder() {
 
     layoutBillPurchase.addEventListener("click",(e) => {
 
-        const acceptPayment = window.confirm("Xác nhận thanh toán hết hóa đơn ?")
+        swal({
+            title: "Thanh toán hết tất cả đơn hàng trong tài khoản?",
+            text: "Vui lòng xác nhận thanh toán hết đơn hàng",
+            icon: "info",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+                if(localStorage.getItem("username")) {
+                    FetchNewBillAllTransferOrder(localStorage.getItem("username"))
+                    .then(data => {
+                        swal("Thanh Toán Hoàn Tất Hóa Đơn", {
+                            icon : "success"
+                          }).then(() => {
+                            window.location.reload();
+                          });
 
-        if (acceptPayment) {
-            if(localStorage.getItem("username")) {
-                FetchNewBillAllTransferOrder(localStorage.getItem("username"))
-                .then(data => {
-                    window.alert(`Thanh Toán Hoàn Tất Hóa Đơn`);
+                    })
+                    .catch(error => {
+
+                        swal("Có lỗi xảy ra vui lòng thử lại", {
+                            icon : "error"
+                          });
+                    })
+                }
+        
+                else {
+                    window.alert("Có lỗi trang web sẽ tải lại");
                     window.location.reload();
-                })
-                .catch(error => {
-                    console.log(error.message)
-                    window.FlashMessage.error('Có lỗi xảy ra vui lòng thử lại');
-                })
+                }
+            } else {
+              swal("Hủy tiến trình", {
+                icon : "info"
+              });
             }
-    
-            else {
-                window.alert("Có lỗi trang web sẽ tải lại");
-                window.location.reload();
-            }
-        }
-
-        else {
-            window.FlashMessage.info("Hủy tiến trình");
-        }
+          });
       
     })
 }
