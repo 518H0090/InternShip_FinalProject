@@ -4,7 +4,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\hieu.huynh\Desktop\deployIIS</_PublishTargetUrl>
-    <History>True|2022-11-10T09:13:52.1451510Z;True|2022-11-10T15:55:40.0739458+07:00;True|2022-11-10T15:47:28.8249018+07:00;</History>
+    <_PublishTargetUrl>D:\DeployToIIS</_PublishTargetUrl>
+    <History>True|2022-11-11T04:15:48.4248851Z;True|2022-11-11T11:09:24.1309563+07:00;</History>
   </PropertyGroup>
 </Project>

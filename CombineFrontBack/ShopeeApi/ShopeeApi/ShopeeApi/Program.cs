@@ -83,11 +83,17 @@ builder.Services.AddScoped<IBillOrderService, BillOrderService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI();
+//}
+
+app.UseSwagger();
+app.UseSwaggerUI(x =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    x.SwaggerEndpoint("/swagger/v1/swagger.json", "ShopeeAPI");
+});
 
 app.UseCors(devCorsPolicy);
 
